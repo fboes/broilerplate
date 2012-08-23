@@ -1,0 +1,67 @@
+// Basic styleguide setup
+// If you need to define new variables, adhere to this principle:
+// CSSPROPERTY(-CSS-SUBPROPERTY)-[default|VARIABLENAME](-SUBVARIABLENAME)
+
+// Colors
+
+$color-red: #abc;
+$color-red-bright: #cde;
+$color-black: #000;
+
+// Colors > Assigning
+
+$color-text : $color-black;
+$color-link: $color-red;
+$color-link-hover: $color-red-bright;
+
+// Typography
+
+$fontfamily-default: Helvetica, Arial, sans-serif;
+$fontfamily-serif: Garamond, serif;
+$fontfamily-symbols: Symbolset;
+
+$fontsize-default: 11px;
+$fontsize-big: $fontsize-default + 2px;
+
+// Typography > Assigning
+
+$font-headline: $fontsize-big $fontfamily-serif;
+
+// Image sizes
+
+$image-width-default: 20px;
+$image-height-default: 20px;
+
+$image-width-teaser: 200px;
+$image-height-teaser: 200px;
+
+// UI Elements
+
+.button {}
+
+// Forms
+
+.form {
+	label {}
+	input {}
+	input[type=hidden] {}
+	input[type=checkbox], input[type=radio] {}
+	select {}
+	button {}
+	fieldset {}
+	legend {}
+}
+
+// Misc
+
+$margin-regular: 8px;
+$padding-regular: 8px;
+
+$width-column: 200px;
+$width-screen-smartphone: 320px;
+$width-screen-tablet: 768px;
+$width-screen-default: 960px;
+
+.shadow {}
+.rounded-corner {}
+.gradient {}
