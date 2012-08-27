@@ -1,6 +1,7 @@
 // Load libraries
 
-// @import '…'
+// @import "compass";
+// @import "compass/reset"
 
 // Load basic style libraries
 
@@ -14,8 +15,8 @@
 // Load media query styles
 
 @media screen {
-  // basic styles giscreen for smartphone
   @import 'screen';
+  @import 'screen_smartphone';
 }
 @media screen and (min-width: $width-screen-tablet) {
   @import 'screen_tablet';
