@@ -15,16 +15,16 @@
 
 @media screen {
   // basic styles giscreen for smartphone
-  import 'screen';
+  @import 'screen';
 }
-@media screen and (min-width: 512px) {
-  @import 'screen_512';
+@media screen and (min-width: $width-screen-tablet) {
+  @import 'screen_tablet';
 }
-@media screen and (min-width: 768px) {
-  @import 'screen_768';
+@media screen and (min-width: $width-screen-tablet-landscape) {
+  @import 'screen_tablet_landscape';
 }
-@media screen and (min-width: 1024px) {
-  @import 'screen_1024';
+@media screen and (min-width: $width-screen-desktop) {
+  @import 'screen_desktop';
 }
 @media print {
   @import 'print';

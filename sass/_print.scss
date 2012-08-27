@@ -1,12 +1,15 @@
-body {
-  font-size:10pt;
-}
 * {
   background: transparent !important;
   color: black !important;
   text-shadow: none !important;
   filter:none !important;
   -ms-filter: none !important;
+}
+@page {
+  margin: 0.5cm;
+}
+h1, h2, h3, h4 {
+  page-break-after: avoid;
 }
 thead {
   display: table-header-group;
@@ -17,16 +20,8 @@ tr, img {
 img {
   max-width: 100% !important;
 }
-@page {
-  margin: 0.5cm;
-}
-p, h2, h3 {
-  orphans: 3;
-  widows: 3;
-}
-h2, h3 {
-  page-break-after: avoid;
-}
 .no-print {
   display:none;
 }
+
+// add your styles here
