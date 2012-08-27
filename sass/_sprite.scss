@@ -1,0 +1,13 @@
+.icon {
+  background-image: url(icons.png);
+  background-repeat: no-repeat;
+}
+
+.icon-hide-text {
+  text-indent: -100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  color: transparent !important;
+  min-width: 10px;
+}

@@ -1,0 +1,20 @@
+.icon { background-image: url(icons.png); background-repeat: no-repeat; }
+
+.icon-hide-text { text-indent: -100%; white-space: nowrap; overflow: hidden; display: inline-block; color: transparent !important; min-width: 10px; }
+
+button, input, textarea { font-size: 1em; }
+
+@media screen { #container { max-width: 256px; }
+  .no-screen { display: none; } }
+@media screen and (min-width: 512px) { #container { max-width: 512px; } }
+@media screen and (min-width: 768px) { #container { max-width: 768px; } }
+@media screen and (min-width: 1024px) { #container { max-width: 1024px; } }
+@media print { body { font-size: 10pt; }
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  .no-print { display: none; } }

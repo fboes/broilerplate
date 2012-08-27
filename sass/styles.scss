@@ -14,18 +14,19 @@
 // Load media query styles
 
 @media screen {
+  // basic styles for smartphone
 	@import 'screen';
 }
 @media screen and (min-width: 512px) {
   @import 'screen_512';
 }
 
-@media screen and (min-width: 752px) {
-  @import 'screen_752';
+@media screen and (min-width: 768px) {
+  @import 'screen_768';
 }
 
-@media screen and (min-width: 992px) {
-  @import 'screen_992';
+@media screen and (min-width: 1024px) {
+  @import 'screen_1024';
 }
 @media print {
   @import 'print';
