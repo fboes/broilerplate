@@ -4,7 +4,8 @@
 
 button, input, textarea { font-size: 1em; }
 
-@media screen { .no-screen { display: none; }
+@media screen { body { font: 11px Helvetica, Arial, sans-serif; color: black; }
+  .no-screen { display: none; }
   #container { max-width: 320px; } }
 @media screen and (min-width: 768px) { #container { max-width: 768px; } }
 @media screen and (min-width: 1024px) { #container { max-width: 1024px; } }

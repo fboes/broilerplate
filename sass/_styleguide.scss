@@ -5,12 +5,12 @@
 // Colors
 
 $color-red: #abc;
-$color-red-bright: #cde;
+$color-red-bright: lighten($color-red, 10);
 $color-black: #000;
 
 // Colors > Assigning
 
-$color-text : $color-black;
+$color-text: $color-black;
 $color-link: $color-red;
 $color-link-hover: $color-red-bright;
 
@@ -25,15 +25,19 @@ $fontsize-big: $fontsize-default + 2px;
 
 // Typography > Assigning
 
+$font-default: $fontsize-default $fontfamily-default;
 $font-headline: $fontsize-big $fontfamily-serif;
 
 // Image sizes
 
-$image-width-default: 20px;
-$image-height-default: 20px;
+$image-width-default: 320px;
+$image-height-default: 240px;
 
-$image-width-teaser: 200px;
-$image-height-teaser: 200px;
+$image-width-teaser: 480px;
+$image-height-teaser: 120px;
+
+$image-width-teaser-stage: 768px;
+$image-height-teaser-stage: 256px;
 
 // UI Elements
 
