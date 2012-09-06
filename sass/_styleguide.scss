@@ -2,17 +2,31 @@
 // If you need to define new variables, adhere to this principle:
 // CSSPROPERTY(-CSS-SUBPROPERTY)-[default|VARIABLENAME](-SUBVARIABLENAME)
 
+// Base canon
+
+$margin-regular: 8px;
+$padding-regular: 8px;
+
+$width-column: 200px;
+$width-screen-smartphone: 320px;
+$width-screen-tablet: 768px;
+$width-screen-tablet-landscape: 1024px;
+$width-screen-desktop: 1280px;
+
 // Colors
 
+$color-black: #000;
+$color-white: #fff;
 $color-red: #abc;
 $color-red-bright: lighten($color-red, 10);
-$color-black: #000;
 
 // Colors > Assigning
 
+$color-body: $color-white;
 $color-text: $color-black;
 $color-link: $color-red;
 $color-link-hover: $color-red-bright;
+$color-background: $color-white;
 
 // Typography
 
@@ -41,32 +55,36 @@ $image-height-teaser-stage: 256px;
 
 // UI Elements
 
+.shadow {}
+.rounded-corner {}
+.gradient {}
 .button {}
 
 // Forms
 
-.form {
+form {
   label {}
-  input {}
+  input[type=text], input[type=password], input[type=search], input[type=date], input[type=email] {}
   input[type=hidden] {}
   input[type=checkbox], input[type=radio] {}
-  select {}
+  textarea {}
+  select {
+    optgroup {}
+  }
   button {}
   fieldset {}
   legend {}
 }
 
-// Misc
+// Tables
 
-$margin-regular: 8px;
-$padding-regular: 8px;
+table {
+  thead {}
+  tfoot {}
+  tbody {}
 
-$width-column: 200px;
-$width-screen-smartphone: 320px;
-$width-screen-tablet: 768px;
-$width-screen-tablet-landscape: 1024px;
-$width-screen-desktop: 1280px;
-
-.shadow {}
-.rounded-corner {}
-.gradient {}
+  tr {
+    th {}
+    td {}
+  }
+}

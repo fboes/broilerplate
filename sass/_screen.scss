@@ -1,8 +1,20 @@
 body {
   font: $font-default;
   color: $color-text;
+  background-color: $color-body;
 }
+#container {
+  background-color: $color-background;
+}
+#header {
 
+}
+#navigation {
+
+}
+#footer {
+
+}
 .no-screen {
   display:none;
 }
