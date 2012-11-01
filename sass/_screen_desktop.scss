@@ -13,6 +13,9 @@
 #footer {
   // insert stuff here
 }
-.no-screen-desktop {
-  display:none;
+.only-smartphone,
+.only-tablet,
+.only-screen-tablet-landscape,
+.no-desktop {
+  display:none !important;
 }
