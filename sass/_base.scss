@@ -65,32 +65,3 @@ $image-height-teaser-stage: 256px;
 .rounded-corner {}
 .gradient {}
 .button {}
-
-// Forms
-
-form {
-  label {}
-  input[type=text], input[type=password], input[type=search], input[type=date], input[type=email] {}
-  input[type=hidden] {}
-  input[type=checkbox], input[type=radio] {}
-  textarea {}
-  select {
-    optgroup {}
-  }
-  button {}
-  fieldset {}
-  legend {}
-}
-
-// Tables
-
-table {
-  thead {}
-  tfoot {}
-  tbody {}
-
-  tr {
-    th {}
-    td {}
-  }
-}

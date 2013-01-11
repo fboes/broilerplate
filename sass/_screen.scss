@@ -1,23 +1,27 @@
 body {
-  font: $font-default;
-  color: $color-text;
-  background-color: $color-body;
+	font: $font-default;
+	color: $color-text;
+	background-color: $color-body;
 }
+
+// -----------------------------------------------------------------
+// Page
+
 #container {
-  background-color: $color-background;
+	background-color: $color-background;
 }
 #header {
-  // insert stuff here
+	// insert stuff here
 }
 #navigation {
-  // insert stuff here
+	// insert stuff here
 }
 #content {
-  // insert stuff here
+	// insert stuff here
 }
 #footer {
-  // insert stuff here
+	// insert stuff here
 }
 .no-screen {
-  display:none;
+	display:none;
 }

@@ -1,12 +1,59 @@
 // Headings
 
-// Teasers
+h1 {}
+h2 {}
+h3 {}
+h4 {}
 
-// Article
+// Text
+
+p {}
+ol {
+	li {}
+}
+ul {
+	li {}
+}
+a {
+	&:link {}
+	&:visited {}
+	&:focus, &:hover {}
+	&:active {}
+	&.active {} // class for links which point to current page
+}
 
 // Forms
 
+form {
+  label {}
+  input[type=text], input[type=password], input[type=search], input[type=date], input[type=email] {}
+  input[type=hidden] {}
+  input[type=checkbox], input[type=radio] {}
+  textarea {}
+  select {
+    optgroup {}
+  }
+  button {}
+  fieldset {}
+  legend {}
+}
+
+// Tables
+
+table {
+  thead {}
+  tfoot {}
+  tbody {}
+
+  tr {
+    th {}
+    td {}
+  }
+}
+
+// -----------------------------------------------------------------
 // Page
+
 #container {
   // insert stuff here
 }

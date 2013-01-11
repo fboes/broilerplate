@@ -1,39 +1,42 @@
 * {
-  background: transparent !important;
-  color: black !important;
-  text-shadow: none !important;
-  filter:none !important;
-  -ms-filter: none !important;
+	background: transparent !important;
+	color: black !important;
+	text-shadow: none !important;
+	filter:none !important;
+	-ms-filter: none !important;
 }
 @page {
-  margin: 0.5cm;
+	margin: 0.5cm;
 }
 h1, h2, h3, h4 {
-  page-break-after: avoid;
+	page-break-after: avoid;
 }
 thead {
-  display: table-header-group;
+	display: table-header-group;
 }
 tr, img {
-  page-break-inside: avoid;
+	page-break-inside: avoid;
 }
 img {
-  max-width: 100% !important;
+	max-width: 100% !important;
 }
 
+// -----------------------------------------------------------------
+// Page
+
 #header {
-  // insert stuff here
+	// insert stuff here
 }
 #navigation {
-  // insert stuff here
+	// insert stuff here
 }
 #content {
-  // insert stuff here
+	// insert stuff here
 }
 #footer {
-  // insert stuff here
+	// insert stuff here
 }
 .no-print {
-  display:none;
+	display:none;
 }
 

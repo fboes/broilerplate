@@ -1,4 +1,4 @@
-// Load libraries
+// Load mixin libraries
 
 // @import "compass";
 // @import "compass/reset"
@@ -15,18 +15,18 @@
 // Load media query styles
 
 @media screen {
-  @import 'screen';
-  @import 'screen_smartphone';
+	@import 'screen';
+	@import 'screen_smartphone';
 }
 @media screen and (min-width: $width-screen-tablet) {
-  @import 'screen_tablet';
+	@import 'screen_tablet';
 }
 @media screen and (min-width: $width-screen-tablet-landscape) {
-  @import 'screen_tablet_landscape';
+	@import 'screen_tablet_landscape';
 }
 @media screen and (min-width: $width-screen-desktop) {
-  @import 'screen_desktop';
+	@import 'screen_desktop';
 }
 @media print {
-  @import 'print';
+	@import 'print';
 }

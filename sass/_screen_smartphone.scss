@@ -1,21 +1,21 @@
 #container {
-  max-width: $width-screen-smartphone;
+	max-width: $width-screen-smartphone;
 }
 #header {
-  // insert stuff here
+	// insert stuff here
 }
 #navigation {
-  // insert stuff here
+	// insert stuff here
 }
 #content {
-  // insert stuff here
+	// insert stuff here
 }
 #footer {
-  // insert stuff here
+	// insert stuff here
 }
 .no-smartphone,
 .only-tablet,
 .only-screen-tablet-landscape,
 .only-desktop {
-  display:none !important;
+	display:none !important;
 }
