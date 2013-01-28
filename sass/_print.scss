@@ -11,11 +11,11 @@
 h1, h2, h3, h4 {
 	page-break-after: avoid;
 }
+h1, h2, h3, h4, p, li, tr, img {
+	page-break-inside: avoid;
+}
 thead {
 	display: table-header-group;
-}
-tr, img {
-	page-break-inside: avoid;
 }
 img {
 	max-width: 100% !important;
