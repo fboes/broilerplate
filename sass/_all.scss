@@ -26,9 +26,11 @@ a {
 
 form {
   label {}
-  input[type=text], input[type=password], input[type=search], input[type=date], input[type=email] {}
-  input[type=hidden] {}
-  input[type=checkbox], input[type=radio] {}
+  input {
+    *[type=text], *[type=password], *[type=search], *[type=date], *[type=email], *[type=number] {}
+    *[type=hidden] {}
+    *[type=checkbox], *[type=radio] {}
+  }
   textarea {}
   select {
     optgroup {}
@@ -36,6 +38,8 @@ form {
   button {}
   fieldset {}
   legend {}
+  .required {}
+  .error {}
 }
 
 // Tables
