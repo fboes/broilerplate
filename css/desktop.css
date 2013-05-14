@@ -1,11 +1,7 @@
-.icon { background-image: url(icons.png); background-repeat: no-repeat; }
-
-.icon-hide-text { text-indent: -100%; white-space: nowrap; overflow: hidden; display: inline-block; color: transparent !important; min-width: 10px; }
-
 @media screen { body { font: 11px Helvetica, Arial, sans-serif; color: black; background-color: white; }
   #container { background-color: white; }
   .no-screen { display: none; }
-  #container { max-width: 320px; }
+  #container { max-width: 360px; }
   .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; }
   #container { max-width: 768px; }
   .only-smartphone, .no-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; }
