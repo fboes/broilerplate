@@ -1,5 +1,8 @@
+a { color: #c30000; }
+a:focus, a:hover { color: #ff9191; }
+
 @media screen { body { font: 11px Helvetica, Arial, sans-serif; color: black; background-color: white; }
-  #container { background-color: white; }
+  #container { background-color: #e5e5e5; }
   .no-screen { display: none; }
   #container { max-width: 360px; }
   .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }

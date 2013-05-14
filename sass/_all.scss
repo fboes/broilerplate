@@ -15,9 +15,13 @@ ul {
 	li {}
 }
 a {
+  color: $color-link;
+
 	&:link {}
 	&:visited {}
-	&:focus, &:hover {}
+	&:focus, &:hover {
+    color: $color-link-hover;
+  }
 	&:active {}
 	&.active {} // class for links which point to current page
 }
