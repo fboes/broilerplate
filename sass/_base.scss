@@ -19,26 +19,26 @@ $width-screen-desktop          : 1280px;
 
 // Colors
 
-$color-white: 				#ffffff;
-$color-black: 				#000000;
-$color-grey: 					mix($color-white, $color-black, 50%);
+$color-white:         #ffffff;
+$color-black:         #000000;
+$color-grey:          mix($color-white, $color-black, 50%);
 $color-grey-dark:     mix($color-white, $color-black, 20%);
 $color-grey-light:    mix($color-white, $color-black, 90%);
-$color-blue: 					#33b5e5;
-$color-blue-dark: 		darken($color-blue, 25%);
-$color-blue-light: 		lighten($color-blue, 15%);
-$color-purple: 				#AA66CC;
-$color-purple-dark: 	darken($color-purple, 25%);
-$color-purple-light: 	lighten($color-purple, 15%);
-$color-green: 				#99cc00;
-$color-green-dark: 		darken($color-green, 25%);
-$color-green-light: 	lighten($color-green, 15%);
-$color-yellow: 				#FFBB33;
-$color-yellow-dark: 	darken($color-yellow, 25%);
-$color-yellow-light: 	lighten($color-yellow, 15%);
-$color-red: 					#FF4444;
-$color-red-dark: 			darken($color-red, 25%);
-$color-red-light: 		lighten($color-red, 15%);
+$color-blue:          #33b5e5;
+$color-blue-dark:     darken($color-blue, 25%);
+$color-blue-light:    lighten($color-blue, 15%);
+$color-purple:        #AA66CC;
+$color-purple-dark:   darken($color-purple, 25%);
+$color-purple-light:  lighten($color-purple, 15%);
+$color-green:         #99cc00;
+$color-green-dark:    darken($color-green, 25%);
+$color-green-light:   lighten($color-green, 15%);
+$color-yellow:        #FFBB33;
+$color-yellow-dark:   darken($color-yellow, 25%);
+$color-yellow-light:  lighten($color-yellow, 15%);
+$color-red:           #FF4444;
+$color-red-dark:      darken($color-red, 25%);
+$color-red-light:     lighten($color-red, 15%);
 
 // Colors > Assigning
 
