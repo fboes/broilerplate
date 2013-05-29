@@ -15,13 +15,13 @@ ul {
 	li {}
 }
 a {
-  color: $color-link;
+	color: $color-link;
 
 	&:link {}
 	&:visited {}
 	&:focus, &:hover {
-    color: $color-link-hover;
-  }
+		color: $color-link-hover;
+	}
 	&:active {}
 	&.active {} // class for links which point to current page
 }
@@ -29,60 +29,60 @@ a {
 // Forms
 
 form {
-  label {}
-  input {
-    *[type=text], *[type=password], *[type=search], *[type=date], *[type=email], *[type=number] {}
-    *[type=hidden] {}
-    *[type=checkbox], *[type=radio] {}
-  }
-  textarea {}
-  select {
-    optgroup {}
-  }
-  button {}
-  fieldset {}
-  legend {}
-  .required {}
-  .error {}
+	label {}
+	input {
+		*[type=text], *[type=password], *[type=search], *[type=date], *[type=email], *[type=number] {}
+		*[type=hidden] {}
+		*[type=checkbox], *[type=radio] {}
+	}
+	textarea {}
+	select {
+		optgroup {}
+	}
+	button {}
+	fieldset {}
+	legend {}
+	.required {}
+	.error {}
 }
 
 // Tables
 
 table {
-  thead {}
-  tfoot {}
-  tbody {}
+	thead {}
+	tfoot {}
+	tbody {}
 
-  tr {
-    th {}
-    td {}
-  }
+	tr {
+		th {}
+		td {}
+	}
 }
 
 // Images
 
 .figure {
-  .figcaption {}
+	.figcaption {}
 }
 
 // -----------------------------------------------------------------
 // Page
 
 #container {
-  // insert stuff here
+	// insert stuff here
 }
 #header {
-  // insert stuff here
+	// insert stuff here
 }
 #nav {
-  // insert stuff here
+	// insert stuff here
 }
 #main {
-  // insert stuff here
+	// insert stuff here
 }
 #aside {
-  // insert stuff here
+	// insert stuff here
 }
 #footer {
-  // insert stuff here
+	// insert stuff here
 }
