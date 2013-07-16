@@ -18,7 +18,9 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 * .figcaption
 * .required
 
+Legal stuff
+-----------
 
-Author:      Frank Boës <info@3960.org>
+Author: [Frank Boës](http://3960.org)
 
-Copyright:   Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+Copyright & license: See LICENSE.txt
