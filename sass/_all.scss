@@ -23,27 +23,41 @@ a {
 		color: $color-link-hover;
 	}
 	&:active {}
-	&.active {} // class for links which point to current page
+	&.current-active {} // class for links which point to current page
 }
 
 // Forms
 
 form {
-	label {}
+	fieldset {}
+	legend {}
+	.form-item {
+		&.required {}
+		&.valid {}
+		&.invalid {}
+	}
+	label {
+		&.required {}
+		&.valid {}
+		&.invalid {}
+	}
+	input, select, textarea {
+		&.required, &[required], &:required {}
+		&.valid, &:valid {}
+		&.invalid, &:invalid {}
+	}
 	input {
-		*[type=text], *[type=password], *[type=search], *[type=date], *[type=email], *[type=number] {}
-		*[type=hidden] {}
-		*[type=checkbox], *[type=radio] {}
+		&[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number] {}
+		&[type=hidden] {}
+		&[type=file] {}
+		&[type=submit] {}
+		&[type=checkbox], &[type=radio] {}
 	}
 	textarea {}
 	select {
 		optgroup {}
 	}
 	button {}
-	fieldset {}
-	legend {}
-	.required {}
-	.error {}
 }
 
 // Tables
