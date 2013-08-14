@@ -1,0 +1,92 @@
+// see https://github.com/fboes/SASS-Toolshed
+
+* {
+	margin:0;
+	padding:0;
+}
+section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
+	display:block;
+}
+h1,h2,h3,h4,p,dl,ul {
+	margin-bottom:1em;
+}
+h1 {
+	font-size:3em;
+}
+h2 {
+	font-size:2em;
+}
+h3 {
+	font-size:1.5em;
+}
+h4 {
+	font-size:1em;
+}
+li {
+	margin-left:3em;
+}
+dt {
+	font-weight:bold;
+}
+dl {
+	margin-left:1em;
+}
+h1, h2, h3, h4, p, li, dt, dd, td, th {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+code, pre, abbr, acronym {
+	hyphens: none;
+}
+a {
+	& img {
+		border:none;
+	}
+}
+img, video, audio {
+	max-width:100%;
+}
+button {
+	cursor:pointer;
+}
+
+form,input,button {
+	font-size:1em;
+}
+input, select, textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+table {
+	font-size: 1em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	td, th {
+		font-size: 1em;
+		vertical-align:top;
+		text-align: left;
+	}
+}
+
+// Special classes
+
+.display-block	{
+	display:block;
+	width:99%;
+}
+.float-right, [align="right"] {
+	float:right;
+	margin:0.25em 0 0.75em 1em;
+}
+.float-left,  [align="left"]  {
+	float:left;
+	margin:0.25em 1em 0.75em 0;
+}
+.clear-both {
+	clear:both;
+}

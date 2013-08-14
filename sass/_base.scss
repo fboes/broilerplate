@@ -5,7 +5,7 @@
 
 // Base canon
 
-$base-unit: 8px;
+$base-unit:       8px;
 
 $margin-default : $base-unit;
 $padding-default: $base-unit;
@@ -53,15 +53,16 @@ $background-color-container: $color-grey-light;
 
 // Typography
 
-$fontfamily-default: Helvetica, Arial, sans-serif;
-$fontfamily-serif:   Garamond, serif;
-$fontfamily-symbols: Symbolset;
+$fontfamily-default:             Helvetica, Arial, sans-serif;
+$fontfamily-serif:               Garamond, serif;
+$fontfamily-monospace:           "Courier New", monospace;
+$fontfamily-symbols:             Symbolset;
 
-$fontsize-default:   11px;
-$fontsize-big:       $fontsize-default + 2px;
+$fontsize-default:               11px;
+$fontsize-big:                   $fontsize-default + 2px;
 
-$lineheight-default: 1.25em;
-$lineheight-big:     1.25em;
+$lineheight-default:             1.25em;
+$lineheight-big:                 1.25em;
 
 // Typography > Assigning (Responsive)
 
@@ -82,10 +83,3 @@ $image-height-teaser:       120px;
 
 $image-width-teaser-stage:  768px;
 $image-height-teaser-stage: 256px;
-
-// UI Elements
-
-.shadow {}
-.rounded-corner {}
-.gradient {}
-.button {}

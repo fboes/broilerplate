@@ -2,6 +2,8 @@
 
 // @import "compass";
 // @import "compass/reset"
+@import 'reset';
+@import "mixins";
 
 // Load basic style libraries
 
@@ -9,6 +11,7 @@
 
 // Load basic styles
 
+@import 'all-base';
 @import 'all';
 
 // Load media query styles
@@ -36,5 +39,6 @@
 	@import 'screen_desktop';
 }
 @media print {
+	@import 'print-base';
 	@import 'print';
 }
