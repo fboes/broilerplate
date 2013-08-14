@@ -46,6 +46,9 @@ a {
 		border:none;
 	}
 }
+img {
+	-ms-interpolation-mode: bicubic;
+}
 img, video, audio {
 	max-width:100%;
 }
@@ -60,6 +63,10 @@ input, select, textarea {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	font: inherit;
+}
+[hidden] {
+	display: none;
 }
 
 table {
@@ -71,22 +78,4 @@ table {
 		vertical-align:top;
 		text-align: left;
 	}
-}
-
-// Special classes
-
-.display-block	{
-	display:block;
-	width:99%;
-}
-.float-right, [align="right"] {
-	float:right;
-	margin:0.25em 0 0.75em 1em;
-}
-.float-left,  [align="left"]  {
-	float:left;
-	margin:0.25em 1em 0.75em 0;
-}
-.clear-both {
-	clear:both;
 }

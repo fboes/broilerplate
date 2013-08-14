@@ -1,20 +1,20 @@
-// -----------------------------------------------------------------
-// Page
-
+body {
+	font: $font-default;
+}
 #container {
 	// insert stuff here
 }
-#header {
+#banner {
 	// insert stuff here
 }
 #nav {
 	// insert stuff here
 }
 #main {
-	// insert stuff here
+	font: $font-content;
 }
 #aside {
-	// insert stuff here
+	font: $font-content;
 }
 #footer {
 	// insert stuff here
