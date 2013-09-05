@@ -5,19 +5,30 @@
 
 // Base canon
 
-$base-unit:                     8px;
+$base-unit:                        8px;
 
-$margin-default :               $base-unit;
-$padding-default:               $base-unit;
+$margin-default:                   $base-unit;
+$padding-default:                  $base-unit;
 
 // Base canon > Assigning
 
-$width-column:                  25 * $base-unit;
+$width-screen-smartphone:          320px;
+$width-screen-tablet:              768px;
+$width-screen-tablet-landscape:    1024px;
+$width-screen-desktop:             1280px;
 
-$width-screen-smartphone:       320px;
-$width-screen-tablet:           768px;
-$width-screen-tablet-landscape: 1024px;
-$width-screen-desktop:          1280px;
+$margin-grid:                      $margin-default;
+$width-grid:                       300px;
+
+$count-grid-smartphone:            1;
+$count-grid-tablet:                2;
+$count-grid-tablet-landscape:      3;
+$count-grid-desktop:               4;
+
+$width-container-smartphone:       my-width-grid($count-grid-smartphone);
+$width-container-tablet:           my-width-grid($count-grid-tablet);
+$width-container-tablet-landscape: my-width-grid($count-grid-tablet-landscape);
+$width-container-desktop:          my-width-grid($count-grid-desktop);
 
 // Colors
 
@@ -48,8 +59,8 @@ $color-text:                 $color-black;
 $color-link:                 $color-red-dark;
 $color-link-hover:           $color-red-light;
 
-$background-color:           $color-white;
-$background-color-container: $color-grey-light;
+$backgroundcolor:            $color-white;
+$backgroundcolor-container:  $color-grey-light;
 
 // Typography
 
@@ -58,7 +69,7 @@ $fontfamily-serif:           Garamond, serif;
 $fontfamily-monospace:       "Courier New", monospace;
 $fontfamily-symbols:         Symbolset;
 
-$fontsize-default:           11px;
+$fontsize-default:           12px;
 $fontsize-big:               $fontsize-default + 2px;
 
 $lineheight-default:         1.25em;
@@ -75,7 +86,7 @@ $fontsize-headline:          $fontsize-big;
 $lineheight-headline:        $lineheight-big;
 
 $font-default:               #{$fontsize-default} $fontfamily-default;
-$font-content:               #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+$font-content:               1em/#{$lineheight-content} $fontfamily-content;
 $font-headline:              #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Image sizes

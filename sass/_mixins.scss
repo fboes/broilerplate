@@ -1,1 +1,3 @@
-// Put general mixins & functions here
+@function my-width-grid ($cols : 1) {
+	@return ($cols * $width-grid) + (($cols - 1) * $margin-grid);
+}

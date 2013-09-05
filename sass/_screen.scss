@@ -1,9 +1,18 @@
 body {
 	color: $color-text;
-	background-color: $background-color;
+	background-color: $backgroundcolor;
 }
 #container {
-	background-color: $background-color-container;
+	background-color: $backgroundcolor-container;
+	.grid {
+		width: my-width-grid(1);
+		margin-right: $margin-grid;
+		float: left;
+		position: relative;
+		&.last {
+			margin-left: 0;
+		}
+	}
 }
 #banner {
 	// insert stuff here
