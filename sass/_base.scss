@@ -32,70 +32,70 @@ $width-container-desktop:          my-width-grid($count-grid-desktop);
 
 // Colors
 
-$color-white:                #ffffff;
-$color-black:                #000000;
-$color-grey:                 mix($color-white, $color-black, 50%);
-$color-grey-dark:            mix($color-white, $color-black, 20%);
-$color-grey-light:           mix($color-white, $color-black, 90%);
-$color-blue:                 #33b5e5;
-$color-blue-dark:            darken($color-blue, 25%);
-$color-blue-light:           lighten($color-blue, 15%);
-$color-purple:               #AA66CC;
-$color-purple-dark:          darken($color-purple, 25%);
-$color-purple-light:         lighten($color-purple, 15%);
-$color-green:                #99cc00;
-$color-green-dark:           darken($color-green, 25%);
-$color-green-light:          lighten($color-green, 15%);
-$color-yellow:               #FFBB33;
-$color-yellow-dark:          darken($color-yellow, 25%);
-$color-yellow-light:         lighten($color-yellow, 15%);
-$color-red:                  #FF4444;
-$color-red-dark:             darken($color-red, 25%);
-$color-red-light:            lighten($color-red, 15%);
+$color-white:                      #ffffff;
+$color-black:                      #000000;
+$color-grey:                       mix($color-white, $color-black, 50%);
+$color-grey-dark:                  mix($color-white, $color-black, 20%);
+$color-grey-light:                 mix($color-white, $color-black, 90%);
+$color-blue:                       #33b5e5;
+$color-blue-dark:                  darken($color-blue, 25%);
+$color-blue-light:                 lighten($color-blue, 15%);
+$color-purple:                     #AA66CC;
+$color-purple-dark:                darken($color-purple, 25%);
+$color-purple-light:               lighten($color-purple, 15%);
+$color-green:                      #99cc00;
+$color-green-dark:                 darken($color-green, 25%);
+$color-green-light:                lighten($color-green, 15%);
+$color-yellow:                     #FFBB33;
+$color-yellow-dark:                darken($color-yellow, 25%);
+$color-yellow-light:               lighten($color-yellow, 15%);
+$color-red:                        #FF4444;
+$color-red-dark:                   darken($color-red, 25%);
+$color-red-light:                  lighten($color-red, 15%);
 
 // Colors > Assigning
 
-$color-text:                 $color-black;
-$color-link:                 $color-red-dark;
-$color-link-hover:           $color-red-light;
+$color-text:                       $color-black;
+$color-link:                       $color-red-dark;
+$color-link-hover:                 $color-red-light;
 
-$backgroundcolor:            $color-white;
-$backgroundcolor-container:  $color-grey-light;
+$backgroundcolor:                  $color-white;
+$backgroundcolor-container:        $color-grey-light;
 
 // Typography
 
-$fontfamily-default:         Helvetica, Arial, sans-serif;
-$fontfamily-serif:           Garamond, serif;
-$fontfamily-monospace:       "Courier New", monospace;
-$fontfamily-symbols:         Symbolset;
+$fontfamily-default:               Helvetica, Arial, sans-serif;
+$fontfamily-serif:                 Garamond, serif;
+$fontfamily-monospace:             "Courier New", monospace;
+$fontfamily-symbols:               Symbolset;
 
-$fontsize-default:           12px;
-$fontsize-big:               $fontsize-default + 2px;
+$fontsize-default:                 12px;
+$fontsize-big:                     $fontsize-default + 2px;
 
-$lineheight-default:         1.25em;
-$lineheight-big:             1.25em;
+$lineheight-default:               1.25em;
+$lineheight-big:                   1.25em;
 
 // Typography > Assigning (Responsive)
 
-$fontfamily-content:         $fontfamily-default;
-$fontsize-content:           $fontsize-default;
-$lineheight-content:         $lineheight-default;
+$fontfamily-content:               $fontfamily-default;
+$fontsize-content:                 $fontsize-default;
+$lineheight-content:               $lineheight-default;
 
-$fontfamily-headline:        $fontfamily-serif;
-$fontsize-headline:          $fontsize-big;
-$lineheight-headline:        $lineheight-big;
+$fontfamily-headline:              $fontfamily-serif;
+$fontsize-headline:                $fontsize-big;
+$lineheight-headline:              $lineheight-big;
 
-$font-default:               #{$fontsize-default} $fontfamily-default;
-$font-content:               1em/#{$lineheight-content} $fontfamily-content;
-$font-headline:              #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+$font-default:                     #{$fontsize-default} $fontfamily-default;
+$font-content:                     1em/#{$lineheight-content} $fontfamily-content;
+$font-headline:                    #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Image sizes
 
-$image-width-default:        320px;
-$image-height-default:       240px;
+$image-width-default:              320px;
+$image-height-default:             240px;
 
-$image-width-teaser:         480px;
-$image-height-teaser:        120px;
+$image-width-teaser:               480px;
+$image-height-teaser:              120px;
 
-$image-width-teaser-stage:   768px;
-$image-height-teaser-stage:  256px;
+$image-width-teaser-stage:         768px;
+$image-height-teaser-stage:        256px;
