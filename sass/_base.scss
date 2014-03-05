@@ -75,7 +75,7 @@ $fontsize-big:                     $fontsize-default + 2px;
 $lineheight-default:               1.25em;
 $lineheight-big:                   1.25em;
 
-// Typography > Assigning (Responsive)
+// Typography > Assigning
 
 $fontfamily-content:               $fontfamily-default;
 $fontsize-content:                 $fontsize-default;
@@ -88,6 +88,10 @@ $lineheight-headline:              $lineheight-big;
 $font-default:                     #{$fontsize-default} $fontfamily-default;
 $font-content:                     1em/#{$lineheight-content} $fontfamily-content;
 $font-headline:                    #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+
+// Z-Indexes
+
+$zindex-headline:                  1;
 
 // Image sizes
 

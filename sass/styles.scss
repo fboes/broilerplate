@@ -21,19 +21,19 @@
 	@import 'screen_smartphone';
 }
 @media screen and (max-width: $width-screen-tablet - 1px) {
-	@import 'screen_only_smartphone';
+	@import 'screen_smartphone_only';
 }
 @media screen and (min-width: $width-screen-tablet) {
 	@import 'screen_tablet';
 }
 @media screen and (min-width: $width-screen-tablet) and (max-width: $width-screen-tablet-landscape - 1px) {
-	@import 'screen_only_tablet';
+	@import 'screen_tablet_only';
 }
 @media screen and (min-width: $width-screen-tablet-landscape) {
 	@import 'screen_tablet_landscape';
 }
 @media screen and (min-width: $width-screen-tablet-landscape) and (max-width: $width-screen-desktop - 1px) {
-	@import 'screen_only_tablet_landscape';
+	@import 'screen_tablet_landscape_only';
 }
 @media screen and (min-width: $width-screen-desktop) {
 	@import 'screen_desktop';
