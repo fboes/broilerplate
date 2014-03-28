@@ -11,4 +11,4 @@ relative_assets = true
 
 # The output style for the compiled css. One of: :nested, :expanded, :compact, or :compressed.
 output_style    = (environment == :development) ? :expanded : :compact
-sass_options    = (environment == :development) ? {:debug_info => true} : {}
+sass_options    = {:debug_info => (environment == :development), :unix_newlines => true}
