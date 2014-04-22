@@ -66,16 +66,14 @@ body { font: 12px Helvetica, Arial, sans-serif; }
 
 @media screen { body { color: black; background-color: white; }
   #container { background-color: #e5e5e5; }
-  #container .grid { width: 300px; margin-right: 8px; float: left; position: relative; }
-  #container .grid.last { margin-left: 0; }
   .no-screen { display: none; }
-  #container { max-width: 300px; }
+  #container { max-width: 320px; }
   .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 768px) { #container { max-width: 608px; }
+@media screen and (min-width: 768px) { #container { max-width: 768px; }
   .only-smartphone, .no-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 1024px) { #container { max-width: 916px; }
+@media screen and (min-width: 1024px) { #container { max-width: 1024px; }
   .only-smartphone, .only-tablet, .no-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 1280px) { #container { max-width: 1224px; }
+@media screen and (min-width: 1280px) { #container { max-width: 1280px; }
   .only-smartphone, .only-tablet, .only-screen-tablet-landscape, .no-desktop { display: none !important; } }
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }

@@ -17,18 +17,10 @@ $width-screen-tablet:              768px;
 $width-screen-tablet-landscape:    1024px;
 $width-screen-desktop:             1280px;
 
-$margin-grid:                      $margin-default;
-$width-grid:                       300px;
-
-$count-grid-smartphone:            1;
-$count-grid-tablet:                2;
-$count-grid-tablet-landscape:      3;
-$count-grid-desktop:               4;
-
-$width-container-smartphone:       my-width-grid($count-grid-smartphone);
-$width-container-tablet:           my-width-grid($count-grid-tablet);
-$width-container-tablet-landscape: my-width-grid($count-grid-tablet-landscape);
-$width-container-desktop:          my-width-grid($count-grid-desktop);
+$width-container-smartphone:       $width-screen-smartphone;
+$width-container-tablet:           $width-screen-tablet;
+$width-container-tablet-landscape: $width-screen-tablet-landscape;
+$width-container-desktop:          $width-screen-desktop;
 
 // Colors
 
@@ -92,6 +84,10 @@ $font-headline:                    #{$fontsize-headline}/#{$lineheight-headline}
 // Z-Indexes
 
 $zindex-headline:                  1;
+
+ // Content
+
+$content-list : "\00BB  ";
 
 // Image sizes
 
