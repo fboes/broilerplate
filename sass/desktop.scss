@@ -2,28 +2,28 @@
 
 // @import "compass";
 // @import "compass/reset"
-@import 'reset';
-@import 'mixins';
+@import "reset";
+@import "mixins";
 
 // Load basic style libraries
 
-@import 'base';
+@import "base";
 
 // Load basic styles
 
-@import 'all-base';
-@import 'all';
+@import "all-base";
+@import "all";
 
 // Load media query styles
 
 @media screen {
-	@import 'screen';
-	@import 'screen_smartphone';
-	@import 'screen_tablet';
-	@import 'screen_tablet_landscape';
-	@import 'screen_desktop';
+	@import "screen";
+	@import "screen_smartphone";
+	@import "screen_tablet";
+	@import "screen_tablet_landscape";
+	@import "screen_desktop";
 }
 @media print {
-	@import 'print-base';
-	@import 'print';
+	@import "print-base";
+	@import "print";
 }

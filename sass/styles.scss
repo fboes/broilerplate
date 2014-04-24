@@ -2,43 +2,43 @@
 
 // @import "compass";
 // @import "compass/reset"
-@import 'reset';
-@import 'mixins';
+@import "reset";
+@import "mixins";
 
 // Load basic style libraries
 
-@import 'base';
+@import "base";
 
 // Load basic styles
 
-@import 'all-base';
-@import 'all';
+@import "all-base";
+@import "all";
 
 // Load media query styles
 
 @media screen {
-	@import 'screen';
-	@import 'screen_smartphone';
+	@import "screen";
+	@import "screen_smartphone";
 }
 @media screen and (max-width: $width-screen-tablet - 1px) {
-	@import 'screen_smartphone_only';
+	@import "screen_smartphone_only";
 }
 @media screen and (min-width: $width-screen-tablet) {
-	@import 'screen_tablet';
+	@import "screen_tablet";
 }
 @media screen and (min-width: $width-screen-tablet) and (max-width: $width-screen-tablet-landscape - 1px) {
-	@import 'screen_tablet_only';
+	@import "screen_tablet_only";
 }
 @media screen and (min-width: $width-screen-tablet-landscape) {
-	@import 'screen_tablet_landscape';
+	@import "screen_tablet_landscape";
 }
 @media screen and (min-width: $width-screen-tablet-landscape) and (max-width: $width-screen-desktop - 1px) {
-	@import 'screen_tablet_landscape_only';
+	@import "screen_tablet_landscape_only";
 }
 @media screen and (min-width: $width-screen-desktop) {
-	@import 'screen_desktop';
+	@import "screen_desktop";
 }
 @media print {
-	@import 'print-base';
-	@import 'print';
+	@import "print-base";
+	@import "print";
 }

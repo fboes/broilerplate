@@ -4,6 +4,12 @@
 	margin:0;
 	padding:0;
 }
+// see http://css-tricks.com/international-box-sizing-awareness-day/
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
 	display:block;
 }
@@ -31,16 +37,6 @@ dt {
 dl {
 	margin-left:1em;
 }
-h1, h2, h3, h4, p, li, dt, dd, td, th {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
-}
-code, pre, abbr, acronym {
-	hyphens: none;
-}
 a {
 	& img {
 		border:none;
@@ -60,9 +56,6 @@ form,input,button {
 	font-size:1em;
 }
 input, select, textarea {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	font: inherit;
 }
 [hidden] {

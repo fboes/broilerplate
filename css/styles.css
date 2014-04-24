@@ -1,5 +1,7 @@
 * { margin: 0; padding: 0; }
 
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
 section, header, footer, nav, main, article, aside, figure, dialog, video, audio, address, hgroup, menu, canvas, details { display: block; }
 
 h1, h2, h3, h4, p, dl, ul { margin-bottom: 1em; }
@@ -18,10 +20,6 @@ dt { font-weight: bold; }
 
 dl { margin-left: 1em; }
 
-h1, h2, h3, h4, p, li, dt, dd, td, th { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; -o-hyphens: auto; hyphens: auto; }
-
-code, pre, abbr, acronym { hyphens: none; }
-
 a img { border: none; }
 
 img { -ms-interpolation-mode: bicubic; }
@@ -32,7 +30,7 @@ button { cursor: pointer; }
 
 form, input, button { font-size: 1em; }
 
-input, select, textarea { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font: inherit; }
+input, select, textarea { font: inherit; }
 
 [hidden] { display: none; }
 
@@ -45,7 +43,7 @@ h2 { font: 21px/1.25em Garamond, serif; }
 
 h3 { font: 14px/1.25em Garamond, serif; }
 
-h4 { font: 1em/1.25em Helvetica, Arial, sans-serif; font-weight: bold; }
+h4 { font: 12px/1.25em Helvetica, Arial, sans-serif; font-weight: bold; }
 
 a { color: #c30000; }
 a:focus, a:hover { color: #ff9191; }
@@ -60,9 +58,9 @@ a:focus, a:hover { color: #ff9191; }
 
 body { font: 12px Helvetica, Arial, sans-serif; }
 
-#main { font: 1em/1.25em Helvetica, Arial, sans-serif; }
+#main { font: 12px/1.25em Helvetica, Arial, sans-serif; }
 
-#aside { font: 1em/1.25em Helvetica, Arial, sans-serif; }
+#aside { font: 12px/1.25em Helvetica, Arial, sans-serif; }
 
 @media screen { body { color: black; background-color: white; }
   #container { background-color: #e5e5e5; }
@@ -81,4 +79,5 @@ body { font: 12px Helvetica, Arial, sans-serif; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
+  #navigation { display: none; }
   .no-print { display: none; } }

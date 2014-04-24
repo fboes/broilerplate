@@ -5,10 +5,13 @@
 
 // Base canon
 
+$develop:                          false;
 $base-unit:                        8px;
 
 $margin-default:                   $base-unit;
 $padding-default:                  $base-unit;
+
+$borderradius-default:             2px;
 
 // Base canon > Assigning
 
@@ -67,6 +70,8 @@ $fontsize-big:                     $fontsize-default + 2px;
 $lineheight-default:               1.25em;
 $lineheight-big:                   1.25em;
 
+$font-default:                     #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+
 // Typography > Assigning
 
 $fontfamily-content:               $fontfamily-default;
@@ -77,8 +82,7 @@ $fontfamily-headline:              $fontfamily-serif;
 $fontsize-headline:                $fontsize-big;
 $lineheight-headline:              $lineheight-big;
 
-$font-default:                     #{$fontsize-default} $fontfamily-default;
-$font-content:                     1em/#{$lineheight-content} $fontfamily-content;
+$font-content:                     #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 $font-headline:                    #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Z-Indexes
@@ -87,7 +91,7 @@ $zindex-headline:                  1;
 
  // Content
 
-$content-list : "\00BB  ";
+$content-list:                     "\00BB  ";
 
 // Image sizes
 

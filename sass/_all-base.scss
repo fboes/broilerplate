@@ -120,3 +120,15 @@ table {
 .clear-both {
 	clear:both;
 }
+
+@if $develop {
+	div,table {
+		outline:1px solid rgba(255,0,0,0.5);
+	}
+	h1,h2,h3,h4 {
+		outline:1px solid rgba(0,255,0,0.5);
+	}
+	td,th {
+		outline:1px solid rgba(0,0,255,0.5);
+	}
+}
