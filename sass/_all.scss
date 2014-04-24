@@ -1,5 +1,6 @@
 body {
-	font: $fontsize-default $fontfamily-default;
+	font-family: $fontfamily-default;
+	font-size: $fontsize-default;
 }
 #container {
 	// insert stuff here
@@ -11,10 +12,12 @@ body {
 	// insert stuff here
 }
 #main {
-	font: $font-content;
+	font-family: $fontfamily-content;
+	font-size: $fontsize-content;
 }
 #aside {
-	font: $font-content;
+	font-family: $fontfamily-content;
+	font-size: $fontsize-content;
 }
 #footer {
 	// insert stuff here

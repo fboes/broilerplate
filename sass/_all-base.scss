@@ -6,16 +6,16 @@
 // Headings
 
 h1 {
-	font: #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline
+	font: #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline;
 }
 h2 {
-	font: #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline
+	font: #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline;
 }
 h3 {
-	font: #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline
+	font: #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 }
 h4 {
-	font: $font-content;
+	font: #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 	font-weight: bold;
 }
 
