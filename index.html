@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<!--[if (IE 8)&(!IEMobile)]><html class="ie8" lang="de"><![endif]-->
+<!--[if (IE 9)&(!IEMobile)]><html class="ie9" lang="de"><![endif]-->
+<!--[if (gt IE 9)]><!--><html lang="de"><!--<![endif]-->
 <head>
-	<title>SASS Styleguide Test Suite</title>
 	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>SASS Styleguide Test Suite</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if gte IE 9]><!-->
 		<link rel="stylesheet" href="css/styles.css" />
@@ -14,10 +17,16 @@
 <body>
 	<div id="container">
 		<div id="banner" class="header">
-			<header role="banner"><!-- --></header>
+			<header role="banner">
+				<a href="#">Title</a>
+			</header>
 		</div>
 		<div id="navigation" class="nav">
-			<nav role="navigation"><!-- --></nav>
+			<nav role="navigation">
+				<ul>
+					<li><a href="#">Navigation</a></li>
+				</ul>
+			</nav>
 		</div>
 		<div id="main" class="main">
 			<main role="main">
@@ -65,7 +74,11 @@
 			<aside role="complementary"><!-- --></aside>
 		</div>
 		<div id="footer" class="footer">
-			<footer role="contentinfo"><!-- --></footer>
+			<footer role="contentinfo">
+				<ul>
+					<li><a href="#">Navigation</a></li>
+				</ul>
+			</footer>
 		</div>
 	</div>
 </body>

@@ -58,12 +58,19 @@ a:focus, a:hover { color: #ff9191; }
 
 body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
+#container { margin: auto; }
+
 #main { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
 #aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
 @media screen { body { color: black; background-color: white; }
   #container { background-color: #e5e5e5; }
+  #banner { padding: 8px; }
+  #navigation { padding: 8px; }
+  #main { padding: 8px; }
+  #sidebar { padding: 8px; }
+  #footer { padding: 8px; }
   .no-screen { display: none; }
   #container { max-width: 320px; }
   .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }
