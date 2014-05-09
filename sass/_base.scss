@@ -72,6 +72,9 @@ $lineheight-big:                   1.25em;
 
 $font-default:                     #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 
+$fontweight-normal:                400; // use these for webfonts
+$fontweight-bold:                  700; // use these for webfonts
+
 // Typography > Assigning
 
 $fontfamily-content:               $fontfamily-default;
@@ -92,14 +95,3 @@ $zindex-headline:                  1;
  // Content
 
 $content-list:                     "\00BB  ";
-
-// Image sizes
-
-$image-width-default:              320px;
-$image-height-default:             240px;
-
-$image-width-teaser:               480px;
-$image-height-teaser:              120px;
-
-$image-width-teaser-stage:         768px;
-$image-height-teaser-stage:        256px;
