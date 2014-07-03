@@ -2,7 +2,14 @@ body {
 	// insert stuff here
 }
 #container {
-	max-width: $width-container-tablet-landscape;
+	@if ($switch-overlapping) {
+		.header--inner, .nav--inner, .main--inner, .aside--inner, .footer--inner {
+			max-width: $width-container-tablet-landscape;
+		}
+	}
+	@else {
+		max-width: $width-container-tablet-landscape;
+	}
 }
 #banner {
 	// insert stuff here

@@ -3,9 +3,13 @@
 // CSSPROPERTY(-CSS-SUBPROPERTY)-[default|VARIABLENAME](-SUBVARIABLENAME)
 // See http://compass-style.org/help/tutorials/best_practices/
 
+// Switches
+
+$switch-develop:                   false; // show debugging styles
+$switch-overlapping:               false; // container does not set width, but every --inner-element on its own
+
 // Base canon
 
-$develop:                          false;
 $base-unit:                        8px;
 
 $margin-default:                   $base-unit;

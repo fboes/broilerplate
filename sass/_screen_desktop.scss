@@ -2,7 +2,14 @@ body {
 	// insert stuff here
 }
 #container {
-	max-width: $width-container-desktop;
+	@if ($switch-overlapping) {
+		.header--inner, .nav--inner, .main--inner, .aside--inner, .footer--inner {
+			max-width: $width-container-desktop;
+		}
+	}
+	@else {
+		max-width: $width-container-desktop;
+	}
 }
 #banner {
 	// insert stuff here

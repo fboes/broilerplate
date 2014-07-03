@@ -2,7 +2,14 @@ body {
 	// insert stuff here
 }
 #container {
-	max-width: $width-container-smartphone;
+	@if ($switch-overlapping) {
+		.header--inner, .nav--inner, .main--inner, .aside--inner, .footer--inner {
+			max-width: $width-container-smartphone;
+		}
+	}
+	@else {
+		max-width: $width-container-smartphone;
+	}
 }
 #banner {
 	// insert stuff here
