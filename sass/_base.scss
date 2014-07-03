@@ -50,12 +50,29 @@ $color-red-light:                  lighten($color-red, 15%);
 
 // Colors > Assigning
 
-$color-text:                       $color-black;
+$backgroundcolor-body:             $color-white;
+$color-body:                       $color-black;
+
+$backgroundcolor-container:        $color-white;
+$color-container:                  $color-grey-light;
+
+$backgroundcolor-banner:           $color-black;
+$color-banner:                     $color-white;
+
+$backgroundcolor-navigation:       $color-white;
+$color-navigation:                 $color-black;
+
+$backgroundcolor-main:             $color-white;
+$color-main:                       $color-black;
+
+$backgroundcolor-sidebar:          $color-grey;
+$color-sidebar:                    $color-black;
+
+$backgroundcolor-footer:           $color-black;
+$color-footer:                     $color-white;
+
 $color-link:                       $color-red-dark;
 $color-link-hover:                 $color-red-light;
-
-$backgroundcolor:                  $color-white;
-$backgroundcolor-container:        $color-grey-light;
 
 // Typography
 

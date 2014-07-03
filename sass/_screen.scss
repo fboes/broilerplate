@@ -1,23 +1,34 @@
 body {
-	color: $color-text;
-	background-color: $backgroundcolor;
+	color: $color-body;
+	background-color: $backgroundcolor-body;
 }
 #container {
-	background-color: $backgroundcolor-container;
+	color: $color-body;
+	background-color: $backgroundcolor-body;
 }
 #banner {
+	color: $color-banner;
+	background-color: $backgroundcolor-banner;
 	padding: $padding-default;
 }
 #navigation {
+	color: $color-navigation;
+	background-color: $backgroundcolor-navigation;
 	padding: $padding-default;
 }
 #main {
+	color: $color-main;
+	background-color: $backgroundcolor-main;
 	padding: $padding-default;
 }
 #sidebar {
+	color: $color-sidebar;
+	background-color: $backgroundcolor-sidebar;
 	padding: $padding-default;
 }
 #footer {
+	color: $color-footer;
+	background-color: $backgroundcolor-footer;
 	padding: $padding-default;
 }
 .no-screen {
