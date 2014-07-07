@@ -6,17 +6,16 @@
 // Headings
 
 h1 {
-	font: #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontweight-bold #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline;
 }
 h2 {
-	font: #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontweight-bold #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline;
 }
 h3 {
-	font: #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontweight-bold #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 }
 h4 {
-	font: #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
-	font-weight: bold;
+	font: $fontweight-bold #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 }
 
 // Text
@@ -27,6 +26,12 @@ ol {
 }
 ul {
 	li {}
+}
+dl {
+	dt {
+		font-weight: $fontweight-bold;
+	}
+	dd {}
 }
 a {
 	color: $color-link;
@@ -40,6 +45,9 @@ a {
 	&.current-active {} // class for links which point to current page
 }
 small {}
+strong {
+	font-weight: $fontweight-bold;
+}
 
 
 // Forms
@@ -85,7 +93,9 @@ table {
 	tbody {}
 
 	tr {
-		th {}
+		th {
+			font-weight: $fontweight-bold;
+		}
 		td {}
 	}
 }

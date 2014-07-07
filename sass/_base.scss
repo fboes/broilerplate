@@ -93,8 +93,8 @@ $lineheight-big:                   1.25em;
 
 $font-default:                     #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 
-$fontweight-normal:                400; // use these for webfonts
-$fontweight-bold:                  700; // use these for webfonts
+$fontweight-normal:                400; // you may also use 'normal' or 'bold' but for webfonts
+$fontweight-bold:                  700; // you may also use 'normal' or 'bold' but for webfonts
 
 // Typography > Assigning
 
