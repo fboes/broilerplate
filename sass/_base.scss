@@ -80,6 +80,9 @@ $color-link-hover:                 $color-red-light;
 
 // Typography
 
+$fontweight-normal:                400; // you may also use 'normal' or 'bold' but for webfonts
+$fontweight-bold:                  700; // you may also use 'normal' or 'bold' but for webfonts
+
 $fontfamily-default:               Helvetica, Arial, sans-serif;
 $fontfamily-serif:                 Garamond, serif;
 $fontfamily-monospace:             "Courier New", monospace;
@@ -92,9 +95,6 @@ $lineheight-default:               1.25em;
 $lineheight-big:                   1.25em;
 
 $font-default:                     #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
-
-$fontweight-normal:                400; // you may also use 'normal' or 'bold' but for webfonts
-$fontweight-bold:                  700; // you may also use 'normal' or 'bold' but for webfonts
 
 // Typography > Assigning
 
