@@ -28,9 +28,7 @@ img, video, audio { max-width: 100%; }
 
 button { cursor: pointer; }
 
-form, input, button { font-size: 1em; }
-
-input, select, textarea { font: inherit; }
+form, input, select, textarea, button { font: inherit; }
 
 [hidden] { display: none; }
 

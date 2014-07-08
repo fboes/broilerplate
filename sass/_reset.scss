@@ -38,7 +38,7 @@ dl {
 	margin-left:1em;
 }
 a {
-	& img {
+	img {
 		border:none;
 	}
 }
@@ -51,11 +51,7 @@ img, video, audio {
 button {
 	cursor:pointer;
 }
-
-form,input,button {
-	font-size:1em;
-}
-input, select, textarea {
+form, input, select, textarea, button {
 	font: inherit;
 }
 [hidden] {
