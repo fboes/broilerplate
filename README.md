@@ -18,6 +18,11 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 * .figcaption
 * .required
 
+Version
+-------
+
+Version: 1.2 (2014-07-25)
+
 Legal stuff
 -----------
 
