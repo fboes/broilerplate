@@ -10,7 +10,18 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
 	display:block;
 }
 h1,h2,h3,h4,p,dl,ul {
@@ -32,7 +43,7 @@ li {
 	margin-left:3em;
 }
 dt {
-	font-weight: bold;
+	font-weight:bold;
 }
 dl {
 	margin-left:1em;
@@ -54,6 +65,9 @@ button {
 form, input, select, textarea, button {
 	font: inherit;
 }
+textarea {
+	overflow: auto;
+}
 [hidden] {
 	display: none;
 }
@@ -62,6 +76,7 @@ table {
 	font-size: 1em;
 	border-collapse: collapse;
 	border-spacing: 0;
+	table-layout: fixed;
 	td, th {
 		font-size: 1em;
 		vertical-align:top;
