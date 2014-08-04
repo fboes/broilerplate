@@ -72,7 +72,7 @@ form {
 		&.invalid, &:invalid {}
 	}
 	input {
-		&[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number] {}
+		&[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number], &[type=url], &[type=time], &[type=tel] {}
 		&[type=hidden] {}
 		&[type=file] {}
 		&[type=submit] {}
