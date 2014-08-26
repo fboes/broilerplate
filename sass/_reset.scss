@@ -65,6 +65,11 @@ button {
 form, input, select, textarea, button {
 	font: inherit;
 }
+optgroup {
+	option {
+		margin-left:1em;
+	}
+}
 textarea {
 	overflow: auto;
 }
