@@ -18,6 +18,13 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 * .figcaption
 * .required
 
+Requirements
+------------
+
+* [SASS](http://sass-lang.com/)
+* Optional: [Compass](http://compass-style.org/)
+* Optional: [Grunt](http://gruntjs.com/) (setup via `npm install`, start via `grunt watch`)
+
 Version
 -------
 

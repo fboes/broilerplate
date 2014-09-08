@@ -1,14 +1,15 @@
 {
-	"name": "sass-styleguide",
-	"description": "A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.",
-	"version": "1.2.1",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:fboes/sass-styleguide.git"
-	},
-	"devDependencies": {
-		"grunt": "^0.4.4",
-		"grunt-contrib-compass": "^0.9.1",
-		"grunt-contrib-watch": "^0.6.1"
-	}
+  "name": "sass-styleguide",
+  "description": "A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.",
+  "version": "1.2.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fboes/sass-styleguide.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-compass": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }
