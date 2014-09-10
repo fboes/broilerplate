@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
+					//basePath: '',
 					config: 'config.rb'
 				}
 			}
