@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
-			dist: {
+			build: {
 				options: {
 					style: 'compact',
 					sourcemap: 'none'
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 			}
 		},
 		compass: {
-			dist: {
+			build: {
 				options: {
 					//basePath: '',
 					config: 'config.rb'
