@@ -1,0 +1,26 @@
+// see http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+// use `@include respond-to($media) {}`
+@mixin respond-to($media) {
+	@if $media == screen_smartphone {
+		@media screen and (max-width: $width-screen-tablet - 1px) { @content; }
+	}
+	@else if $media == screen_smartphone_only {
+		@media screen and (max-width: $width-screen-tablet - 1px) { @content; }
+	}
+	@else if $media == screen_tablet {
+		@media screen and (min-width: $width-screen-tablet) { @content; }
+	}
+	@else if $media == screen_tablet_only {
+		@media screen and (min-width: $width-screen-tablet) and (max-width: $width-screen-tablet-landscape - 1px) { @content; }
+	}
+	@else if $media == screen_tablet_landscape {
+		@media screen and (min-width: $width-screen-tablet-landscape) { @content; }
+	}
+	@else if $media == screen_tablet_landscape_only {
+		@media screen and (min-width: $width-screen-tablet-landscape) and (max-width: $width-screen-desktop - 1px) { @content; }
+	}
+	@else if $media == screen_desktop {
+		@media screen and (min-width: $width-screen-desktop) { @content; }
+	}
+}
+
