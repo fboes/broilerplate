@@ -1,42 +1,43 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		sass: {
+		dirs: {
+			web: ''
+		},
+
+		/*sass: {
 			build: {
 				options: {
 					style: 'compact',
 					sourcemap: 'none'
 				},
-				files: [{
-					expand: true,
-					cwd: 'sass/',
-					src: ['*.scss'],
-					dest: 'css/',
-					ext: '.css'
-				}]
+				files: {
+					'<%= dirs.web %>css/styles.css' : '<%= dirs.web %>sass/styles.scss',
+					'<%= dirs.web %>css/desktop.css': '<%= dirs.web %>sass/desktop.scss'
+				}
 			}
-		},
+		},*/
 		compass: {
 			build: {
 				options: {
-					//basePath: '',
-					config: 'config.rb'
+					basePath: '<%= dirs.web %>',
+					config: '<%= dirs.web %>config.rb'
 				}
 			}
 		},
 		watch: {
 			styles: {
-				files: ['sass/**/*.scss'],
-				tasks: ['sass'] // or 'compass'
+				files: ['<%= compass.web %>sass/**/*.scss'],
+				tasks: ['compass'] // or 'sass'
 			}
 		}
 	});
 
 	// Load the plugins
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	//grunt.loadNpmTasks('grunt-contrib-compass');
+	// grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass']); // or 'compass'
+	grunt.registerTask('default', ['compass']); // or 'sass'
 };
