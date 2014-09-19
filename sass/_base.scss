@@ -132,3 +132,7 @@ $content-list:                     "\00BB  ";
 $content-copyright:                "\00A9";
 $content-hellip:                   "\2026";
 $content-null:                     " "; // for spawning :before & :after
+
+// Animation
+
+$transition-default:               all 0.5s ease;
