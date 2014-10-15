@@ -80,14 +80,15 @@ $color-link-hover:                 $color-red-light;
 
 // Typography
 
+// http://www.webtype.com/info/articles/fonts-weights/
 $fontweight-thin:                  100;
 $fontweight-extralight:            200;
 $fontweight-light:                 300;
 $fontweight-normal:                400; // this is also 'normal'
 $fontweight-medium:                500;
 $fontweight-semibold:              600;
-$fontweight-bold:                  700;
-$fontweight-extrabold:             800; // this is also 'bold'
+$fontweight-bold:                  700; // this is also 'bold'
+$fontweight-extrabold:             800;
 $fontweight-black:                 900;
 
 $fontfamily-default:               Helvetica, Arial, sans-serif;
@@ -99,28 +100,32 @@ $fontsize-default:                 12px;
 $fontsize-big:                     $fontsize-default + 2px;
 
 $lineheight-default:               1.25em;
-$lineheight-big:                   1.25em;
+$fontweight-default:               $fontweight-normal;
+$fontweight-default-bold:          $fontweight-bold;
+$fontstyle-default:                normal;
 
-$font-default:                     #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+$font-default:                     $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 
 // Typography > Assigning
 
 $fontfamily-content:               $fontfamily-default;
 $fontsize-content:                 $fontsize-default;
 $lineheight-content:               $lineheight-default;
+$fontweight-content:               $fontweight-normal;
+$fontweight-content-bold:          $fontweight-bold;
+$fontstyle-content:                $fontstyle-default;
+
+$font-content:                     $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 
 $fontfamily-headline:              $fontfamily-serif;
 $fontsize-headline:                $fontsize-big;
-$lineheight-headline:              $lineheight-big;
-
-$font-content:                     #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
-$font-headline:                    #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
-
-$fontweight-regular:               $fontweight-normal;
+$lineheight-headline:              $lineheight-default;
 $fontweight-headline:              $fontweight-bold;
-$fontweight-strong:                $fontweight-medium;
+$fontweight-headline-bold:         $fontweight-extrabold;
+$fontstyle-headline:               $fontstyle-default;
 
-$fontstyle-headline:               normal;
+$font-headline:                    $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+
 
 // Z-Indexes
 

@@ -45,16 +45,16 @@ h2 { font: normal 700 21px/1.25em Garamond, serif; }
 
 h3 { font: normal 700 14px/1.25em Garamond, serif; }
 
-h4 { font: 500 12px/1.25em Helvetica, Arial, sans-serif; }
+h4 { font: normal 700 12px/1.25em Helvetica, Arial, sans-serif; }
 
-dl dt { font-weight: 500; }
+dl dt { font-weight: 700; }
 
 a { color: #c30000; }
 a:focus, a:hover { color: #ff9191; }
 
-strong { font-weight: 500; }
+strong { font-weight: 700; }
 
-table tr th { font-weight: 500; }
+table tr th { font-weight: 700; }
 
 .display-block { display: block; width: 99%; }
 

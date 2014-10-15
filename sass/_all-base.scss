@@ -15,7 +15,7 @@ h3 {
 	font: $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 }
 h4 {
-	font: $fontweight-strong #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+	font: $fontstyle-content $fontweight-content-bold #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 }
 
 // Text
@@ -29,7 +29,7 @@ ul {
 }
 dl {
 	dt {
-		font-weight: $fontweight-strong;
+		font-weight: $fontweight-content-bold;
 	}
 	dd {}
 }
@@ -46,7 +46,7 @@ a {
 }
 small {}
 strong {
-	font-weight: $fontweight-strong;
+	font-weight: $fontweight-content-bold;
 }
 
 
@@ -94,7 +94,7 @@ table {
 
 	tr {
 		th {
-			font-weight: $fontweight-strong;
+			font-weight: $fontweight-content-bold;
 		}
 		td {}
 	}
