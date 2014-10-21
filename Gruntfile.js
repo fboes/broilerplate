@@ -26,13 +26,7 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			options: {
-				livereload: true,
-			},
 			grunt: {
-				options: {
-					livereload: false,
-				},
 				files: ['Gruntfile.js']
 			},
 			sass: {
@@ -43,7 +37,10 @@ module.exports = function(grunt) {
 				tasks: ['compass'] // or 'sass'
 			},
 			stuff: {
-				files: ['<%= dirs.web %>css/*.css', '<%= dirs.web %>*.html'],
+				options: {
+					livereload: true,
+				},
+				files: ['<%= dirs.web %>css/*.css', '<%= dirs.web %>*.html', '<%= dirs.web %>js/*.js'],
 				tasks: []
 			}
 		}
