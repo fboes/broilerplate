@@ -9,6 +9,11 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+	// see http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+	// this is actually a :not-first selector
+	& + h1, + h2, + h3, + h4, + p, + dl, + ul, + li, + form, + table {
+		margin-top:1em;
+	}
 }
 
 article,
@@ -24,9 +29,6 @@ nav,
 section,
 summary {
 	display:block;
-}
-h1,h2,h3,h4,p,dl,ul {
-	margin-bottom:1em;
 }
 h1 {
 	font-size:3em;
