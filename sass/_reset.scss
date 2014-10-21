@@ -87,7 +87,29 @@ table {
 	table-layout: fixed;
 	td, th {
 		font-size: 1em;
-		vertical-align:top;
+		vertical-align: top;
 		text-align: left;
+	}
+}
+
+[dir="rtl"] {
+	li {
+		margin-right:3em;
+		margin-left:0;
+	}
+	dl {
+		margin-right:1em;
+		margin-left:0;
+	}
+	optgroup {
+		option {
+			margin-right:1em;
+			margin-left:0;
+		}
+	}
+	table {
+		td, th {
+			text-align: right;
+		}
 	}
 }
