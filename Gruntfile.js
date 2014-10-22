@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 			web: ''
 		},
 
-		/*sass: {
+		sass: {
 			build: {
 				options: {
 					style: 'compact',
@@ -16,15 +16,15 @@ module.exports = function(grunt) {
 					'<%= dirs.web %>css/desktop.css': '<%= dirs.web %>sass/desktop.scss'
 				}
 			}
-		},*/
-		compass: {
+		},
+		/*compass: {
 			build: {
 				options: {
 					basePath: '<%= dirs.web %>',
 					config: '<%= dirs.web %>config.rb'
 				}
 			}
-		},
+		},*/
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js']
@@ -33,8 +33,8 @@ module.exports = function(grunt) {
 				options: {
 					livereload: false,
 				},
-				files: ['<%= compass.build.options.basePath %>sass/**/*.scss'],
-				tasks: ['compass'] // or 'sass'
+				files: ['<%= dirs.web %>sass/*.scss'],
+				tasks: ['sass'] // or 'compass'
 			},
 			stuff: {
 				options: {
@@ -47,9 +47,7 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugins
-	// grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	require('jit-grunt')(grunt);
 
 	// Default task(s).
 	grunt.registerTask('default', ['compass']); // or 'sass'
