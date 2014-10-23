@@ -24,3 +24,45 @@
 	}
 }
 
+// http://davidwalsh.name/write-media-queries-sass
+@mixin screen_smartphone () {
+	@include respond-to(screen_smartphone) {
+		@content;
+	}
+}
+
+@mixin screen_smartphone_only () {
+	@include respond-to(screen_smartphone_only) {
+		@content;
+	}
+}
+
+@mixin screen_tablet () {
+	@include respond-to(screen_tablet) {
+		@content;
+	}
+}
+
+@mixin screen_tablet_only () {
+	@include respond-to(screen_tablet_only) {
+		@content;
+	}
+}
+
+@mixin screen_tablet_landscape () {
+	@include respond-to(screen_tablet_landscape) {
+		@content;
+	}
+}
+
+@mixin screen_tablet_landscape_only () {
+	@include respond-to(screen_tablet_landscape_only) {
+		@content;
+	}
+}
+
+@mixin screen_desktop () {
+	@include respond-to(screen_desktop) {
+		@content;
+	}
+}
