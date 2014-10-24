@@ -30,17 +30,14 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js']
 			},
 			sass: {
-				options: {
-					livereload: false,
-				},
 				files: ['<%= dirs.web %>sass/*.scss'],
 				tasks: ['sass'] // or 'compass'
 			},
-			stuff: {
+			livereload: {
 				options: {
 					livereload: true,
 				},
-				files: ['<%= dirs.web %>css/*.css', '<%= dirs.web %>*.html', '<%= dirs.web %>js/*.js'],
+				files: ['<%= dirs.web %>css/*.css', '<%= dirs.web %>*.html', '<%= dirs.web %>js/*.js', '<%= dirs.web %>images/*'],
 				tasks: []
 			}
 		}
@@ -50,5 +47,5 @@ module.exports = function(grunt) {
 	require('jit-grunt')(grunt);
 
 	// Default task(s).
-	grunt.registerTask('default', ['compass']); // or 'sass'
+	grunt.registerTask('default', ['sass']); // or 'compass'
 };
