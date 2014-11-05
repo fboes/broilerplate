@@ -11,10 +11,13 @@ module.exports = function(grunt) {
 					style: 'compact',
 					sourcemap: 'none'
 				},
-				files: {
-					'<%= dirs.web %>css/styles.css' : '<%= dirs.web %>sass/styles.scss',
-					'<%= dirs.web %>css/desktop.css': '<%= dirs.web %>sass/desktop.scss'
-				}
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.web %>sass',
+					src: ['*.scss'],
+					dest: '<%= dirs.web %>css',
+					ext: '.css'
+				}]
 			}
 		},
 		/*compass: {

@@ -133,9 +133,15 @@ $zindex-headline:                  1;
 
  // Content
 
-$content-list:                     "\00BB  ";
+$content-list:                     "\00BB  "; // using a laquo
 $content-copyright:                "\00A9  ";
+$content-bulletpoint:              "\2022";
 $content-hellip:                   "\2026";
+$content-ldquo:                    "\201C";
+$content-rdquo:                    "\201D";
+$content-bdquo:                    "\201E";
+$content-laquo:                    "\00AB";
+$content-raquo:                    "\00BB";
 $content-null:                     " "; // for spawning :before & :after
 
 // Animation
