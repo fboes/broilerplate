@@ -19,6 +19,7 @@ dt { font-weight: bold; }
 dl { margin-left: 1em; }
 
 a img { border: none; }
+a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:hover { color: inherit; text-decoration: inherit; }
 
 img { -ms-interpolation-mode: bicubic; }
 

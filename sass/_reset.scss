@@ -55,6 +55,12 @@ a {
 	img {
 		border:none;
 	}
+	&[href^="tel"] {
+		&:link, &:visited, &:hover {
+			color:inherit;
+			text-decoration:inherit;
+		}
+	}
 }
 img {
 	-ms-interpolation-mode: bicubic;
