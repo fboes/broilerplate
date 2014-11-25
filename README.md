@@ -25,6 +25,11 @@ Requirements
 * Optional: [Compass](http://compass-style.org/)
 * Optional: [Grunt](http://gruntjs.com/) (setup via `npm install`, start via `grunt watch`)
 
+Installation
+------------
+
+Via [Bower](http://bower.io/): `bower install fboes/sass-styleguide`
+
 Version
 -------
 

@@ -1,0 +1,21 @@
+{
+  "name": "sass-styleguide",
+  "version": "1.2.1",
+  "homepage": "https://github.com/fboes/sass-styleguide",
+  "authors": [
+    "Frank Boës <http://3960.org>"
+  ],
+  "description": "A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.",
+  "main": "index.html",
+  "keywords": [
+    "SASS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
