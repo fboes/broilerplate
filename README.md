@@ -28,7 +28,8 @@ Requirements
 Installation
 ------------
 
-Via [Bower](http://bower.io/): `bower install fboes/sass-styleguide`
+* Via [Bower](http://bower.io/): `bower install fboes/sass-styleguide`
+* Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/sass-styleguide.git`
 
 Version
 -------
