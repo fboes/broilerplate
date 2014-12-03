@@ -2,25 +2,16 @@
 // use `@include respond-to($media) {}`
 @mixin respond-to($media) {
 	@if $media == screen_smartphone {
-		@media screen and (max-width: $width-screen-tablet - 1px) { @content; }
-	}
-	@else if $media == screen_smartphone_only {
-		@media screen and (max-width: $width-screen-tablet - 1px) { @content; }
+		@media #{$media-responsive-smartphone} { @content; }
 	}
 	@else if $media == screen_tablet {
-		@media screen and (min-width: $width-screen-tablet) { @content; }
-	}
-	@else if $media == screen_tablet_only {
-		@media screen and (min-width: $width-screen-tablet) and (max-width: $width-screen-tablet-landscape - 1px) { @content; }
+		@media #{$media-responsive-tablet} { @content; }
 	}
 	@else if $media == screen_tablet_landscape {
-		@media screen and (min-width: $width-screen-tablet-landscape) { @content; }
-	}
-	@else if $media == screen_tablet_landscape_only {
-		@media screen and (min-width: $width-screen-tablet-landscape) and (max-width: $width-screen-desktop - 1px) { @content; }
+		@media #{$media-responsive-tablet-landscape} { @content; }
 	}
 	@else if $media == screen_desktop {
-		@media screen and (min-width: $width-screen-desktop) { @content; }
+		@media #{$media-responsive-desktop} { @content; }
 	}
 }
 
@@ -31,32 +22,14 @@
 	}
 }
 
-@mixin screen_smartphone_only () {
-	@include respond-to(screen_smartphone_only) {
-		@content;
-	}
-}
-
 @mixin screen_tablet () {
 	@include respond-to(screen_tablet) {
 		@content;
 	}
 }
 
-@mixin screen_tablet_only () {
-	@include respond-to(screen_tablet_only) {
-		@content;
-	}
-}
-
 @mixin screen_tablet_landscape () {
 	@include respond-to(screen_tablet_landscape) {
-		@content;
-	}
-}
-
-@mixin screen_tablet_landscape_only () {
-	@include respond-to(screen_tablet_landscape_only) {
 		@content;
 	}
 }

@@ -7,6 +7,7 @@
 
 $switch-develop:                   false; // show debugging styles
 $switch-overlapping:               false; // container does not set width, but every --inner-element on its own
+$switch-responsive-strategy:       'mobile-first'; // one of 'mobile-first','desktop-first','single','mobile-separate','mobile-separate-reverse'
 
 // Base canon
 
@@ -19,15 +20,44 @@ $borderradius-default:             2px;
 
 // Base canon > Assigning
 
-$width-screen-smartphone:          320px;
-$width-screen-tablet:              768px;
-$width-screen-tablet-landscape:    1024px;
-$width-screen-desktop:             1280px;
+$width-screen-smartphone:          320px;  // minimal width
+$width-screen-tablet:              768px;  // minimal width
+$width-screen-tablet-landscape:    1024px; // minimal width
+$width-screen-desktop:             1280px; // minimal width
 
 $width-container-smartphone:       $width-screen-smartphone;
 $width-container-tablet:           $width-screen-tablet;
 $width-container-tablet-landscape: $width-screen-tablet-landscape;
 $width-container-desktop:          $width-screen-desktop;
+
+$media-responsive-smartphone:      "screen";
+$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet})";
+$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape})";
+$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+@if ($switch-responsive-strategy == 'desktop-first') {
+	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:          "screen and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape:"screen and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:         "screen";
+}
+@elseif ($switch-responsive-strategy == 'single') {
+	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape}) and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+}
+@elseif ($switch-responsive-strategy == 'mobile-separate') {
+	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet})";
+	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape})";
+	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+}
+@elseif ($switch-responsive-strategy == 'mobile-separate-reverse') {
+	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-tablet})";
+}
 
 // Colors
 

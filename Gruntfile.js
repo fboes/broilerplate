@@ -20,6 +20,15 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+		autoprefixer: {
+			build: {
+				expand: true,
+				flatten: true,
+				src: '<%= dirs.web %>css/*.css',
+				dest: '<%= dirs.web %>css/'
+			}
+		},
+
 		/*compass: {
 			build: {
 				options: {
@@ -33,14 +42,19 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js']
 			},
 			sass: {
-				files: ['<%= dirs.web %>sass/*.scss'],
-				tasks: ['sass'] // or 'compass'
+				files: ['<%= dirs.web %>sass/**/*.scss'],
+				tasks: ['sass','autoprefixer'] // or 'compass'
 			},
 			livereload: {
 				options: {
 					livereload: true,
 				},
-				files: ['<%= dirs.web %>css/*.css', '<%= dirs.web %>*.html', '<%= dirs.web %>js/*.js', '<%= dirs.web %>images/*'],
+				files: [
+					'<%= dirs.web %>css/*.css',
+					'<%= dirs.web %>*.html',
+					'<%= dirs.web %>js/*.js',
+					'<%= dirs.web %>images/*'
+				],
 				tasks: []
 			}
 		}
@@ -50,5 +64,5 @@ module.exports = function(grunt) {
 	require('jit-grunt')(grunt);
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass']); // or 'compass'
+	grunt.registerTask('default', ['sass','autoprefixer']); // or 'compass'
 };

@@ -31,10 +31,17 @@ Installation
 * Via [Bower](http://bower.io/): `bower install fboes/sass-styleguide`
 * Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/sass-styleguide.git`
 
+Setup
+-----
+
+# Start compiler
+# Edit your seetings in `_base.scss`
+# Define your responsive strategy `$switch-responsive-strategy`
+
 Version
 -------
 
-Version: 1.2.1 (2014-07-25)
+Version: 1.3.0 (2014-12-03)
 
 Legal stuff
 -----------

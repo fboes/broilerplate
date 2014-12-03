@@ -1,5 +1,5 @@
 * { margin: 0; padding: 0; }
-*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: border-box; }
 * + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table { margin-top: 1em; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -92,7 +92,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
   .only-smartphone, .only-tablet, .no-screen-tablet-landscape, .only-desktop { display: none !important; }
   #container { max-width: 1280px; }
   .only-smartphone, .only-tablet, .only-screen-tablet-landscape, .no-desktop { display: none !important; } }
-@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }
