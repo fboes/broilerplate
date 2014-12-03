@@ -28,7 +28,6 @@ module.exports = function(grunt) {
 				dest: '<%= dirs.web %>css/'
 			}
 		},
-
 		/*compass: {
 			build: {
 				options: {
@@ -37,6 +36,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},*/
+
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js']

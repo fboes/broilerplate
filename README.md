@@ -34,9 +34,9 @@ Installation
 Setup
 -----
 
-# Start compiler
-# Edit your seetings in `_base.scss`
-# Define your responsive strategy `$switch-responsive-strategy`
+1. Start compiler
+2. Edit your seetings in `_base.scss`
+3. Define your responsive strategy `$switch-responsive-strategy`
 
 Version
 -------
