@@ -35,8 +35,8 @@ Setup
 -----
 
 1. Start compiler
-2. Edit your seetings in `_base.scss`
-3. Define your responsive strategy `$switch-responsive-strategy`
+2. Edit your settings in `_base.scss`
+3. Define your responsive/adaptive strategy via `$switch-responsive-strategy`
 
 Version
 -------
