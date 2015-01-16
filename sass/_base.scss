@@ -110,17 +110,6 @@ $color-link-hover:                 $color-red-light;
 
 // Typography
 
-// http://www.webtype.com/info/articles/fonts-weights/
-$fontweight-thin:                  100;
-$fontweight-extralight:            200;
-$fontweight-light:                 300;
-$fontweight-normal:                400; // this is also 'normal'
-$fontweight-medium:                500;
-$fontweight-semibold:              600;
-$fontweight-bold:                  700; // this is also 'bold'
-$fontweight-extrabold:             800;
-$fontweight-black:                 900;
-
 $fontfamily-default:               Helvetica, Arial, sans-serif;
 $fontfamily-serif:                 Garamond, serif;
 $fontfamily-monospace:             "Courier New", monospace;
@@ -129,7 +118,7 @@ $fontfamily-symbols:               "FontAwesome"; // http://fortawesome.github.i
 $fontsize-default:                 12px;
 $fontsize-big:                     $fontsize-default + 2px;
 
-$lineheight-default:               1.25em;
+$lineheight-default:               $lineheight-base;
 $fontweight-default:               $fontweight-normal;
 $fontweight-default-bold:          $fontweight-bold;
 $fontstyle-default:                normal;
@@ -156,23 +145,10 @@ $fontstyle-headline:               $fontstyle-default;
 
 $font-headline:                    $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
-
 // Z-Indexes
 
 $zindex-headline:                  1;
-
- // Content
-
-$content-list:                     "\00BB  "; // using a laquo
-$content-copyright:                "\00A9  ";
-$content-bulletpoint:              "\2022";
-$content-hellip:                   "\2026";
-$content-ldquo:                    "\201C";
-$content-rdquo:                    "\201D";
-$content-bdquo:                    "\201E";
-$content-laquo:                    "\00AB";
-$content-raquo:                    "\00BB";
-$content-null:                     " "; // for spawning :before & :after
+$zindex-popup:                     $zindex-headline + 1;
 
 // Animation
 
