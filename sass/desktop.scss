@@ -17,14 +17,48 @@
 
 // Load media query styles
 
+$media-responsive-smartphone:      "screen";
+$media-responsive-tablet:          "screen";
+$media-responsive-tablet-landscape:"screen";
+$media-responsive-desktop:         "screen";
+@if ($switch-responsive-strategy == 'desktop-first') {
+	$media-responsive-smartphone:      "screen";
+	$media-responsive-tablet:          "none";
+	$media-responsive-tablet-landscape:"none";
+	$media-responsive-desktop:         "screen";
+}
+@elseif ($switch-responsive-strategy == 'single') {
+	$media-responsive-smartphone:      "none";
+	$media-responsive-tablet:          "screen";
+	$media-responsive-tablet-landscape:"screen";
+	$media-responsive-desktop:         "screen";
+}
+@elseif ($switch-responsive-strategy == 'mobile-separate') {
+	$media-responsive-smartphone:      "screen";
+	$media-responsive-tablet:          "screen";
+	$media-responsive-tablet-landscape:"screen";
+	$media-responsive-desktop:         "screen";
+}
+
 @media screen {
 	@import "screen";
-	@import "screen_smartphone";       // uncomment this line depending on your responsive strategy
-	@import "screen_tablet";           // uncomment this line depending on your responsive strategy
-	@import "screen_tablet_landscape"; // uncomment this line depending on your responsive strategy
+}
+@media #{$media-responsive-smartphone} {
+	@import "screen_smartphone";
+}
+@media #{$media-responsive-tablet} {
+	@import "screen_tablet";
+}
+@media #{$media-responsive-tablet-landscape} {
+	@import "screen_tablet_landscape";
+}
+@media #{$media-responsive-desktop} {
 	@import "screen_desktop";
 }
+
+
 @media print {
 	@import "print-base";
 	@import "print";
 }
+
