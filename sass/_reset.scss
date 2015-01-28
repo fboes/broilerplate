@@ -11,7 +11,7 @@
 	}
 	// see http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
 	// this is actually a :not-first selector
-	& + h1, + h2, + h3, + h4, + p, + dl, + ul, + li, + form, + table {
+	& + h1, + h2, + h3, + h4, + p, + dl, + ul, + li, + form, + table, + section {
 		margin-top:1em;
 	}
 }

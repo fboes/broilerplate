@@ -37,13 +37,27 @@ module.exports = function(grunt) {
 			}
 		},*/
 
+		styleguide : {
+			options: {
+				framework: {
+					name: 'kss'
+				},
+				name: 'SASS Styleguide'
+			},
+			build: {
+				files: {
+					'<%= dirs.web %>docs/styleguide': '<%= dirs.web %>sass/styles.scss'
+				}
+			}
+		},
+
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js']
 			},
 			sass: {
 				files: ['<%= dirs.web %>sass/**/*.scss'],
-				tasks: ['sass','autoprefixer'] // or 'compass'
+				tasks: ['sass','autoprefixer','styleguide'] // or 'compass'
 			},
 			livereload: {
 				options: {
@@ -64,5 +78,5 @@ module.exports = function(grunt) {
 	require('jit-grunt')(grunt);
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass','autoprefixer']); // or 'compass'
+	grunt.registerTask('default', ['sass','autoprefixer','styleguide']); // or 'compass'
 };

@@ -12,6 +12,7 @@
     "grunt-contrib-compass": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "jit-grunt": "^0.9.0",
-    "grunt-autoprefixer": "^2.0.0"
+    "grunt-autoprefixer": "^2.0.0",
+    "grunt-styleguide": "^0.2.17"
   }
 }

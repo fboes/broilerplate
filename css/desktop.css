@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 *, *:before, *:after { box-sizing: border-box; }
-* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table { margin-top: 1em; }
+* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table, * + section { margin-top: 1em; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 
