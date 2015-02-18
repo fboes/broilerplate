@@ -78,11 +78,11 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
 @media screen { body { color: #000000; background-color: #ffffff; font-weight: 400; }
   #container { color: #000000; background-color: #ffffff; }
-  #banner { color: #ffffff; background-color: #000000; padding: 8px; }
-  #navigation { color: #000000; background-color: #ffffff; padding: 8px; }
-  #main { color: #000000; background-color: #ffffff; padding: 8px; }
-  #sidebar { color: #000000; background-color: #7f7f7f; padding: 8px; }
-  #footer { color: #ffffff; background-color: #000000; padding: 8px; }
+  #banner { color: #ffffff; background-color: #000000; }
+  #navigation { color: #000000; background-color: #ffffff; }
+  #main { color: #000000; background-color: #ffffff; }
+  #sidebar { color: #000000; background-color: #7f7f7f; }
+  #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; } }
 @media screen { #container { max-width: 320px; }
   .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }

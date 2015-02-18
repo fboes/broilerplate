@@ -1,0 +1,13 @@
+AddType application/font-woff .woff
+AddType application/vnd.ms-fontobject .eot
+AddType application/x-font-ttf .ttf
+AddType application/x-font-opentype .otf
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip svgz
+
+Header set X-UA-Compatible "IE=edge"
+
+<FilesMatch "^(LICENSE\.txt|README\.md|package\.json|Gruntfile\.js|config\.rb)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
