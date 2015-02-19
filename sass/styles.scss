@@ -18,22 +18,9 @@
 // Load media query styles
 
 @media screen {
+	@import "screen-base";
 	@import "screen";
 }
-@media #{$media-responsive-smartphone} {
-	@import "screen_smartphone";
-}
-@media #{$media-responsive-tablet} {
-	@import "screen_tablet";
-}
-@media #{$media-responsive-tablet-landscape} {
-	@import "screen_tablet_landscape";
-}
-@media #{$media-responsive-desktop} {
-	@import "screen_desktop";
-}
-
-
 @media print {
 	@import "print-base";
 	@import "print";

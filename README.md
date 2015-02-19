@@ -41,7 +41,7 @@ Setup
 Version
 -------
 
-Version: 1.3.1 (2015-01-16)
+Version: 2.0.0 (2015-02-19)
 
 Legal stuff
 -----------

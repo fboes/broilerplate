@@ -77,26 +77,22 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 #aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
 @media screen { body { color: #000000; background-color: #ffffff; font-weight: 400; }
-  #container { color: #000000; background-color: #ffffff; }
-  #banner { color: #ffffff; background-color: #000000; }
-  #navigation { color: #000000; background-color: #ffffff; }
+  #container { color: #000000; background-color: #ffffff; } }
+@media screen { #container { max-width: 320px; } }
+@media screen and (min-width: 768px) { #container { max-width: 768px; } }
+@media screen and (min-width: 1024px) { #container { max-width: 1024px; } }
+@media screen and (min-width: 1280px) { #container { max-width: 1280px; } }
+
+@media screen { #banner { color: #ffffff; background-color: #000000; text-align: center; }
+  #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }
   #sidebar { color: #000000; background-color: #7f7f7f; }
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; } }
-@media screen { #container { max-width: 320px; }
-  .no-smartphone, .only-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 768px) { #container { max-width: 768px; }
-  .only-smartphone, .no-tablet, .only-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 1024px) { #container { max-width: 1024px; }
-  .only-smartphone, .only-tablet, .no-screen-tablet-landscape, .only-desktop { display: none !important; } }
-@media screen and (min-width: 1280px) { #container { max-width: 1280px; }
-  .only-smartphone, .only-tablet, .only-screen-tablet-landscape, .no-desktop { display: none !important; } }
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
-  #navigation { display: none; }
   .no-print { display: none; } }
