@@ -1,7 +1,7 @@
 {
   "name": "sass-styleguide",
   "description": "A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:fboes/sass-styleguide.git"
@@ -13,6 +13,7 @@
     "grunt-autoprefixer": "^2.0.0",
     "grunt-contrib-compass": "^0.9.1",
     "grunt-styleguide": "^0.2.17",
+    "grunt-text-replace": "^0.4.0",
     "jit-grunt": "^0.9.0"
   }
 }

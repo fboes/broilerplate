@@ -18,18 +18,26 @@ $padding-default:                  $base-unit;
 
 $borderradius-default:             2px;
 
+$width-column:                     300px;
+$spacing-column:                   20px;
+
+$width-column-2:                   2 * $width-column + 1 * $spacing-column;
+$width-column-3:                   3 * $width-column + 2 * $spacing-column;
+$width-column-4:                   4 * $width-column + 3 * $spacing-column;
+
 // Base canon > Assigning
 
-$width-screen-smartphone:          320px;  // minimal width
-$width-screen-tablet:              768px;  // minimal width
-$width-screen-tablet-landscape:    1024px; // minimal width
-$width-screen-desktop:             1280px; // minimal width
+$width-screen-smartphone:          $width-column + $spacing-column;
+$width-screen-tablet:              $width-column-2 + $spacing-column;
+$width-screen-tablet-landscape:    $width-column-3 + $spacing-column;
+$width-screen-desktop:             $width-column-4 + $spacing-column;
 
-$width-container-smartphone:       $width-screen-smartphone;
-$width-container-tablet:           $width-screen-tablet;
-$width-container-tablet-landscape: $width-screen-tablet-landscape;
-$width-container-desktop:          $width-screen-desktop;
+$width-container-smartphone:       $width-column;
+$width-container-tablet:           $width-column-2;
+$width-container-tablet-landscape: $width-column-3;
+$width-container-desktop:          $width-column-4;
 
+// -> 'mobile-first'
 $media-responsive-smartphone:      "screen";
 $media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet})";
 $media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape})";
@@ -81,6 +89,9 @@ $color-yellow-light:               lighten($color-yellow, 15%);
 $color-red:                        #FF4444;
 $color-red-dark:                   darken($color-red, 25%);
 $color-red-light:                  lighten($color-red, 15%);
+
+$color-lighter:                    rgba(255,255,255,0.25);
+$color-darker :                    rgba(0,0,0,0.25);
 
 // Colors > Assigning
 

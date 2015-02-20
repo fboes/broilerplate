@@ -18,6 +18,8 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 * .figcaption
 * .required
 
+Grunt will create a secondary stylesheet which is called `oldie.css` for old Intern Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
+
 Requirements
 ------------
 
@@ -34,14 +36,16 @@ Installation
 Setup
 -----
 
-1. Start compiler
-2. Edit your settings in `_base.scss`
+1. Start compiler (e.g. via `grunt watch`)
+2. Edit your settings in `sass/_base.scss`
 3. Define your responsive/adaptive strategy via `$switch-responsive-strategy`
+4. Edit `sass/_all.scss`, `sass/_print.scss` and `sass/_screen.scss`
+5. Add SASS libraries to `sass/vendor/`
 
 Version
 -------
 
-Version: 2.0.0 (2015-02-19)
+Version: 2.0.1 (2015-02-20)
 
 Legal stuff
 -----------

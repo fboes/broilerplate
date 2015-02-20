@@ -1,6 +1,7 @@
 body {
 	font-family: $fontfamily-default;
 	font-size: $fontsize-default;
+	font-weight: $fontweight-default;
 }
 #container {
 	margin: auto;
@@ -14,10 +15,12 @@ body {
 #main {
 	font-family: $fontfamily-content;
 	font-size: $fontsize-content;
+	font-weight: $fontweight-content;
 }
 #aside {
 	font-family: $fontfamily-content;
 	font-size: $fontsize-content;
+	font-weight: $fontweight-content;
 }
 #footer {
 	// insert stuff here

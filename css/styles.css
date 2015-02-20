@@ -68,20 +68,20 @@ table tr th { font-weight: 700; }
 
 .clear-both { clear: both; }
 
-body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
+body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
 #container { margin: auto; }
 
-#main { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
+#main { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
-#aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
+#aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
-@media screen { body { color: #000000; background-color: #ffffff; font-weight: 400; }
+@media screen { body { color: #000000; background-color: #ffffff; }
   #container { color: #000000; background-color: #ffffff; } }
-@media screen { #container { max-width: 320px; } }
-@media screen and (min-width: 768px) { #container { max-width: 768px; } }
-@media screen and (min-width: 1024px) { #container { max-width: 1024px; } }
-@media screen and (min-width: 1280px) { #container { max-width: 1280px; } }
+@media screen { #container { max-width: 300px; } }
+@media screen and (min-width: 640px) { #container { max-width: 620px; } }
+@media screen and (min-width: 960px) { #container { max-width: 940px; } }
+@media screen and (min-width: 1280px) { #container { max-width: 1260px; } }
 
 @media screen { #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
@@ -95,4 +95,5 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
-  .no-print { display: none; } }
+  .no-print { display: none; }
+  #navigation { display: none; } }

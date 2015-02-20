@@ -51,13 +51,30 @@ module.exports = function(grunt) {
 			}
 		},*/
 
+		replace: {
+			oldie: {
+				src: ['<%= dirs.web %>css/styles.css'],
+				dest: '<%= dirs.web %>css/oldie.css',
+				replacements: [
+					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
+					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: ''},
+					{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
+					//{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: ''},
+					{from: /-moz-[^\{]+?:.+?;\s*/g, to: ''},
+					{from: /-webkit-[^\{]+?:.+?;\s*/g, to: ''},
+					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
+					{from: /@media \(tty\) \{ (.+ \}) \}(\s*)/g, to: '$1$2'}
+				]
+			}
+		},
+
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js']
 			},
 			sass: {
 				files: ['<%= dirs.web %>sass/**/*.scss'],
-				tasks: ['sass','autoprefixer'] // or 'compass','styleguide'
+				tasks: ['sass','autoprefixer','replace'] // or 'compass','styleguide'
 			},
 			livereload: {
 				options: {
@@ -75,7 +92,9 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugins
-	require('jit-grunt')(grunt);
+	require('jit-grunt')(grunt, {
+		replace: 'grunt-text-replace'
+	});
 
 	// Default task(s).
 	grunt.registerTask('default', ['sass','autoprefixer']); // or 'compass','styleguide'
