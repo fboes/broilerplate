@@ -79,6 +79,10 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 
 @media screen { body { color: #000000; background-color: #ffffff; }
   #container { color: #000000; background-color: #ffffff; } }
 @media screen { #container { max-width: 300px; } }
+@media screen { #container { max-width: 620px; } }
+@media screen { #container { max-width: 940px; } }
+@media screen { #container { max-width: 1260px; } }
+
 @media screen { #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }

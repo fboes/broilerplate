@@ -56,25 +56,28 @@ module.exports = function(grunt) {
 				src: ['<%= dirs.web %>css/styles.css'],
 				dest: '<%= dirs.web %>css/rtl.css',
 				replacements: [
-					{from: /left/g, to: 'xrite'},
-					{from: /right/g, to: 'left'},
-					{from: /xrite/g, to: 'right'},
+					{from: /(\W)left(\W)/g, to: '$1xrite$2'},
+					{from: /(\W)right(\W)/g, to: '$1left$2'},
+					{from: /(\W)xrite(\W)/g, to: '$1right$2'},
 					{from: /:\s?(\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*);/g, to: ':$1 $4 $3 $2;'},
-					{from: /"rtl"/g, to: '"ltr"'}
+					{from: /(\W)rtl(\W)/g, to: '$1ltr$2'},
+					{from: /((body|html) \{ )/g, to: '$1direction: rtl; '}
 				]
 			},
 			oldie: {
 				src: ['<%= dirs.web %>css/*.css'],
 				dest: '<%= dirs.web %>css/oldie/',
 				replacements: [
-					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
-					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: ''},
-					//{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
-					{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: ''},
+					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
+					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
+					{from: /(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
+					//{from: /(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
 					{from: /-moz-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /-webkit-[^\{]+?:.+?;\s*/g, to: ''},
+					{from: /(transition|border-[\S]*radius):.+?;\s*/g, to: ''},
 					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
-					{from: /@media \(tty\) \{ (.+ \}) \}(\s*)/g, to: '$1$2'}
+					{from: /@media \(tty\) \{ (.+ \}) \}(\s*)/g, to: '$1$2'},
+					{from: /\s\S+\s?\{\s+\}/g, to: ''}
 				]
 			}
 		},

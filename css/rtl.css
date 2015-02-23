@@ -68,7 +68,7 @@ table tr th { font-weight: 700; }
 
 .clear-both { clear: both; }
 
-body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
+body { direction: rtl; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
 #container { margin: auto; }
 
@@ -76,7 +76,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 
 
 #aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
-@media screen { body { color: #000000; background-color: #ffffff; }
+@media screen { body { direction: rtl; color: #000000; background-color: #ffffff; }
   #container { color: #000000; background-color: #ffffff; } }
 @media screen { #container { max-width: 300px; } }
 @media screen and (min-width: 640px) { #container { max-width: 620px; } }
