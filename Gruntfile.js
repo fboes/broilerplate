@@ -52,14 +52,25 @@ module.exports = function(grunt) {
 		},*/
 
 		replace: {
-			oldie: {
+			rtl: {
 				src: ['<%= dirs.web %>css/styles.css'],
-				dest: '<%= dirs.web %>css/oldie.css',
+				dest: '<%= dirs.web %>css/rtl.css',
+				replacements: [
+					{from: /left/g, to: 'xrite'},
+					{from: /right/g, to: 'left'},
+					{from: /xrite/g, to: 'right'},
+					{from: /:\s?(\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*);/g, to: ':$1 $4 $3 $2;'},
+					{from: /"rtl"/g, to: '"ltr"'}
+				]
+			},
+			oldie: {
+				src: ['<%= dirs.web %>css/*.css'],
+				dest: '<%= dirs.web %>css/oldie/',
 				replacements: [
 					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
 					//{from: /(@media screen) and \(min-width: 660px\)( \{ .+ \} \}\s*)/g, to: ''},
-					{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
-					//{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: ''},
+					//{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: '$1$2'},
+					{from: /(@media screen) and \(.+?\)( \{ .+ \} \}\s*)/g, to: ''},
 					{from: /-moz-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /-webkit-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
@@ -97,5 +108,5 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass','autoprefixer']); // or 'compass','styleguide'
+	grunt.registerTask('default', ['sass','autoprefixer','replace']); // or 'compass','styleguide'
 };
