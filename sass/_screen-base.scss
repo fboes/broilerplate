@@ -3,40 +3,37 @@ body {
 	background-color: $backgroundcolor-body;
 }
 #container {
-	@if ($switch-overlapping) {
-		.header--inner, .nav--inner, .main--inner, .aside--inner, .footer--inner, .news--inner {
-			margin:0 auto;
-			@if ($switch-responsive-strategy == 'mobile-first' or $switch-responsive-strategy == 'mobile-separate') {
-				@include screen_smartphone {
-					max-width: $width-container-smartphone;
-				}
-				@include screen_tablet {
-					max-width: $width-container-tablet;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-tablet-landscape;
-				}
-				@include screen_desktop {
-					max-width: $width-container-desktop;
-				}
-			}
-			@else {
-				@include screen_desktop {
-					max-width: $width-container-desktop;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-tablet-landscape;
-				}
-				@include screen_tablet {
-					max-width: $width-container-tablet;
-				}
-				@include screen_smartphone {
-					max-width: $width-container-smartphone;
-				}
-			}
-		}
-	}
-	@else {
+	color: $color-body;
+	background-color: $backgroundcolor-body;
+}
+#banner {
+	color: $color-banner;
+	background-color: $backgroundcolor-banner;
+	text-align:center;
+}
+#navigation {
+	color: $color-navigation;
+	background-color: $backgroundcolor-navigation;
+	text-align:center;
+}
+#main {
+	color: $color-main;
+	background-color: $backgroundcolor-main;
+}
+#sidebar {
+	color: $color-sidebar;
+	background-color: $backgroundcolor-sidebar;
+}
+#footer {
+	color: $color-footer;
+	background-color: $backgroundcolor-footer;
+}
+.no-screen {
+	display:none;
+}
+@if ($switch-overlapping) {
+	.header--inner, .nav--inner, .main--inner, .aside--inner, .footer--inner, .news--inner {
+		margin:0 auto;
 		@if ($switch-responsive-strategy == 'mobile-first' or $switch-responsive-strategy == 'mobile-separate') {
 			@include screen_smartphone {
 				max-width: $width-container-smartphone;
@@ -66,33 +63,34 @@ body {
 			}
 		}
 	}
-
-
-	color: $color-body;
-	background-color: $backgroundcolor-body;
 }
-#banner {
-	color: $color-banner;
-	background-color: $backgroundcolor-banner;
-	text-align:center;
-}
-#navigation {
-	color: $color-navigation;
-	background-color: $backgroundcolor-navigation;
-	text-align:center;
-}
-#main {
-	color: $color-main;
-	background-color: $backgroundcolor-main;
-}
-#sidebar {
-	color: $color-sidebar;
-	background-color: $backgroundcolor-sidebar;
-}
-#footer {
-	color: $color-footer;
-	background-color: $backgroundcolor-footer;
-}
-.no-screen {
-	display:none;
+@else {
+	@if ($switch-responsive-strategy == 'mobile-first' or $switch-responsive-strategy == 'mobile-separate') {
+		@include screen_smartphone {
+			max-width: $width-container-smartphone;
+		}
+		@include screen_tablet {
+			max-width: $width-container-tablet;
+		}
+		@include screen_tablet_landscape {
+			max-width: $width-container-tablet-landscape;
+		}
+		@include screen_desktop {
+			max-width: $width-container-desktop;
+		}
+	}
+	@else {
+		@include screen_desktop {
+			max-width: $width-container-desktop;
+		}
+		@include screen_tablet_landscape {
+			max-width: $width-container-tablet-landscape;
+		}
+		@include screen_tablet {
+			max-width: $width-container-tablet;
+		}
+		@include screen_smartphone {
+			max-width: $width-container-smartphone;
+		}
+	}
 }

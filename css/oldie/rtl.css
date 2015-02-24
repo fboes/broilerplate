@@ -77,18 +77,17 @@ body { direction: rtl; font-family: Helvetica, Arial, sans-serif; font-size: 12p
 #aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
 
 @media screen { body { direction: rtl; color: #000000; background-color: #ffffff; }
-  #container { color: #000000; background-color: #ffffff; } }
-@media screen { #container { max-width: 300px; } }
-@media screen { #container { max-width: 620px; } }
-@media screen { #container { max-width: 940px; } }
-@media screen { #container { max-width: 1260px; } }
-
-@media screen { #banner { color: #ffffff; background-color: #000000; text-align: center; }
+  #container { color: #000000; background-color: #ffffff; }
+  #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }
   #sidebar { color: #000000; background-color: #7f7f7f; }
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; } }
+@media screen { max-width: 300px; }
+@media screen { max-width: 620px; }
+@media screen and (min-width: 960px) { max-width: 940px; }
+@media screen and (min-width: 1280px) { max-width: 1260px; }
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
