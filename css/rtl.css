@@ -88,6 +88,18 @@ body { direction: rtl; font-family: Helvetica, Arial, sans-serif; font-size: 12p
 @media screen and (min-width: 640px) { max-width: 620px; }
 @media screen and (min-width: 960px) { max-width: 940px; }
 @media screen and (min-width: 1280px) { max-width: 1260px; }
+@media screen { .columns { width: 300px; }
+  .columns__4-1 { width: 300px; }
+  .columns__4-2 { width: 620px; }
+  .columns__4-3 { width: 940px; }
+  .columns__4-4 { width: 1260px; } }
+@media screen and (min-width: 960px) { .columns__3-1 { width: 300px; }
+  .columns__3-2 { width: 620px; }
+  .columns__3-3 { width: 940px; } }
+@media screen and (min-width: 640px) { .columns__2-1 { width: 300px; }
+  .columns__2-2 { width: 620px; } }
+@media screen { .columns__1-1 { width: 300px; } }
+
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
@@ -96,3 +108,5 @@ body { direction: rtl; font-family: Helvetica, Arial, sans-serif; font-size: 12p
   img { max-width: 100% !important; }
   .no-print { display: none; }
   #navigation { display: none; } }
+
+/*# sourceMappingURL=styles.css.map */

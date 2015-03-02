@@ -39,3 +39,9 @@
 		@content;
 	}
 }
+
+@mixin screen_oldie () {
+	@media (tty) {
+		@content;
+	}
+}

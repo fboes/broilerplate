@@ -8,8 +8,7 @@ module.exports = function(grunt) {
 		sass: {
 			build: {
 				options: {
-					style: 'compact',
-					sourcemap: 'none'
+					style: 'compact'
 				},
 				files: [{
 					expand: true,
@@ -24,6 +23,9 @@ module.exports = function(grunt) {
 			build: {
 				expand: true,
 				flatten: true,
+				options: {
+					map: true
+				},
 				src: '<%= dirs.web %>css/*.css',
 				dest: '<%= dirs.web %>css/'
 			}
@@ -68,6 +70,8 @@ module.exports = function(grunt) {
 				src: ['<%= dirs.web %>css/*.css'],
 				dest: '<%= dirs.web %>css/oldie/',
 				replacements: [
+					{from: /\/\*#.+?\*\//g, to: ''},
+					{from: /(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''},
 					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
 					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
 					{from: /(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
@@ -75,9 +79,27 @@ module.exports = function(grunt) {
 					{from: /-moz-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /-webkit-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /(transition|border-[\S]*radius):.+?;\s*/g, to: ''},
+					{from: /opacity: 0;\s*/g, to: 'visibility: hidden; '},
+					{from: /opacity: 1;\s*/g, to: 'visibility: visible; '},
 					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
 					{from: /@media \(tty\) \{ (.+ \}) \}(\s*)/g, to: '$1$2'},
-					{from: /\s\S+\s?\{\s+\}/g, to: ''}
+					{from: /\s\S+\s?\{\s+\}/g, to: ''},
+					{from: /([\d\.]+)vw/g,  to: function (matchedWord, index, fullText, regexMatches) {
+						return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
+					}},
+					{from: /([\d\.]+)vh/g,  to: function (matchedWord, index, fullText, regexMatches) {
+						return Math.round(parseFloat(regexMatches[0]) * 7.68) + 'px'; // matches 768 px
+					}},
+					{from: /([\d\.]+)rem/g, to: function (matchedWord, index, fullText, regexMatches) {
+						return Math.round(parseFloat(regexMatches[0]) * 12) + 'px'; // matches $fontsize-default
+					}}
+				]
+			},
+			notty: {
+				src: ['<%= dirs.web %>css/*.css'],
+				overwrite: true,
+				replacements: [
+					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
 				]
 			}
 		},

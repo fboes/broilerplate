@@ -94,3 +94,32 @@ body {
 		}
 	}
 }
+
+.columns {
+	width: $width-column;
+
+	@each $cols in (1,2,3,4) {
+		&__4-#{$cols} {
+			width: $cols * $width-column + ($cols - 1) * $spacing-column;
+		}
+	}
+	@include screen_tablet_landscape {
+		@each $cols in (1,2,3) {
+			&__3-#{$cols} {
+				width: $cols * $width-column + ($cols - 1) * $spacing-column;
+			}
+		}
+	}
+	@include screen_tablet {
+		@each $cols in (1,2) {
+			&__2-#{$cols} {
+				width: $cols * $width-column + ($cols - 1) * $spacing-column;
+			}
+		}
+	}
+	@include screen_smartphone {
+		&__1-1 {
+			width: $width-column;
+		}
+	}
+}
