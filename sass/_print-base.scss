@@ -1,8 +1,8 @@
 // see https://github.com/fboes/SASS-Toolshed
 
 * {
-	background: transparent !important;
 	color: black !important;
+	background: transparent !important;
 	text-shadow: none !important;
 	filter:none !important;
 	-ms-filter: none !important;
@@ -21,7 +21,4 @@ thead {
 }
 img {
 	max-width: 100% !important;
-}
-.no-print {
-	display:none;
 }

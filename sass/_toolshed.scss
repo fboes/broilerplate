@@ -1,0 +1,217 @@
+// build webfont source
+@mixin toolshed-webfont-src ($base, $id) {
+	src: url('#{$base}.eot');
+	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
+		url('#{$base}.woff') format('woff'),
+		url('#{$base}.svg##{$id}') format('svg'),
+		url('#{$base}.ttf') format('truetype');
+}
+
+// hide text from current element
+@mixin toolshed-hide-text () {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	color: transparent !important;
+}
+
+// clear floats
+@mixin toolshed-clearfix () {
+	zoom: 1;
+	&:after {
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
+		content: ".";
+	}
+}
+
+// convert current element to horizontal list
+// For $useFloat : false remove whitespaces between list elements like `</li><li>`
+@mixin toolshed-horizontal-list ($useFloat : true) {
+	display:block;
+	list-style:none;
+	@if $useFloat {
+		@include toolshed-clearfix();
+	}
+	@else {
+		text-align: center;
+	}
+	li {
+		display:inline-block; // compass: @include inline-block();
+		margin:0;
+		padding:0;
+		@if $useFloat {
+			float:left;
+			[dir="rtl"] & {
+				float:right;
+			}
+		}
+		@else {
+			vertical-align: top;
+		}
+	}
+}
+
+// on retina, use image that's scaled by 2
+@mixin toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight) {
+	background-image: url($imageUrl);
+	background-size: $imageWidth $imageHeight;
+	@media (min--moz-device-pixel-ratio: 1.3),
+	(-o-min-device-pixel-ratio: 2.6/2),
+	(-webkit-min-device-pixel-ratio: 1.3),
+	(min-device-pixel-ratio: 1.3),
+	(min-resolution: 1.3dppx) {
+		background-image: url($retinaImageUrl);
+	}
+}
+
+@mixin toolshed-visuallyhidden () {
+	position: absolute;
+	width: 1px; // Setting this to 0 make it invisible for VoiceOver
+	height: 1px; // Setting this to 0 make it invisible for VoiceOver
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+
+// @see http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
+@mixin toolshed-absolute-center ($width : 50%, $height : 50%) {
+	width: $width;
+	height: $height;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+// This mixin allows you to get a specific icon from a grid-sprite.
+// Combine this mixing with @mixin background-retina to a new mixing for your sprite
+// * $imageUrl       (string)
+// * $retinaImageUrl (string)
+// * $imageWidth     (unit)    The dimension of the non-retina image
+// * $imageHeight    (unit)    The dimension of the non-retina image
+// * $xGrid          (unit)    The x-spacing from the center of each icon to the next, e.g. "20px"
+// * $yGrid          (unit)    The y-spacing from the center of each icon to the next, e.g. "20px"
+// * $iconWidth      (unit)    The width of this icon in px
+// * $iconHeight     (unit)    The height of this icon in px
+// * $xOffset        (integer) The x-position of the icon on this grid
+// * $yOffset        (integer) The y-position of the icon on this grid
+// * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
+@mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight, $xOffset : 0, $yOffset : 0, $mode: 0) {
+	@if ($mode == 0) {
+		@include toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight);
+	}
+	@if ($mode == 3) {
+		width:ceil($iconWidth);
+		height:ceil($iconHeight);
+	}
+	@else {
+		@include toolshed-grid-sprite($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight, ($mode == 2));
+	}
+}
+
+// generating sprite stuff without bg-image
+@mixin toolshed-grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px, $compact : false) {
+	@if $compact {
+	}
+	@else {
+		@include toolshed-grid-sprite-stuff ($iconWidth, $iconHeight);
+	}
+	@include toolshed-grid-sprite-position($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight);
+}
+
+// generating sprite stuff like dimensions etc, but without position
+@mixin toolshed-grid-sprite-stuff ($iconWidth : 20px, $iconHeight : 20px) {
+	background-repeat:no-repeat;
+	display:inline-block;
+	width:ceil($iconWidth);
+	height:ceil($iconHeight);
+	content: " ";
+}
+
+// generating sprite background-position
+@mixin toolshed-grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px) {
+	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
+}
+
+@mixin toolshed-table-fixed {
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+	td, th {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@mixin toolshed-vertical-center ($useFlex: true) {
+	@if ($useFlex) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@else {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+// -----------------------------------------------
+// FUNCTIONS
+// -----------------------------------------------
+
+// Convert pixels to rem
+@function toolshed-rem ($value-px, $base-px, $relative : 0) {
+	@return #{($value-px / $base-px) + $relative}rem;
+}
+
+// round with precision of 3
+@function toolshed-round ($val) {
+	@return round($val * 1000) / 1000;
+}
+
+
+// -----------------------------------------------
+// VENDOR PREFIXING
+// Ignore these if you use autoprefixer
+// -----------------------------------------------
+
+// add automatic hyphens (set lang=".." on parent element)
+@mixin toolshed-hyphenate () {
+	     -o-hyphens: auto;
+	    -ms-hyphens: auto;
+	   -moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	        hyphens: auto;
+}
+
+@mixin toolshed-animation ($name, $duration, $timing-function:'ease', $delay:0, $iteration-count:1, $direction:'normal') {
+	     -o-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	    -ms-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	   -moz-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	-webkit-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	        animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+}
+
+@mixin toolshed-keyframes ($name) {
+	@-o-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

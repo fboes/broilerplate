@@ -104,22 +104,64 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jslint: {
+			build: {
+				src: [
+					'<%= dirs.web %>js/*.js',
+					'!<%= dirs.web %>js/*.min.js'
+				],
+				directives: {
+					browser: true,
+					white: true
+				},
+				options: {
+					failOnError: false
+				}
+			}
+		},
+
+		uglify: {
+			build: {
+				 options: {
+					// mangle: false,
+					// beautify: true,
+					// compress: false,
+					maxLineLen: 9000,
+					sourceMap: true
+				},
+				files: {
+					'<%= dirs.web %>js/main.min.js': [
+						'<%= dirs.web %>js/main.js',
+						'!<%= dirs.web %>js/main.min.js'
+					]
+				}
+			}
+		},
+
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js']
 			},
 			sass: {
+				options: {
+					livereload: true,
+				},
 				files: ['<%= dirs.web %>sass/**/*.scss'],
-				tasks: ['sass','autoprefixer','replace'] // or 'compass','styleguide'
+				tasks: ['sass','autoprefixer','replace']
+			},
+			scripts: {
+				options: {
+					livereload: true,
+				},
+				files: ['<%= jslint.build.src %>'],
+				tasks: ['jslint','uglify']
 			},
 			livereload: {
 				options: {
 					livereload: true,
 				},
 				files: [
-					'<%= dirs.web %>css/*.css',
 					'<%= dirs.web %>*.html',
-					'<%= dirs.web %>js/*.js',
 					'<%= dirs.web %>images/*'
 				],
 				tasks: []
@@ -133,5 +175,5 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass','autoprefixer','replace']); // or 'compass','styleguide'
+	grunt.registerTask('default', ['jslint','uglify','sass','autoprefixer','replace']);
 };

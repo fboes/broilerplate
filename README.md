@@ -1,7 +1,12 @@
-SASS Styleguide
+Broilerplate
 ================
 
-A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.
+A boilerplate with SASS & JS.
+
+SASS
+----
+
+Basic structure to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.
 
 Main idea based on a session given by Ken Woodworth (http://kenwoodworth.com/).
 
@@ -30,8 +35,8 @@ Requirements
 Installation
 ------------
 
-* Via [Bower](http://bower.io/): `bower install git://github.com/fboes/sass-styleguide.git`
-* Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/sass-styleguide.git`
+* Via [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
+* Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
 
 Setup
 -----
@@ -45,7 +50,7 @@ Setup
 Version
 -------
 
-Version: 2.0.1 (2015-02-20)
+Version: 0.0.1 (2015-03-03)
 
 Legal stuff
 -----------

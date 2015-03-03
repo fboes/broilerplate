@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 *, *:before, *:after { box-sizing: border-box; }
-* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table, * + section { margin-top: 1em; }
+* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table { margin-top: 1em; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 
@@ -100,12 +100,11 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 
   .columns__2-2 { width: 620px; } }
 @media screen { .columns__1-1 { width: 300px; } }
 
-@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+@media print { * { color: black !important; background: transparent !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
-  .no-print { display: none; }
   #navigation { display: none; } }
 

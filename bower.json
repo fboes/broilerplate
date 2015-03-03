@@ -1,14 +1,15 @@
 {
-  "name": "sass-styleguide",
-  "version": "2.0.1",
-  "homepage": "https://github.com/fboes/sass-styleguide",
+  "name": "broilerplate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/fboes/broilerplate",
   "authors": [
     "Frank Boës <http://3960.org>"
   ],
-  "description": "A simple SASS boilerplate to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.",
+  "description": "A boilerplate with SASS & JS.",
   "main": "index.html",
   "keywords": [
-    "SASS"
+    "SASS",
+    "JS"
   ],
   "license": "MIT",
   "ignore": [
