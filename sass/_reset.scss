@@ -5,8 +5,6 @@
 	padding:0;
 	// see http://css-tricks.com/international-box-sizing-awareness-day/
 	&, &:before, &:after {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 	// see http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
@@ -95,27 +93,5 @@ table {
 		font-size: 1em;
 		vertical-align: top;
 		text-align: left;
-	}
-}
-
-[dir="rtl"] {
-	li {
-		margin-right:3em;
-		margin-left:0;
-	}
-	dl {
-		margin-right:1em;
-		margin-left:0;
-	}
-	optgroup {
-		option {
-			margin-right:1em;
-			margin-left:0;
-		}
-	}
-	table {
-		td, th {
-			text-align: right;
-		}
 	}
 }

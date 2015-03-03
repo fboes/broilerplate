@@ -45,9 +45,6 @@
 		padding:0;
 		@if $useFloat {
 			float:left;
-			[dir="rtl"] & {
-				float:right;
-			}
 		}
 		@else {
 			vertical-align: top;
@@ -176,42 +173,4 @@
 // round with precision of 3
 @function toolshed-round ($val) {
 	@return round($val * 1000) / 1000;
-}
-
-
-// -----------------------------------------------
-// VENDOR PREFIXING
-// Ignore these if you use autoprefixer
-// -----------------------------------------------
-
-// add automatic hyphens (set lang=".." on parent element)
-@mixin toolshed-hyphenate () {
-	     -o-hyphens: auto;
-	    -ms-hyphens: auto;
-	   -moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	        hyphens: auto;
-}
-
-@mixin toolshed-animation ($name, $duration, $timing-function:'ease', $delay:0, $iteration-count:1, $direction:'normal') {
-	     -o-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
-	    -ms-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
-	   -moz-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
-	-webkit-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
-	        animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
-}
-
-@mixin toolshed-keyframes ($name) {
-	@-o-keyframes #{$name} {
-		@content;
-	}
-	@-moz-keyframes #{$name} {
-		@content;
-	}
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
-	@keyframes #{$name} {
-		@content;
-	}
 }

@@ -113,24 +113,6 @@ table {
 .gradient {}
 .button {}
 
-// Special classes
-
-.display-block	{
-	display:block;
-	width:99%;
-}
-.float-right, [align="right"] {
-	float:right;
-	margin:0.25em 0 0.75em 1em;
-}
-.float-left,  [align="left"]  {
-	float:left;
-	margin:0.25em 1em 0.75em 0;
-}
-.clear-both {
-	clear:both;
-}
-
 @if ($switch-develop) {
 	div,table {
 		outline:1px solid rgba(255,0,0,0.5);
