@@ -5,6 +5,40 @@ module.exports = function(grunt) {
 			web: ''
 		},
 
+		jslint: {
+			build: {
+				src: [
+					'<%= dirs.web %>js/*.js', // add your vendors here
+					'!<%= dirs.web %>js/*.min.js'
+				],
+				directives: {
+					browser: true,
+					white: true
+				},
+				options: {
+					failOnError: false
+				}
+			}
+		},
+
+		uglify: {
+			build: {
+				 options: {
+					// mangle: false,
+					// beautify: true,
+					// compress: false,
+					maxLineLen: 9000,
+					sourceMap: true
+				},
+				files: {
+					'<%= dirs.web %>js/main.min.js': [
+						'<%= dirs.web %>js/main.js',
+						'!<%= dirs.web %>js/main.min.js'
+					]
+				}
+			}
+		},
+
 		sass: {
 			build: {
 				options: {
@@ -19,6 +53,7 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+
 		autoprefixer: {
 			build: {
 				expand: true,
@@ -30,6 +65,7 @@ module.exports = function(grunt) {
 				dest: '<%= dirs.web %>css/'
 			}
 		},
+
 		/*compass: {
 			build: {
 				options: {
@@ -104,38 +140,8 @@ module.exports = function(grunt) {
 			}
 		},
 
-		jslint: {
-			build: {
-				src: [
-					'<%= dirs.web %>js/*.js',
-					'!<%= dirs.web %>js/*.min.js'
-				],
-				directives: {
-					browser: true,
-					white: true
-				},
-				options: {
-					failOnError: false
-				}
-			}
-		},
-
-		uglify: {
-			build: {
-				 options: {
-					// mangle: false,
-					// beautify: true,
-					// compress: false,
-					maxLineLen: 9000,
-					sourceMap: true
-				},
-				files: {
-					'<%= dirs.web %>js/main.min.js': [
-						'<%= dirs.web %>js/main.js',
-						'!<%= dirs.web %>js/main.min.js'
-					]
-				}
-			}
+		shell: {
+			prev: { command: 'ssh example.com "cd your-directory && git pull && exit"'}
 		},
 
 		watch: {
