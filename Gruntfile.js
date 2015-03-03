@@ -133,10 +133,6 @@ module.exports = function(grunt) {
 					'<%= dirs.web %>js/main.min.js': [
 						'<%= dirs.web %>js/main.js',
 						'!<%= dirs.web %>js/main.min.js'
-					],
-					'<%= dirs.web %>js/main.jquery.min.js': [
-						'<%= dirs.web %>js/main.jquery.js',
-						'!<%= dirs.web %>js/main.jquery.min.js'
 					]
 				}
 			}
