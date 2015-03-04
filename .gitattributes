@@ -3,3 +3,7 @@
 
 # Declare files that will always have LF line endings on checkout.
 *.css text eol=lf
+
+*.css merge=ours
+*.min.js merge=ours
+*.map merge=ours
