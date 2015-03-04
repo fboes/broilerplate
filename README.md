@@ -35,8 +35,8 @@ Grunt will create a secondary stylesheet which is called `oldie.css` for old Int
 Requirements
 ------------
 
+* [Grunt](http://gruntjs.com/)
 * [SASS](http://sass-lang.com/)
-* [Grunt](http://gruntjs.com/) (setup via `npm install`, start via `grunt watch`)
 
 Installation
 ------------
@@ -44,16 +44,22 @@ Installation
 * Via [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
 * Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
 
-Setup
------
+Setup & development
+-------------------
 
-1. Start compiler (e.g. via `grunt watch`)
+1. Install Grunt plugins via `npm install`
 2. Edit your settings in `htdocs/sass/_base.scss`
 3. Define your responsive/adaptive strategy via `$switch-responsive-strategy`
-4. Edit `htdocs/sass/_all.scss`, `htdocs/sass/_print.scss` and `htdocs/sass/_screen.scss`
+4. Alter `replace` in `Gruntfile.js` to match your responsive/adaptive strategy
 5. Add SASS libraries to `htdocs/sass/vendor/`
-6. Add new plugins to `htdocs/js/main.jquery.js`
-7. Add JS libraries to `htdocs/js/vendor/`
+6. Add JS libraries to `htdocs/js/vendor/`
+
+At this point you are free to develop:
+
+1. Start compiler via `grunt watch`
+2. Start [LiveReload](http://livereload.com/) in your browser
+3. Edit `htdocs/sass/_all.scss`, `htdocs/sass/_print.scss` and `htdocs/sass/_screen.scss`
+4. Add new plugins to `htdocs/js/main.jquery.js`
 
 Version
 -------
