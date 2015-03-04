@@ -1,12 +1,12 @@
 {
   "name": "broilerplate",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "homepage": "https://github.com/fboes/broilerplate",
   "authors": [
     "Frank Boës <http://3960.org>"
   ],
   "description": "A boilerplate with SASS & JS.",
-  "main": "index.html",
+  "main": "htdocs/index.html",
   "keywords": [
     "SASS",
     "JS"

@@ -2,14 +2,15 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		dirs: {
-			web: ''
+			htdocs: 'htdocs/',
+			docs:   'docs/'
 		},
 
 		jslint: {
 			build: {
 				src: [
-					'<%= dirs.web %>js/*.js',
-					'!<%= dirs.web %>js/*.min.js'
+					'<%= dirs.htdocs %>js/*.js',
+					'!<%= dirs.htdocs %>js/*.min.js'
 				],
 				directives: {
 					browser: true,
@@ -31,9 +32,9 @@ module.exports = function(grunt) {
 					sourceMap: true
 				},
 				files: {
-					'<%= dirs.web %>js/main.min.js': [
-						'<%= dirs.web %>js/main.js', // add your vendors here
-						'!<%= dirs.web %>js/main.min.js'
+					'<%= dirs.htdocs %>js/main.min.js': [
+						'<%= dirs.htdocs %>js/main.js', // add your vendors here
+						'!<%= dirs.htdocs %>js/main.min.js'
 					]
 				}
 			}
@@ -46,9 +47,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.web %>sass',
+					cwd: '<%= dirs.htdocs %>sass',
 					src: ['*.scss'],
-					dest: '<%= dirs.web %>css',
+					dest: '<%= dirs.htdocs %>css',
 					ext: '.css'
 				}]
 			}
@@ -61,16 +62,16 @@ module.exports = function(grunt) {
 				options: {
 					map: true
 				},
-				src: '<%= dirs.web %>css/*.css',
-				dest: '<%= dirs.web %>css/'
+				src: '<%= dirs.htdocs %>css/*.css',
+				dest: '<%= dirs.htdocs %>css/'
 			}
 		},
 
 		/*compass: {
 			build: {
 				options: {
-					basePath: '<%= dirs.web %>',
-					config: '<%= dirs.web %>config.rb'
+					basePath: '<%= dirs.htdocs %>',
+					config: '<%= dirs.htdocs %>config.rb'
 				}
 			}
 		},*/
@@ -84,15 +85,15 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'<%= dirs.web %>docs/styleguide': '<%= dirs.web %>sass/styles.scss'
+					'<%= dirs.docs %>styleguide': '<%= dirs.htdocs %>sass/styles.scss'
 				}
 			}
 		},*/
 
 		replace: {
 			rtl: {
-				src: ['<%= dirs.web %>css/styles.css'],
-				dest: '<%= dirs.web %>css/rtl.css',
+				src: ['<%= dirs.htdocs %>css/styles.css'],
+				dest: '<%= dirs.htdocs %>css/rtl.css',
 				replacements: [
 					{from: /(\W)left(\W)/g, to: '$1xrite$2'},
 					{from: /(\W)right(\W)/g, to: '$1left$2'},
@@ -103,8 +104,8 @@ module.exports = function(grunt) {
 				]
 			},
 			oldie: {
-				src: ['<%= dirs.web %>css/*.css'],
-				dest: '<%= dirs.web %>css/oldie/',
+				src: ['<%= dirs.htdocs %>css/*.css'],
+				dest: '<%= dirs.htdocs %>css/oldie/',
 				replacements: [
 					{from: /\/\*#.+?\*\//g, to: ''},
 					{from: /(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''},
@@ -132,7 +133,7 @@ module.exports = function(grunt) {
 				]
 			},
 			notty: {
-				src: ['<%= dirs.web %>css/*.css'],
+				src: ['<%= dirs.htdocs %>css/*.css'],
 				overwrite: true,
 				replacements: [
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
@@ -152,7 +153,7 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true,
 				},
-				files: ['<%= dirs.web %>sass/**/*.scss'],
+				files: ['<%= dirs.htdocs %>sass/**/*.scss'],
 				tasks: ['sass','autoprefixer','replace']
 			},
 			scripts: {
@@ -167,8 +168,8 @@ module.exports = function(grunt) {
 					livereload: true,
 				},
 				files: [
-					'<%= dirs.web %>*.html',
-					'<%= dirs.web %>images/*'
+					'<%= dirs.htdocs %>*.html',
+					'<%= dirs.htdocs %>images/*'
 				],
 				tasks: []
 			}
