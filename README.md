@@ -24,14 +24,13 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 
 * .header
 * .nav
-* #main
+* .main
 * .aside
 * .footer
 * .figure
 * .figcaption
-* .required
 
-Grunt will create a secondary stylesheet which is called `oldie.css` for old Intern Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
+Grunt will create a secondary stylesheet which is called `oldie.css` for old Internet Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
 
 Requirements
 ------------
@@ -49,12 +48,12 @@ Setup
 -----
 
 1. Start compiler (e.g. via `grunt watch`)
-2. Edit your settings in `sass/_base.scss`
+2. Edit your settings in `htdocs/sass/_base.scss`
 3. Define your responsive/adaptive strategy via `$switch-responsive-strategy`
-4. Edit `sass/_all.scss`, `sass/_print.scss` and `sass/_screen.scss`
-5. Add SASS libraries to `sass/vendor/`
-6. Add new plugins to `js/main.jquery.js`
-7. Add JS libraries to `js/vendor/`
+4. Edit `htdocs/sass/_all.scss`, `htdocs/sass/_print.scss` and `htdocs/sass/_screen.scss`
+5. Add SASS libraries to `htdocs/sass/vendor/`
+6. Add new plugins to `htdocs/js/main.jquery.js`
+7. Add JS libraries to `htdocs/js/vendor/`
 
 Version
 -------
