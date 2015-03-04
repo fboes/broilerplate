@@ -93,16 +93,41 @@
 					</tbody>
 				</table>
 
-				<form action="#" method="get" class="form">
+				<form action="." method="post">
 					<fieldset>
 						<legend>Legend</legend>
-						<label>Label</label>
-						<input type="text" name="text" required="required" class="required" /><br />
-						<textarea name="textarea">Textarea</textarea><br />
-						<select name="select">
-							<option>Select</option>
-						</select><br />
-						<button type="submit">Button</button>
+						<div class="form-field">
+							<label for="Alpha">Alpha</label>
+							<input name="Alpha" type="text" id="Alpha" class="input text" />
+						</div>
+						<div class="form-field">
+							<label for="Bravo">Bravo</label>
+							<textarea name="Bravo" id="Bravo"></textarea>
+						</div>
+
+						<div class="form-field">
+							<label for="Charlie">Charlie</label>
+							<select name="Charlie" id="Charlie"><option value="a">b</option><option value="c">d</option></select>
+						</div>
+
+						<div class="form-field">
+							<label>Delta</label>
+							<ul class="form-optionlist" id="Delta_">
+								<li><label><input value="a" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
+								<li><label><input value="c" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
+							</ul>
+						</div>
+
+						<div class="form-field">
+							<label>Echo</label>
+							<ul class="form-optionlist" id="Echo">
+								<li><label><input value="a" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
+								<li><label><input value="c" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
+							</ul>
+						</div>
+
+						<input type="hidden" name="b" id="b" class="input hidden" />
+						<button type="submit">Submit</button>
 					</fieldset>
 				</form>
 			</main>
