@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		jslint: {
 			build: {
 				src: [
-					'<%= dirs.web %>js/*.js', // add your vendors here
+					'<%= dirs.web %>js/*.js',
 					'!<%= dirs.web %>js/*.min.js'
 				],
 				directives: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'<%= dirs.web %>js/main.min.js': [
-						'<%= dirs.web %>js/main.js',
+						'<%= dirs.web %>js/main.js', // add your vendors here
 						'!<%= dirs.web %>js/main.min.js'
 					]
 				}
