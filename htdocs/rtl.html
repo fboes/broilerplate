@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html prefix="og: http://ogp.me/ns#" lang="ar" dir="rtl">
 <head>
 	<meta charset="utf-8" />
 	<title>SASS Styleguide Test Suite</title>
@@ -31,115 +31,125 @@
 <body>
 	<div id="container">
 		<div id="banner" class="header">
-			<header class="header--inner" role="banner">
-				<a href="#">Title</a>
-			</header>
+			<div class="header--inner">
+				<header role="banner">
+					<a href="#">Title</a>
+				</header>
+			</div>
 		</div>
 		<div id="navigation" class="nav">
-			<nav class="nav--inner" role="navigation">
-				<ul>
-					<li><a href="#">Navigation</a></li>
-				</ul>
-			</nav>
+			<div class="nav--inner">
+				<nav role="navigation">
+					<ul>
+						<li><a href="#">Navigation</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 		<div id="main" class="main">
-			<main class="main--inner" role="main">
-				<h1>Heading 1</h1>
-				<p>Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing elitr</a>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+			<div class="main--inner">
+				<main role="main">
+					<h1>Heading 1</h1>
+					<p>Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing elitr</a>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
 
-				<h2>Heading 2</h2>
-				<p><strong>Stet</strong> clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					<h2>Heading 2</h2>
+					<p><strong>Stet</strong> clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
-				<h2>Heading 2</h2>
+					<h2>Heading 2</h2>
 
-				<p>kasd gubergren, no sea takimata sanctus est</p>
+					<p>kasd gubergren, no sea takimata sanctus est</p>
 
-				<h3>Heading 3</h3>
-				<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-				<ul>
+					<h3>Heading 3</h3>
+					<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					<ul>
 						<li>Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing elitr</a>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
 						<li>At vero eos et accusam et justo duo dolores et ea rebum. </li>
-				</ul>
-				<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					</ul>
+					<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
-				<h4>Heading 4</h4>
-				<p><strong>Stet</strong> clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					<h4>Heading 4</h4>
+					<p><strong>Stet</strong> clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
-				<div class="figure">
-					<figure>
-						<div class="figcaption">
-							<figcaption><!-- --></figcaption>
-						</div>
-					</figure>
-				</div>
+					<div class="figure">
+						<figure>
+							<div class="figcaption">
+								<figcaption><!-- --></figcaption>
+							</div>
+						</figure>
+					</div>
 
-				<table>
-					<thead>
-						<tr>
-							<th>Head 1</th>
-							<th>Head 2</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Row 1</th>
-							<td>Row 2</td>
-						</tr>
-						<tr>
-							<th>Row 1</th>
-							<td>Row 2</td>
-						</tr>
-					</tbody>
-				</table>
+					<table>
+						<thead>
+							<tr>
+								<th>Head 1</th>
+								<th>Head 2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Row 1</th>
+								<td>Row 2</td>
+							</tr>
+							<tr>
+								<th>Row 1</th>
+								<td>Row 2</td>
+							</tr>
+						</tbody>
+					</table>
 
-				<form action="." method="post">
-					<fieldset>
-						<legend>Legend</legend>
-						<div class="form-field">
-							<label for="Alpha">Alpha</label>
-							<input name="Alpha" type="text" id="Alpha" class="input text" />
-						</div>
-						<div class="form-field">
-							<label for="Bravo">Bravo</label>
-							<textarea name="Bravo" id="Bravo"></textarea>
-						</div>
+					<form action="." method="post">
+						<fieldset>
+							<legend>Legend</legend>
+							<div class="form-field">
+								<label for="Alpha">Alpha</label>
+								<input name="Alpha" type="text" id="Alpha" class="input text" />
+							</div>
+							<div class="form-field">
+								<label for="Bravo">Bravo</label>
+								<textarea name="Bravo" id="Bravo"></textarea>
+							</div>
 
-						<div class="form-field">
-							<label for="Charlie">Charlie</label>
-							<select name="Charlie" id="Charlie"><option value="a">b</option><option value="c">d</option></select>
-						</div>
+							<div class="form-field">
+								<label for="Charlie">Charlie</label>
+								<select name="Charlie" id="Charlie"><option value="a">b</option><option value="c">d</option></select>
+							</div>
 
-						<div class="form-field">
-							<label>Delta</label>
-							<ul class="form-optionlist" id="Delta_">
-								<li><label><input value="a" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
-								<li><label><input value="c" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
-							</ul>
-						</div>
+							<div class="form-field">
+								<label>Delta</label>
+								<ul class="form-optionlist" id="Delta_">
+									<li><label><input value="a" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
+									<li><label><input value="c" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
+								</ul>
+							</div>
 
-						<div class="form-field">
-							<label>Echo</label>
-							<ul class="form-optionlist" id="Echo">
-								<li><label><input value="a" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
-								<li><label><input value="c" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
-							</ul>
-						</div>
+							<div class="form-field">
+								<label>Echo</label>
+								<ul class="form-optionlist" id="Echo">
+									<li><label><input value="a" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
+									<li><label><input value="c" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
+								</ul>
+							</div>
 
-						<input type="hidden" name="b" id="b" class="input hidden" />
-						<button type="submit">Submit</button>
-					</fieldset>
-				</form>
-			</main>
+							<input type="hidden" name="b" id="b" class="input hidden" />
+							<button type="submit">Submit</button>
+						</fieldset>
+					</form>
+				</main>
+			</div>
 		</div>
 		<div id="sidebar" class="aside">
-			<aside class="aside--inner" role="complementary"><!-- --></aside>
+			<div class="aside--inner">
+				<aside role="complementary"><!-- --></aside>
+			</div>
 		</div>
 		<div id="footer" class="footer">
-			<footer class="footer--inner" role="contentinfo">
-				<ul>
-					<li><a href="#">Navigation</a></li>
-				</ul>
-			</footer>
+				<div class="footer--inner">
+				<footer role="contentinfo">
+					<ul>
+						<li><a href="#">Navigation</a></li>
+					</ul>
+				</footer>
+			</div>
 		</div>
 	</div>
 
