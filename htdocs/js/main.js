@@ -1,4 +1,4 @@
-/*global $,console */
+/*global $ */
 (function ($) {
 	'use strict';
 	$.fn.exampleInteraction = function () { // function (options)
