@@ -18,7 +18,6 @@
 						event.stopPropagation();
 						// Your stuff here
 						console.log($(this));
-						that.update();
 					});
 				}
 			};
