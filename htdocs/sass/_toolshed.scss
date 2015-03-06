@@ -137,6 +137,13 @@
 	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
 }
 
+// Load a single webfont icon. This works best in :before
+@mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em) {
+	display:inline-block;
+	font: normal normal #{$fontsize}/1 $fontfamily;
+	content: $content;
+}
+
 @mixin toolshed-table-fixed {
 	table-layout: fixed;
 	width: 100%;
