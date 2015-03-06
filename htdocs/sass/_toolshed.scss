@@ -1,3 +1,7 @@
+// -----------------------------------------------
+// BASICS
+// -----------------------------------------------
+
 // build webfont source
 @mixin toolshed-webfont-src ($base, $id) {
 	src: url('#{$base}.eot');
@@ -14,6 +18,18 @@
 	overflow: hidden;
 	display: inline-block;
 	color: transparent !important;
+}
+
+// hide entire element
+@mixin toolshed-visuallyhidden () {
+	position: absolute;
+	width: 1px; // Setting this to 0 make it invisible for VoiceOver
+	height: 1px; // Setting this to 0 make it invisible for VoiceOver
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
 // clear floats
@@ -40,7 +56,7 @@
 		text-align: center;
 	}
 	li {
-		display:inline-block; // compass: @include inline-block();
+		display:inline-block;
 		margin:0;
 		padding:0;
 		@if $useFloat {
@@ -51,6 +67,35 @@
 		}
 	}
 }
+
+@mixin toolshed-table-fixed {
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+	td, th {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@mixin toolshed-vertical-center ($useFlex: true) {
+	@if ($useFlex) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@else {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+// -----------------------------------------------
+// BACKGROUND IMAGES & SPRITES
+// -----------------------------------------------
+
 
 // on retina, use image that's scaled by 2
 @mixin toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight) {
@@ -63,28 +108,6 @@
 	(min-resolution: 1.3dppx) {
 		background-image: url($retinaImageUrl);
 	}
-}
-
-@mixin toolshed-visuallyhidden () {
-	position: absolute;
-	width: 1px; // Setting this to 0 make it invisible for VoiceOver
-	height: 1px; // Setting this to 0 make it invisible for VoiceOver
-	padding: 0;
-	margin: -1px;
-	border: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-
-
-// @see http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
-@mixin toolshed-absolute-center ($width : 50%, $height : 50%) {
-	width: $width;
-	height: $height;
-	overflow: auto;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
 }
 
 // This mixin allows you to get a specific icon from a grid-sprite.
@@ -101,14 +124,14 @@
 // * $yOffset        (integer) The y-position of the icon on this grid
 // * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
 @mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight, $xOffset : 0, $yOffset : 0, $mode: 0) {
-	@if ($mode == 0) {
-		@include toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight);
-	}
 	@if ($mode == 3) {
 		width:ceil($iconWidth);
 		height:ceil($iconHeight);
 	}
 	@else {
+		@if ($mode == 0) {
+			@include toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight);
+		}
 		@include toolshed-grid-sprite($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight, ($mode == 2));
 	}
 }
@@ -144,32 +167,8 @@
 	content: $content;
 }
 
-@mixin toolshed-table-fixed {
-	table-layout: fixed;
-	width: 100%;
-	white-space: nowrap;
-	td, th {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-}
-
-@mixin toolshed-vertical-center ($useFlex: true) {
-	@if ($useFlex) {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	@else {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-
 // -----------------------------------------------
-// FUNCTIONS
+// CALCULATIONS
 // -----------------------------------------------
 
 // Convert pixels to rem
