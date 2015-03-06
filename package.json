@@ -14,6 +14,7 @@
     "grunt-text-replace": "^0.4.0",
     "jit-grunt": "^0.9.1",
     "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-uglify": "^0.8.0"
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-styleguide": "^0.2.17"
   }
 }

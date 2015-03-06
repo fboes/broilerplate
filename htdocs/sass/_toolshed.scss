@@ -1,8 +1,16 @@
+// Toolshed
+//
+// Styleguide 1.1
+
 // -----------------------------------------------
 // BASICS
 // -----------------------------------------------
 
+// toolshed-webfont-src
+//
 // build webfont source
+//
+// Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
 	src: url('#{$base}.eot');
 	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
@@ -11,7 +19,11 @@
 		url('#{$base}.ttf') format('truetype');
 }
 
+// toolshed-hide-text
+//
 // hide text from current element
+//
+// Styleguide 1.1.2
 @mixin toolshed-hide-text () {
 	text-indent: 100%;
 	white-space: nowrap;
@@ -20,7 +32,11 @@
 	color: transparent !important;
 }
 
+// toolshed-visuallyhidden
+//
 // hide entire element
+//
+// Styleguide 1.1.3
 @mixin toolshed-visuallyhidden () {
 	position: absolute;
 	width: 1px; // Setting this to 0 make it invisible for VoiceOver
@@ -32,7 +48,11 @@
 	overflow: hidden;
 }
 
+// toolshed-clearfix
+//
 // clear floats
+//
+// Styleguide 1.1.4
 @mixin toolshed-clearfix () {
 	zoom: 1;
 	&:after {
@@ -44,8 +64,13 @@
 	}
 }
 
+// toolshed-horizontal-list
+//
 // convert current element to horizontal list
-// For $useFloat : false remove whitespaces between list elements like `</li><li>`
+//
+// $useFloat : false remove whitespaces between list elements like `</li><li>`
+//
+// Styleguide 1.1.5
 @mixin toolshed-horizontal-list ($useFloat : true) {
 	display:block;
 	list-style:none;
@@ -68,6 +93,9 @@
 	}
 }
 
+// toolshed-table-fixed
+//
+// Styleguide 1.1.6
 @mixin toolshed-table-fixed {
 	table-layout: fixed;
 	width: 100%;
@@ -79,6 +107,9 @@
 	}
 }
 
+// toolshed-vertical-center
+//
+// Styleguide 1.1.7
 @mixin toolshed-vertical-center ($useFlex: true) {
 	@if ($useFlex) {
 		display: flex;
@@ -96,8 +127,11 @@
 // BACKGROUND IMAGES & SPRITES
 // -----------------------------------------------
 
-
+// toolshed-background-retina
+//
 // on retina, use image that's scaled by 2
+//
+// Styleguide 1.1.8
 @mixin toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight) {
 	background-image: url($imageUrl);
 	background-size: $imageWidth $imageHeight;
@@ -110,8 +144,11 @@
 	}
 }
 
+// toolshed-grid-sprite-complete
+//
 // This mixin allows you to get a specific icon from a grid-sprite.
 // Combine this mixing with @mixin background-retina to a new mixing for your sprite
+//
 // * $imageUrl       (string)
 // * $retinaImageUrl (string)
 // * $imageWidth     (unit)    The dimension of the non-retina image
@@ -123,6 +160,8 @@
 // * $xOffset        (integer) The x-position of the icon on this grid
 // * $yOffset        (integer) The y-position of the icon on this grid
 // * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
+//
+// Styleguide 1.1.9
 @mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight, $xOffset : 0, $yOffset : 0, $mode: 0) {
 	@if ($mode == 3) {
 		width:ceil($iconWidth);
@@ -136,7 +175,11 @@
 	}
 }
 
+// toolshed-grid-sprite
+//
 // generating sprite stuff without bg-image
+//
+// Styleguide 1.1.10
 @mixin toolshed-grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px, $compact : false) {
 	@if $compact {
 	}
@@ -146,7 +189,11 @@
 	@include toolshed-grid-sprite-position($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight);
 }
 
+// toolshed-grid-sprite-stuff
+//
 // generating sprite stuff like dimensions etc, but without position
+//
+// Styleguide 1.1.11
 @mixin toolshed-grid-sprite-stuff ($iconWidth : 20px, $iconHeight : 20px) {
 	background-repeat:no-repeat;
 	display:inline-block;
@@ -155,12 +202,20 @@
 	content: " ";
 }
 
+// toolshed-grid-sprite-position
+//
 // generating sprite background-position
+//
+// Styleguide 1.1.12
 @mixin toolshed-grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px) {
 	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
 }
 
+// toolshed-font-icon
+//
 // Load a single webfont icon. This works best in :before
+//
+// Styleguide 1.1.13
 @mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em) {
 	display:inline-block;
 	font: normal normal #{$fontsize}/1 $fontfamily;
@@ -171,12 +226,20 @@
 // CALCULATIONS
 // -----------------------------------------------
 
+// toolshed-rem
+//
 // Convert pixels to rem
+//
+// Styleguide 1.1.14
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
 
+// toolshed-round
+//
 // round with precision of 3
+//
+// Styleguide 1.1.15
 @function toolshed-round ($val) {
 	@return round($val * 1000) / 1000;
 }

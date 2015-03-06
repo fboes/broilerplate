@@ -4,12 +4,16 @@
 // See http://compass-style.org/help/tutorials/best_practices/
 
 // Switches
+//
+// Styleguide 2.2
 
 $switch-develop:                   false; // show debugging styles
 $switch-overlapping:               false; // container does not set width, but every --inner-element on its own
 $switch-responsive-strategy:       'mobile-first'; // one of 'mobile-first','desktop-first','single','mobile-separate','mobile-separate-reverse'
 
 // Base canon
+//
+// Styleguide 2.3
 
 $base-unit:                        8px;
 
@@ -68,6 +72,8 @@ $media-responsive-desktop:         "screen and (min-width: #{$width-screen-deskt
 }
 
 // Colors
+//
+// Styleguide 2.4
 
 $color-white:                      #ffffff;
 $color-black:                      #000000;
@@ -120,6 +126,8 @@ $color-link:                       $color-red-dark;
 $color-link-hover:                 $color-red-light;
 
 // Typography
+//
+// Styleguide 2.5
 
 $fontfamily-default:               Helvetica, Arial, sans-serif;
 $fontfamily-serif:                 Garamond, serif;
@@ -157,11 +165,15 @@ $fontstyle-headline:               $fontstyle-default;
 $font-headline:                    $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Z-Indexes
+//
+// Styleguide 2.6
 
 $zindex-headline:                  1;
 $zindex-popup:                     $zindex-headline + 1;
 
 // Animation
+//
+// Styleguide 2.7
 
 $transition-default:               all 0.25s ease-in-out;
 $transition-fast:                  all 0.1s ease-in-out;

@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 			}
 		},*/
 
-		/*styleguide : {
+		styleguide : {
 			options: {
 				framework: {
 					name: 'kss'
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 					'<%= dirs.docs %>styleguide': '<%= dirs.htdocs %>sass/styles.scss'
 				}
 			}
-		},*/
+		},
 
 		replace: {
 			rtl: {
@@ -182,5 +182,5 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace']);
+	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace','styleguide']);
 };

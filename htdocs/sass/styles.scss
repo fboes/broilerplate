@@ -1,23 +1,24 @@
-// Load mixin libraries
+// Mixins & resets
+//
+// Styleguide 1
 
-// @import "compass";
-// @import "compass/reset"
 @import "reset";
 @import "toolshed";
 @import "mixins";
 
-// Load basic style libraries
+// Variables & constants
+//
+// Styleguide 2
 
 @import "constants";
 @import "base";
 
-// Load basic styles
+// Actual styles
+//
+// Styleguide 3
 
 @import "all-base";
 @import "all";
-
-// Load media query styles
-
 @media screen {
 	@import "screen-base";
 	@import "screen";
