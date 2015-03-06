@@ -14,15 +14,10 @@ module.exports = function(grunt) {
 						'!<%= dirs.htdocs %>js/*.min.js'
 					]
 				},
-				options: {
-					curly: true,
-					eqeqeq: true,
-					eqnull: true,
+				options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
 					browser: true,
-					undef: true,
-					unused: true,
-					strict: true,
-					jquery: true
+					jquery: true,
+					strict: true
 				}
 			}
 		},
