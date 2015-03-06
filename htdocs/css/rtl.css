@@ -55,13 +55,13 @@ strong { font-weight: 700; }
 
 table tr th { font-weight: 700; }
 
-body { direction: rtl; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
+body { direction: rtl; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 #container { margin: auto; }
 
-#main { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
+#main { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
-#aside { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; }
+#aside { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 @media screen { body { direction: rtl; color: #000000; background-color: #ffffff; }
   #container { color: #000000; background-color: #ffffff; }

@@ -64,7 +64,7 @@ At this point you are free to develop:
 Version
 -------
 
-Version: 0.1.1 (2015-03-04)
+Version: 0.2.0 (2015-03-06)
 
 Legal stuff
 -----------

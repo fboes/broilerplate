@@ -1,7 +1,7 @@
 body {
-	font-family: $fontfamily-default;
-	font-size: $fontsize-default;
-	font-weight: $fontweight-default;
+	font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 #container {
 	margin: auto;
@@ -13,14 +13,10 @@ body {
 	// insert stuff here
 }
 #main {
-	font-family: $fontfamily-content;
-	font-size: $fontsize-content;
-	font-weight: $fontweight-content;
+	font:  $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 }
 #aside {
-	font-family: $fontfamily-content;
-	font-size: $fontsize-content;
-	font-weight: $fontweight-content;
+	font:  $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 }
 #footer {
 	// insert stuff here

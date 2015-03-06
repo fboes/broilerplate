@@ -6,18 +6,23 @@ module.exports = function(grunt) {
 			docs:   'docs/'
 		},
 
-		jslint: {
+		jshint: {
 			build: {
-				src: [
-					'<%= dirs.htdocs %>js/*.js',
-					'!<%= dirs.htdocs %>js/*.min.js'
-				],
-				directives: {
-					browser: true,
-					white: true
+				files: {
+					src: [
+						'<%= dirs.htdocs %>js/*.js',
+						'!<%= dirs.htdocs %>js/*.min.js'
+					]
 				},
 				options: {
-					failOnError: false
+					curly: true,
+					eqeqeq: true,
+					eqnull: true,
+					browser: true,
+					undef: true,
+					unused: true,
+					strict: true,
+					jquery: true
 				}
 			}
 		},
@@ -160,8 +165,8 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true,
 				},
-				files: ['<%= jslint.build.src %>'],
-				tasks: ['jslint','uglify']
+				files: ['<%= jshint.build.files.src %>'],
+				tasks: ['jshint','uglify']
 			},
 			livereload: {
 				options: {
@@ -182,5 +187,5 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['jslint','uglify','sass','autoprefixer','replace']);
+	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace']);
 };

@@ -10,14 +10,16 @@
 				},
 				/*values : {},*/
 				init : function (el) {
-					var that = this;
-
+					//var that = this;
 					this.elements.parent = el;
+
+					// Your stuff here
+
 					this.elements.parent.on('click.exampleInteraction', function (event) {
 						event.preventDefault();
 						event.stopPropagation();
 						// Your stuff here
-						console.log($(this));
+						// console.log($(this));
 					});
 				}
 			};
@@ -27,7 +29,6 @@
 	};
 }($));
 
-// You may want to move this someplace else
 $(document).ready(function() {
 	'use strict';
 	$('.js-exampleInteraction').exampleInteraction();
