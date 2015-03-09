@@ -10,6 +10,7 @@ A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 * Best practices for icons
 * RTL-support
 * Support for old IEs (aka `oldie`)
+* Support for [editorconfig](http://editorconfig.org/)
 
 So you can eat your broiler and have it.
 
@@ -44,22 +45,14 @@ Installation
 * Via [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
 * Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
 
-Setup & development
--------------------
+Developing with Broilerplate
+----------------------------
 
 1. Install Grunt plugins via `npm install`
-2. Edit your settings in `htdocs/sass/_base.scss`
-3. Define your responsive/adaptive strategy via `$switch-responsive-strategy`
-4. Alter `replace` in `Gruntfile.js` to match your responsive/adaptive strategy
-5. Add SASS libraries to `htdocs/sass/vendor/`
-6. Add JS libraries to `htdocs/js/vendor/`
+2. Start compiler via `grunt watch`
+3. Start [LiveReload](http://livereload.com/) in your browser
 
-At this point you are free to develop:
-
-1. Start compiler via `grunt watch`
-2. Start [LiveReload](http://livereload.com/) in your browser
-3. Edit `htdocs/sass/_all.scss`, `htdocs/sass/_print.scss` and `htdocs/sass/_screen.scss`
-4. Add new plugins to `htdocs/js/main.jquery.js`
+See `docs/development` for more information
 
 Version
 -------
