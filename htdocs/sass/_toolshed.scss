@@ -216,9 +216,13 @@
 // Load a single webfont icon. This works best in :before
 //
 // Styleguide 1.1.13
-@mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em) {
-	display:inline-block;
-	font: normal normal #{$fontsize}/1 $fontfamily;
+@mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em, $onlyContent: false) {
+	@if ($onlyContent) {
+	}
+	@else {
+		display:inline-block;
+		font: normal normal #{$fontsize}/1 $fontfamily;
+	}
 	content: $content;
 }
 

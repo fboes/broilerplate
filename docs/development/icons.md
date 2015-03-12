@@ -6,6 +6,8 @@ Icons & sprites
 3. You may also want to generate a second PNG file with double the resolution for Retina displays. A naming convention for Retina files is: `ORIGINAL_FILENAME@2x.ORIGINAL_FILEENDING`
 4. Build a mixin in `htdocs/sass/_mixins.scss` to call icons by name in SASS
 
+You may also want to check if your sprite may be replace by an [icon webfonts](webfonts.md).
+
 Sample mixin for icons
 ----------------------
 

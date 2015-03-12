@@ -3,8 +3,8 @@
 // Styleguide 2.8
 
 //@font-face {
-//	font-family: 'Example';
-//	font-weight: $fontweight-normal;
-//	font-style: normal;
-//	@include toolshed-webfont-src('../fonts/example/example','example');
+//	font-family: $fontfamily-symbols;
+//	font-weight: normal;
+//	font-style:  normal;
+//	@include toolshed-webfont-src('../fonts/#{$fontfamily-symbols}/#{$fontfamily-symbols}','#{$fontfamily-symbols}');
 //}
