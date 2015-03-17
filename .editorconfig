@@ -10,6 +10,9 @@ trim_trailing_whitespace = true
 end_of_line = lf
 tab_width = 4
 
+[*.md]
+trim_trailing_whitespace = false
+
 # generated files
 
 [{package.json,**/*.css}]

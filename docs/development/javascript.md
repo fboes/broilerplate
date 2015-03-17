@@ -12,5 +12,3 @@ Adding new functionality
 2. Build a selector at the end of `htdocs/js/main.js` to target the element you want to animate, and chain it to your plugin
 
 You may want to combine multiple events to a single selector. It is not unusual to have a `body` selector for reacting to modal dialogs or general link behavior.
-
-
