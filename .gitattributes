@@ -2,8 +2,12 @@
 # In case of problems: http://stackoverflow.com/questions/11383094/unstaged-changes-left-after-git-reset-hard
 
 # Declare files that will always have LF line endings on checkout.
-*.css text eol=lf
-
-*.css merge=ours
+*.html text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.php text eol=lf
+*.css text eol=lf merge=ours
+*.js text eol=lf
+*.scss text eol=lf
 *.min.js merge=ours
 *.map merge=ours
