@@ -1,13 +1,17 @@
-AddType text/cache-manifest .appcache
-AddType application/x-web-app-manifest+json .webapp
-AddType application/font-woff .woff
-AddType application/vnd.ms-fontobject .eot
-AddType application/x-font-ttf .ttf
-AddType application/x-font-opentype .otf
-AddType image/svg+xml .svg .svgz
-AddEncoding gzip svgz
+<IfModule mod_mime.c>
+	AddType text/cache-manifest .appcache
+	AddType application/x-web-app-manifest+json .webapp
+	AddType application/font-woff .woff
+	AddType application/vnd.ms-fontobject .eot
+	AddType application/x-font-ttf .ttf
+	AddType application/x-font-opentype .otf
+	AddType image/svg+xml .svg .svgz
+	AddEncoding gzip svgz
+</IfModule>
 
-Header set X-UA-Compatible "IE=edge"
+<IfModule mod_headers.c>
+	Header set X-UA-Compatible "IE=edge"
+</IfModule>
 
 #<FilesMatch "^(LICENSE\.txt|README\.md|package\.json|Gruntfile\.js|config\.rb)$">
 #	Order Allow,Deny
