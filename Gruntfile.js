@@ -141,6 +141,33 @@ module.exports = function(grunt) {
 			}
 		},
 
+		image_resize: {
+			options: {overwrite:true},
+			fav16: {
+				options: {width: 16},
+				files:   {'<%= dirs.htdocs %>favicon-16x16.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			fav32: {
+				options: {width: 32},
+				files:   {
+					'<%= dirs.htdocs %>favicon-32x32.png':'<%= dirs.htdocs %>images/logo.png',
+					'<%= dirs.htdocs %>favicon.ico':'<%= dirs.htdocs %>images/logo.png'
+				}
+			},
+			fav96: {
+				options: {width: 96},
+				files:   {'<%= dirs.htdocs %>favicon-96x96.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			fav152: {
+				options: {width: 152},
+				files:   {'<%= dirs.htdocs %>apple-touch-icon-precomposed.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			fav196: {
+				options: {width: 196},
+				files:   {'<%= dirs.htdocs %>favicon-196x196.png':'<%= dirs.htdocs %>images/logo.png'}
+			}
+		},
+
 		shell: {
 			prev: { command: 'ssh example.com "cd your-directory && git pull && exit"'}
 		},
@@ -182,5 +209,5 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace','styleguide']);
+	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace','styleguide','image_resize']);
 };
