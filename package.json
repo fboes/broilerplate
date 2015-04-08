@@ -1,7 +1,7 @@
 {
   "name": "broilerplate",
   "description": "A boilerplate with SASS & JS.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:fboes/broilerplate.git"

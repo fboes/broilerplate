@@ -14,25 +14,6 @@ A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 
 So you can eat your broiler and have it.
 
-SASS
-----
-
-Basic structure to help you identify your core variables and build a clean structure for medium- to big-size stylesheets.
-
-Main idea based on a session given by Ken Woodworth (http://kenwoodworth.com/).
-
-Note: In this example there is no styling applied to HTML5 elements. Instead, there are classes and IDs with the corresponding name, so you can safely use this stylesheet stub for Microsoft Internet Explorer 8. See http://caniuse.com/html5semantic
-
-* .header
-* .nav
-* .main
-* .aside
-* .footer
-* .figure
-* .figcaption
-
-Grunt will create a secondary stylesheet which is called `oldie.css` for old Internet Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
-
 Requirements
 ------------
 
@@ -57,7 +38,7 @@ See `docs/development` for more information
 Version
 -------
 
-Version: 0.2.0 (2015-03-06)
+Version: 1.0.0 (2015-04-08)
 
 Legal stuff
 -----------

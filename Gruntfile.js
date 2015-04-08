@@ -142,17 +142,18 @@ module.exports = function(grunt) {
 		},
 
 		image_resize: {
-			options: {overwrite:true},
+			options: {overwrite: true, upscale: true, crop:true, gravity: 'NorthEast'},
 			fav16: {
 				options: {width: 16},
 				files:   {'<%= dirs.htdocs %>favicon-16x16.png':'<%= dirs.htdocs %>images/logo.png'}
 			},
 			fav32: {
 				options: {width: 32},
-				files:   {
-					'<%= dirs.htdocs %>favicon-32x32.png':'<%= dirs.htdocs %>images/logo.png',
-					'<%= dirs.htdocs %>favicon.ico':'<%= dirs.htdocs %>images/logo.png'
-				}
+				files:   {'<%= dirs.htdocs %>favicon-32x32.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			fav32: {
+				options: {width: 48},
+				files:   {'<%= dirs.htdocs %>favicon.ico':'<%= dirs.htdocs %>images/logo.png'}
 			},
 			fav96: {
 				options: {width: 96},
@@ -165,6 +166,22 @@ module.exports = function(grunt) {
 			fav196: {
 				options: {width: 196},
 				files:   {'<%= dirs.htdocs %>favicon-196x196.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			tile128: {
+				options: {width: 128},
+				files:   {'<%= dirs.htdocs %>images/tile-128x128.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			tile270: {
+				options: {width: 270},
+				files:   {'<%= dirs.htdocs %>images/tile-270x270.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			tilewide: {
+				options: {width: 558, height:270},
+				files:   {'<%= dirs.htdocs %>images/tile-558x270.png':'<%= dirs.htdocs %>images/logo.png'}
+			},
+			tile558: {
+				options: {width: 558},
+				files:   {'<%= dirs.htdocs %>images/tile-558x558.png':'<%= dirs.htdocs %>images/logo.png'}
 			}
 		},
 
@@ -182,6 +199,10 @@ module.exports = function(grunt) {
 				},
 				files: ['<%= dirs.htdocs %>sass/**/*.scss'],
 				tasks: ['sass','autoprefixer','replace']
+			},
+			logo: {
+				files: ['<%= dirs.htdocs %>/images/logo.png'],
+				tasks: ['image_resize']
 			},
 			scripts: {
 				options: {
