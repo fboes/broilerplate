@@ -14,24 +14,33 @@ A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 
 So you can eat your broiler and have it.
 
-Requirements
+Installation
 ------------
+
+Download this repository via…
+
+* [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
+* [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
+
+You also need:
 
 * [Grunt](http://gruntjs.com/)
 * [SASS](http://sass-lang.com/)
 
-Installation
-------------
-
-* Via [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
-* Via [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
-
-Developing with Broilerplate
-----------------------------
+Setup your development space:
 
 1. Install Grunt plugins via `npm install`
-2. Start compiler via `grunt watch`
-3. Start [LiveReload](http://livereload.com/) in your browser
+2. Check Gruntfile for any file or host references
+3. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable
+
+Developing
+----------
+
+1. Start Grunt watcher via `grunt watch`
+2. Start [LiveReload](http://livereload.com/) in your browser
+3. Develop
+4. Commit to your repository
+5. Use `grunt shell:prev` to deploy to your preview server
 
 See `docs/development` for more information
 

@@ -143,16 +143,8 @@ module.exports = function(grunt) {
 
 		image_resize: {
 			options: {overwrite: true, upscale: true, crop:true, gravity: 'NorthEast'},
-			fav16: {
-				options: {width: 16},
-				files:   {'<%= dirs.htdocs %>favicon-16x16.png':'<%= dirs.htdocs %>images/logo.png'}
-			},
 			fav32: {
 				options: {width: 32},
-				files:   {'<%= dirs.htdocs %>favicon-32x32.png':'<%= dirs.htdocs %>images/logo.png'}
-			},
-			fav32: {
-				options: {width: 48},
 				files:   {'<%= dirs.htdocs %>favicon.ico':'<%= dirs.htdocs %>images/logo.png'}
 			},
 			fav96: {
