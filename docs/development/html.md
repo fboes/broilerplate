@@ -15,3 +15,8 @@ Important `rel`-attributes:
 * `nofollow`
 * `canonical`
 * `alternate` (also in combination with `hreflang`-attribute)
+
+Accessibility
+-------------
+
+* Use [`aria-label` & `aria-hidden` for improved accessibility](https://dev.opera.com/articles/ux-accessibility-aria-label/)
