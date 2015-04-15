@@ -1,7 +1,7 @@
 Javascript
 ==========
 
-1. You may want to download a local copy of [jQuery](http://jquery.com/) to your project and put it in `htdocs/js/vendor/`. Replace the jQuery call in your local HTML (near the bottom) for this to work
+1. You may want to update your local copy of [jQuery](http://jquery.com/) in `htdocs/js/vendor/`. Replace the jQuery call in your local HTML (near the bottom) for this to work
 2. Optional: For touch interaction add [jQuery.event.swipe](http://stephband.info/jquery.event.swipe/) to `htdocs/js/vendor/` and add a `<script></script>` call in your HTML footer.
 3. Add new functionality via `htdocs/js/main.js`
 4. Add JS libraries to `htdocs/js/vendor/`
