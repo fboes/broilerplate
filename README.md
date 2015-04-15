@@ -33,6 +33,14 @@ Setup your development space:
 2. Check Gruntfile for any file or host references
 3. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable
 
+Variables used in templates:
+
+* `{{ BASE_URL }}`: Base url including protocol, domain name and base path. Does not end with `/`
+* `{{ RELATIVE_URL }}`: URL of current document relative to base path. Does start with a `/`
+* `{{ SITENAME }}`: Title of your project
+* `{{ TITLE }}`: Title of the current page
+* `{{ DESCRIPTION }}`: Description of the current page
+
 Developing
 ----------
 
