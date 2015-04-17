@@ -146,6 +146,18 @@ module.exports = function(grunt) {
 					{from: / lang="de"/g, to: ' lang="ar" dir="rtl"'},
 					{from: /styles\.css/g, to: 'rtl.css'}
 				]
+			},
+			variables: {
+				src: ['<%= dirs.htdocs %>*.html', '<%= dirs.htdocs %>*.xml'],
+				overwrite: true,
+				replacements: [
+					{from: /\{\{ BASE_URL \}\}/g, to: '<?php echo(htmlspecialchars(\'http://\'.$_SERVER[\'HTTP_HOST\']));?>'},
+					{from: /\{\{ SITENAME \}\}/g, to: '<?php echo(htmlspecialchars($sitename));?>'},
+					{from: /\{\{ PAGE_RELATIVE_URL \}\}/g, to: '<?php echo(htmlspecialchars($_SERVER[\'SCRIPT_URL\']));?>'},
+					{from: /\{\{ PAGE_TITLE \}\}/g, to: '<?php echo(htmlspecialchars($title));?>'},
+					{from: /\{\{ PAGE_DESCRIPTION \}\}/g, to: '<?php echo(htmlspecialchars($description));?>'},
+					{from: /\{\{ THEME_COLOR \}\}/g, to: '#aa00ff'}
+				]
 			}
 		},
 
