@@ -3,7 +3,7 @@
 <head>
 	<!--base href="{{ BASE_URL }}" /-->
 	<meta charset="utf-8" />
-	<title>{{ TITLE }} - {{ SITENAME }}</title>
+	<title>{{ PAGE_TITLE }} - {{ SITENAME }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if gte IE 9]><!-->
 		<link rel="stylesheet" href="css/styles.css" />
@@ -11,12 +11,12 @@
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="css/oldie/styles.css" />
 	<![endif]-->
-	<meta name="description" content="{{ DESCRIPTION }}" />
+	<meta name="description" content="{{ PAGE_DESCRIPTION }}" />
 	<meta property="og:site_name" content="{{ SITENAME }}" />
-	<meta property="og:title" content="{{ TITLE }}" />
+	<meta property="og:title" content="{{ PAGE_TITLE }}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{{ BASE_URL }}{{ RELATIVE_URL }}" />
-	<meta property="og:description" content="{{ DESCRIPTION }}" />
+	<meta property="og:url" content="{{ BASE_URL }}{{ PAGE_RELATIVE_URL }}" />
+	<meta property="og:description" content="{{ PAGE_DESCRIPTION }}" />
 	<meta property="og:image" content="{{ BASE_URL }}/images/tile-558x558.png" />
 	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/png" href="images/tile-128x128.png" sizes="128x128" />
@@ -26,7 +26,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
 	<link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-precomposed.png" sizes="152x152" />
 	<!--link rel="home" type="application/rss+xml" href="{{ BASE_URL }}/rss.xml" /-->
-	<meta name="theme-color" content="#eeffdd" />
+	<meta name="theme-color" content="{{ THEME_COLOR }}" />
 </head>
 <body>
 	<div id="container">
@@ -49,7 +49,7 @@
 		<div id="main" class="main">
 			<div class="main--inner">
 				<main role="main">
-					<h1>{{ TITLE }}</h1>
+					<h1>{{ PAGE_TITLE }}</h1>
 
 					<p>Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing elitr</a>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
 

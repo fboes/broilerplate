@@ -35,11 +35,12 @@ Setup your development space:
 
 Variables used in templates:
 
-* `{{ BASE_URL }}`: Base url including protocol, domain name and base path. Does not end with `/`
-* `{{ RELATIVE_URL }}`: URL of current document relative to base path. Does start with a `/`
+* `{{ BASE_URL }}`: Base url including protocol, domain name and base path. Does not end with `/`. E.g. `https://www.example.com`
 * `{{ SITENAME }}`: Title of your project
-* `{{ TITLE }}`: Title of the current page
-* `{{ DESCRIPTION }}`: Description of the current page
+* `{{ PAGE_RELATIVE_URL }}`: URL of current document relative to base path. Does start with a `/`. E.g. `/example/index.html`
+* `{{ PAGE_TITLE }}`: Title of the current page
+* `{{ PAGE_DESCRIPTION }}`: Description of the current page. Maximum length is 160 characters
+* `{{ THEME_COLOR }}`: Hex color used as basic theme color. E.g. `#aa00ff`
 
 Developing
 ----------

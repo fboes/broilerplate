@@ -138,6 +138,14 @@ module.exports = function(grunt) {
 				replacements: [
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
 				]
+			},
+			htmlrtl: {
+				src: ['<%= dirs.htdocs %>index.html'],
+				dest: '<%= dirs.htdocs %>rtl.html',
+				replacements: [
+					{from: / lang="de"/g, to: ' lang="ar" dir="rtl"'},
+					{from: /styles\.css/g, to: 'rtl.css'}
+				]
 			}
 		},
 
@@ -186,27 +194,21 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js']
 			},
 			sass: {
-				options: {
-					livereload: true,
-				},
+				options: {livereload: true},
 				files: ['<%= dirs.htdocs %>sass/**/*.scss'],
-				tasks: ['sass','autoprefixer','replace']
+				tasks: ['build-sass']
+			},
+			js: {
+				options: {livereload: true},
+				files: ['<%= jshint.build.files.src %>'],
+				tasks: ['build-js']
 			},
 			logo: {
 				files: ['<%= dirs.htdocs %>/images/logo.png'],
 				tasks: ['image_resize']
 			},
-			scripts: {
-				options: {
-					livereload: true,
-				},
-				files: ['<%= jshint.build.files.src %>'],
-				tasks: ['jshint','uglify']
-			},
 			livereload: {
-				options: {
-					livereload: true,
-				},
+				options: {livereload: true},
 				files: [
 					'<%= dirs.htdocs %>*.html',
 					'<%= dirs.htdocs %>images/*'
@@ -222,5 +224,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','replace','styleguide','image_resize']);
+	grunt.registerTask('build-sass', ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
+	grunt.registerTask('build-js',   ['jshint','uglify']);
+	grunt.registerTask('default',    ['build-js','build-sass','styleguide','image_resize']);
 };

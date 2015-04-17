@@ -6,7 +6,7 @@
 			<square150x150logo src="images/tile-270x270.png"/>
 			<wide310x150logo src="images/tile-558x270.png"/>
 			<square310x310logo src="images/tile-558x558.png"/>
-			<TileColor>#eeffdd</TileColor>
+			<TileColor>{{ THEME_COLOR }}</TileColor>
 		</tile>
 		<!--notification>
 			<polling-uri src="http://notifications.buildmypinnedsite.com/?feed={{ BASE_URL }}/rss.xml"/>
