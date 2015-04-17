@@ -48,7 +48,7 @@ Developing
 2. Start [LiveReload](http://livereload.com/) in your browser
 3. Develop
 4. Commit to your repository
-5. Use `grunt shell:prev` to deploy to your preview server
+5. Use `grunt shell:prev && grunt watch` to deploy to your preview server and start watcher anew
 
 See `docs/development` for more information
 
