@@ -55,7 +55,8 @@ strong { font-weight: 700; }
 
 table tr th { font-weight: 700; }
 
-body { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
+html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
+
 
 #container { margin: auto; }
 
@@ -64,7 +65,7 @@ body { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 #aside { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 @media screen { body { color: #000000; background-color: #ffffff; }
-  #container { color: #000000; background-color: #ffffff; }
+  #container { color: #e5e5e5; background-color: #ffffff; }
   #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }

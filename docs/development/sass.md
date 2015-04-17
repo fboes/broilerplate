@@ -43,3 +43,18 @@ Directory structure
 * [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Add your own styles for all screen channels
 * [`htdocs/sass/_print-base.scss`](../../htdocs/sass/_print-base.scss): Sensible defaults for all print channels, uses variables from `base`
 * [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Add your own styles for all print channels
+
+Using media queries
+-------------------
+
+There is a set of prefedined media queries in [`htdocs/sass/_mixins.scss`](../../htdocs/sass/_mixins.scss). Use these mixins in [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss) like this:
+
+```
+.selector {
+	// Here goes some regular CSS
+	@include screen_smartphone {
+		// Here goes some CSS for smartphones
+	}
+}
+```
+
