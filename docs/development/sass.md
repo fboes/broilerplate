@@ -49,7 +49,7 @@ Using media queries
 
 There is a set of prefedined media queries in [`htdocs/sass/_mixins.scss`](../../htdocs/sass/_mixins.scss). Use these mixins in [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss) like this:
 
-```
+```sass
 .selector {
 	// Here goes some regular CSS
 	@include screen_smartphone {

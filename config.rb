@@ -4,11 +4,11 @@
 #environment     = :development
 environment     = :production
 
-css_dir         = "css"
-sass_dir        = "sass"
-images_dir      = "images"
-fonts_dir       = "fonts"
-javascripts_dir = "js"
+css_dir         = "htdocs/css"
+sass_dir        = "htdocs/sass"
+images_dir      = "htdocs/images"
+fonts_dir       = "htdocs/fonts"
+javascripts_dir = "htdocs/js"
 relative_assets = true
 
 # The output style for the compiled css. One of: :nested, :expanded, :compact, or :compressed.

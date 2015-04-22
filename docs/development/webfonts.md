@@ -23,7 +23,7 @@ Build your own icon font
 Example SASS implementation
 ---------------------------
 
-```
+```sass
 @mixin icon-font ($name, $onlyContent: false) {
 	$content:  'X';
 	$fontsize: 20px;

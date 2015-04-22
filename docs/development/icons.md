@@ -11,7 +11,7 @@ You may also want to check if your sprite may be replace by an [icon webfonts](w
 Sample mixin for icons
 ----------------------
 
-```
+```sass
 @mixin sprite ($iconName, $yOffset: 0, $mode: 0) {
 	$iconWidth:  20px;
 	$iconHeight: $iconWidth;

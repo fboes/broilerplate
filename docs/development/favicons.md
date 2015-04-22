@@ -3,11 +3,11 @@ Favicons
 
 Generate your favicon in different sizes:
 
-```
-	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
-	<link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-precomposed.png" sizes="152x152" />
+```html
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-precomposed.png" sizes="152x152" />
 ```
 
 * All favicon files should be located in the document root directory.
@@ -23,8 +23,8 @@ OG:Images
 
 Every page should have it's own preview image, referenced by this code:
 
-```
-	<meta property="og:image" content="{{ BASE_URL }}{{ IMAGE_URL }}" />
+```html
+<meta property="og:image" content="{{ BASE_URL }}{{ IMAGE_URL }}" />
 ```
 
 According to Facebook this image should be at least 200×200 pixels.
