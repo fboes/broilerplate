@@ -3,7 +3,7 @@ Grunt
 
 Be sure to install [Grunt](http://gruntjs.com/).
 
-The following command can be executed in a terminal right from the root folder of this project:
+The following commands can be executed in a terminal right from the root folder of this project:
 
 * `grunt watch`: Tells Grunt to watch for file changes an compile files after changes occured
 * `grunt build-sass`: Rebuild all CSS files from SASS

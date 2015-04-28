@@ -24,23 +24,32 @@ Example SASS implementation
 ---------------------------
 
 ```sass
-@mixin icon-font ($name, $onlyContent: false) {
+@mixin icon-font ($name, $onlyContent: true) {
 	$content:  'X';
-	$fontsize: 20px;
-	@if ($name == 'play') {
-		$content:  "\e603";
-		$fontsize: 24px;
+	@if ($name == 'prev') {
+		$content:  "\e601";
 	}
-	@elseif ($name == 'play-big') {
-		$content:  "\e603";
-		$fontsize: 48px;
-	}
-	@elseif ($name == 'close') {
-		$content: "\e604";
-		$fontsize: 24px;
+	@elseif ($name == 'next') {
+		$content: "\e602";
 	}
 	// ... add some more
 
-	@include toolshed-font-icon($fontfamily-symbols, $content, $fontsize, $onlyContent);
+	@include toolshed-font-icon($fontfamily-symbols, $content, 1em, $onlyContent);
+}
+```
+
+A simple solution for generating icon-classes
+
+```sass
+.icon {
+	:before {
+		@include icon-font('x');
+	}
+
+	@each $icon in (prev,next) {
+		&--#{$icon}:before {
+			@include icon-font('#{$icon}');
+		}
+	}
 }
 ```
