@@ -11,3 +11,12 @@ The following commands can be executed in a terminal right from the root folder 
 * `grunt image_resize`: Rebuild all favicons, apple-touch-icons and any other form of icon from `logo.png`
 * `grunt styleguide`: Rebuild the SASS styleguide
 * `grunt shell:prev && grunt watch`: Deploy project to your preview server and restart the watcher afterwards
+
+Node.js & npm
+-------------
+
+For Grunt to work [Node.js](https://nodejs.org/) has to be installed.
+
+David Walsh published a [guide on updating Node.js via npm](http://davidwalsh.name/upgrade-nodejs).
+
+After this procedure use `sudo npm install -g npm` to update npm as well.
