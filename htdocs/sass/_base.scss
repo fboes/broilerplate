@@ -7,174 +7,174 @@
 //
 // Styleguide 2.2
 
-$switch-develop:                   false; // show debugging styles
-$switch-overlapping:               false; // container does not set width, but every --inner-element on its own
-$switch-responsive-strategy:       'mobile-first'; // one of 'mobile-first','desktop-first','single','mobile-separate','mobile-separate-reverse'
+$switch-develop:                    false; // show debugging styles
+$switch-overlapping:                false; // container does not set width, but every --inner-element on its own
+$switch-responsive-strategy:        'mobile-first'; // one of 'mobile-first','desktop-first','single','mobile-separate','mobile-separate-reverse'
 
 // Base canon
 //
 // Styleguide 2.3
 
-$base-unit:                        8px;
+$base-unit:                         8px;
 
-$margin-default:                   $base-unit;
-$padding-default:                  $base-unit;
+$margin-default:                    $base-unit;
+$padding-default:                   $base-unit;
 
-$borderradius-default:             2px;
+$borderradius-default:              2px;
 
-$width-column:                     300px;
-$spacing-column:                   20px;
+$width-column:                      300px;
+$spacing-column:                    20px;
 
-$width-column-2:                   2 * $width-column + 1 * $spacing-column;
-$width-column-3:                   3 * $width-column + 2 * $spacing-column;
-$width-column-4:                   4 * $width-column + 3 * $spacing-column;
+$width-column-2:                    2 * $width-column + 1 * $spacing-column;
+$width-column-3:                    3 * $width-column + 2 * $spacing-column;
+$width-column-4:                    4 * $width-column + 3 * $spacing-column;
 
 // Base canon > Assigning
 
-$width-screen-smartphone:          $width-column + $spacing-column;
-$width-screen-tablet:              $width-column-2 + $spacing-column;
-$width-screen-tablet-landscape:    $width-column-3 + $spacing-column;
-$width-screen-desktop:             $width-column-4 + $spacing-column;
+$width-screen-smartphone:           $width-column + $spacing-column;
+$width-screen-tablet:               $width-column-2 + $spacing-column;
+$width-screen-tablet-landscape:     $width-column-3 + $spacing-column;
+$width-screen-desktop:              $width-column-4 + $spacing-column;
 
-$width-container-smartphone:       $width-column;
-$width-container-tablet:           $width-column-2;
-$width-container-tablet-landscape: $width-column-3;
-$width-container-desktop:          $width-column-4;
+$width-container-smartphone:        $width-column;
+$width-container-tablet:            $width-column-2;
+$width-container-tablet-landscape:  $width-column-3;
+$width-container-desktop:           $width-column-4;
 
 // -> 'mobile-first'
-$media-responsive-smartphone:      "screen";
-$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet})";
-$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape})";
-$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+$media-responsive-smartphone:       "screen";
+$media-responsive-tablet:           "screen and (min-width: #{$width-screen-tablet})";
+$media-responsive-tablet-landscape: "screen and (min-width: #{$width-screen-tablet-landscape})";
+$media-responsive-desktop:          "screen and (min-width: #{$width-screen-desktop})";
 @if ($switch-responsive-strategy == 'desktop-first') {
-	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
-	$media-responsive-tablet:          "screen and (max-width: #{$width-screen-tablet-landscape - 1px})";
-	$media-responsive-tablet-landscape:"screen and (max-width: #{$width-screen-desktop - 1px})";
-	$media-responsive-desktop:         "screen";
+	$media-responsive-smartphone:       "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:           "screen and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape: "screen and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:          "screen";
 }
 @elseif ($switch-responsive-strategy == 'single') {
-	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
-	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
-	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape}) and (max-width: #{$width-screen-desktop - 1px})";
-	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+	$media-responsive-smartphone:       "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:           "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape: "screen and (min-width: #{$width-screen-tablet-landscape}) and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:          "screen and (min-width: #{$width-screen-desktop})";
 }
 @elseif ($switch-responsive-strategy == 'mobile-separate') {
-	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
-	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet})";
-	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet-landscape})";
-	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-desktop})";
+	$media-responsive-smartphone:       "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:           "screen and (min-width: #{$width-screen-tablet})";
+	$media-responsive-tablet-landscape: "screen and (min-width: #{$width-screen-tablet-landscape})";
+	$media-responsive-desktop:          "screen and (min-width: #{$width-screen-desktop})";
 }
 @elseif ($switch-responsive-strategy == 'mobile-separate-reverse') {
-	$media-responsive-smartphone:      "screen and (max-width: #{$width-screen-tablet - 1px})";
-	$media-responsive-tablet:          "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
-	$media-responsive-tablet-landscape:"screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-desktop - 1px})";
-	$media-responsive-desktop:         "screen and (min-width: #{$width-screen-tablet})";
+	$media-responsive-smartphone:       "screen and (max-width: #{$width-screen-tablet - 1px})";
+	$media-responsive-tablet:           "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
+	$media-responsive-tablet-landscape: "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-desktop - 1px})";
+	$media-responsive-desktop:          "screen and (min-width: #{$width-screen-tablet})";
 }
 
 // Colors
 //
 // Styleguide 2.4
 
-$color-white:                      #ffffff;
-$color-black:                      #000000;
-$color-grey:                       mix($color-white, $color-black, 50%);
-$color-grey-dark:                  mix($color-white, $color-black, 20%);
-$color-grey-light:                 mix($color-white, $color-black, 90%);
-$color-blue:                       #33b5e5;
-$color-blue-dark:                  darken($color-blue, 25%);
-$color-blue-light:                 lighten($color-blue, 15%);
-$color-purple:                     #AA66CC;
-$color-purple-dark:                darken($color-purple, 25%);
-$color-purple-light:               lighten($color-purple, 15%);
-$color-green:                      #99cc00;
-$color-green-dark:                 darken($color-green, 25%);
-$color-green-light:                lighten($color-green, 15%);
-$color-yellow:                     #FFBB33;
-$color-yellow-dark:                darken($color-yellow, 25%);
-$color-yellow-light:               lighten($color-yellow, 15%);
-$color-red:                        #FF4444;
-$color-red-dark:                   darken($color-red, 25%);
-$color-red-light:                  lighten($color-red, 15%);
+$color-white:                       #ffffff;
+$color-black:                       #000000;
+$color-grey:                        mix($color-white, $color-black, 50%);
+$color-grey-dark:                   mix($color-white, $color-black, 20%);
+$color-grey-light:                  mix($color-white, $color-black, 90%);
+$color-blue:                        #33b5e5;
+$color-blue-dark:                   darken($color-blue, 25%);
+$color-blue-light:                  lighten($color-blue, 15%);
+$color-purple:                      #AA66CC;
+$color-purple-dark:                 darken($color-purple, 25%);
+$color-purple-light:                lighten($color-purple, 15%);
+$color-green:                       #99cc00;
+$color-green-dark:                  darken($color-green, 25%);
+$color-green-light:                 lighten($color-green, 15%);
+$color-yellow:                      #FFBB33;
+$color-yellow-dark:                 darken($color-yellow, 25%);
+$color-yellow-light:                lighten($color-yellow, 15%);
+$color-red:                         #FF4444;
+$color-red-dark:                    darken($color-red, 25%);
+$color-red-light:                   lighten($color-red, 15%);
 
-$color-lighter:                    rgba(255,255,255,0.25);
-$color-darker :                    rgba(0,0,0,0.25);
+$color-lighter:                     rgba(255,255,255,0.25);
+$color-darker :                     rgba(0,0,0,0.25);
 
 // Colors > Assigning
 
-$backgroundcolor-body:             $color-white;
-$color-body:                       $color-black;
+$backgroundcolor-body:              $color-white;
+$color-body:                        $color-black;
 
-$backgroundcolor-container:        $color-white;
-$color-container:                  $color-grey-light;
+$backgroundcolor-container:         $color-white;
+$color-container:                   $color-grey-light;
 
-$backgroundcolor-banner:           $color-black;
-$color-banner:                     $color-white;
+$backgroundcolor-banner:            $color-black;
+$color-banner:                      $color-white;
 
-$backgroundcolor-navigation:       $color-white;
-$color-navigation:                 $color-black;
+$backgroundcolor-navigation:        $color-white;
+$color-navigation:                  $color-black;
 
-$backgroundcolor-main:             $color-white;
-$color-main:                       $color-black;
+$backgroundcolor-main:              $color-white;
+$color-main:                        $color-black;
 
-$backgroundcolor-sidebar:          $color-grey;
-$color-sidebar:                    $color-black;
+$backgroundcolor-sidebar:           $color-grey;
+$color-sidebar:                     $color-black;
 
-$backgroundcolor-footer:           $color-black;
-$color-footer:                     $color-white;
+$backgroundcolor-footer:            $color-black;
+$color-footer:                      $color-white;
 
-$color-link:                       $color-red-dark;
-$color-link-hover:                 $color-red-light;
+$color-link:                        $color-red-dark;
+$color-link-hover:                  $color-red-light;
 
 // Typography
 //
 // Styleguide 2.5
 
-$fontfamily-default:               Helvetica, Arial, sans-serif;
-$fontfamily-serif:                 Garamond, serif;
-$fontfamily-monospace:             "Courier New", monospace;
-$fontfamily-symbols:               "FontAwesome"; // http://fortawesome.github.io/Font-Awesome/
+$fontfamily-default:                Helvetica, Arial, sans-serif;
+$fontfamily-serif:                  Garamond, serif;
+$fontfamily-monospace:              "Courier New", monospace;
+$fontfamily-symbols:                "FontAwesome"; // http://fortawesome.github.io/Font-Awesome/
 
-$fontsize-default:                 12px;
-$fontsize-big:                     $fontsize-default + 2px;
+$fontsize-default:                  12px;
+$fontsize-big:                      $fontsize-default + 2px;
 
-$lineheight-default:               $lineheight-base;
-$fontweight-default:               $fontweight-normal;
-$fontweight-default-bold:          $fontweight-bold;
-$fontstyle-default:                normal;
+$lineheight-default:                $lineheight-base;
+$fontweight-default:                $fontweight-normal;
+$fontweight-default-bold:           $fontweight-bold;
+$fontstyle-default:                 normal;
 
-$font-default:                     $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+$font-default:                      $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 
 // Typography > Assigning
 
-$fontfamily-content:               $fontfamily-default;
-$fontsize-content:                 $fontsize-default;
-$lineheight-content:               $lineheight-default;
-$fontweight-content:               $fontweight-normal;
-$fontweight-content-bold:          $fontweight-bold;
-$fontstyle-content:                $fontstyle-default;
+$fontfamily-content:                $fontfamily-default;
+$fontsize-content:                  $fontsize-default;
+$lineheight-content:                $lineheight-default;
+$fontweight-content:                $fontweight-normal;
+$fontweight-content-bold:           $fontweight-bold;
+$fontstyle-content:                 $fontstyle-default;
 
-$font-content:                     $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+$font-content:                      $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 
-$fontfamily-headline:              $fontfamily-serif;
-$fontsize-headline:                $fontsize-big;
-$lineheight-headline:              $lineheight-default;
-$fontweight-headline:              $fontweight-bold;
-$fontweight-headline-bold:         $fontweight-extrabold;
-$fontstyle-headline:               $fontstyle-default;
+$fontfamily-headline:               $fontfamily-serif;
+$fontsize-headline:                 $fontsize-big;
+$lineheight-headline:               $lineheight-default;
+$fontweight-headline:               $fontweight-bold;
+$fontweight-headline-bold:          $fontweight-extrabold;
+$fontstyle-headline:                $fontstyle-default;
 
-$font-headline:                    $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+$font-headline:                     $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Z-Indexes
 //
 // Styleguide 2.6
 
-$zindex-headline:                  1;
-$zindex-popup:                     $zindex-headline + 1;
+$zindex-headline:                   1;
+$zindex-popup:                      $zindex-headline + 1;
 
 // Animation
 //
 // Styleguide 2.7
 
-$transition-default:               all 0.25s ease-in-out;
-$transition-fast:                  all 0.1s ease-in-out;
-$transition-slow:                  all 0.5s ease-in-out;
+$transition-default:                all 0.25s ease-in-out;
+$transition-fast:                   all 0.1s ease-in-out;
+$transition-slow:                   all 0.5s ease-in-out;
