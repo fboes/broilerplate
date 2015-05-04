@@ -217,7 +217,7 @@ module.exports = function(grunt) {
 			},
 			logo: {
 				files: ['<%= dirs.htdocs %>/images/logo.png'],
-				tasks: ['image_resize']
+				tasks: ['build-icons']
 			},
 			livereload: {
 				options: {livereload: true},
@@ -238,5 +238,6 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('build-sass', ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
 	grunt.registerTask('build-js',   ['jshint','uglify']);
-	grunt.registerTask('default',    ['build-js','build-sass','styleguide','image_resize']);
+	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
+	grunt.registerTask('default',    ['build-js','build-sass','build-icons']);
 };

@@ -175,6 +175,13 @@ $zindex-popup:                      $zindex-headline + 1;
 //
 // Styleguide 2.7
 
-$transition-default:                all 0.25s ease-in-out;
-$transition-fast:                   all 0.1s ease-in-out;
-$transition-slow:                   all 0.5s ease-in-out;
+$transitionduration-default:        0.25s;
+$transitionduration-fast:           ($transitionduration-default / 2);
+$transitionduration-slow:           ($transitionduration-default * 2);
+
+$transitionfunction-default:        ease-in-out;
+
+$transition-default:                all $transitionduration-default $transitionfunction-default;
+$transition-fast:                   all $transitionduration-fast $transitionfunction-default;
+$transition-slow:                   all $transitionduration-slow $transitionfunction-default;
+
