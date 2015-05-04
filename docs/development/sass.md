@@ -58,3 +58,21 @@ There is a set of prefedined media queries in [`htdocs/sass/_mixins.scss`](../..
 }
 ```
 
+Using toolshed mixins
+---------------------
+
+You can use the toolshed mixins by calling the mixin:
+
+```sass
+.selector {
+	@include toolshed-clearfix();
+}
+```
+
+or by extending the supplied classes:
+
+```sass
+.selector {
+	@extend %toolshed-clearfix;
+}
+```
