@@ -31,9 +31,6 @@
 	display: inline-block;
 	color: transparent !important;
 }
-%toolshed-hide-text {
-	@include toolshed-hide-text();
-}
 
 // toolshed-visuallyhidden
 //
@@ -50,9 +47,6 @@
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-%toolshed-visuallyhidden {
-	@include toolshed-visuallyhidden();
-}
 
 // toolshed-clearfix
 //
@@ -68,9 +62,6 @@
 		clear: both;
 		content: ".";
 	}
-}
-%toolshed-clearfix {
-	@include toolshed-clearfix();
 }
 
 // toolshed-horizontal-list
@@ -101,9 +92,6 @@
 		}
 	}
 }
-%toolshed-horizontal-list {
-	@include toolshed-horizontal-list();
-}
 
 // toolshed-table-fixed
 //
@@ -117,9 +105,6 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-}
-%toolshed-table-fixed {
-	@include toolshed-table-fixed();
 }
 
 // toolshed-vertical-center
@@ -136,9 +121,6 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
-}
-%toolshed-vertical-center {
-	@include toolshed-vertical-center();
 }
 
 // -----------------------------------------------

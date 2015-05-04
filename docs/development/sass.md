@@ -69,7 +69,7 @@ You can use the toolshed mixins by calling the mixin:
 }
 ```
 
-or by extending the supplied classes:
+or by extending the supplied classes, as long as your are in screen media query:
 
 ```sass
 .selector {

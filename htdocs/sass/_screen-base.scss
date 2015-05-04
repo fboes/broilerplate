@@ -123,3 +123,22 @@ body {
 		}
 	}
 }
+
+%toolshed-hide-text {
+	@include toolshed-hide-text();
+}
+%toolshed-visuallyhidden {
+	@include toolshed-visuallyhidden();
+}
+%toolshed-clearfix {
+	@include toolshed-clearfix();
+}
+%toolshed-horizontal-list {
+	@include toolshed-horizontal-list();
+}
+%toolshed-table-fixed {
+	@include toolshed-table-fixed();
+}
+%toolshed-vertical-center {
+	@include toolshed-vertical-center();
+}
