@@ -89,6 +89,8 @@ body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smooth
   .columns__2-2 { width: 620px; } }
 @media screen { .columns__1-1 { width: 300px; } }
 
+@media screen { .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; right: 0; border-bottom: 1px solid #eeeeee; text-align: center; }
+  .browsehappy a { color: blue; } }
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
