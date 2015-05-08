@@ -1,7 +1,10 @@
+# Automatically set line endings
 # See https://help.github.com/articles/dealing-with-line-endings
 # In case of problems: http://stackoverflow.com/questions/11383094/unstaged-changes-left-after-git-reset-hard
 
-# Declare files that will always have LF line endings on checkout.
+# Automatically solve merge conflicts
+# See http://stackoverflow.com/questions/27134100/whats-the-proper-usage-of-gitattributes-with-merge-ours
+
 *.html text eol=lf
 *.txt text eol=lf
 *.md text eol=lf
