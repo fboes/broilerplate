@@ -8,7 +8,7 @@
 // Styleguide 2.2
 
 $switch-develop:                    false; // show debugging styles
-$switch-overlapping:                false; // container does not set width, but every --inner-element on its own
+$switch-overlapping:                false; // container does not set width, but every __inner-element on its own
 $switch-responsive-strategy:        'mobile-first'; // one of 'mobile-first','desktop-first','single','mobile-separate','mobile-separate-reverse'
 
 // Base canon

@@ -72,10 +72,11 @@ html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
   #sidebar { color: #000000; background-color: #7f7f7f; }
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; } }
-@media screen { max-width: 300px; }
-@media screen { max-width: 620px; }
-@media screen and (min-width: 960px) { max-width: 940px; }
-@media screen and (min-width: 1280px) { max-width: 1260px; }
+@media screen { #container { max-width: 300px; } }
+@media screen { #container { max-width: 620px; } }
+@media screen { #container { max-width: 940px; } }
+@media screen { #container { max-width: 1260px; } }
+
 @media screen { .columns { width: 300px; }
   .columns__4-1 { width: 300px; }
   .columns__4-2 { width: 620px; }
