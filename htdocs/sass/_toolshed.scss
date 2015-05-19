@@ -12,11 +12,10 @@
 //
 // Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
-	src: url('#{$base}.eot');
 	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
 		url('#{$base}.woff') format('woff'),
-		url('#{$base}.svg##{$id}') format('svg'),
-		url('#{$base}.ttf') format('truetype');
+		url('#{$base}.ttf') format('truetype'),
+		url('#{$base}.svg##{$id}') format('svg');
 }
 
 // toolshed-hide-text
