@@ -14,3 +14,7 @@
 *.scss text eol=lf
 *.min.js merge=ours
 *.map merge=ours
+
+# https://github.com/github/linguist#using-gitattributes
+config.rb linguist-documentation=false
+setup/vagrant/Vagrantfile linguist-documentation=false
