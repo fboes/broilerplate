@@ -2,16 +2,18 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		dirs: {
-			htdocs: 'htdocs/',
-			docs:   'docs/'
+			htdocs:   'htdocs/',
+			template: '<%= dirs.htdocs %>',
+			docs:     'docs/'
+			setup:    'setup/'
 		},
 
 		jshint: {
 			build: {
 				files: {
 					src: [
-						'<%= dirs.htdocs %>js/*.js',
-						'!<%= dirs.htdocs %>js/*.min.js'
+						'<%= dirs.template %>js/*.js',
+						'!<%= dirs.template %>js/*.min.js'
 					]
 				},
 				options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
@@ -32,9 +34,9 @@ module.exports = function(grunt) {
 					sourceMap: true
 				},
 				files: {
-					'<%= dirs.htdocs %>js/main.min.js': [
-						'<%= dirs.htdocs %>js/main.js', // add your vendors here
-						'!<%= dirs.htdocs %>js/main.min.js'
+					'<%= dirs.template %>js/main.min.js': [
+						'<%= dirs.template %>js/main.js', // add your vendors here
+						'!<%= dirs.template %>js/main.min.js'
 					]
 				}
 			}
@@ -47,9 +49,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.htdocs %>sass',
+					cwd: '<%= dirs.template %>sass',
 					src: ['*.scss'],
-					dest: '<%= dirs.htdocs %>css',
+					dest: '<%= dirs.template %>css',
 					ext: '.css'
 				}]
 			}
@@ -62,16 +64,16 @@ module.exports = function(grunt) {
 				options: {
 					map: true
 				},
-				src: '<%= dirs.htdocs %>css/*.css',
-				dest: '<%= dirs.htdocs %>css/'
+				src: '<%= dirs.template %>css/*.css',
+				dest: '<%= dirs.template %>css/'
 			}
 		},
 
 		/*compass: {
 			build: {
 				options: {
-					basePath: '<%= dirs.htdocs %>',
-					config: '<%= dirs.htdocs %>config.rb'
+					basePath: '<%= dirs.template %>',
+					config: '<%= dirs.template %>config.rb'
 				}
 			}
 		},*/
@@ -85,15 +87,15 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'<%= dirs.docs %>styleguide': '<%= dirs.htdocs %>sass/styles.scss'
+					'<%= dirs.docs %>styleguide': '<%= dirs.template %>sass/styles.scss'
 				}
 			}
 		},
 
 		replace: {
 			rtl: {
-				src: ['<%= dirs.htdocs %>css/styles.css'],
-				dest: '<%= dirs.htdocs %>css/rtl.css',
+				src: ['<%= dirs.template %>css/styles.css'],
+				dest: '<%= dirs.template %>css/rtl.css',
 				replacements: [
 					{from: /(\W)left(\W)/g, to: '$1xrite$2'},
 					{from: /(\W)right(\W)/g, to: '$1left$2'},
@@ -104,8 +106,8 @@ module.exports = function(grunt) {
 				]
 			},
 			oldie: {
-				src: ['<%= dirs.htdocs %>css/*.css'],
-				dest: '<%= dirs.htdocs %>css/oldie/',
+				src: ['<%= dirs.template %>css/*.css'],
+				dest: '<%= dirs.template %>css/oldie/',
 				replacements: [
 					{from: /\/\*#.+?\*\//g, to: ''},
 					{from: /(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''},
@@ -133,22 +135,22 @@ module.exports = function(grunt) {
 				]
 			},
 			notty: {
-				src: ['<%= dirs.htdocs %>css/*.css'],
+				src: ['<%= dirs.template %>css/*.css'],
 				overwrite: true,
 				replacements: [
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
 				]
 			},
 			htmlrtl: {
-				src: ['<%= dirs.htdocs %>index.html'],
-				dest: '<%= dirs.htdocs %>rtl.html',
+				src: ['<%= dirs.template %>index.html'],
+				dest: '<%= dirs.template %>rtl.html',
 				replacements: [
 					{from: / lang="de"/g, to: ' lang="ar" dir="rtl"'},
 					{from: /styles\.css/g, to: 'rtl.css'}
 				]
 			},
 			variables: {
-				src: ['<%= dirs.htdocs %>*.html', '<%= dirs.htdocs %>*.xml'],
+				src: ['<%= dirs.template %>*.html', '<%= dirs.template %>*.xml'],
 				overwrite: true,
 				replacements: [
 					{from: /\{\{ BASE_URL \}\}/g, to: '<?php echo(htmlspecialchars(\'http://\'.$_SERVER[\'HTTP_HOST\']));?>'},
@@ -165,40 +167,40 @@ module.exports = function(grunt) {
 			options: {overwrite: true, upscale: true, crop: true, gravity: 'Center', quality: 0.7},
 			fav32: {
 				options: {width: 32},
-				files:   {'<%= dirs.htdocs %>favicon.ico':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon.ico':'<%= dirs.template %>images/logo.png'}
 			},
 			fav96: {
 				options: {width: 96},
-				files:   {'<%= dirs.htdocs %>favicon-96x96.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon-96x96.png':'<%= dirs.template %>images/logo.png'}
 			},
 			fav152: {
 				options: {width: 152},
-				files:   {'<%= dirs.htdocs %>apple-touch-icon-precomposed.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>apple-touch-icon-precomposed.png':'<%= dirs.template %>images/logo.png'}
 			},
 			fav196: {
 				options: {width: 196},
-				files:   {'<%= dirs.htdocs %>favicon-196x196.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon-196x196.png':'<%= dirs.template %>images/logo.png'}
 			},
 			tile128: {
 				options: {width: 128},
-				files:   {'<%= dirs.htdocs %>images/tile-128x128.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>images/tile-128x128.png':'<%= dirs.template %>images/logo.png'}
 			},
 			tile270: {
 				options: {width: 270},
-				files:   {'<%= dirs.htdocs %>images/tile-270x270.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>images/tile-270x270.png':'<%= dirs.template %>images/logo.png'}
 			},
 			tilewide: {
 				options: {width: 558, height:270},
-				files:   {'<%= dirs.htdocs %>images/tile-558x270.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>images/tile-558x270.png':'<%= dirs.template %>images/logo.png'}
 			},
 			tile558: {
 				options: {width: 558},
-				files:   {'<%= dirs.htdocs %>images/tile-558x558.png':'<%= dirs.htdocs %>images/logo.png'}
+				files:   {'<%= dirs.template %>images/tile-558x558.png':'<%= dirs.template %>images/logo.png'}
 			}
 		},
 
 		shell: {
-			deploy:  { command: 'setup/deploy.sh'}
+			deploy:  { command: '<%= dirs.setup %>deploy.sh'}
 		},
 
 		watch: {
@@ -207,7 +209,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				options: {livereload: true},
-				files: ['<%= dirs.htdocs %>sass/**/*.scss'],
+				files: ['<%= dirs.template %>sass/**/*.scss'],
 				tasks: ['build-sass']
 			},
 			js: {
@@ -216,14 +218,14 @@ module.exports = function(grunt) {
 				tasks: ['build-js']
 			},
 			logo: {
-				files: ['<%= dirs.htdocs %>/images/logo.png'],
+				files: ['<%= dirs.template %>/images/logo.png'],
 				tasks: ['build-icons']
 			},
 			livereload: {
 				options: {livereload: true},
 				files: [
-					'<%= dirs.htdocs %>*.html',
-					'<%= dirs.htdocs %>images/*'
+					'<%= dirs.template %>*.html',
+					'<%= dirs.template %>images/*'
 				],
 				tasks: []
 			}
