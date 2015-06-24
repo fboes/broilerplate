@@ -5,3 +5,4 @@
 /logs
 /stats
 /setup/vagrant/.vagrant
+.sublime-grunt.cache

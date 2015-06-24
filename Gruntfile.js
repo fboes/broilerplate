@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			prev: { command: 'ssh example.com "cd your-directory && git pull && exit"'}
+			deploy:  { command: 'setup/deploy.sh'}
 		},
 
 		watch: {
@@ -236,8 +236,9 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('build-sass', ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
-	grunt.registerTask('build-js',   ['jshint','uglify']);
+	grunt.registerTask('build-sass',  ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
+	grunt.registerTask('build-js',    ['jshint','uglify']);
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
-	grunt.registerTask('default',    ['build-js','build-sass','build-icons']);
+	grunt.registerTask('default',     ['build-js','build-sass','build-icons']);
+	grunt.registerTask('deploy',      ['shell:deploy']);
 };
