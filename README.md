@@ -56,7 +56,7 @@ See `docs/development` for more information
 Version
 -------
 
-Version: 1.0.0 (2015-04-08)
+Version: 1.1.0 (2015-06-24)
 
 Legal stuff
 -----------
