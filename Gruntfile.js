@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 		dirs: {
 			htdocs:   'htdocs/',
 			template: '<%= dirs.htdocs %>',
-			docs:     'docs/'
+			images:   '<%= dirs.htdocs %>images/',
+			docs:     'docs/',
 			setup:    'setup/'
 		},
 
@@ -167,35 +168,45 @@ module.exports = function(grunt) {
 			options: {overwrite: true, upscale: true, crop: true, gravity: 'Center', quality: 0.7},
 			fav32: {
 				options: {width: 32},
-				files:   {'<%= dirs.template %>favicon.ico':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon.ico':'<%= dirs.images %>logo.png'}
 			},
 			fav96: {
 				options: {width: 96},
-				files:   {'<%= dirs.template %>favicon-96x96.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon-96x96.png':'<%= dirs.images %>logo.png'}
 			},
 			fav152: {
 				options: {width: 152},
-				files:   {'<%= dirs.template %>apple-touch-icon-precomposed.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.template %>apple-touch-icon-precomposed.png':'<%= dirs.images %>logo.png'}
 			},
 			fav196: {
 				options: {width: 196},
-				files:   {'<%= dirs.template %>favicon-196x196.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.template %>favicon-196x196.png':'<%= dirs.images %>logo.png'}
 			},
 			tile128: {
 				options: {width: 128},
-				files:   {'<%= dirs.template %>images/tile-128x128.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.images %>tile-128x128.png':'<%= dirs.images %>logo.png'}
 			},
 			tile270: {
 				options: {width: 270},
-				files:   {'<%= dirs.template %>images/tile-270x270.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.images %>tile-270x270.png':'<%= dirs.images %>logo.png'}
 			},
 			tilewide: {
 				options: {width: 558, height:270},
-				files:   {'<%= dirs.template %>images/tile-558x270.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.images %>tile-558x270.png':'<%= dirs.images %>logo.png'}
 			},
 			tile558: {
 				options: {width: 558},
-				files:   {'<%= dirs.template %>images/tile-558x558.png':'<%= dirs.template %>images/logo.png'}
+				files:   {'<%= dirs.images %>tile-558x558.png':'<%= dirs.images %>logo.png'}
+			},
+			article_images: {
+				options: {width: 1280, height: 720, crop: true, gravity: 'Center'},
+				src:  '<%= dirs.images %>originals/*.jpg',
+				dest: '<%= dirs.images %>articles/'
+			},
+			article_images_2: {
+				options: {width: 2560, height: 1440, crop: true, gravity: 'Center'},
+				src:  '<%= dirs.images %>originals/*.jpg',
+				dest: '<%= dirs.images %>articles@2x/'
 			}
 		},
 
@@ -218,16 +229,17 @@ module.exports = function(grunt) {
 				tasks: ['build-js']
 			},
 			logo: {
-				files: ['<%= dirs.template %>/images/logo.png'],
+				files: ['<%= dirs.images %>logo.png'],
 				tasks: ['build-icons']
+			},
+			article_images: {
+				options: {livereload: true},
+				files: ['<%= image_resize.article_images.src %>'],
+				tasks: ['build-article-images']
 			},
 			livereload: {
 				options: {livereload: true},
-				files: [
-					'<%= dirs.template %>*.html',
-					'<%= dirs.template %>images/*'
-				],
-				tasks: []
+				files: ['<%= dirs.template %>*.html','<%= dirs.template %>images/*']
 			}
 		}
 	});
@@ -241,6 +253,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build-sass',  ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
 	grunt.registerTask('build-js',    ['jshint','uglify']);
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
+	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
 	grunt.registerTask('default',     ['build-js','build-sass','build-icons']);
 	grunt.registerTask('deploy',      ['shell:deploy']);
 };
