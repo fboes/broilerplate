@@ -203,7 +203,7 @@ module.exports = function(grunt) {
 				src:  '<%= dirs.images %>originals/*.jpg',
 				dest: '<%= dirs.images %>articles/'
 			},
-			article_images_2: {
+			article_images2: {
 				options: {width: 2560, height: 1440, crop: true, gravity: 'Center'},
 				src:  '<%= dirs.images %>originals/*.jpg',
 				dest: '<%= dirs.images %>articles@2x/'
@@ -233,7 +233,6 @@ module.exports = function(grunt) {
 				tasks: ['build-icons']
 			},
 			article_images: {
-				options: {livereload: true},
 				files: ['<%= image_resize.article_images.src %>'],
 				tasks: ['build-article-images']
 			},
