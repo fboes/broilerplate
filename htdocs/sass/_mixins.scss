@@ -17,6 +17,9 @@
 	@else if $media == screen_desktop {
 		@media #{$media-responsive-desktop} { @content; }
 	}
+	@else {
+		/* Query not known */
+	}
 }
 
 // http://davidwalsh.name/write-media-queries-sass
@@ -48,4 +51,9 @@
 	@media (tty) {
 		@content;
 	}
+}
+
+// This will compute any pixel value to a rem value, according to $fontsize-default you set in `_base.scss`
+@function rem ($value-px) {
+	@return toolshed-rem($value-px, $fontsize-default);
 }

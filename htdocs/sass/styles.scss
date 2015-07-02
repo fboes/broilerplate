@@ -1,18 +1,18 @@
-// Mixins & resets
-//
-// Styleguide 1
-
-@import "reset";
-@import "toolshed";
-@import "mixins";
-
 // Variables & constants
 //
-// Styleguide 2
+// Styleguide 1
 
 @import "constants";
 @import "base";
 @import "fonts";
+
+// Mixins & resets
+//
+// Styleguide 2
+
+@import "reset";
+@import "toolshed";
+@import "mixins";
 
 // Actual styles
 //

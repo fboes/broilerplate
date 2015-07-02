@@ -8,10 +8,14 @@
 
 // toolshed-webfont-src
 //
-// build webfont source
+// build webfont source. Remember that the filename of the font must be short than 31 characters, else it will not work in IE8 and lower.
+// See http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
 //
 // Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
+	@if ( str-length($id) > 31) {
+		/* This will not work in IE, filename to long! */
+	}
 	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
 		url('#{$base}.woff') format('woff'),
 		url('#{$base}.ttf') format('truetype'),
