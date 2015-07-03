@@ -165,7 +165,7 @@
 // * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
 //
 // Styleguide 1.1.9
-@mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight, $xOffset : 0, $yOffset : 0, $mode: 0) {
+@mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight : $iconWidth, $xOffset : 0, $yOffset : 0, $mode: 0) {
 	@if ($mode == 3) {
 		width:ceil($iconWidth);
 		height:ceil($iconHeight);
@@ -183,7 +183,7 @@
 // generating sprite stuff without bg-image
 //
 // Styleguide 1.1.10
-@mixin toolshed-grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px, $compact : false) {
+@mixin toolshed-grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : $iconWidth, $compact : false) {
 	@if $compact {
 	}
 	@else {
@@ -197,7 +197,7 @@
 // generating sprite stuff like dimensions etc, but without position
 //
 // Styleguide 1.1.11
-@mixin toolshed-grid-sprite-stuff ($iconWidth : 20px, $iconHeight : 20px) {
+@mixin toolshed-grid-sprite-stuff ($iconWidth : 20px, $iconHeight : $iconWidth) {
 	background-repeat:no-repeat;
 	display:inline-block;
 	width:ceil($iconWidth);
@@ -210,7 +210,7 @@
 // generating sprite background-position
 //
 // Styleguide 1.1.12
-@mixin toolshed-grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : 20px) {
+@mixin toolshed-grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : $iconWidth) {
 	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
 }
 
