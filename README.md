@@ -29,9 +29,10 @@ You also need:
 
 Setup your development space:
 
-1. Install Grunt plugins via `npm install`
-2. Check Gruntfile for any file or host references
-3. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable
+1. Install Grunt plugins via `npm install`.
+2. Check Gruntfile for any file or host references.
+3. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable.
+4. If you do not want to install the [LiveReload plugin](http://livereload.com/extensions/), insert the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-).
 
 Variables used in templates:
 
@@ -45,11 +46,11 @@ Variables used in templates:
 Developing
 ----------
 
-1. Start Grunt watcher via `grunt watch`
-2. Start [LiveReload](http://livereload.com/) in your browser
-3. Develop
-4. Commit to your repository
-5. Use `grunt shell:prev && grunt watch` to deploy to your preview server and start watcher anew
+1. Start Grunt watcher via `grunt watch`.
+2. Start [LiveReload plugin](http://livereload.com/) in your browser. If you use the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-) disregard this step.
+3. Develop.
+4. Commit to your repository.
+5. Use `grunt shell:prev && grunt watch` to deploy to your preview server and start watcher anew.
 
 See `docs/development` for more information
 
