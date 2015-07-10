@@ -79,16 +79,10 @@ module.exports = function(grunt) {
 			}
 		},*/
 
-		styleguide : {
-			options: {
-				framework: {
-					name: 'kss'
-				},
-				name: 'SASS Styleguide'
-			},
+		kss : {
 			build: {
 				files: {
-					'<%= dirs.docs %>styleguide': '<%= dirs.template %>sass/styles.scss'
+					'<%= dirs.docs %>styleguide': '<%= dirs.template %>sass/'
 				}
 			}
 		},
