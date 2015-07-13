@@ -11,10 +11,14 @@ Web server in a box
 
 You may want to use [Vagrant](https://www.vagrantup.com/). This will offer you an easy setup for virtual machines.
 
-There are preconfigured machines to help you get started:
+This project comes pre-equipeed with [Scotch Box](https://box.scotch.io/). For more complex setups consider using [PuPHPet](https://puphpet.com/).
 
-* [Scotch Box](https://box.scotch.io/)
-* [PuPHPet](https://puphpet.com/)
+The most important commands:
+
+* `vagrant up`: Start/resume your server
+* `vagrant suspend`: Pause your server. You should do this before shutting down your computer.
+* `vagrant destroy`: Delete your server
+* `vagrant ssh`: SSH into your server
 
 Testing for IE
 --------------
