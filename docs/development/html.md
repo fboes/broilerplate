@@ -31,3 +31,13 @@ If you want to use responsive images it is important to understand the [`srcset`
 ```
 
 You may want to use [picturefill.js](http://scottjehl.github.io/picturefill/) to help older browsers to understand the `srcset`-attribute.
+
+Microformats
+------------
+
+See [schema.org](http://schema.org/Place) and [microformats.org](http://microformats.org/wiki/Main_Page) for useful examples on how to set up HTML to be machine readable. The most important will be:
+
+* [schema.org for events](http://schema.org/Event)
+* [schema.org for organisations](http://schema.org/Organization) and [persons](http://schema.org/Person)
+* [microformat for events](http://microformats.org/wiki/h-event)
+* [microformat for address cards](http://microformats.org/wiki/h-card)

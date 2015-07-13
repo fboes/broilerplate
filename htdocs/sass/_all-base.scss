@@ -20,19 +20,6 @@ h4 {
 
 // Text
 
-p {}
-ol {
-	li {}
-}
-ul {
-	li {}
-}
-dl {
-	dt {
-		font-weight: $fontweight-content-bold;
-	}
-	dd {}
-}
 a {
 	color: $color-link;
 
@@ -44,9 +31,39 @@ a {
 	&:active {}
 	&.current-active {} // class for links which point to current page
 }
-small {}
 strong {
 	font-weight: $fontweight-content-bold;
+}
+p {
+	a {}
+	strong {}
+	em {}
+	mark {}
+	code {}
+	small {}
+	del {}
+	ins {}
+	sub {}
+	sup {}
+}
+blockquote {
+	p {}
+	cite {}
+}
+
+// Lists
+
+ul {
+	li {}
+}
+ol {
+	li {}
+}
+dl {
+	dt {
+		font-weight: $fontweight-content-bold;
+	}
+	dd {}
 }
 
 
@@ -107,11 +124,6 @@ table {
 }
 
 // UI Elements
-
-.shadow {}
-.rounded-corner {}
-.gradient {}
-.button {}
 
 @if ($switch-develop) {
 	div,table {

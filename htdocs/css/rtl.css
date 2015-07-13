@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 *, *:before, *:after { box-sizing: border-box; }
-* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + li, * + form, * + table, * + section, * + blockquote { margin-top: 1em; }
+* + h1, * + h2, * + h3, * + h4, * + p, * + dl, * + ul, * + ol, * + li, * + dt, * + form, * + table, * + section, * + blockquote { margin-top: 1em; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 
@@ -12,7 +12,7 @@ h3 { font-size: 1.5em; }
 
 h4 { font-size: 1em; }
 
-li { margin-right: 3em; }
+blockquote, li { margin-right: 3em; }
 
 dt { font-weight: bold; }
 
@@ -46,12 +46,12 @@ h3 { font: normal 700 14px/1.2 Garamond, serif; }
 
 h4 { font: normal 700 12px/1.2 Helvetica, Arial, sans-serif; }
 
-dl dt { font-weight: 700; }
-
 a { color: #c30000; }
 a:focus, a:hover { color: #ff9191; }
 
 strong { font-weight: 700; }
+
+dl dt { font-weight: 700; }
 
 table tr th { font-weight: 700; }
 
