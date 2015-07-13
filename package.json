@@ -1,6 +1,6 @@
 {
   "name": "broilerplate",
-  "description": "A boilerplate with SASS & JS.",
+  "description": "A boilerplate with SASS, JS & Vagrant.",
   "version": "1.2.0",
   "repository": {
     "type": "git",

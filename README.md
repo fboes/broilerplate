@@ -1,7 +1,7 @@
 Broilerplate
 ================
 
-A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
+A boilerplate with SASS, JS & Vagrant. It serves the following goodness on a shiny plate:
 
 * SASS
 * jQuery Plugin builder
@@ -11,6 +11,7 @@ A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 * RTL-support
 * Support for old IEs (aka `oldie`)
 * Support for [editorconfig](http://editorconfig.org/)
+* Vagrant for a build-in webserver / database solution.
 
 So you can eat your broiler and have it.
 
