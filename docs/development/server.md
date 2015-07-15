@@ -21,6 +21,8 @@ The most important commands:
 
 The local Vagrant setup will execute any commands from [`setup/vagrant/bootstrap.sh`](../../setup/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Grunt watcher](grunt.md).
 
+After starting Vagrant there will be a webserver, running at the host name you set it to under [`setup/vagrant/Vagrantfile`](../../setup/vagrant/Vagrantfile).
+
 Testing for IE
 --------------
 
