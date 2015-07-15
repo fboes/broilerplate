@@ -18,5 +18,8 @@
     "grunt-shell": "^1.1.*",
     "grunt-text-replace": "^0.4.*",
     "jit-grunt": "^0.9.*"
-  }
+  },
+  "author": "Frank Boës",
+  "license": "MIT",
+  "private": false
 }
