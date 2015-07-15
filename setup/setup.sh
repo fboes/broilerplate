@@ -1,3 +1,3 @@
 cd ..
 npm install
-# Import SQL dump?
+# mysql -u root -proot < setup.sql
