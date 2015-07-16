@@ -49,11 +49,12 @@ Developing
 ----------
 
 1. Vagrant way: Start Vagrant via `cd setup/vagrant && vagrant up`. This will start a webserver at http://broilerplate.local/ for your current project.
-2. Grunt way: Start Grunt watcher via `grunt watch`. This will start the Grunt watcher responsible for compiling SASS, linting JS, relaoding your page on changes via LiveReload and doing other useful stuff.
+2. Vagrant way: Start Grunt watcher via `vagrant ssh -- cd /var/www/ && grunt watch`
+2. Grunt way: Start Grunt watcher via `grunt watch`. This will start the Grunt watcher responsible for compiling SASS, linting JS, reloading your page on changes via LiveReload and doing other useful stuff.
 3. Start [LiveReload plugin](http://livereload.com/) in your browser. If you use the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-) disregard this step.
 4. Develop (and check for advice given by the Grunt watcher).
 5. Commit to your repository.
-6. Use `grunt shell:prev && grunt watch` to deploy to your preview server and start watcher anew.
+6. Use `grunt shell:prev` to deploy to your preview server and start watcher anew.
 
 See `docs/development` for more information
 

@@ -127,5 +127,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# documentation for more information about their specific syntax and use.
 	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 	config.vm.provision :shell, path: "bootstrap.sh"
-	config.vm.provision :shell, path: "always.sh", run: "always"
 end
