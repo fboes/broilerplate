@@ -1,3 +1,4 @@
+sudo apt-get install language-pack-de-base -y
 sudo sed -i -- 's/\/public/\/htdocs/g' /etc/apache2/**/*.conf
 sudo service apache2 restart
 sudo apt-get install ruby -y
