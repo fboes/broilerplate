@@ -53,9 +53,9 @@ strong { font-weight: 700; }
 
 dl dt { font-weight: 700; }
 
-table { table-layout: fixed; }
+table { table-layout: fixed; width: 100%; }
 table th { font-weight: 700; }
-table th.no-overflow, table td.no-overflow { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 table th.number, table td.number { font-family: "Courier New", monospace; text-align: left; }
 
 html { direction: rtl; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }

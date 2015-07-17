@@ -74,19 +74,29 @@ form {
 		legend {}
 	}
 	.form-field {
-		&.required {}
-		&.valid {}
-		&.invalid {}
+		&.required {
+			label {}
+			input {}
+			textarea {}
+		}
+		&.valid {
+			label {}
+			input {}
+			textarea {}
+		}
+		&.invalid {
+			label {}
+			input {}
+			textarea {}
+			select {}
+		}
 	}
-	label {
-		&.required {}
-		&.valid {}
-		&.invalid {}
-	}
-	input, select, textarea {
-		&.required, &[required], &:required {}
-		&.valid, &:valid {}
-		&.invalid, &:invalid {}
+	label {}
+	small {}
+	input, textarea, select {
+		&:required {}
+		&:valid {}
+		&:invalid {}
 	}
 	input {
 		&[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number], &[type=url], &[type=time], &[type=tel] {}
@@ -106,6 +116,7 @@ form {
 
 table {
 	table-layout: fixed;
+	width:100%;
 
 	thead {}
 	tfoot {}
@@ -117,7 +128,7 @@ table {
 	}
 	td {}
 	th, td {
-		&.no-overflow {
+		&.no-break {
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;

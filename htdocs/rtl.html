@@ -165,54 +165,144 @@
 						<tbody>
 							<tr>
 								<th>Row 1</th>
-								<td>Row 2</td>
-								<td>Row 3</td>
+								<td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
+								<td class="number">1234.5</td>
 							</tr>
 							<tr>
 								<th>Row 1</th>
-								<td>Row 2</td>
-								<td>Row 3</td>
+								<td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
+								<td class="number">1234.5</td>
 							</tr>
 						</tbody>
 					</table>
 
 					<h2>Forms</h2>
 
-					<form action="." method="post">
+					<form action="." method="post" enctype="multipart/form-data">
 						<fieldset>
 							<legend>Legend</legend>
-							<div class="form-field">
-								<label for="Alpha">Alpha</label>
-								<input name="Alpha" type="text" id="Alpha" class="input text" />
+							<div class="form-field required">
+								<label for="text">
+									text
+									<small>There goes some additional text</small>
+								</label>
+								<input name="text" type="text" id="text" class="input text" required="required" />
 							</div>
-							<div class="form-field">
-								<label for="Bravo">Bravo</label>
-								<textarea name="Bravo" id="Bravo"></textarea>
+
+							<div class="form-field required">
+								<label for="password">
+									password
+									<small>There goes some additional text</small>
+								</label>
+								<input name="password" type="text" id="password" class="input password" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="search">
+									search
+									<small>There goes some additional search</small>
+								</label>
+								<input name="search" type="search" id="search" class="input search" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="date">
+									date
+									<small>There goes some additional date</small>
+								</label>
+								<input name="date" type="date" id="date" class="input date" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="email">
+									email
+									<small>There goes some additional email</small>
+								</label>
+								<input name="email" type="email" id="email" class="input email" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="number">
+									number
+									<small>There goes some additional number</small>
+								</label>
+								<input name="number" type="number" id="number" class="input number" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="url">
+									url
+									<small>There goes some additional url</small>
+								</label>
+								<input name="url" type="url" id="url" class="input url" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="time">
+									time
+									<small>There goes some additional time</small>
+								</label>
+								<input name="time" type="time" id="time" class="input time" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="tel">
+									tel
+									<small>There goes some additional tel</small>
+								</label>
+								<input name="tel" type="tel" id="tel" class="input tel" required="required" />
+							</div>
+
+							<div class="form-field required">
+								<label for="file">
+									file
+									<small>There goes some additional file</small>
+								</label>
+								<input name="file" type="file" id="file" class="input file" required="required" />
 							</div>
 
 							<div class="form-field">
-								<label for="Charlie">Charlie</label>
-								<select name="Charlie" id="Charlie"><option value="a">b</option><option value="c">d</option></select>
+								<label for="textarea">
+									textarea
+									<small>There goes some additional text</small>
+								</label>
+								<textarea name="textarea" id="textarea"></textarea>
 							</div>
 
 							<div class="form-field">
-								<label>Delta</label>
-								<ul class="form-optionlist" id="Delta_">
-									<li><label><input value="a" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
-									<li><label><input value="c" name="Delta[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
+								<label for="select">
+									select
+									<small>There goes some additional text</small>
+								</label>
+								<select name="select" id="select"><option value="a">b</option><option value="c">d</option></select>
+							</div>
+
+							<div class="form-field">
+								<label for="multiple">
+									multiple
+									<small>There goes some additional text</small>
+								</label>
+								<select name="multiple" id="multiple" multiple="multiple"><option value="a">b</option><option value="c">d</option></select>
+							</div>
+
+							<div class="form-field">
+								<label>checkbox</label>
+								<ul class="form-optionlist" id="checkbox_">
+									<li><label><input value="a" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
+									<li><label><input value="c" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
 								</ul>
 							</div>
 
 							<div class="form-field">
-								<label>Echo</label>
-								<ul class="form-optionlist" id="Echo">
-									<li><label><input value="a" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
-									<li><label><input value="c" name="Echo" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
+								<label>radio</label>
+								<ul class="form-optionlist" id="radio">
+									<li><label><input value="a" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
+									<li><label><input value="c" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
 								</ul>
 							</div>
 
 							<input type="hidden" name="b" id="b" class="input hidden" />
-							<button type="submit">Submit</button>
+							<button type="submit">submit</button>
 						</fieldset>
 					</form>
 				</main>
