@@ -105,15 +105,27 @@ form {
 // Tables
 
 table {
+	table-layout: fixed;
+
 	thead {}
 	tfoot {}
 	tbody {}
-
 	tr {
-		th {
-			font-weight: $fontweight-content-bold;
+	}
+	th {
+		font-weight: $fontweight-content-bold;
+	}
+	td {}
+	th, td {
+		&.no-overflow {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
-		td {}
+		&.number {
+			font-family: $fontfamily-monospace;
+			text-align:right;
+		}
 	}
 }
 
