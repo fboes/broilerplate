@@ -81,7 +81,7 @@
 			main.init($(this));
 		});
 	};
-}($));
+}( jQuery ));
 
 $(document).ready(function() {
 	'use strict';
