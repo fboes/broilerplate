@@ -1,22 +1,28 @@
-// Variables & constants
+// Resets & super-basic mixins
 //
 // Styleguide 1
 
-@import "constants";
-@import "base";
-@import "fonts";
+@import "base/reset";
+@import "base/toolshed";
 
-// Mixins & resets
+
+// Variables & constants
 //
 // Styleguide 2
 
-@import "reset";
-@import "toolshed";
-@import "mixins";
+@import "base/constants";
+@import "base/base";
+@import "base/fonts";
+
+// Mixins
+//
+// Styleguide 3
+
+@import "base/mixins";
 
 // Actual styles
 //
-// Styleguide 3
+// Styleguide 4
 
 @import "animations";
 @import "all-base";

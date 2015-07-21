@@ -1,6 +1,6 @@
 // Toolshed
 //
-// Styleguide 2.1
+// Styleguide 1.1
 
 // -----------------------------------------------
 // BASICS
@@ -11,7 +11,7 @@
 // build webfont source. Remember that the filename of the font must be short than 31 characters, else it will not work in IE8 and lower.
 // See http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
 //
-// Styleguide 2.1.1.
+// Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
 	@if ( str-length($id) > 31) {
 		/* This will not work in IE, filename to long! */
@@ -26,7 +26,7 @@
 //
 // hide text from current element
 //
-// Styleguide 2.1.2
+// Styleguide 1.1.2
 @mixin toolshed-hide-text () {
 	text-indent: 100%;
 	white-space: nowrap;
@@ -39,7 +39,7 @@
 //
 // hide entire element
 //
-// Styleguide 2.1.3
+// Styleguide 1.1.3
 @mixin toolshed-visuallyhidden () {
 	position: absolute;
 	width: 1px; // Setting this to 0 make it invisible for VoiceOver
@@ -55,7 +55,7 @@
 //
 // clear floats
 //
-// Styleguide 2.1.4
+// Styleguide 1.1.4
 @mixin toolshed-clearfix () {
 	zoom: 1;
 	&:after {
@@ -73,7 +73,7 @@
 //
 // $useFloat : false remove whitespaces between list elements like `</li><li>`
 //
-// Styleguide 2.1.5
+// Styleguide 1.1.5
 @mixin toolshed-horizontal-list ($useFloat : false) {
 	display:block;
 	list-style:none;
@@ -98,7 +98,7 @@
 
 // toolshed-table-fixed
 //
-// Styleguide 2.1.6
+// Styleguide 1.1.6
 @mixin toolshed-table-fixed {
 	table-layout: fixed;
 	width: 100%;
@@ -112,7 +112,7 @@
 
 // toolshed-vertical-center
 //
-// Styleguide 2.1.7
+// Styleguide 1.1.7
 @mixin toolshed-vertical-center ($useFlex: true) {
 	@if ($useFlex) {
 		display: flex;
@@ -134,7 +134,7 @@
 //
 // on retina, use image that's scaled by 2
 //
-// Styleguide 2.1.8
+// Styleguide 1.1.8
 @mixin toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight) {
 	background-image: url($imageUrl);
 	background-size: $imageWidth $imageHeight;
@@ -164,7 +164,7 @@
 // * $yOffset        (integer) The y-position of the icon on this grid
 // * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
 //
-// Styleguide 2.1.9
+// Styleguide 1.1.9
 @mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight : $iconWidth, $xOffset : 0, $yOffset : 0, $mode: 0) {
 	@if ($mode == 3) {
 		width:ceil($iconWidth);
@@ -182,7 +182,7 @@
 //
 // generating sprite stuff without bg-image
 //
-// Styleguide 2.1.10
+// Styleguide 1.1.10
 @mixin toolshed-grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : $iconWidth, $compact : false) {
 	@if $compact {
 	}
@@ -196,7 +196,7 @@
 //
 // generating sprite stuff like dimensions etc, but without position
 //
-// Styleguide 2.1.11
+// Styleguide 1.1.11
 @mixin toolshed-grid-sprite-stuff ($iconWidth : 20px, $iconHeight : $iconWidth) {
 	background-repeat:no-repeat;
 	display:inline-block;
@@ -209,7 +209,7 @@
 //
 // generating sprite background-position
 //
-// Styleguide 2.1.12
+// Styleguide 1.1.12
 @mixin toolshed-grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $iconWidth : 20px, $iconHeight : $iconWidth) {
 	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
 }
@@ -218,7 +218,7 @@
 //
 // Load a single webfont icon. This works best in :before
 //
-// Styleguide 2.1.13
+// Styleguide 1.1.13
 @mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em, $onlyContent: false) {
 	@if ($onlyContent) {
 	}
@@ -237,7 +237,7 @@
 //
 // Convert pixels to rem
 //
-// Styleguide 2.1.14
+// Styleguide 1.1.14
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
@@ -246,7 +246,7 @@
 //
 // round with precision of 3
 //
-// Styleguide 2.1.15
+// Styleguide 1.1.15
 @function toolshed-round ($val) {
 	@return round($val * 1000) / 1000;
 }
