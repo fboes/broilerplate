@@ -53,6 +53,8 @@ strong { font-weight: 700; }
 
 dl dt { font-weight: 700; }
 
+form .form-field.required label:after { content: "*"; }
+
 table { table-layout: fixed; width: 100%; }
 table th { font-weight: 700; }
 table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

@@ -36,14 +36,14 @@
 	<div id="container">
 		<div id="banner" class="header">
 			<div class="header__inner">
-				<header role="banner">
+				<header>
 					<a href="." rel="home">{{ SITENAME }}</a>
 				</header>
 			</div>
 		</div>
 		<div id="navigation" class="nav">
 			<div class="nav__inner">
-				<nav role="navigation">
+				<nav>
 					<ul>
 						<li class="current-active"><a href="#">Navigation 1</a></li>
 						<li><a href="#">Navigation 2</a></li>
@@ -54,7 +54,7 @@
 		</div>
 		<div id="main" class="main">
 			<div class="main__inner">
-				<main role="main">
+				<main>
 					<h1>{{ PAGE_TITLE }}</h1>
 
 					<p>This is a standard paragraph. It can contain special inline elements.</p>
@@ -189,10 +189,17 @@
 								<input name="text" type="text" id="text" class="input text" required="required" />
 							</div>
 
+							<div class="form-field">
+								<label for="text">
+									pattern
+									<small>There goes some additional text</small>
+								</label>
+								<input name="pattern" type="text" id="pattern" class="input text" pattern="\S\S+" />
+							</div>
+
 							<div class="form-field required">
 								<label for="password">
 									password
-									<small>There goes some additional text</small>
 								</label>
 								<input name="password" type="text" id="password" class="input password" required="required" />
 							</div>
@@ -200,7 +207,6 @@
 							<div class="form-field required">
 								<label for="search">
 									search
-									<small>There goes some additional search</small>
 								</label>
 								<input name="search" type="search" id="search" class="input search" required="required" />
 							</div>
@@ -208,7 +214,6 @@
 							<div class="form-field required">
 								<label for="date">
 									date
-									<small>There goes some additional date</small>
 								</label>
 								<input name="date" type="date" id="date" class="input date" required="required" />
 							</div>
@@ -216,7 +221,6 @@
 							<div class="form-field required">
 								<label for="email">
 									email
-									<small>There goes some additional email</small>
 								</label>
 								<input name="email" type="email" id="email" class="input email" required="required" />
 							</div>
@@ -224,47 +228,41 @@
 							<div class="form-field required">
 								<label for="number">
 									number
-									<small>There goes some additional number</small>
 								</label>
 								<input name="number" type="number" id="number" class="input number" required="required" />
 							</div>
 
-							<div class="form-field required">
+							<div class="form-field">
 								<label for="url">
 									url
-									<small>There goes some additional url</small>
 								</label>
-								<input name="url" type="url" id="url" class="input url" required="required" />
+								<input name="url" type="url" id="url" class="input url" />
 							</div>
 
-							<div class="form-field required">
+							<div class="form-field">
 								<label for="time">
 									time
-									<small>There goes some additional time</small>
 								</label>
-								<input name="time" type="time" id="time" class="input time" required="required" />
+								<input name="time" type="time" id="time" class="input time" />
 							</div>
 
-							<div class="form-field required">
+							<div class="form-field">
 								<label for="tel">
 									tel
-									<small>There goes some additional tel</small>
 								</label>
-								<input name="tel" type="tel" id="tel" class="input tel" required="required" />
+								<input name="tel" type="tel" id="tel" class="input tel" />
 							</div>
 
-							<div class="form-field required">
+							<div class="form-field">
 								<label for="file">
 									file
-									<small>There goes some additional file</small>
 								</label>
-								<input name="file" type="file" id="file" class="input file" required="required" />
+								<input name="file" type="file" id="file" class="input file" />
 							</div>
 
 							<div class="form-field">
 								<label for="textarea">
 									textarea
-									<small>There goes some additional text</small>
 								</label>
 								<textarea name="textarea" id="textarea"></textarea>
 							</div>
@@ -272,7 +270,6 @@
 							<div class="form-field">
 								<label for="select">
 									select
-									<small>There goes some additional text</small>
 								</label>
 								<select name="select" id="select"><option value="a">b</option><option value="c">d</option></select>
 							</div>
@@ -280,7 +277,6 @@
 							<div class="form-field">
 								<label for="multiple">
 									multiple
-									<small>There goes some additional text</small>
 								</label>
 								<select name="multiple" id="multiple" multiple="multiple"><option value="a">b</option><option value="c">d</option></select>
 							</div>
@@ -310,12 +306,12 @@
 		</div>
 		<div id="sidebar" class="aside">
 			<div class="aside__inner">
-				<aside role="complementary"><!-- --></aside>
+				<aside><!-- --></aside>
 			</div>
 		</div>
 		<div id="footer" class="footer">
 			<div class="footer__inner">
-				<footer role="contentinfo">
+				<footer>
 					<ul>
 						<li><a href="#">Navigation</a></li>
 						<li><a href="rtl.html" rel="alternate" hreflang="ar">This page in Arabic</a></li>

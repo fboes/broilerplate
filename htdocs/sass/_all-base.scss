@@ -75,7 +75,11 @@ form {
 	}
 	.form-field {
 		&.required {
-			label {}
+			label {
+				&:after {
+					content: "*";
+				}
+			}
 			input {}
 			textarea {}
 		}

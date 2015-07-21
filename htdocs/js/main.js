@@ -1,4 +1,9 @@
 /*global $ */
+function isTouch () {
+	'use strict';
+	return 'ontouchstart' in window;
+}
+
 (function ($) {
 	'use strict';
 	$.fn.bodyInteraction = function () { // function (options)
