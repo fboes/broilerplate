@@ -11,6 +11,9 @@
 // build webfont source. Remember that the filename of the font must be short than 31 characters, else it will not work in IE8 and lower.
 // See http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
 //
+// $base - (string)
+// $id   - (string)
+//
 // Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
 	@if ( str-length($id) > 31) {
@@ -71,7 +74,7 @@
 //
 // convert current element to horizontal list
 //
-// $useFloat : false remove whitespaces between list elements like `</li><li>`
+// $useFloat - (bool) Will remove whitespaces between list elements like `</li><li>`
 //
 // Styleguide 1.1.5
 @mixin toolshed-horizontal-list ($useFloat : false) {
@@ -111,6 +114,8 @@
 }
 
 // toolshed-vertical-center
+//
+// $useFlex - (bool) If you want to use flex-boxes instead of `position:absolute`
 //
 // Styleguide 1.1.7
 @mixin toolshed-vertical-center ($useFlex: true) {
@@ -152,17 +157,17 @@
 // This mixin allows you to get a specific icon from a grid-sprite.
 // Combine this mixing with @mixin background-retina to a new mixing for your sprite
 //
-// * $imageUrl       (string)
-// * $retinaImageUrl (string)
-// * $imageWidth     (unit)    The dimension of the non-retina image
-// * $imageHeight    (unit)    The dimension of the non-retina image
-// * $xGrid          (unit)    The x-spacing from the center of each icon to the next, e.g. "20px"
-// * $yGrid          (unit)    The y-spacing from the center of each icon to the next, e.g. "20px"
-// * $iconWidth      (unit)    The width of this icon in px
-// * $iconHeight     (unit)    The height of this icon in px
-// * $xOffset        (integer) The x-position of the icon on this grid
-// * $yOffset        (integer) The y-position of the icon on this grid
-// * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
+// $imageUrl       - (string)
+// $retinaImageUrl - (string)
+// $imageWidth     - (unit)    The dimension of the non-retina image
+// $imageHeight    - (unit)    The dimension of the non-retina image
+// $xGrid          - (unit)    The x-spacing from the center of each icon to the next, e.g. "20px"
+// $yGrid          - (unit)    The y-spacing from the center of each icon to the next, e.g. "20px"
+// $iconWidth      - (unit)    The width of this icon in px
+// $iconHeight     - (unit)    The height of this icon in px
+// $xOffset        - (integer) The x-position of the icon on this grid
+// $yOffset        - (integer) The y-position of the icon on this grid
+// $mode           - (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
 //
 // Styleguide 1.1.9
 @mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight : $iconWidth, $xOffset : 0, $yOffset : 0, $mode: 0) {
@@ -218,6 +223,11 @@
 //
 // Load a single webfont icon. This works best in :before
 //
+// $fontfamily  : (string) Name of fontfamily used for icon font
+// $content     : (string) Character to display. Will be something like `\e601`
+// $fontsize    : (unit) Size of character. Defaults to `1em`
+// $onlyContent : (bool) Only output the caracter. Defaults to `false`
+//
 // Styleguide 1.1.13
 @mixin toolshed-font-icon ($fontfamily, $content, $fontsize : 1em, $onlyContent: false) {
 	@if ($onlyContent) {
@@ -245,6 +255,8 @@
 // toolshed-round
 //
 // round with precision of 3
+//
+// $val - (unit) Any unit you want be rounded to the last three decimals
 //
 // Styleguide 1.1.15
 @function toolshed-round ($val) {

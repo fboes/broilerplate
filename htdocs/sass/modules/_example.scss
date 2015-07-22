@@ -1,0 +1,13 @@
+// Article
+//
+// Styleguide 4.2.1
+
+.article {
+	&__inner { }
+	&--open { }
+
+	@include screen_smartphone {
+		&__inner { }
+		&--open { }
+	}
+}

@@ -34,65 +34,33 @@ body {
 @if ($switch-overlapping) {
 	.header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
 		margin:0 auto;
-		@if ($switch-responsive-strategy == 'mobile-first' or $switch-responsive-strategy == 'mobile-separate') {
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
-			}
-			@include screen_tablet {
-				max-width: $width-container-tablet;
-			}
-			@include screen_tablet_landscape {
-				max-width: $width-container-tablet-landscape;
-			}
-			@include screen_desktop {
-				max-width: $width-container-desktop;
-			}
+		@include screen_smartphone {
+			max-width: $width-container-smartphone;
 		}
-		@else {
-			@include screen_desktop {
-				max-width: $width-container-desktop;
-			}
-			@include screen_tablet_landscape {
-				max-width: $width-container-tablet-landscape;
-			}
-			@include screen_tablet {
-				max-width: $width-container-tablet;
-			}
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
-			}
+		@include screen_tablet {
+			max-width: $width-container-tablet;
+		}
+		@include screen_tablet_landscape {
+			max-width: $width-container-tablet-landscape;
+		}
+		@include screen_desktop {
+			max-width: $width-container-desktop;
 		}
 	}
 }
 @else {
 	#container {
-		@if ($switch-responsive-strategy == 'mobile-first' or $switch-responsive-strategy == 'mobile-separate') {
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
-			}
-			@include screen_tablet {
-				max-width: $width-container-tablet;
-			}
-			@include screen_tablet_landscape {
-				max-width: $width-container-tablet-landscape;
-			}
-			@include screen_desktop {
-				max-width: $width-container-desktop;
-			}
+		@include screen_smartphone {
+			max-width: $width-container-smartphone;
 		}
-		@else {
-			@include screen_desktop {
-				max-width: $width-container-desktop;
-			}
-			@include screen_tablet_landscape {
-				max-width: $width-container-tablet-landscape;
-			}
-			@include screen_tablet {
-				max-width: $width-container-tablet;
-			}
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
-			}
+		@include screen_tablet {
+			max-width: $width-container-tablet;
+		}
+		@include screen_tablet_landscape {
+			max-width: $width-container-tablet-landscape;
+		}
+		@include screen_desktop {
+			max-width: $width-container-desktop;
 		}
 	}
 }
@@ -157,6 +125,7 @@ body {
 	left:0;
 	border-bottom:1px solid #eeeeee;
 	text-align:center;
+	display:block;
 	a {
 		color:blue;
 	}

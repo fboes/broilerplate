@@ -60,6 +60,8 @@ table th { font-weight: 700; }
 table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 table th.number, table td.number { font-family: "Courier New", monospace; text-align: right; }
 
+.browsehappy { display: none; }
+
 html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -95,7 +97,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   .columns__2-2 { width: 620px; } }
 @media screen { .columns__1-1 { width: 300px; } }
 
-@media screen { .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; border-bottom: 1px solid #eeeeee; text-align: center; }
+@media screen { .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
   .browsehappy a { color: blue; } }
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }

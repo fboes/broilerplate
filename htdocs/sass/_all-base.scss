@@ -152,6 +152,10 @@ table {
 
 // UI Elements
 
+.browsehappy {
+	display:none;
+}
+
 @if ($switch-develop) {
 	div,table {
 		outline:1px solid rgba(255,0,0,0.5);
