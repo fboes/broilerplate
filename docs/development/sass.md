@@ -20,18 +20,23 @@ Grunt will create a secondary stylesheet which is called `oldie.css` for old Int
 Setup
 -----
 
-1. Set basic variables in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss)
-2. Edit your settings in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss)
-3. Define your responsive/adaptive strategy by modyfing [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss)
-4. Alter `replace` in `Gruntfile.js` to match your responsive/adaptive strategy
-5. Add SASS libraries to `htdocs/sass/vendor/`
+1. Set basic variables & settings in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss)
+2. Define your responsive/adaptive strategy by modyfing [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss)
+3. Alter `replace:oldie` in `Gruntfile.js` for replacing media queries for Inetrnet Explorer to match your responsive/adaptive strategy
 
 You may also want to see the documenation for [webfonts](webfonts.md).
 
 Directory structure
 -------------------
 
-`htdocs/sass/base/` contains basic settings:
+There is a set of directories in SASS:
+
+* [`htdocs/sass/`](../../htdocs/sass/): These are your regular working files.
+* [`htdocs/sass/base/`](../../htdocs/sass/base/): Contains basic settings
+* [`htdocs/sass/modules/`](../../htdocs/sass/modules/): You may want to define modules for `_screen.scss`. Put these modules here.
+* [`htdocs/sass/vendor/`](../../htdocs/sass/vendor/): You may want to put vendor CSS here.
+
+`htdocs/sass/base/` contains:
 
 * [`htdocs/sass/base/_reset.scss`](../../htdocs/sass/base/_reset.scss): Resets all CSS to common defaults
 * [`htdocs/sass/base/_toolshed.scss`](../../htdocs/sass/base/_toolshed.scss): Some all-purpose mixins
@@ -40,7 +45,7 @@ Directory structure
 * [`htdocs/sass/base/_fonts.scss`](../../htdocs/sass/base/_fonts.scss): Add your own webfonts here
 * [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss): Add your own mixins here
 
-Your regular working files:
+`htdocs/sass/` contains your regular working files:
 
 * [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss): Sensible defaults for all output channels, uses variables from `base`
 * [`htdocs/sass/_all.scss`](../../htdocs/sass/_all.scss): Add your own styles for all output channels
@@ -48,8 +53,6 @@ Your regular working files:
 * [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Add your own styles for all screen channels
 * [`htdocs/sass/_print-base.scss`](../../htdocs/sass/_print-base.scss): Sensible defaults for all print channels, uses variables from `base`
 * [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Add your own styles for all print channels
-
-You may want to define modules for `_screen.scss` in `htdocs/sass/modules/`.
 
 Using media queries
 -------------------
