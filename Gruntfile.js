@@ -20,7 +20,8 @@ module.exports = function(grunt) {
 				options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
 					browser: true,
 					jquery: true,
-					strict: true
+					strict: true,
+					curly: true
 				}
 			}
 		},

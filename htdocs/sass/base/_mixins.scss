@@ -45,7 +45,7 @@
 // Styles for devices with a high DPI ratio, aka retina devices. See 3.1.1
 //
 // Styleguide 3.1.5
-@mixing screen_retina () {
+@mixin screen_retina () {
 	@media (min--moz-device-pixel-ratio: 1.3),
 		(-o-min-device-pixel-ratio: 2.6/2),
 		(-webkit-min-device-pixel-ratio: 1.3),

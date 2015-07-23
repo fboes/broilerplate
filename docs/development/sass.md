@@ -68,6 +68,8 @@ There is a set of prefedined media queries in [`htdocs/sass/base/_mixins.scss`](
 }
 ```
 
+You may want to take a look at [Write Better Media Queries with Sass](http://davidwalsh.name/write-media-queries-sass).
+
 Using toolshed mixins
 ---------------------
 
