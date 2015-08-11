@@ -8,10 +8,9 @@ if [ -f setup/mysql/dbdump.sql ]; then
 	mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
 fi
 
-if [ -d /vagrant ]; then
-	[ -e node_modules ] || sudo npm install --no-bin-links
-else
-	[ -e node_modules ] || npm install
+if [ ! -d /logs ]; then
+	mkdir logs
+	chmod 777 logs
 fi
 
 cd htdocs
@@ -19,10 +18,9 @@ cd htdocs
 # chmod 777 tmp
 #[ -h TARGET ] || ln -s SOURCE TARGET
 #[ -f TARGET ] || cp SOURCE TARGET
+cd ..
 
 if [ ! -d /vagrant ]; then
-	rsync -avz hyu-mnr-prev:/var/www/hyu-mnr-prev.shift.agency/htdocs/uploads .
-
 	echo ""
 	echo "=== Apache2 vhost config ==="
 	echo ""
@@ -32,4 +30,7 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	echo "127.0.0.1    broilerplate.local"
 	echo ""
+	[ -d node_modules ] || sudo npm install --no-bin-links
+else
+	[ -d node_modules ] || npm install
 fi
