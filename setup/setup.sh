@@ -9,7 +9,7 @@ if [ -f setup/mysql/dbdump.sql ]; then
 fi
 
 if [ ! -d /logs ]; then
-	mkdir logs
+	mkdir -p logs
 	chmod 777 logs
 fi
 
@@ -26,11 +26,11 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	sed "s#/var/www#$cwd#g" setup/apache/httpd-vhost.conf
 	echo ""
-	echo "=== /etcs/hosts === "
+	echo "=== /etc/hosts === "
 	echo ""
 	echo "127.0.0.1    broilerplate.local"
 	echo ""
-	[ -d node_modules ] || sudo npm install --no-bin-links
-else
 	[ -d node_modules ] || npm install
+else
+	[ -d node_modules ] || sudo npm install --no-bin-links
 fi
