@@ -1,6 +1,8 @@
 Broilerplate
 ================
 
+[![devDependency Status](https://david-dm.org/fboes/broilerplate/dev-status.svg)](https://david-dm.org/fboes/broilerplate#info=devDependencies)
+
 A boilerplate with SASS, JS & Vagrant. It serves the following goodness on a shiny plate:
 
 * SASS
