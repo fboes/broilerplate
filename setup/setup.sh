@@ -1,8 +1,12 @@
 cd ..
 
-[ -f setup/mysql/dbdump.sql ] && mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
-[ -f setup/mysql/dbdump.sql ] && mysql -u root -proot --execute "GRANT ALL ON broilerplate.* to  'broilerplate'@'localhost' IDENTIFIED BY 'broilerplate'"
-[ -f setup/mysql/dbdump.sql ] && mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
+cwd=$(pwd)
+
+if [ -f setup/mysql/dbdump.sql ]; then
+	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
+	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* to  'broilerplate'@'localhost' IDENTIFIED BY 'broilerplate'"
+	mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
+fi
 
 if [ -d /vagrant ]; then
 	[ -e node_modules ] || sudo npm install --no-bin-links
