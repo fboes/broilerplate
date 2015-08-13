@@ -4,7 +4,7 @@ cwd=$(pwd)
 
 if [ -f setup/mysql/dbdump.sql ]; then
 	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
-	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* to  'broilerplate'@'localhost' IDENTIFIED BY 'broilerplate'"
+	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* to 'broilerplate'@'localhost' IDENTIFIED BY 'broilerplate'"
 	mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
 fi
 

@@ -41,3 +41,14 @@ See [schema.org](http://schema.org/Place) and [microformats.org](http://microfor
 * [schema.org for organisations](http://schema.org/Organization) and [persons](http://schema.org/Person)
 * [microformat for events](http://microformats.org/wiki/h-event)
 * [microformat for address cards](http://microformats.org/wiki/h-card)
+
+Robots
+------
+
+See [Google's guide for robots](https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?hl=en). Keep in mind that not every search engine will understand the X-Robots-Tag HTTP header.
+
+In most cases this will prevent bots from indexing a given page:
+
+```html
+<meta name="robots" content="noindex" />
+```

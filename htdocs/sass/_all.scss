@@ -4,7 +4,7 @@
 
 // see http://css-tricks.com/html-vs-body-in-css/
 html {
-	font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	font: $font-default;
 }
 body {
 	-webkit-font-smoothing: antialiased;

@@ -119,39 +119,57 @@ $color-link-hover:                  $color-red-light;
 //
 // Styleguide 2.5
 
-$fontfamily-default:                Helvetica, Arial, sans-serif;
-$fontfamily-serif:                  Garamond, serif;
-$fontfamily-monospace:              "Courier New", monospace;
-$fontfamily-symbols:                "FontAwesome"; // http://fortawesome.github.io/Font-Awesome/
+$fontfamily-first-primary:          Helvetica;
+$fontfamily-primary:                $fontfamily-first-primary, Arial, sans-serif;
+$fontweight-primary:                $fontweight-normal;
+$fontweight-primary-bold:           $fontweight-bold;
+$fontweight-primary-light:          $fontweight-thin;
+
+$fontfamily-first-secondary:        Garamond;
+$fontfamily-secondary:              $fontfamily-first-secondary, serif;
+$fontweight-secondary:              $fontweight-bold;
+$fontweight-secondary-bold:         $fontweight-extrabold;
+$fontweight-secondary-light:        $fontweight-normal;
+
+$fontfamily-first-monospace:        "Courier New";
+$fontfamily-monospace:              $fontfamily-first-monospace, monospace;
+$fontweight-monospace:              $fontweight-normal;
+$fontweight-monospace-bold:         $fontweight-bold;
+$fontweight-monospace-light:        $fontweight-thin;
+
+$fontfamily-first-symbols:          "FontAwesome"; // http://fortawesome.github.io/Font-Awesome/
+$fontfamily-symbols:                $fontfamily-first-symbols;
+$fontweight-symbols:                $fontweight-normal;
+$fontweight-symbols-bold:           $fontweight-bold;
+$fontweight-symbols-light:          $fontweight-thin;
+
 
 $fontsize-default:                  12px;
 $fontsize-big:                      $fontsize-default + 2px;
 
 $lineheight-default:                $lineheight-base;
-$fontweight-default:                $fontweight-normal;
-$fontweight-default-bold:           $fontweight-bold;
 $fontstyle-default:                 normal;
 
-$font-default:                      $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+$font-default:                      $fontstyle-default $fontweight-primary #{$fontsize-default}/#{$lineheight-default} $fontfamily-primary;
 
-$textshadow-default:               1px 1px 3px $color-darker;
+$textshadow-default:                1px 1px 3px $color-darker;
 
 // Typography > Assigning
 
-$fontfamily-content:                $fontfamily-default;
+$fontfamily-content:                $fontfamily-primary;
+$fontweight-content:                $fontweight-primary;
+$fontweight-content-bold:           $fontweight-primary-bold;
 $fontsize-content:                  $fontsize-default;
 $lineheight-content:                $lineheight-default;
-$fontweight-content:                $fontweight-normal;
-$fontweight-content-bold:           $fontweight-bold;
 $fontstyle-content:                 $fontstyle-default;
 
 $font-content:                      $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 
-$fontfamily-headline:               $fontfamily-serif;
+$fontfamily-headline:               $fontfamily-secondary;
+$fontweight-headline:               $fontweight-secondary;
+$fontweight-headline-bold:          $fontweight-secondary-bold;
 $fontsize-headline:                 $fontsize-big;
 $lineheight-headline:               $lineheight-default;
-$fontweight-headline:               $fontweight-bold;
-$fontweight-headline-bold:          $fontweight-extrabold;
 $fontstyle-headline:                $fontstyle-default;
 
 $font-headline:                     $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;

@@ -3,8 +3,22 @@
 // Styleguide 2.8
 
 //@font-face {
-//	font-family: $fontfamily-symbols;
-//	font-weight: normal;
+//	font-family: $fontfamily-first-primary;
+//	font-weight: $fontweight-primary;
 //	font-style:  normal;
-//	@include toolshed-webfont-src('../fonts/#{$fontfamily-symbols}/#{$fontfamily-symbols}','#{$fontfamily-symbols}');
+//	@include toolshed-webfont-src('../fonts/#{$fontfamily-first-primary}/#{$fontfamily-first-primary}','#{$fontfamily-first-primary}');
+//}
+
+//@font-face {
+//	font-family: $fontfamily-first-primary;
+//	font-weight: $fontweight-primary-bold;
+//	font-style:  normal;
+//	@include toolshed-webfont-src('../fonts/#{$fontfamily-first-primary}/#{$fontfamily-first-primary}-bold','#{$fontfamily-first-primary}');
+//}
+
+//@font-face {
+//	font-family: $fontfamily-first-symbols;
+//	font-weight: $fontweight-symbols;
+//	font-style:  normal;
+//	@include toolshed-webfont-src('../fonts/#{$fontfamily-first-symbols}/#{$fontfamily-first-symbols}','#{$fontfamily-first-symbols}');
 //}
