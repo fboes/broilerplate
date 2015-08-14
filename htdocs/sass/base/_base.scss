@@ -143,16 +143,18 @@ $fontweight-symbols:                $fontweight-normal;
 $fontweight-symbols-bold:           $fontweight-bold;
 $fontweight-symbols-light:          $fontweight-thin;
 
-
+$fontfamily-default:                $fontfamily-primary;
+$fontweight-default:                $fontweight-primary;
 $fontsize-default:                  12px;
-$fontsize-big:                      $fontsize-default + 2px;
-
 $lineheight-default:                $lineheight-base;
 $fontstyle-default:                 normal;
 
-$font-default:                      $fontstyle-default $fontweight-primary #{$fontsize-default}/#{$lineheight-default} $fontfamily-primary;
-
 $textshadow-default:                1px 1px 3px $color-darker;
+
+$fontsize-big:                      round($fontsize-default * 1.15);
+$fontsize-bigger:                   round($fontsize-default * 1.25);
+$fontsize-small:                    round($fontsize-default * 0.9);
+$fontsize-smaller:                  round($fontsize-default * 0.8);
 
 // Typography > Assigning
 
@@ -160,18 +162,16 @@ $fontfamily-content:                $fontfamily-primary;
 $fontweight-content:                $fontweight-primary;
 $fontweight-content-bold:           $fontweight-primary-bold;
 $fontsize-content:                  $fontsize-default;
-$lineheight-content:                $lineheight-default;
-$fontstyle-content:                 $fontstyle-default;
-
+$lineheight-content:                $lineheight-base;
+$fontstyle-content:                 normal;
 $font-content:                      $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
 
 $fontfamily-headline:               $fontfamily-secondary;
 $fontweight-headline:               $fontweight-secondary;
 $fontweight-headline-bold:          $fontweight-secondary-bold;
 $fontsize-headline:                 $fontsize-big;
-$lineheight-headline:               $lineheight-default;
-$fontstyle-headline:                $fontstyle-default;
-
+$lineheight-headline:               $lineheight-base;
+$fontstyle-headline:                normal;
 $font-headline:                     $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
 
 // Misc
