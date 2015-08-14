@@ -20,10 +20,10 @@ body {
 	// insert stuff here
 }
 #main {
-	font:  $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 }
 #aside {
-	font:  $fontstyle-content $fontweight-content #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 }
 #footer {
 	// insert stuff here

@@ -113,20 +113,23 @@ body {
 	@include toolshed-vertical-center();
 }
 
-.browsehappy {
-	z-index:2;
-	position:fixed;
-	width:100%;
-	background-color: #ffffdd;
-	color: #000000;
-	padding:0.5em;
-	width:100%;
-	top:0;
-	left:0;
-	border-bottom:1px solid #eeeeee;
-	text-align:center;
-	display:block;
-	a {
-		color:blue;
+@media (tty) {
+	.browsehappy {
+		z-index:2;
+		position:fixed;
+		width:100%;
+		background-color: #ffffdd;
+		color: #000000;
+		padding:0.5em;
+		width:100%;
+		top:0;
+		left:0;
+		border-bottom:1px solid #eeeeee;
+		text-align:center;
+		display:block;
+		a {
+			color:blue;
+		}
 	}
 }
+

@@ -22,7 +22,7 @@ Setup
 
 1. Set basic variables & settings in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss)
 2. Define your responsive/adaptive strategy by modyfing [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss)
-3. Alter `replace:oldie` in `Gruntfile.js` for replacing media queries for Inetrnet Explorer to match your responsive/adaptive strategy
+3. Check default in [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss)
 
 You may also want to see the documenation for [webfonts](webfonts.md).
 

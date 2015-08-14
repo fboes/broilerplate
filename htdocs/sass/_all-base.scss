@@ -6,16 +6,16 @@
 // Headings
 
 h1 {
-	font: $fontstyle-headline $fontweight-headline #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default} $fontfamily-secondary;
 }
 h2 {
-	font: $fontstyle-headline $fontweight-headline #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontstyle-default $fontweight-secondary #{$fontsize-bigger}/#{$lineheight-default} $fontfamily-secondary;
 }
 h3 {
-	font: $fontstyle-headline $fontweight-headline #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline;
+	font: $fontstyle-default $fontweight-secondary #{$fontsize-big}/#{$lineheight-default} $fontfamily-secondary;
 }
 h4 {
-	font: $fontstyle-content $fontweight-content-bold #{$fontsize-content}/#{$lineheight-content} $fontfamily-content;
+	font: $fontstyle-default $fontweight-default-bold #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 }
 
 // Text
@@ -32,7 +32,7 @@ a {
 	&.current-active {} // class for links which point to current page
 }
 strong {
-	font-weight: $fontweight-content-bold;
+	font-weight: $fontweight-default-bold;
 }
 p {
 	a {}
@@ -61,7 +61,7 @@ ol {
 }
 dl {
 	dt {
-		font-weight: $fontweight-content-bold;
+		font-weight: $fontweight-default-bold;
 	}
 	dd {}
 }
@@ -128,7 +128,7 @@ table {
 	tr {
 	}
 	th {
-		font-weight: $fontweight-content-bold;
+		font-weight: $fontweight-default-bold;
 	}
 	td {}
 	th, td {
@@ -166,4 +166,18 @@ table {
 	td,th {
 		outline:1px solid rgba(0,0,255,0.5);
 	}
+
+	@media #{$media-responsive-smartphone} { .debug {/*media-responsive-smartphone*/ }}
+	@media #{$media-responsive-tablet} { .debug {/*media-responsive-tablet*/ }}
+	@media #{$media-responsive-tablet-landscape} { .debug {/*media-responsive-tablet-landscape*/ }}
+	@media #{$media-responsive-desktop} { .debug {/*media-responsive-desktop*/ }}
+	@media #{$media-responsive-smartphone--smaller} { .debug {/*media-responsive-smartphone--smaller*/ }}
+	@media #{$media-responsive-tablet--smaller} { .debug {/*media-responsive-tablet--smaller*/ }}
+	@media #{$media-responsive-tablet-landscape--smaller} { .debug {/*media-responsive-tablet-landscape--smaller*/ }}
+	@media #{$media-responsive-desktop--smaller} { .debug {/*media-responsive-desktop--smaller*/ }}
+	@media #{$media-responsive-smartphone--bigger} { .debug {/*media-responsive-smartphone--bigger*/ }}
+	@media #{$media-responsive-tablet--bigger} { .debug {/*media-responsive-tablet--bigger*/ }}
+	@media #{$media-responsive-tablet-landscape--bigger} { .debug {/*media-responsive-tablet-landscape--bigger*/ }}
+	@media #{$media-responsive-desktop--bigger} { .debug {/*media-responsive-desktop--bigger*/ }}
+	@media tty { .debug {/* Old-IE*/ }}
 }

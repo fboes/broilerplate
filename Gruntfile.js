@@ -106,18 +106,16 @@ module.exports = function(grunt) {
 				dest: '<%= dirs.template %>css/oldie/',
 				replacements: [
 					{from: /\/\*#.+?\*\//g, to: ''},
+					{from: /@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, to: '$1$2'},
 					{from: /(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''},
-					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
-					//{from: /(@media screen) and \(max-width: (660)px\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
+					{from: /(@media screen) [^\{]+ \(max-width: \d+px\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
 					{from: /(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, to: '$1$2'},
-					//{from: /(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, to: ''},
 					{from: /-moz-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /-webkit-[^\{]+?:.+?;\s*/g, to: ''},
 					{from: /(transition|border-[\S]*radius):.+?;\s*/g, to: ''},
 					{from: /opacity: 0;\s*/g, to: 'visibility: hidden; '},
 					{from: /opacity: 1;\s*/g, to: 'visibility: visible; '},
 					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
-					{from: /@media \(tty\) \{ (.+ \}) \}(\s*)/g, to: '$1$2'},
 					{from: /\s\S+\s?\{\s+\}/g, to: ''},
 					{from: /([\d\.]+)vw/g,  to: function (matchedWord, index, fullText, regexMatches) {
 						return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
