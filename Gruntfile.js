@@ -59,15 +59,15 @@ module.exports = function(grunt) {
 			}
 		},
 
-		autoprefixer: {
+		postcss: {
+			options: {
+				map: true,
+				processors: [
+					require('autoprefixer-core')({browsers: ['last 1 version']})
+				]
+			},
 			build: {
-				expand: true,
-				flatten: true,
-				options: {
-					map: true
-				},
 				src: '<%= dirs.template %>css/*.css',
-				dest: '<%= dirs.template %>css/'
 			}
 		},
 
@@ -238,11 +238,12 @@ module.exports = function(grunt) {
 
 	// Load the plugins
 	require('jit-grunt')(grunt, {
-		replace: 'grunt-text-replace'
+		replace: 'grunt-text-replace',
+		postcss: 'grunt-postcss'
 	});
 
 	// Default task(s).
-	grunt.registerTask('build-sass',  ['sass','autoprefixer','replace:rtl','replace:oldie','replace:notty']);
+	grunt.registerTask('build-sass',  ['sass','postcss','replace:rtl','replace:oldie','replace:notty']);
 	grunt.registerTask('build-js',    ['jshint','uglify']);
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);

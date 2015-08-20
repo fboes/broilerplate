@@ -8,11 +8,6 @@ if [ -f setup/mysql/dbdump.sql ]; then
 	mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
 fi
 
-if [ ! -d /logs ]; then
-	mkdir -p logs
-	chmod 777 logs
-fi
-
 cd htdocs
 # mkdir -p tmp
 # chmod 777 tmp
