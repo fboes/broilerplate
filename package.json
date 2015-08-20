@@ -18,7 +18,8 @@
     "grunt-postcss": "^0.5.5",
     "grunt-shell": "^1.1.*",
     "grunt-text-replace": "^0.4.*",
-    "jit-grunt": "^0.9.*"
+    "jit-grunt": "^0.9.*",
+    "rtlcss": "^1.6.2"
   },
   "author": "Frank Boës",
   "license": "MIT",

@@ -62,7 +62,7 @@ table th.number, table td.number { font-family: "Courier New", monospace; text-a
 
 .browsehappy { display: none; }
 
-html { direction: rtl; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
+html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 body { direction: rtl; }
 
@@ -72,7 +72,7 @@ body { direction: rtl; }
 
 #aside { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
-@media screen { body { direction: rtl; color: #000000; background-color: #ffffff; }
+@media screen { body { color: #000000; background-color: #ffffff; }
   #container { color: #e5e5e5; background-color: #ffffff; }
   #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
@@ -106,4 +106,3 @@ body { direction: rtl; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
   #navigation { display: none; } }
-

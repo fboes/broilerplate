@@ -64,6 +64,7 @@ table th.number, table td.number { font-family: "Courier New", monospace; text-a
 
 html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
+body { direction: ltr; }
 
 #container { margin: auto; }
 

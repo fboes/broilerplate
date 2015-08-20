@@ -60,14 +60,24 @@ module.exports = function(grunt) {
 		},
 
 		postcss: {
-			options: {
-				map: true,
-				processors: [
-					require('autoprefixer-core')({browsers: ['last 2 versions', 'ie 8', 'ie 9']})
-				]
-			},
 			build: {
-				src: '<%= dirs.template %>css/*.css',
+				options: {
+					map: true,
+					processors: [
+						require('autoprefixer-core')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
+					]
+				},
+				src: '<%= dirs.template %>css/*.css'
+			},
+			rtl: {
+				options: {
+					map: true,
+					processors: [
+						require('rtlcss')()
+					]
+				},
+				src: '<%= dirs.template %>css/styles.css',
+				dest: '<%= dirs.template %>css/rtl.css'
 			}
 		},
 
@@ -89,18 +99,6 @@ module.exports = function(grunt) {
 		},
 
 		replace: {
-			rtl: {
-				src: ['<%= dirs.template %>css/styles.css'],
-				dest: '<%= dirs.template %>css/rtl.css',
-				replacements: [
-					{from: /(\W)left(\W)/g, to: '$1xrite$2'},
-					{from: /(\W)right(\W)/g, to: '$1left$2'},
-					{from: /(\W)xrite(\W)/g, to: '$1right$2'},
-					{from: /:\s?(\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*) (\d[a-z0-9\.]*);/g, to: ':$1 $4 $3 $2;'},
-					{from: /(\W)rtl(\W)/g, to: '$1ltr$2'},
-					{from: /((body|html) \{ )/g, to: '$1direction: rtl; '}
-				]
-			},
 			oldie: {
 				src: ['<%= dirs.template %>css/*.css'],
 				dest: '<%= dirs.template %>css/oldie/',
@@ -243,7 +241,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('build-sass',  ['sass','postcss','replace:rtl','replace:oldie','replace:notty']);
+	grunt.registerTask('build-sass',  ['sass','postcss','replace:oldie','replace:notty']);
 	grunt.registerTask('build-js',    ['jshint','uglify']);
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
