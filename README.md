@@ -25,18 +25,10 @@ Download this repository via…
 * [Bower](http://bower.io/): `bower install git://github.com/fboes/broilerplate.git`
 * [NPM](https://www.npmjs.org/): `npm install git+https://github.com/fboes/broilerplate.git`
 
-There are two ways to develop:
+Setup your project:
 
-* The Grunt way: Locally, which requires [Grunt](http://gruntjs.com/) & [SASS](http://sass-lang.com/)
-* The Vagrant way: Virtualized, which requires [Vagrant](https://www.vagrantup.com/)
-
-Setup your development space:
-
-1. The Vagrant way: Update `setup/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate.local`)
-2. The Grunt way: Install Grunt plugins via `npm install`.
-3. Check Gruntfile for any file or host references.
-4. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable.
-5. If you do not want to install the [LiveReload plugin](http://livereload.com/extensions/), insert the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-).
+1. Check Gruntfile for any file or host references.
+2. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable.
 
 Variables used in templates:
 
@@ -46,6 +38,21 @@ Variables used in templates:
 * `{{ PAGE_TITLE }}`: Title of the current page
 * `{{ PAGE_DESCRIPTION }}`: Description of the current page. Maximum length is 160 characters
 * `{{ THEME_COLOR }}`: Hex color used as basic theme color. E.g. `#aa00ff`
+
+Installation of __your__ project
+--------------------------------
+
+There are two ways to develop:
+
+* The Grunt way: Locally, which requires [Grunt](http://gruntjs.com/) & [SASS](http://sass-lang.com/)
+* The Vagrant way: Virtualized, which requires [Vagrant](https://www.vagrantup.com/)
+
+Setup your development space:
+
+1. The Vagrant way: Update `setup/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate.local`)
+2. The Grunt way: Install Grunt plugins via `npm install`.
+4. The Grunt way: Run `setup/setup.sh`
+6. If you do not want to install the [LiveReload plugin](http://livereload.com/extensions/), insert the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-).
 
 Developing
 ----------

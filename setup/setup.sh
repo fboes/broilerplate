@@ -1,4 +1,4 @@
-cd ..
+# Execute this script from project base
 
 cwd=$(pwd)
 
