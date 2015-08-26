@@ -225,7 +225,7 @@
 //
 // $fontfamily  : (string) Name of fontfamily used for icon font
 // $content     : (string) Character to display. Will be something like `\e601`
-// $fontsize    : (unit) Size of character. Defaults to `1em`
+// $fontsize    : (unit) Size of character. Defaults to `1em`. Beware of using `rem` as IE9-10 will not glob this.
 // $onlyContent : (bool) Only output the caracter. Defaults to `false`
 //
 // Styleguide 1.1.13

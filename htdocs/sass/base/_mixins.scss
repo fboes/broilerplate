@@ -64,11 +64,11 @@
 
 // rem
 //
-// This will compute any pixel value to a rem value, according to $fontsize-default you set in `_base.scss`
+// This will compute any pixel value to a rem value, according to $base-unit you set in `_base.scss`
 //
-// $value-px - (unit) A size given in pixels. This will be converted to rem, according to your `fontsize-default` set in `_base.scss`
+// $value-px - (unit) A size given in pixels. This will be converted to rem, according to your `base-unit` set in `_base.scss`
 //
 // Styleguide 3.1.7
 @function rem ($value-px) {
-	@return toolshed-rem($value-px, $fontsize-default);
+	@return toolshed-rem($value-px, $base-unit);
 }

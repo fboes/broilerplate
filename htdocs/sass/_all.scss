@@ -4,28 +4,29 @@
 
 // see http://css-tricks.com/html-vs-body-in-css/
 html {
-	font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	font-size: $base-unit;
 }
 body {
 	direction: ltr;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
 }
 #container {
 	margin: auto;
 }
 #banner {
-	// insert stuff here
 }
 #navigation {
-	// insert stuff here
 }
 #main {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
 }
 #aside {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
 }
 #footer {
-	// insert stuff here
 }

@@ -16,7 +16,7 @@ $switch-overlapping:                false !default; // container does not set wi
 //
 // Styleguide 2.3
 
-$base-unit:                         8px !default;
+$base-unit:                         8px !default; // this is also the base unit to calculate `rem` to
 
 $margin-default:                    $base-unit !default;
 $padding-default:                   $base-unit !default;

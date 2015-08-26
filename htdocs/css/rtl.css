@@ -31,7 +31,10 @@ form, input, select, textarea, button { font: inherit; }
 
 optgroup option { margin-right: 1em; }
 
-textarea { overflow: auto; }
+textarea { overflow: auto; resize: vertical; }
+
+input [type="search"] { -webkit-appearance: none; }
+input [type="hidden"], input [hidden] { display: none; }
 
 [hidden] { display: none; }
 
@@ -62,9 +65,9 @@ table th.number, table td.number { font-family: "Courier New", monospace; text-a
 
 .browsehappy { display: none; }
 
-html { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
+html { font-size: 8px; }
 
-body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 #container { margin: auto; }
 

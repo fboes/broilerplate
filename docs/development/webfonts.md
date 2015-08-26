@@ -8,7 +8,7 @@ Webfonts
 Use icon font
 -------------
 
-1. Wisest choice: [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
+1. Choose icon font, like [Font Awesome](http://fortawesome.github.io/Font-Awesome/) or [Octicons](https://octicons.github.com/).
 2. Set `$fontfamily-symbols` in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss).
 
 Build your own icon font
