@@ -7,8 +7,8 @@
 //
 // Styleguide 2.2
 
-$switch-develop:                    false; // show debugging styles
-$switch-overlapping:                false; // container does not set width, but every __inner-element on its own
+$switch-develop:                    false !default; // show debugging styles
+$switch-overlapping:                false !default; // container does not set width, but every __inner-element on its own
 
 // Base canon
 //
@@ -16,15 +16,15 @@ $switch-overlapping:                false; // container does not set width, but 
 //
 // Styleguide 2.3
 
-$base-unit:                         8px;
+$base-unit:                         8px !default;
 
-$margin-default:                    $base-unit;
-$padding-default:                   $base-unit;
+$margin-default:                    $base-unit !default;
+$padding-default:                   $base-unit !default;
 
-$borderradius-default:              2px;
+$borderradius-default:              2px !default;
 
-$width-column:                      300px;
-$spacing-column:                    20px;
+$width-column:                      300px !default;
+$spacing-column:                    20px !default;
 
 $width-column-2:                    2 * $width-column + 1 * $spacing-column;
 $width-column-3:                    3 * $width-column + 2 * $spacing-column;

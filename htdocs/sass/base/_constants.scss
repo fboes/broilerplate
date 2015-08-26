@@ -5,33 +5,33 @@
 // Styleguide 2.1
 
 // http://www.webtype.com/info/articles/fonts-weights/
-$fontweight-thin:                   100;
-$fontweight-extralight:             200;
-$fontweight-light:                  300;
-$fontweight-normal:                 400; // this is also 'normal'
-$fontweight-medium:                 500;
-$fontweight-semibold:               600;
-$fontweight-bold:                   700; // this is also 'bold'
-$fontweight-extrabold:              800;
-$fontweight-black:                  900;
+$fontweight-thin:                   100 !default;
+$fontweight-extralight:             200 !default;
+$fontweight-light:                  300 !default;
+$fontweight-normal:                 400 !default; // this is also 'normal'
+$fontweight-medium:                 500 !default;
+$fontweight-semibold:               600 !default;
+$fontweight-bold:                   700 !default; // this is also 'bold'
+$fontweight-extrabold:              800 !default;
+$fontweight-black:                  900 !default;
 
 // inspired by https://gist.github.com/fat/a47b882eb5f84293c4ed
-$lineheight-tightest:               0.8;
-$lineheight-tighter:                1;
-$lineheight-tight:                  1.1;
-$lineheight-base:                   1.2;
-$lineheight-loose:                  1.5;
-$lineheight-looser:                 1.7;
-$lineheight-loosest:                2;
+$lineheight-tightest:               0.8 !default;
+$lineheight-tighter:                1 !default;
+$lineheight-tight:                  1.1 !default;
+$lineheight-base:                   1.2 !default;
+$lineheight-loose:                  1.5 !default;
+$lineheight-looser:                 1.7 !default;
+$lineheight-loosest:                2 !default;
 
 // Content
-$content-list:                      "\00BB  "; // using a laquo
-$content-copyright:                 "\00A9  ";
-$content-bulletpoint:               "\2022";
-$content-hellip:                    "\2026";
-$content-ldquo:                     "\201C";
-$content-rdquo:                     "\201D";
-$content-bdquo:                     "\201E";
-$content-laquo:                     "\00AB";
-$content-raquo:                     "\00BB";
-$content-null:                      " "; // for spawning :before & :after
+$content-list:                      "\00BB  " !default; // using a laquo
+$content-copyright:                 "\00A9  " !default;
+$content-bulletpoint:               "\2022" !default;
+$content-hellip:                    "\2026" !default;
+$content-ldquo:                     "\201C" !default;
+$content-rdquo:                     "\201D" !default;
+$content-bdquo:                     "\201E" !default;
+$content-laquo:                     "\00AB" !default;
+$content-raquo:                     "\00BB" !default;
+$content-null:                      " " !default; // for spawning :before & :after

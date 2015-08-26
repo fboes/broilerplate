@@ -10,7 +10,7 @@ fi
 
 cd htdocs
 # mkdir -p tmp
-# chmod 777 tmp
+# mkdir -p uploads && chmod 777 uploads
 #[ -h TARGET ] || ln -s SOURCE TARGET
 #[ -f TARGET ] || cp SOURCE TARGET
 cd ..

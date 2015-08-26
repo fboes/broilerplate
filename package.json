@@ -15,7 +15,7 @@
     "grunt-contrib-watch": "^0.6.*",
     "grunt-image-resize": "^1.*",
     "grunt-kss": "^2.*",
-    "grunt-postcss": "^0.6.*",
+    "grunt-postcss": "^0.5.*",
     "grunt-shell": "^1.1.*",
     "grunt-text-replace": "^0.4.*",
     "jit-grunt": "^0.9.*",
