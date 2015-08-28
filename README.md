@@ -30,14 +30,7 @@ Setup your project:
 1. Check Gruntfile for any file or host references.
 2. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable.
 
-Variables used in templates:
-
-* `{{ BASE_URL }}`: Base url including protocol, domain name and base path. Does not end with `/`. E.g. `https://www.example.com`
-* `{{ SITENAME }}`: Title of your project
-* `{{ PAGE_RELATIVE_URL }}`: URL of current document relative to base path. Does start with a `/`. E.g. `/example/index.html`
-* `{{ PAGE_TITLE }}`: Title of the current page
-* `{{ PAGE_DESCRIPTION }}`: Description of the current page. Maximum length is 160 characters
-* `{{ THEME_COLOR }}`: Hex color used as basic theme color. E.g. `#aa00ff`
+See the [setup instructions in detail](docs/development/setup.md).
 
 Installation of __your__ project
 --------------------------------
@@ -70,7 +63,7 @@ See `docs/development` for more information
 Version
 -------
 
-Version: 1.3.0 (2015-07-22)
+Version: 1.3.1 (2015-08-28)
 
 Legal stuff
 -----------
