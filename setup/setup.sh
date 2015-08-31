@@ -1,5 +1,5 @@
 # Execute this script from project base
-
+cd ${0%/*}/..
 cwd=$(pwd)
 
 if [ -f setup/mysql/dbdump.sql ]; then
