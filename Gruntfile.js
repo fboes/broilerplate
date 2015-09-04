@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 				options: {
 					map: true,
 					processors: [
-						require('autoprefixer-core')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
+						require('autoprefixer')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
 					]
 				},
 				src: '<%= dirs.template %>css/*.css'
