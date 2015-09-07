@@ -13,6 +13,8 @@ module.exports = function(grunt) {
 			build: {
 				files: {
 					src: [
+						'!<%= dirs.template %>js/vendor/*.js',
+						'<%= dirs.template %>js/modules/*.js',
 						'<%= dirs.template %>js/*.js',
 						'!<%= dirs.template %>js/*.min.js'
 					]
@@ -37,7 +39,9 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'<%= dirs.template %>js/main.min.js': [
-						'<%= dirs.template %>js/main.js', // add your vendors here
+						'!<%= dirs.template %>js/vendor/*.js',
+						'<%= dirs.template %>js/modules/*.js',
+						'<%= dirs.template %>js/main.js',
 						'!<%= dirs.template %>js/main.min.js'
 					]
 				}
