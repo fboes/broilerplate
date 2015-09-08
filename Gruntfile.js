@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'<%= dirs.template %>js/main.min.js': [
-						'!<%= dirs.template %>js/vendor/*.js',
+						'<%= dirs.template %>js/vendor/*.js', // disable this line by prepending '!' - in case of errors
 						'<%= dirs.template %>js/modules/*.js',
 						'<%= dirs.template %>js/main.js',
 						'!<%= dirs.template %>js/main.min.js'
