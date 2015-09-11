@@ -3,5 +3,5 @@
 docs/styleguide
 logs
 node_modules
-setup/vagrant/.vagrant
+install/vagrant/.vagrant
 tmp

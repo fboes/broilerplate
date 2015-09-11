@@ -3,10 +3,10 @@ cd ${0%/*}/..
 
 cwd=$(pwd)
 
-if [ -f setup/mysql/dbdump.sql ]; then
+if [ -f install/mysql/dbdump.sql ]; then
 	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
 	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* TO 'broilerplate'@'localhost' IDENTIFIED BY '{{ DB_PASSWORD }}'"
-	mysql -u root -proot broilerplate < setup/mysql/dbdump.sql
+	mysql -u root -proot broilerplate < install/mysql/dbdump.sql
 fi
 
 cd htdocs
@@ -20,7 +20,7 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	echo "=== Apache2 vhost config ==="
 	echo ""
-	sed "s#/var/www#$cwd#g" setup/apache/httpd-vhost.conf
+	sed "s#/var/www#$cwd#g" install/apache/httpd-vhost.conf
 	echo ""
 	echo "=== /etc/hosts === "
 	echo ""
