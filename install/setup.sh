@@ -18,11 +18,12 @@ cd ..
 
 if [ ! -d /vagrant ]; then
 	echo ""
-	echo "=== Apache2 vhost config ==="
+	echo -e "=== [32mApache2 vhost config[m ==="
 	echo ""
-	sed "s#/var/www#$cwd#g" install/apache/httpd-vhost.conf
+	sed "s#/var/www#$cwd#g" install/apache/macros.conf
+	sed "s#/var/www#$cwd#g" install/apache/sites.conf
 	echo ""
-	echo "=== /etc/hosts === "
+	echo -e "=== [32m/etc/hosts[m === "
 	echo ""
 	echo "127.0.0.1    broilerplate.local"
 	echo ""
