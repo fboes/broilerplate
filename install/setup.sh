@@ -20,8 +20,8 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	echo -e "=== [32mApache2 vhost config[m ==="
 	echo ""
-	sed "s#/var/www#$cwd#g" install/apache/macros.conf
-	sed "s#/var/www#$cwd#g" install/apache/sites.conf
+	sed "s#/var/www#$cwd#g" install/apache/macro-broilerplate.conf
+	sed "s#/var/www#$cwd#g" install/apache/broilerplate.local.conf
 	echo ""
 	echo -e "=== [32m/etc/hosts[m === "
 	echo ""
