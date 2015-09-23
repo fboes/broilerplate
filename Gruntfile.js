@@ -10,49 +10,46 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
+			options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+				browser: true,
+				jquery: true,
+				strict: true,
+				curly: true
+			},
 			build: {
 				files: {
 					src: [
-						'!<%= dirs.template %>js/vendor/*.js',
-						'<%= dirs.template %>js/modules/*.js',
-						'<%= dirs.template %>js/*.js',
-						'!<%= dirs.template %>js/*.min.js'
+						'<%= dirs.template %>js-src/**/*.js',
+						'!<%= dirs.template %>js-src/vendor/*.js'
 					]
-				},
-				options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-					browser: true,
-					jquery: true,
-					strict: true,
-					curly: true
 				}
 			}
 		},
 
 		uglify: {
+			options: {
+				// mangle: false,
+				// beautify: true,
+				// compress: false,
+				maxLineLen: 9000,
+				sourceMap: true
+			},
 			build: {
-				 options: {
-					// mangle: false,
-					// beautify: true,
-					// compress: false,
-					maxLineLen: 9000,
-					sourceMap: true
-				},
 				files: {
 					'<%= dirs.template %>js/main.min.js': [
-						'<%= dirs.template %>js/vendor/*.js', // disable this line by prepending '!' - in case of errors
-						'<%= dirs.template %>js/modules/*.js',
-						'<%= dirs.template %>js/main.js',
-						'!<%= dirs.template %>js/main.min.js'
+						'<%= dirs.template %>js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
+						'<%= dirs.template %>js-src/modules/*.js',
+						'<%= dirs.template %>js-src/main.js'
 					]
 				}
 			}
 		},
 
 		sass: {
+			options: {
+				style: 'compact'
+			},
 			build: {
-				options: {
-					style: 'compact'
-				},
 				files: [{
 					expand: true,
 					cwd: '<%= dirs.template %>sass',
@@ -130,7 +127,7 @@ module.exports = function(grunt) {
 				]
 			},
 			notty: {
-				src: ['<%= dirs.template %>css/*.css'],
+				src: ['<%= replace.oldie.src %>'],
 				overwrite: true,
 				replacements: [
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
