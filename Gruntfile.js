@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		develop: true,
 		dirs: {
 			htdocs:   'htdocs/',
+			source:   '<%= dirs.htdocs %>',
 			template: '<%= dirs.htdocs %>',
 			images:   '<%= dirs.htdocs %>images/',
 			docs:     'docs/',
@@ -19,8 +21,8 @@ module.exports = function(grunt) {
 			build: {
 				files: {
 					src: [
-						'<%= dirs.template %>js-src/**/*.js',
-						'!<%= dirs.template %>js-src/vendor/*.js'
+						'<%= dirs.source %>js-src/**/*.js',
+						'!<%= dirs.source %>js-src/vendor/*.js'
 					]
 				}
 			}
@@ -32,14 +34,14 @@ module.exports = function(grunt) {
 				// beautify: true,
 				// compress: false,
 				maxLineLen: 9000,
-				sourceMap: true
+				sourceMap: '<%= develop %>'
 			},
 			build: {
 				files: {
 					'<%= dirs.template %>js/main.min.js': [
-						'<%= dirs.template %>js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
-						'<%= dirs.template %>js-src/modules/*.js',
-						'<%= dirs.template %>js-src/main.js'
+						'<%= dirs.source %>js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
+						'<%= dirs.source %>js-src/modules/*.js',
+						'<%= dirs.source %>js-src/main.js'
 					]
 				}
 			}
@@ -47,12 +49,13 @@ module.exports = function(grunt) {
 
 		sass: {
 			options: {
-				style: 'compact'
+				style: 'compact',
+				sourcemap: ('<%= develop %>' ? 'auto' : 'none')
 			},
 			build: {
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.template %>sass',
+					cwd: '<%= dirs.source %>sass',
 					src: ['*.scss'],
 					dest: '<%= dirs.template %>css',
 					ext: '.css'
@@ -61,9 +64,11 @@ module.exports = function(grunt) {
 		},
 
 		postcss: {
+			options: {
+				map: '<%= develop %>'
+			},
 			build: {
 				options: {
-					map: true,
 					processors: [
 						require('autoprefixer')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
 					]
@@ -72,7 +77,6 @@ module.exports = function(grunt) {
 			},
 			rtl: {
 				options: {
-					map: true,
 					processors: [
 						require('rtlcss')()
 					]
@@ -94,7 +98,7 @@ module.exports = function(grunt) {
 		kss : {
 			build: {
 				files: {
-					'<%= dirs.docs %>styleguide': '<%= dirs.template %>sass/'
+					'<%= dirs.docs %>styleguide': '<%= dirs.source %>sass/'
 				}
 			}
 		},
@@ -131,26 +135,6 @@ module.exports = function(grunt) {
 				overwrite: true,
 				replacements: [
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
-				]
-			},
-			htmlrtl: {
-				src: ['<%= dirs.template %>index.html'],
-				dest: '<%= dirs.template %>rtl.html',
-				replacements: [
-					{from: / lang="de"/g, to: ' lang="ar" dir="rtl"'},
-					{from: /styles\.css/g, to: 'rtl.css'}
-				]
-			},
-			variables: {
-				src: ['<%= dirs.template %>*.html', '<%= dirs.template %>*.xml'],
-				overwrite: true,
-				replacements: [
-					{from: /\{\{ BASE_URL \}\}/g, to: '<?php echo(htmlspecialchars(\'http://\'.$_SERVER[\'HTTP_HOST\']));?>'},
-					{from: /\{\{ SITENAME \}\}/g, to: '<?php echo(htmlspecialchars($sitename));?>'},
-					{from: /\{\{ PAGE_RELATIVE_URL \}\}/g, to: '<?php echo(htmlspecialchars($_SERVER[\'SCRIPT_URL\']));?>'},
-					{from: /\{\{ PAGE_TITLE \}\}/g, to: '<?php echo(htmlspecialchars($title));?>'},
-					{from: /\{\{ PAGE_DESCRIPTION \}\}/g, to: '<?php echo(htmlspecialchars($description));?>'},
-					{from: /\{\{ THEME_COLOR \}\}/g, to: '#aa00ff'}
 				]
 			}
 		},
@@ -211,7 +195,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				options: {livereload: true},
-				files: ['<%= dirs.template %>sass/**/*.scss'],
+				files: ['<%= dirs.source %>sass/**/*.scss'],
 				tasks: ['build-sass']
 			},
 			js: {
