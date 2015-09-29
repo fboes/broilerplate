@@ -1,8 +1,3 @@
-function isTouch () {
-	'use strict';
-	return 'ontouchstart' in window;
-}
-
 $(document).ready(function() {
 	'use strict';
 	$('body').bodyInteraction(); // ({})
