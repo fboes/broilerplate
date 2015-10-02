@@ -6,7 +6,7 @@ cwd=$(pwd)
 if [ -f install/mysql/dbdump.sql ]; then
 	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
 	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* TO 'broilerplate'@'localhost' IDENTIFIED BY '{{ DB_PASSWORD }}'"
-	mysql -u root -proot broilerplate < install/mysql/dbdump.sql
+	install/import-dbdump.sh
 fi
 
 cd htdocs

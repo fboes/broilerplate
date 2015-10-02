@@ -186,7 +186,7 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			deploy:  { command: '<%= dirs.install %>deploy.sh'}
+			deploy_live:  { command: '<%= dirs.install %>deploy-live.sh'}
 		},
 
 		watch: {
@@ -230,5 +230,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
 	grunt.registerTask('default',     ['build-js','build-sass','build-icons']);
-	grunt.registerTask('deploy',      ['shell:deploy']);
+	grunt.registerTask('deploy_live', ['shell:deploy_live']);
 };
