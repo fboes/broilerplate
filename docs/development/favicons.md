@@ -24,7 +24,7 @@ OG:Images
 Every page should have it's own preview image, referenced by this code:
 
 ```html
-<meta property="og:image" content="{{ BASE_URL }}{{ IMAGE_URL }}" />
+<meta property="og:image" content="{{BASE_URL}}{{IMAGE_URL}}" />
 ```
 
 According to Facebook this image should be at least 200×200 pixels.

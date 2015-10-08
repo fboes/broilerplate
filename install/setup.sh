@@ -1,11 +1,11 @@
 #!/bin/bash
 cd ${0%/*}/..
 
-cwd=$(pwd)
+CWD=$(pwd)
 
 if [ -f install/mysql/dbdump.sql ]; then
 	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS broilerplate"
-	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* TO 'broilerplate'@'localhost' IDENTIFIED BY '{{ DB_PASSWORD }}'"
+	mysql -u root -proot --execute "GRANT ALL ON broilerplate.* TO 'broilerplate'@'localhost' IDENTIFIED BY '$DB_PASSWORD'"
 	install/import-dbdump.sh
 fi
 
@@ -20,8 +20,8 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	echo -e "=== [32mApache2 vhost config[m ==="
 	echo ""
-	sed "s#/var/www#$cwd#g" install/apache/macro-broilerplate.conf
-	sed "s#/var/www#$cwd#g" install/apache/broilerplate.local.conf
+	sed "s#/var/www#$CWD#g" install/apache/macro-broilerplate.conf
+	sed "s#/var/www#$CWD#g" install/apache/broilerplate.local.conf
 	echo ""
 	echo -e "=== [32m/etc/hosts[m === "
 	echo ""
