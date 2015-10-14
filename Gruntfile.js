@@ -106,19 +106,18 @@ module.exports = function(grunt) {
 		appcache: {
 			options: {
 				//preferOnline: true,
-				basePath: '<%= dirs.template %>'
+				basePath: '<%= dirs.htdocs %>'
 			},
 			all: {
 				dest: '<%= dirs.template %>/manifest.appcache',
 				cache: {
 					patterns: [
-						'<%= dirs.template %>/**/*',
+						'<%= dirs.template %>/*',
 						'!<%= dirs.template %>/*.html',
-						'!<%= dirs.template %>/sass/**/*',
-						'!<%= dirs.template %>/js-src/**/*',
-						'!<%= dirs.template %>/images/articles/**/*',
-						'!<%= dirs.template %>/images/articles@2x/**/*',
-						'!<%= dirs.template %>/images/originals/**/*'
+						'<%= dirs.template %>/css/**/*',
+						'<%= dirs.template %>/fonts/**/*',
+						'<%= dirs.template %>/images/*',
+						'<%= dirs.template %>/js/**/*'
 					]
 				},
 				network: '*'
