@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		develop: true,
+		develop: false,
 		dirs: {
 			htdocs:   'htdocs/',
 			source:   '<%= dirs.htdocs %>',
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'<%= dirs.template %>js/main.min.js': [
+					'<%= dirs.template %>js/scripts.js': [
 						'<%= dirs.source %>js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
 						'<%= dirs.source %>js-src/modules/*.js',
 						'<%= dirs.source %>js-src/main.js'
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 		sass: {
 			options: {
 				style: 'compact',
-				sourcemap: ('<%= develop %>' ? 'auto' : 'none')
+				sourcemap: 'none' // 'auto', depending on '<%= develop %>'
 			},
 			build: {
 				files: [{
@@ -103,6 +103,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		appcache: {
+			options: {
+				//preferOnline: true,
+				basePath: '<%= dirs.template %>'
+			},
+			all: {
+				dest: '<%= dirs.template %>/manifest.appcache',
+				cache: {
+					patterns: [
+						'<%= dirs.template %>/**/*',
+						'!<%= dirs.template %>/*.html',
+						'!<%= dirs.template %>/sass/**/*',
+						'!<%= dirs.template %>/js-src/**/*',
+						'!<%= dirs.template %>/images/articles/**/*',
+						'!<%= dirs.template %>/images/articles@2x/**/*',
+						'!<%= dirs.template %>/images/originals/**/*'
+					]
+				},
+				network: '*'
+			}
+		},
 		replace: {
 			oldie: {
 				src: ['<%= dirs.template %>css/*.css'],
@@ -225,9 +246,9 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('build-sass',  ['sass','postcss','replace:oldie','replace:notty']);
-	grunt.registerTask('build-js',    ['jshint','uglify']);
-	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558']);
+	grunt.registerTask('build-sass',  ['sass','postcss','replace:oldie','replace:notty', 'appcache']);
+	grunt.registerTask('build-js',    ['jshint','uglify', 'appcache']);
+	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558', 'appcache']);
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
 	grunt.registerTask('default',     ['build-js','build-sass','build-icons']);
 	grunt.registerTask('deploy_live', ['shell:deploy_live']);

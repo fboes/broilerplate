@@ -49,7 +49,7 @@ h3 { font: normal 700 14px/1.2 Garamond, serif; }
 
 h4 { font: normal 700 12px/1.2 Helvetica, Arial, sans-serif; }
 
-a { color: #c30000; }
+a { color: #c40000; }
 a:focus, a:hover { color: #ff9191; }
 
 strong { font-weight: 700; }
@@ -76,11 +76,11 @@ body { direction: ltr; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 #aside { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
 @media screen { body { color: #000000; background-color: #ffffff; }
-  #container { color: #e5e5e5; background-color: #ffffff; }
+  #container { color: #e6e6e6; background-color: #ffffff; }
   #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }
-  #sidebar { color: #000000; background-color: #7f7f7f; }
+  #sidebar { color: #000000; background-color: gray; }
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; } }
 @media screen { #container { max-width: 300px; } }
@@ -109,4 +109,3 @@ body { direction: ltr; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
   thead { display: table-header-group; }
   img { max-width: 100% !important; }
   #navigation { display: none; } }
-

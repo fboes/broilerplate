@@ -1,0 +1,23 @@
+CACHE MANIFEST
+# rev 8 - 2015-10-14T15:02:34.770Z
+
+CACHE:
+apple-touch-icon-precomposed.png
+browserconfig.xml
+css/oldie/rtl.css
+css/oldie/styles.css
+css/rtl.css
+css/styles.css
+favicon-196x196.png
+favicon-96x96.png
+favicon.ico
+images/logo.png
+images/tile-128x128.png
+images/tile-270x270.png
+images/tile-558x270.png
+images/tile-558x558.png
+js/scripts.js
+robots.txt
+
+NETWORK:
+*
