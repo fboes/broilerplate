@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 
 		appcache: {
 			options: {
-				//preferOnline: true,
+				preferOnline: true,
 				basePath: '<%= dirs.htdocs %>'
 			},
 			all: {
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
 					patterns: [
 						'<%= dirs.template %>/*',
 						'!<%= dirs.template %>/*.html',
-						'<%= dirs.template %>/css/**/*',
+						'<%= dirs.template %>/css/*',
 						'<%= dirs.template %>/fonts/**/*',
 						'<%= dirs.template %>/images/*',
 						'<%= dirs.template %>/js/**/*'

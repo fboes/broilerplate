@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 10 - 2015-10-14T15:44:25.035Z
+# rev 11 - 2015-10-14T15:58:54.127Z
 
 CACHE:
 apple-touch-icon-precomposed.png
@@ -8,8 +8,6 @@ favicon-196x196.png
 favicon-96x96.png
 favicon.ico
 robots.txt
-css/oldie/rtl.css
-css/oldie/styles.css
 css/rtl.css
 css/styles.css
 images/logo.png
@@ -21,3 +19,6 @@ js/scripts.js
 
 NETWORK:
 *
+
+SETTINGS:
+prefer-online
