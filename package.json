@@ -1,7 +1,7 @@
 {
   "name": "broilerplate",
   "description": "A boilerplate with SASS, JS & Vagrant.",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:fboes/broilerplate.git"
@@ -21,6 +21,10 @@
     "grunt-text-replace": "^0.4.*",
     "jit-grunt": "^0.9.*",
     "rtlcss": "^1.6.2"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "htdocs"
   },
   "author": "Frank Boës",
   "license": "MIT",

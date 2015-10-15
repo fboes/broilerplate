@@ -3,11 +3,10 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		develop: false,
 		dirs: {
-			htdocs:   'htdocs/',
+			htdocs:   '<%= pkg.directories.lib %>/',
 			source:   '<%= dirs.htdocs %>',
 			template: '<%= dirs.htdocs %>',
 			images:   '<%= dirs.htdocs %>images/',
-			docs:     'docs/',
 			install:  'install/'
 		},
 
@@ -98,7 +97,7 @@ module.exports = function(grunt) {
 		kss : {
 			build: {
 				files: {
-					'<%= dirs.docs %>styleguide': '<%= dirs.source %>sass/'
+					'<%= pkg.directories.doc %>/styleguide': '<%= dirs.source %>sass/'
 				}
 			}
 		},
@@ -216,7 +215,7 @@ module.exports = function(grunt) {
 			sass: {
 				options: {livereload: true},
 				files: ['<%= dirs.source %>sass/**/*.scss'],
-				tasks: ['build-sass']
+				tasks: ['build-css']
 			},
 			js: {
 				options: {livereload: true},
@@ -245,10 +244,10 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('build-sass',  ['sass','postcss','replace:oldie','replace:notty', 'appcache']);
+	grunt.registerTask('build-css',   ['sass','postcss','replace:oldie','replace:notty', 'appcache']);
 	grunt.registerTask('build-js',    ['jshint','uglify', 'appcache']);
 	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558', 'appcache']);
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
-	grunt.registerTask('default',     ['build-js','build-sass','build-icons']);
-	grunt.registerTask('deploy_live', ['shell:deploy_live']);
+	grunt.registerTask('default',     ['build-js','build-css','build-icons']);
+	grunt.registerTask('deploy-live', ['shell:deploy_live']);
 };
