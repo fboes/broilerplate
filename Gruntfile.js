@@ -205,7 +205,7 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			deploy_live:  { command: '<%= dirs.install %>deploy-live.sh'}
+			deploy_live:  { command: '<%= dirs.install %>deploy.sh live'}
 		},
 
 		watch: {

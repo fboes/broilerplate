@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cd ${0%/*}/..
 
 if [ -f install/mysql/dbdump.sql ]; then

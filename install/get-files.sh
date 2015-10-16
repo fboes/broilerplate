@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cd ${0%/*}/../htdocs
 
 rsync -avz $REMOTE_HOST:$REMOTE_DIRECTORY/htdocs/download ./
