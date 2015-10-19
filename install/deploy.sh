@@ -18,5 +18,3 @@ case "$1" in
 		echo "Environment '$1' not found" && exit 1
 		;;
 esac
-
-
