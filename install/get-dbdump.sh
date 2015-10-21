@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd ${0%/*}/../htdocs
+cd ${0%/*}/..
 
 case "$1" in
 	live)
