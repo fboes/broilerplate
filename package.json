@@ -17,10 +17,10 @@
     "grunt-image-resize": "^1.*",
     "grunt-kss": "^2.*",
     "grunt-postcss": "^0.7.*",
-    "grunt-shell": "^1.1.*",
+    "grunt-shell": "^1.*",
     "grunt-text-replace": "^0.4.*",
     "jit-grunt": "^0.9.*",
-    "rtlcss": "^1.6.2"
+    "rtlcss": "^1.*"
   },
   "directories": {
     "doc": "docs",

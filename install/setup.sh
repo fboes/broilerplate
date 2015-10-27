@@ -10,6 +10,10 @@ if [ -f install/mysql/dbdump.sql ]; then
 	install/import-dbdump.sh
 fi
 
+echo ""
+echo -e "=== \x1B[32mDirectory access\x1B[m ==="
+echo ""
+
 function make_writable_directory {
 	mkdir -p $1 && chmod 777 $1
 	if [ -x "/usr/sbin/sestatus" ]; then
