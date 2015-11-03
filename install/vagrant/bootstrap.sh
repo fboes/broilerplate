@@ -9,7 +9,7 @@ fi
 
 [ -d /var/www/logs ] || mkdir -p /var/www/logs
 [ -f /var/www/install/apache/macro-broilerplate.conf ] && cp /var/www/install/apache/macro-broilerplate.conf /etc/apache2/conf-enabled/macro-broilerplate.conf
-[ -f /var/www/install/apache/broilerplate.local.conf ] && cp /var/www/install/apache/broilerplate.local.conf /etc/apache2/sites-enabled/broilerplate.local.conf
+[ -f /var/www/install/apache/broilerplate.local.conf ] && cp /var/www/install/apache/httpd-vhost /etc/apache2/sites-enabled/broilerplate.local.conf && sudo sed -i -- 's/\/localhost/\/broilerplate\.local/g' /etc/apache2/sites-enabled/broilerplate.local.conf
 sudo service apache2 restart
 sudo chmod 666 /var/www/logs/*
 

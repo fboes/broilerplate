@@ -19,7 +19,7 @@ if [ -x "/usr/sbin/sestatus" ]; then
 fi
 
 function make_writable_directory {
-	mkdir -p $1 && chmod 777 $1
+	mkdir -p $1 && chmod -R 777 $1
 	if [ -x "/usr/sbin/sestatus" ]; then
 		echo "semanage fcontext -a -t httpd_sys_rw_content_t \"$LOCAL_DIRECTORY/$1(/.*)?\""
 	fi
@@ -35,7 +35,7 @@ if [ ! -d /vagrant ]; then
 	echo -e "=== \x1B[32mApache2 vhost config\x1B[m ==="
 	echo ""
 	sed "s#/var/www#$LOCAL_DIRECTORY#g" install/apache/macro-broilerplate.conf
-	sed "s#/var/www#$LOCAL_DIRECTORY#g;s#localhost#$LOCAL_HOST#g" install/apache/broilerplate.local.conf
+	sed "s#/var/www#$LOCAL_DIRECTORY#g;s#localhost#$LOCAL_HOST#g" install/apache/httpd-vhost.conf
 	echo ""
 	echo -e "=== \x1B[32m/etc/hosts\x1B[m === "
 	echo ""

@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		develop: false,
 		dirs: {
 			htdocs:   '<%= pkg.directories.lib %>/',
-			source:   '<%= dirs.htdocs %>',
+			source:   'src/',
 			template: '<%= dirs.htdocs %>',
 			images:   '<%= dirs.htdocs %>images/',
 			install:  'install/'
