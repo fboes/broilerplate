@@ -17,16 +17,29 @@ body {
 	margin: auto;
 }
 #banner {
+	font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default} $fontfamily-secondary;
+	//font-size: $fontsize-biggest; // needed for IE 9-10 in case of rem
+	padding:1rem;
 }
 #navigation {
+	padding:1rem;
+	ul {
+		@extend %toolshed-horizontal-list;
+	}
 }
 #main {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
+	padding:1rem;
 }
 #aside {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
+	padding:1rem;
 }
 #footer {
+	padding:1rem;
+	ul {
+		@extend %toolshed-horizontal-list;
+	}
 }

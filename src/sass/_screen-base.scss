@@ -31,68 +31,93 @@ body {
 .no-screen {
 	display:none;
 }
-@if ($switch-overlapping) {
-	.header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
-		margin:0 auto;
-		@include screen_smartphone {
-			max-width: $width-container-smartphone;
+@if ($switch-fluid) {
+	.columns {
+		width: $width-column;
+
+		@each $cols in (1,2,3) {
+			&__4-#{$cols} {
+				width: 100% / 4 * $cols;
+			}
 		}
-		@include screen_tablet {
-			max-width: $width-container-tablet;
+		@each $cols in (1,2) {
+			&__3-#{$cols} {
+				width: 100% / 3 * $cols;
+			}
 		}
-		@include screen_tablet_landscape {
-			max-width: $width-container-tablet-landscape;
-		}
-		@include screen_desktop {
-			max-width: $width-container-desktop;
+		@each $cols in (1) {
+			&__2-#{$cols} {
+				width: 100% / 2 * $cols;
+			}
 		}
 	}
 }
 @else {
-	#container {
-		@include screen_smartphone {
-			max-width: $width-container-smartphone;
+	@if ($switch-overlapping) {
+		.header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
+			margin:0 auto;
+			@include screen_smartphone {
+				max-width: $width-container-smartphone;
+			}
+			@include screen_tablet {
+				max-width: $width-container-tablet;
+			}
+			@include screen_tablet_landscape {
+				max-width: $width-container-tablet-landscape;
+			}
+			@include screen_desktop {
+				max-width: $width-container-desktop;
+			}
 		}
-		@include screen_tablet {
-			max-width: $width-container-tablet;
+	}
+	@else {
+		#container {
+			@include screen_smartphone {
+				max-width: $width-container-smartphone;
+			}
+			@include screen_tablet {
+				max-width: $width-container-tablet;
+			}
+			@include screen_tablet_landscape {
+				max-width: $width-container-tablet-landscape;
+			}
+			@include screen_desktop {
+				max-width: $width-container-desktop;
+			}
+		}
+	}
+	.columns {
+		width: $width-column;
+
+		@each $cols in (1,2,3,4) {
+			&__4-#{$cols} {
+				width: $cols * $width-column + ($cols - 1) * $spacing-column;
+			}
 		}
 		@include screen_tablet_landscape {
-			max-width: $width-container-tablet-landscape;
+			@each $cols in (1,2,3) {
+				&__3-#{$cols} {
+					width: $cols * $width-column + ($cols - 1) * $spacing-column;
+				}
+			}
 		}
-		@include screen_desktop {
-			max-width: $width-container-desktop;
+		@include screen_tablet {
+			@each $cols in (1,2) {
+				&__2-#{$cols} {
+					width: $cols * $width-column + ($cols - 1) * $spacing-column;
+				}
+			}
+		}
+		@include screen_smartphone {
+			&__1-1 {
+				width: $width-column;
+			}
 		}
 	}
 }
 
-.columns {
-	width: $width-column;
 
-	@each $cols in (1,2,3,4) {
-		&__4-#{$cols} {
-			width: $cols * $width-column + ($cols - 1) * $spacing-column;
-		}
-	}
-	@include screen_tablet_landscape {
-		@each $cols in (1,2,3) {
-			&__3-#{$cols} {
-				width: $cols * $width-column + ($cols - 1) * $spacing-column;
-			}
-		}
-	}
-	@include screen_tablet {
-		@each $cols in (1,2) {
-			&__2-#{$cols} {
-				width: $cols * $width-column + ($cols - 1) * $spacing-column;
-			}
-		}
-	}
-	@include screen_smartphone {
-		&__1-1 {
-			width: $width-column;
-		}
-	}
-}
+
 
 %toolshed-hide-text {
 	@include toolshed-hide-text();

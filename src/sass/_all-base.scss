@@ -95,7 +95,10 @@ form {
 			select {}
 		}
 	}
-	label {}
+	label {
+		display: inline-block;
+		width: 20%;
+	}
 	small {}
 	input, textarea, select {
 		&:required {}

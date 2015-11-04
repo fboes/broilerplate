@@ -195,12 +195,12 @@ module.exports = function(grunt) {
 			article_images: {
 				options: {width: 1280, height: 720, crop: true, gravity: 'Center'},
 				src:  '<%= dirs.images %>originals/*.jpg',
-				dest: '<%= dirs.images %>articles/'
+				dest: '<%= dirs.images %>articles-1280/'
 			},
 			article_images2: {
 				options: {width: 2560, height: 1440, crop: true, gravity: 'Center'},
 				src:  '<%= dirs.images %>originals/*.jpg',
-				dest: '<%= dirs.images %>articles@2x/'
+				dest: '<%= dirs.images %>articles-2560/'
 			}
 		},
 

@@ -9,6 +9,7 @@
 
 $switch-develop:                    false !default; // show debugging styles
 $switch-overlapping:                false !default; // container does not set width, but every __inner-element on its own
+$switch-fluid:                      false !default; // if set to fluid, the container will not use breakpoints for its width
 
 // Base canon
 //

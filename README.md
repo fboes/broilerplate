@@ -63,7 +63,7 @@ See `docs/development` for more information
 Version
 -------
 
-Version: 1.3.1 (2015-08-28)
+Version: 1.4.0 (2015-11-04)
 
 Legal stuff
 -----------

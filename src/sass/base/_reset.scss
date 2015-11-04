@@ -73,6 +73,9 @@ button {
 form, input, select, textarea, button {
 	font: inherit;
 }
+fieldset {
+	padding: 0.5em;
+}
 optgroup {
 	option {
 		margin-left:1em;
