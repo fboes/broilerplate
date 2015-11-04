@@ -193,14 +193,14 @@ module.exports = function(grunt) {
 				files:   {'<%= dirs.images %>tile-558x558.png':'<%= dirs.images %>logo.png'}
 			},
 			article_images: {
+				options: {width: 640, height: 360, crop: true, gravity: 'Center'},
+				src:  '<%= dirs.images %>originals/*.jpg',
+				dest: '<%= dirs.images %>articles-640/'
+			},
+			article_images2: {
 				options: {width: 1280, height: 720, crop: true, gravity: 'Center'},
 				src:  '<%= dirs.images %>originals/*.jpg',
 				dest: '<%= dirs.images %>articles-1280/'
-			},
-			article_images2: {
-				options: {width: 2560, height: 1440, crop: true, gravity: 'Center'},
-				src:  '<%= dirs.images %>originals/*.jpg',
-				dest: '<%= dirs.images %>articles-2560/'
 			}
 		},
 
