@@ -6,9 +6,11 @@ if [ ! -e install/config.sh ]; then
 fi
 source install/config.sh
 
+if [ "$LOCAL_DB_HOST" ]; then
+	mysql -h $LOCAL_DB_HOST -u root -proot --execute "CREATE DATABASE IF NOT EXISTS $LOCAL_DB_DB"
+	mysql -h $LOCAL_DB_HOST -u root -proot --execute "GRANT ALL ON $LOCAL_DB_DB.* TO '$LOCAL_DB_USR'@'localhost' IDENTIFIED BY '$LOCAL_DB_PWD'"
+if
 if [ -f install/mysql/dbdump.sql ]; then
-	mysql -u root -proot --execute "CREATE DATABASE IF NOT EXISTS $LOCAL_DB_DB"
-	mysql -u root -proot --execute "GRANT ALL ON $LOCAL_DB_DB.* TO '$LOCAL_DB_USR'@'localhost' IDENTIFIED BY '$LOCAL_DB_PWD'"
 	install/import-dbdump.sh
 fi
 
