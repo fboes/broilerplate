@@ -10,7 +10,6 @@
 $switch-develop:                    false !default; // show debugging styles
 $switch-overlapping:                false !default; // container does not set width, but every __inner-element on its own
 $switch-fluid:                      false !default; // if set to fluid, the container will not use breakpoints for its width
-$switch-use-columns:                false !default; // Make containers bigger, so columns _&_ their respective margins fit in there; otherwise you might want to use flex-layouts
 
 // Base canon
 //
@@ -96,11 +95,11 @@ $color-darker :                     rgba(0,0,0,0.25);
 
 // Colors > Assigning
 
-$backgroundcolor-body:              $color-white;
+$backgroundcolor-body:              $color-grey-light;
 $color-body:                        $color-black;
 
-$backgroundcolor-container:         $color-white;
-$color-container:                   $color-grey-light;
+$backgroundcolor-container:         $color-black;
+$color-container:                   $color-white;
 
 $backgroundcolor-banner:            $color-black;
 $color-banner:                      $color-white;

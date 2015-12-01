@@ -31,6 +31,9 @@ body {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
 	//font-size: $fontsize-default; // needed for IE 9-10 in case of rem
 	padding:1rem;
+	.columns__container {
+		margin:0 calc(-1rem - #{floor($spacing-column/2)});
+	}
 }
 #aside {
 	font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;

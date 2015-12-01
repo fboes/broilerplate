@@ -79,19 +79,23 @@ body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smooth
 #navigation { padding: 1rem; }
 
 #main { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; padding: 1rem; }
+#main .columns__container { margin: 0 calc(-1rem - 10px); }
 
 #aside { font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; padding: 1rem; }
 
 #footer { padding: 1rem; }
 
-@media screen { body { color: #000000; background-color: #ffffff; }
-  #container { color: #e6e6e6; background-color: #ffffff; }
+@media screen { body { color: #000000; background-color: #e6e6e6; }
+  #container { color: #ffffff; background-color: #000000; }
   #banner { color: #ffffff; background-color: #000000; text-align: center; }
   #navigation { color: #000000; background-color: #ffffff; text-align: center; }
   #main { color: #000000; background-color: #ffffff; }
   #sidebar { color: #000000; background-color: gray; }
   #footer { color: #ffffff; background-color: #000000; }
-  .no-screen { display: none; } }
+  .no-screen { display: none; }
+  .columns { float: right; margin-right: 10px; margin-left: 10px; }
+  .columns--raw { margin-right: 0; margin-left: 0; }
+  .columns__container { margin-right: -10px; margin-left: -10px; } }
 @media screen { #container { max-width: 300px; } }
 @media screen and (min-width: 640px) { #container { max-width: 620px; } }
 @media screen and (min-width: 960px) { #container { max-width: 940px; } }
@@ -108,7 +112,9 @@ body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smooth
 @media screen and (min-width: 640px) { .columns--2-1 { width: 300px; }
   .columns--2-2 { width: 620px; } }
 @media screen { .columns--1-1 { width: 300px; } }
-@media screen { .columns__container { margin-right: -10px; margin-left: -10px; }
+
+@media screen { .columns__container { zoom: 1; }
+  .columns__container:after { display: block; visibility: hidden; height: 0; clear: both; content: "."; }
   #navigation ul, #footer ul { display: block; list-style: none; text-align: center; }
   #navigation ul li, #footer ul li { display: inline-block; margin: 0; padding: 0; vertical-align: top; } }
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }

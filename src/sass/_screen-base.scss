@@ -31,23 +31,55 @@ body {
 .no-screen {
 	display:none;
 }
+
+.columns {
+	float:left;
+	margin-left:  ceil($spacing-column/2);
+	margin-right: floor($spacing-column/2);
+	&--raw {
+		margin-left:0;
+		margin-right:0;
+	}
+	&__container {
+		@extend %toolshed-clearfix;
+		margin-left:  ceil($spacing-column/-2);
+		margin-right: floor($spacing-column/-2);
+	}
+}
+
 @if ($switch-fluid) {
 	.columns {
-		width: $width-column;
-
+		width: 100%;
 		@each $cols in (1,2,3) {
-			&__4-#{$cols} {
-				width: 100% / 4 * $cols;
+			&--4-#{$cols} {
+				width: calc( #{100% / 4 * $cols} - #{$spacing-column});
 			}
 		}
 		@each $cols in (1,2) {
-			&__3-#{$cols} {
-				width: 100% / 3 * $cols;
+			&--3-#{$cols} {
+				width: calc( #{100% / 3 * $cols} - #{$spacing-column});
 			}
 		}
 		@each $cols in (1) {
-			&__2-#{$cols} {
-				width: 100% / 2 * $cols;
+			&--2-#{$cols} {
+				width: calc( #{100% / 2 * $cols} - #{$spacing-column});
+			}
+		}
+		&--raw {
+			@each $cols in (1,2,3) {
+				&--4-#{$cols} {
+					width: 100% / 4 * $cols;
+				}
+			}
+			@each $cols in (1,2) {
+				&--3-#{$cols} {
+					width: 100% / 3 * $cols;
+				}
+			}
+			@each $cols in (1) {
+				&--2-#{$cols} {
+					width: 100% / 2 * $cols;
+				}
 			}
 		}
 	}
@@ -56,75 +88,38 @@ body {
 	@if ($switch-overlapping) {
 		.header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
 			margin:0 auto;
-			@if ($switch-use-columns) {
-				@include screen_smartphone {
-					max-width: $width-container-col-smartphone;
-				}
-				@include screen_tablet {
-					max-width: $width-container-col-tablet;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-col-tablet-landscape;
-				}
-				@include screen_desktop {
-					max-width: $width-container-col-desktop;
-				}
+			@include screen_smartphone {
+				max-width: $width-container-smartphone;
 			}
-			@else {
-				@include screen_smartphone {
-					max-width: $width-container-smartphone;
-				}
-				@include screen_tablet {
-					max-width: $width-container-tablet;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-tablet-landscape;
-				}
-				@include screen_desktop {
-					max-width: $width-container-desktop;
-				}
+			@include screen_tablet {
+				max-width: $width-container-tablet;
+			}
+			@include screen_tablet_landscape {
+				max-width: $width-container-tablet-landscape;
+			}
+			@include screen_desktop {
+				max-width: $width-container-desktop;
 			}
 		}
 	}
 	@else {
 		#container {
-			@if ($switch-use-columns) {
-				@include screen_smartphone {
-					max-width: $width-container-col-smartphone;
-				}
-				@include screen_tablet {
-					max-width: $width-container-col-tablet;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-col-tablet-landscape;
-				}
-				@include screen_desktop {
-					max-width: $width-container-col-desktop;
-				}
+			@include screen_smartphone {
+				max-width: $width-container-smartphone;
 			}
-			@else {
-				@include screen_smartphone {
-					max-width: $width-container-smartphone;
-				}
-				@include screen_tablet {
-					max-width: $width-container-tablet;
-				}
-				@include screen_tablet_landscape {
-					max-width: $width-container-tablet-landscape;
-				}
-				@include screen_desktop {
-					max-width: $width-container-desktop;
-				}
+			@include screen_tablet {
+				max-width: $width-container-tablet;
+			}
+			@include screen_tablet_landscape {
+				max-width: $width-container-tablet-landscape;
+			}
+			@include screen_desktop {
+				max-width: $width-container-desktop;
 			}
 		}
 	}
 	.columns {
 		width: $width-column;
-		@if ($switch-use-columns) {
-			margin-left:  ceil($spacing-column/2);
-			margin-right: floor($spacing-column/2);
-		}
-
 		@each $cols in (1,2,3,4) {
 			&--4-#{$cols} {
 				width: $cols * $width-column + ($cols - 1) * $spacing-column;
@@ -149,22 +144,8 @@ body {
 				width: $width-column;
 			}
 		}
-
-		&__container {
-			@if ($switch-use-columns) {
-				margin-left:  ceil($spacing-column/2);
-				margin-right: floor($spacing-column/2);
-			}
-			@else {
-				margin-left:  ceil($spacing-column/-2);
-				margin-right: floor($spacing-column/-2);
-			}
-		}
 	}
 }
-
-
-
 
 %toolshed-hide-text {
 	@include toolshed-hide-text();
