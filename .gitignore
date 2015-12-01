@@ -3,6 +3,6 @@
 docs/styleguide
 logs
 node_modules
-install/vagrant/.vagrant
-install/config.sh
+build/vagrant/.vagrant
+build/config.sh
 tmp

@@ -21,7 +21,7 @@ if [ -x "/usr/sbin/sestatus" ]; then
 fi
 
 function make_writable_directory {
-	mkdir -p $1 && chmod -R 777 $1
+	mkdir -p $1 && chmod -R ugo+rwX $1
 	if [ -x "/usr/sbin/sestatus" ]; then
 		echo "semanage fcontext -a -t httpd_sys_rw_content_t \"$LOCAL_DIRECTORY/$1(/.*)?\""
 	fi

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			source:   'src/',
 			template: '<%= dirs.htdocs %>',
 			images:   '<%= dirs.htdocs %>images/',
-			install:  'install/'
+			build:  'build/'
 		},
 
 		jshint: {
@@ -205,7 +205,7 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			deploy_live:  { command: '<%= dirs.install %>deploy.sh live'}
+			deploy_live:  { command: '<%= dirs.build %>deploy.sh live'}
 		},
 
 		watch: {

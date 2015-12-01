@@ -10,7 +10,7 @@ Variables used in templates:
 * `{{PAGE_DESCRIPTION}}`: Description of the current page. Maximum length is 160 characters
 * `{{THEME_COLOR}}`: Hex color used as basic theme color. E.g. `#aa00ff`
 
-There are also some variables used for automatic setups (see [setup.sh](../../install/setup.sh):
+There are also some variables used for automatic setups (see [setup.sh](../../build/setup.sh):
 
 * `{{DB_TABLE}}`
 * `{{DB_USERNAME}}`
@@ -19,7 +19,7 @@ There are also some variables used for automatic setups (see [setup.sh](../../in
 Using the setup script
 ----------------------
 
-If you want to use automatic setups via [setup.sh](../../install/setup.sh), you may have to modify if extensively.
+If you want to use automatic setups via [setup.sh](../../build/setup.sh), you may have to modify if extensively.
 
 Web server in a box
 --------------------
@@ -40,7 +40,7 @@ The most important commands:
 * `vagrant ssh`: SSH into your server
 * `vagrant provision`: Run provisioner again
 
-The local Vagrant setup will execute any commands from [`install/vagrant/bootstrap.sh`](../../install/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Grunt watcher](grunt.md).
+The local Vagrant setup will execute any commands from [`build/vagrant/bootstrap.sh`](../../build/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Grunt watcher](grunt.md).
 
-After starting Vagrant there will be a webserver, running at the host name you set it to under [`install/vagrant/Vagrantfile`](../../install/vagrant/Vagrantfile).
+After starting Vagrant there will be a webserver, running at the host name you set it to under [`build/vagrant/Vagrantfile`](../../build/vagrant/Vagrantfile).
 
