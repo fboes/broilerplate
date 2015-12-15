@@ -1,14 +1,6 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		develop: false,
-		dirs: {
-			htdocs:   '<%= pkg.directories.lib %>/',
-			source:   'src/',
-			template: '<%= dirs.htdocs %>',
-			images:   '<%= dirs.htdocs %>images/',
-			build:  'build/'
-		},
 
 		jshint: {
 			options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
@@ -20,8 +12,8 @@ module.exports = function(grunt) {
 			build: {
 				files: {
 					src: [
-						'<%= dirs.source %>js-src/**/*.js',
-						'!<%= dirs.source %>js-src/vendor/*.js'
+						'<%= pkg.directories.lib %>/js-src/**/*.js',
+						'!<%= pkg.directories.lib %>/js-src/vendor/*.js'
 					]
 				}
 			}
@@ -33,14 +25,14 @@ module.exports = function(grunt) {
 				// beautify: true,
 				// compress: false,
 				maxLineLen: 9000,
-				sourceMap: '<%= develop %>'
+				sourceMap: '<%= pkg.config.develop %>'
 			},
 			build: {
 				files: {
-					'<%= dirs.template %>js/scripts.js': [
-						'<%= dirs.source %>js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
-						'<%= dirs.source %>js-src/modules/*.js',
-						'<%= dirs.source %>js-src/main.js'
+					'<%= pkg.directories.template %>/js/scripts.js': [
+						'<%= pkg.directories.lib %>/js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
+						'<%= pkg.directories.lib %>/js-src/modules/*.js',
+						'<%= pkg.directories.lib %>/js-src/main.js'
 					]
 				}
 			}
@@ -49,14 +41,14 @@ module.exports = function(grunt) {
 		sass: {
 			options: {
 				style: 'compact',
-				sourcemap: 'none' // 'auto', depending on '<%= develop %>'
+				sourcemap: 'none' // 'auto', depending on '<%= pkg.config.develop %>'
 			},
 			build: {
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.source %>sass',
+					cwd: '<%= pkg.directories.lib %>/sass',
 					src: ['*.scss'],
-					dest: '<%= dirs.template %>css',
+					dest: '<%= pkg.directories.template %>/css',
 					ext: '.css'
 				}]
 			}
@@ -64,7 +56,7 @@ module.exports = function(grunt) {
 
 		postcss: {
 			options: {
-				map: '<%= develop %>'
+				map: '<%= pkg.config.develop %>'
 			},
 			build: {
 				options: {
@@ -72,7 +64,7 @@ module.exports = function(grunt) {
 						require('autoprefixer')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
 					]
 				},
-				src: '<%= dirs.template %>css/*.css'
+				src: '<%= pkg.directories.template %>/css/*.css'
 			},
 			rtl: {
 				options: {
@@ -80,16 +72,16 @@ module.exports = function(grunt) {
 						require('rtlcss')()
 					]
 				},
-				src: '<%= dirs.template %>css/styles.css',
-				dest: '<%= dirs.template %>css/rtl.css'
+				src: '<%= pkg.directories.template %>/css/styles.css',
+				dest: '<%= pkg.directories.template %>/css/rtl.css'
 			}
 		},
 
 		/*compass: {
 			build: {
 				options: {
-					basePath: '<%= dirs.template %>',
-					config: '<%= dirs.template %>config.rb'
+					basePath: '<%= pkg.directories.template %>/',
+					config: '<%= pkg.directories.template %>/config.rb'
 				}
 			}
 		},*/
@@ -97,7 +89,7 @@ module.exports = function(grunt) {
 		kss : {
 			build: {
 				files: {
-					'<%= pkg.directories.doc %>/styleguide': '<%= dirs.source %>sass/'
+					'<%= pkg.directories.doc %>/styleguide': '<%= pkg.directories.lib %>/sass/'
 				}
 			}
 		},
@@ -105,18 +97,18 @@ module.exports = function(grunt) {
 		appcache: {
 			options: {
 				preferOnline: true,
-				basePath: '<%= dirs.htdocs %>'
+				basePath: '<%= pkg.directories.htdocs %>/'
 			},
 			all: {
-				dest: '<%= dirs.template %>/manifest.appcache',
+				dest: '<%= pkg.directories.template %>/manifest.appcache',
 				cache: {
 					patterns: [
-						'<%= dirs.template %>/*',
-						'!<%= dirs.template %>/*.html',
-						'<%= dirs.template %>/css/*',
-						'<%= dirs.template %>/fonts/**/*',
-						'<%= dirs.template %>/images/*',
-						'<%= dirs.template %>/js/**/*'
+						'<%= pkg.directories.template %>/*',
+						'!<%= pkg.directories.template %>/*.html',
+						'<%= pkg.directories.template %>/css/*',
+						'<%= pkg.directories.template %>/fonts/**/*',
+						'<%= pkg.directories.template %>/images/*',
+						'<%= pkg.directories.template %>/js/**/*'
 					]
 				},
 				network: '*'
@@ -124,8 +116,8 @@ module.exports = function(grunt) {
 		},
 		replace: {
 			oldie: {
-				src: ['<%= dirs.template %>css/*.css'],
-				dest: '<%= dirs.template %>css/oldie/',
+				src: ['<%= pkg.directories.template %>/css/*.css'],
+				dest: '<%= pkg.directories.template %>/css/oldie/',
 				replacements: [
 					{from: /\/\*#.+?\*\//g, to: ''},
 					{from: /@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, to: '$1$2'},
@@ -162,50 +154,50 @@ module.exports = function(grunt) {
 			options: {overwrite: true, upscale: true, crop: true, gravity: 'Center', quality: 0.7},
 			fav32: {
 				options: {width: 32},
-				files:   {'<%= dirs.template %>favicon.ico':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.template %>/favicon.ico':'<%= pkg.directories.images %>/logo.png'}
 			},
 			fav96: {
 				options: {width: 96},
-				files:   {'<%= dirs.template %>favicon-96x96.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.template %>/favicon-96x96.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			fav152: {
 				options: {width: 152},
-				files:   {'<%= dirs.template %>apple-touch-icon-precomposed.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.template %>/apple-touch-icon-precomposed.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			fav196: {
 				options: {width: 196},
-				files:   {'<%= dirs.template %>favicon-196x196.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.template %>/favicon-196x196.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			tile128: {
 				options: {width: 128},
-				files:   {'<%= dirs.images %>tile-128x128.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.images %>/tile-128x128.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			tile270: {
 				options: {width: 270},
-				files:   {'<%= dirs.images %>tile-270x270.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.images %>/tile-270x270.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			tilewide: {
 				options: {width: 558, height:270},
-				files:   {'<%= dirs.images %>tile-558x270.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.images %>/tile-558x270.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			tile558: {
 				options: {width: 558},
-				files:   {'<%= dirs.images %>tile-558x558.png':'<%= dirs.images %>logo.png'}
+				files:   {'<%= pkg.directories.images %>/tile-558x558.png':'<%= pkg.directories.images %>/logo.png'}
 			},
 			article_images: {
 				options: {width: 640, height: 360, crop: true, gravity: 'Center'},
-				src:  '<%= dirs.images %>originals/*.jpg',
-				dest: '<%= dirs.images %>articles-640/'
+				src:  '<%= pkg.directories.images %>/originals/*.jpg',
+				dest: '<%= pkg.directories.images %>/articles-640/'
 			},
 			article_images2: {
 				options: {width: 1280, height: 720, crop: true, gravity: 'Center'},
-				src:  '<%= dirs.images %>originals/*.jpg',
-				dest: '<%= dirs.images %>articles-1280/'
+				src:  '<%= pkg.directories.images %>/originals/*.jpg',
+				dest: '<%= pkg.directories.images %>/articles-1280/'
 			}
 		},
 
 		shell: {
-			deploy_live:  { command: '<%= dirs.build %>deploy.sh live'}
+			deploy_live:  { command: '<%= pkg.directories.build %>/deploy.sh live'}
 		},
 
 		watch: {
@@ -214,7 +206,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				options: {livereload: true},
-				files: ['<%= dirs.source %>sass/**/*.scss'],
+				files: ['<%= pkg.directories.lib %>/sass/**/*.scss'],
 				tasks: ['build-css']
 			},
 			js: {
@@ -223,7 +215,7 @@ module.exports = function(grunt) {
 				tasks: ['build-js']
 			},
 			logo: {
-				files: ['<%= dirs.images %>logo.png'],
+				files: ['<%= pkg.directories.images %>/logo.png'],
 				tasks: ['build-icons']
 			},
 			article_images: {
@@ -232,7 +224,7 @@ module.exports = function(grunt) {
 			},
 			livereload: {
 				options: {livereload: true},
-				files: ['<%= dirs.template %>*.html','<%= dirs.template %>images/*']
+				files: ['<%= pkg.directories.template %>*.html','<%= pkg.directories.template %>/images/*']
 			}
 		}
 	});

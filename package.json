@@ -23,8 +23,15 @@
     "rtlcss": "^1.*"
   },
   "directories": {
-    "doc": "docs",
-    "lib": "htdocs"
+    "doc":      "docs",
+    "lib":      "src",
+    "htdocs":   "htdocs",
+    "template": "htdocs",
+    "images":   "htdocs/images",
+    "build":    "build"
+  },
+  "config": {
+    "develop": false
   },
   "author": "Frank Boës",
   "license": "MIT",
