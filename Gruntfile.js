@@ -7,7 +7,8 @@ module.exports = function(grunt) {
 				browser: true,
 				jquery: true,
 				strict: true,
-				curly: true
+				curly: true,
+				undef:true
 			},
 			build: {
 				files: {
