@@ -1,9 +1,11 @@
-$(document).ready(function() {
+(function ($) {
 	'use strict';
-	$('body').bodyInteraction(); // ({})
-	$('#navigation').navigationInteraction(); // ({})
-	$('#main').mainInteraction(); // ({})
+	$(document).ready(function() {
+		$('body').bodyInteraction(); // ({})
+		$('#navigation').navigationInteraction(); // ({})
+		$('#main').mainInteraction(); // ({})
 
-	//$(window).resize(function() {});
-	//$(window).scroll(function() {});
-});
+		//$(window).resize(function() {});
+		//$(window).scroll(function() {});
+	});
+})(jQuery);
