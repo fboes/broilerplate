@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 					config: '<%= pkg.directories.template %>/config.rb'
 				}
 			}
-		},*/
+		},
 
 		kss : {
 			build: {
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 					'<%= pkg.directories.doc %>/styleguide': '<%= pkg.directories.lib %>/sass/'
 				}
 			}
-		},
+		},*/
 
 		appcache: {
 			options: {
