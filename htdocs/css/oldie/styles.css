@@ -114,7 +114,7 @@ body { direction: ltr; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 @media screen { .columns--1-1 { width: 300px; } }
 
 @media screen { .columns__container { zoom: 1; }
-  .columns__container:after { display: block; visibility: hidden; height: 0; clear: both; content: "."; }
+  .columns__container:after { display: block; visibility: hidden; height: 0; clear: both; content: " "; }
   #navigation ul, #footer ul { display: block; list-style: none; text-align: center; }
   #navigation ul li, #footer ul li { display: inline-block; margin: 0; padding: 0; vertical-align: top; } }
 @media screen { .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }

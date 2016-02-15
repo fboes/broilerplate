@@ -114,7 +114,7 @@ body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smooth
 @media screen { .columns--1-1 { width: 300px; } }
 
 @media screen { .columns__container { zoom: 1; }
-  .columns__container:after { display: block; visibility: hidden; height: 0; clear: both; content: "."; }
+  .columns__container:after { display: block; visibility: hidden; height: 0; clear: both; content: " "; }
   #navigation ul, #footer ul { display: block; list-style: none; text-align: center; }
   #navigation ul li, #footer ul li { display: inline-block; margin: 0; padding: 0; vertical-align: top; } }
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }

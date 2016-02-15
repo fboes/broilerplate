@@ -56,7 +56,7 @@
 
 // toolshed-clearfix
 //
-// clear floats
+// clear floats; see also http://cssmojo.com/the-very-latest-clearfix-reloaded/
 //
 // Styleguide 1.1.4
 @mixin toolshed-clearfix () {
@@ -66,7 +66,7 @@
 		visibility: hidden;
 		height: 0;
 		clear: both;
-		content: ".";
+		content: " ";
 	}
 }
 
