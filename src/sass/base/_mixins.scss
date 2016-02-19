@@ -2,15 +2,15 @@
 //
 // Styleguide 3.1
 
-// screen_smartphone
+// screen_mobile
 //
 // Will output the enclosed styles in a media query matching the settings in your `_base.scss`. You may want to change these to match your responsive strategy, be it "mobile-first", "desktop-first", "each their own", "mobile separate" or anything in between.
 // See http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 and http://davidwalsh.name/write-media-queries-sass for more information.
-// Use like `@include screen_smartphone {…}`
+// Use like `@include screen_mobile {…}`
 //
 // Styleguide 3.1.1
-@mixin screen_smartphone () {
-	@media #{$media-responsive-smartphone--bigger} { @content; }
+@mixin screen_mobile () {
+	@media #{$media-responsive-mobile--bigger} { @content; }
 }
 
 // screen_tablet

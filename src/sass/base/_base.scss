@@ -33,32 +33,32 @@ $width-column-4:                    4 * $width-column + 3 * $spacing-column;
 
 // Base canon > Assigning
 
-$width-container-col-smartphone:    $width-column + $spacing-column;
+$width-container-col-mobile:        $width-column + $spacing-column;
 $width-container-col-tablet:        $width-column-2 + $spacing-column;
 $width-container-col-tablet-landscape: $width-column-3 + $spacing-column;
 $width-container-col-desktop:       $width-column-4 + $spacing-column;
 
-$width-container-smartphone:        $width-column;
+$width-container-mobile:            $width-column;
 $width-container-tablet:            $width-column-2;
 $width-container-tablet-landscape:  $width-column-3;
 $width-container-desktop:           $width-column-4;
 
-$width-screen-smartphone:           $width-container-col-smartphone;
+$width-screen-mobile:               $width-container-col-mobile;
 $width-screen-tablet:               $width-container-col-tablet;
 $width-screen-tablet-landscape:     $width-container-col-tablet-landscape;
 $width-screen-desktop:              $width-container-col-desktop;
 
-$media-responsive-smartphone:                "screen and (max-width: #{$width-screen-tablet - 1px})";
+$media-responsive-mobile:                    "screen and (max-width: #{$width-screen-tablet - 1px})";
 $media-responsive-tablet:                    "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
 $media-responsive-tablet-landscape:          "screen and (min-width: #{$width-screen-tablet-landscape}) and (max-width: #{$width-screen-desktop - 1px})";
 $media-responsive-desktop:                   "screen and (min-width: #{$width-screen-desktop})";
 
-$media-responsive-smartphone--smaller:       "screen and (max-width: #{$width-screen-tablet - 1px})";
+$media-responsive-mobile--smaller:           "screen and (max-width: #{$width-screen-tablet - 1px})";
 $media-responsive-tablet--smaller:           "screen and (max-width: #{$width-screen-tablet-landscape - 1px})";
 $media-responsive-tablet-landscape--smaller: "screen and (max-width: #{$width-screen-desktop - 1px})";
 $media-responsive-desktop--smaller:          "screen";
 
-$media-responsive-smartphone--bigger:        "screen";
+$media-responsive-mobile--bigger:            "screen";
 $media-responsive-tablet--bigger:            "screen and (min-width: #{$width-screen-tablet})";
 $media-responsive-tablet-landscape--bigger:  "screen and (min-width: #{$width-screen-tablet-landscape})";
 $media-responsive-desktop--bigger:           "screen and (min-width: #{$width-screen-desktop})";

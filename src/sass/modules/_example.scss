@@ -6,7 +6,7 @@
 	&__inner { }
 	&--open { }
 
-	@include screen_smartphone {
+	@include screen_mobile {
 		&__inner { }
 		&--open { }
 	}

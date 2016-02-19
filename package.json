@@ -33,9 +33,9 @@
     "develop": false
   },
   "scripts": {
-    "install": "build/setup.sh",
+    "install": "build/setup.sh && grunt watch",
     "build": "grunt",
-    "watch": "grunt watch",
+    "start": "grunt watch",
     "deploy-live": "build/deploy.sh live"
   },
   "author": "Frank Boës",

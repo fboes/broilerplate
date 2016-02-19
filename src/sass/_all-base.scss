@@ -170,15 +170,15 @@ table {
 		outline:1px solid rgba(0,0,255,0.5);
 	}
 
-	@media #{$media-responsive-smartphone} { .debug {/*media-responsive-smartphone*/ }}
+	@media #{$media-responsive-mobile} { .debug {/*media-responsive-mobile*/ }}
 	@media #{$media-responsive-tablet} { .debug {/*media-responsive-tablet*/ }}
 	@media #{$media-responsive-tablet-landscape} { .debug {/*media-responsive-tablet-landscape*/ }}
 	@media #{$media-responsive-desktop} { .debug {/*media-responsive-desktop*/ }}
-	@media #{$media-responsive-smartphone--smaller} { .debug {/*media-responsive-smartphone--smaller*/ }}
+	@media #{$media-responsive-mobile--smaller} { .debug {/*media-responsive-mobile--smaller*/ }}
 	@media #{$media-responsive-tablet--smaller} { .debug {/*media-responsive-tablet--smaller*/ }}
 	@media #{$media-responsive-tablet-landscape--smaller} { .debug {/*media-responsive-tablet-landscape--smaller*/ }}
 	@media #{$media-responsive-desktop--smaller} { .debug {/*media-responsive-desktop--smaller*/ }}
-	@media #{$media-responsive-smartphone--bigger} { .debug {/*media-responsive-smartphone--bigger*/ }}
+	@media #{$media-responsive-mobile--bigger} { .debug {/*media-responsive-mobile--bigger*/ }}
 	@media #{$media-responsive-tablet--bigger} { .debug {/*media-responsive-tablet--bigger*/ }}
 	@media #{$media-responsive-tablet-landscape--bigger} { .debug {/*media-responsive-tablet-landscape--bigger*/ }}
 	@media #{$media-responsive-desktop--bigger} { .debug {/*media-responsive-desktop--bigger*/ }}

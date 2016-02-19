@@ -62,8 +62,8 @@ There is a set of prefedined media queries in [`htdocs/sass/base/_mixins.scss`](
 ```sass
 .selector {
 	// Here goes some regular CSS
-	@include screen_smartphone {
-		// Here goes some CSS for smartphones
+	@include screen_mobile {
+		// Here goes some CSS for mobiles
 	}
 }
 ```

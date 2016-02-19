@@ -88,8 +88,8 @@ body {
 	@if ($switch-overlapping) {
 		.header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
 			margin:0 auto;
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
+			@include screen_mobile {
+				max-width: $width-container-mobile;
 			}
 			@include screen_tablet {
 				max-width: $width-container-tablet;
@@ -104,8 +104,8 @@ body {
 	}
 	@else {
 		#container {
-			@include screen_smartphone {
-				max-width: $width-container-smartphone;
+			@include screen_mobile {
+				max-width: $width-container-mobile;
 			}
 			@include screen_tablet {
 				max-width: $width-container-tablet;
@@ -139,7 +139,7 @@ body {
 				}
 			}
 		}
-		@include screen_smartphone {
+		@include screen_mobile {
 			&--1-1 {
 				width: $width-column;
 			}
