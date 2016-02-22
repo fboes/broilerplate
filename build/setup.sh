@@ -9,7 +9,7 @@ source build/config.sh
 if [ "$LOCAL_DB_HOST" ]; then
 	mysql -h $LOCAL_DB_HOST -u root -proot --execute "CREATE DATABASE IF NOT EXISTS $LOCAL_DB_DB"
 	mysql -h $LOCAL_DB_HOST -u root -proot --execute "GRANT ALL ON $LOCAL_DB_DB.* TO '$LOCAL_DB_USR'@'localhost' IDENTIFIED BY '$LOCAL_DB_PWD'"
-if
+fi
 if [ -f build/mysql/dbdump.sql ]; then
 	build/import-dbdump.sh
 fi
