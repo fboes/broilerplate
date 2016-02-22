@@ -1,17 +1,17 @@
 #!/bin/bash
 set -e
 cd ${0%/*}/..
-if [ ! -e install/config.sh ]; then
-	cp install/_config.sh install/config.sh
+if [ ! -e build/config.sh ]; then
+	cp build/_config.sh build/config.sh
 fi
-source install/config.sh
+source build/config.sh
 
 if [ "$LOCAL_DB_HOST" ]; then
 	mysql -h $LOCAL_DB_HOST -u root -proot --execute "CREATE DATABASE IF NOT EXISTS $LOCAL_DB_DB"
 	mysql -h $LOCAL_DB_HOST -u root -proot --execute "GRANT ALL ON $LOCAL_DB_DB.* TO '$LOCAL_DB_USR'@'localhost' IDENTIFIED BY '$LOCAL_DB_PWD'"
 if
-if [ -f install/mysql/dbdump.sql ]; then
-	install/import-dbdump.sh
+if [ -f build/mysql/dbdump.sql ]; then
+	build/import-dbdump.sh
 fi
 
 if [ -x "/usr/sbin/sestatus" ]; then
@@ -36,8 +36,8 @@ if [ ! -d /vagrant ]; then
 	echo ""
 	echo -e "=== \x1B[32mApache2 vhost config\x1B[m ==="
 	echo ""
-	sed "s#/var/www#$LOCAL_DIRECTORY#g" install/apache/macro-broilerplate.conf
-	sed "s#/var/www#$LOCAL_DIRECTORY#g;s#localhost#$LOCAL_HOST#g" install/apache/httpd-vhost.conf
+	sed "s#/var/www#$LOCAL_DIRECTORY#g" build/apache/macro-broilerplate.conf
+	sed "s#/var/www#$LOCAL_DIRECTORY#g;s#localhost#$LOCAL_HOST#g" build/apache/httpd-vhost.conf
 	echo ""
 	echo -e "=== \x1B[32m/etc/hosts\x1B[m === "
 	echo ""

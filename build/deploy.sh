@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd ${0%/*}/..
-source install/config.sh
+source build/config.sh
 
 if [ $# -lt 1 ]; then
 	echo "Usage : $0 [prev|live]"
