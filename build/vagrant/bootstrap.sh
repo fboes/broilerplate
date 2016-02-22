@@ -8,9 +8,10 @@ if [ ! -f /etc/apache2/sites-enabled/broilerplate.local.conf ]; then
 fi
 
 [ -d /var/www/logs ] || mkdir -p /var/www/logs
-[ -f /var/www/install/apache/macro-broilerplate.conf ] && cp /var/www/install/apache/macro-broilerplate.conf /etc/apache2/conf-enabled/macro-broilerplate.conf
-[ -f /var/www/install/apache/broilerplate.local.conf ] && cp /var/www/install/apache/httpd-vhost /etc/apache2/sites-enabled/broilerplate.local.conf && sudo sed -i -- 's/\/localhost/\/broilerplate\.local/g' /etc/apache2/sites-enabled/broilerplate.local.conf
+sudo chmod ugo+rwX /var/www/logs/*
+touch /var/www/logs/access.log && touch /var/www/logs/error.log
+[ -f /var/www/build/apache/macro-broilerplate.conf ] && sudo cp /var/www/build/apache/macro-broilerplate.conf /etc/apache2/conf-enabled/macro-broilerplate.conf
+[ -f /var/www/build/apache/broilerplate.local.conf ] && sudo cp /var/www/build/apache/httpd-vhost /etc/apache2/sites-enabled/broilerplate.local.conf && sudo sed -i -- 's/localhost/broilerplate\.local/g' /etc/apache2/sites-enabled/broilerplate.local.conf
 sudo service apache2 restart
-sudo chmod 666 /var/www/logs/*
 
-[ -f /var/www/install/setup.sh ] && /var/www/install/setup.sh
+[ -f /var/www/build/setup.sh ] && /var/www/build/setup.sh
