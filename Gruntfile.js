@@ -198,7 +198,9 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			deploy_live:  { command: '<%= pkg.directories.build %>/deploy.sh live'}
+			deploy_live:     { command: '<%= pkg.directories.build %>/deploy.sh live'},
+			vagrant_up:      { command: 'cd <%= pkg.directories.build %>/vagrant && vagrant up && cd -'},
+			vagrant_suspend: { command: 'cd <%= pkg.directories.build %>/vagrant && vagrant suspend && cd -'}
 		},
 
 		watch: {
@@ -243,4 +245,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
 	grunt.registerTask('default',     ['build-js','build-css','build-icons']);
 	grunt.registerTask('deploy-live', ['shell:deploy_live']);
+	grunt.registerTask('vagrant-up',   ['shell:vagrant_up']);
+	grunt.registerTask('vagrant-suspend', ['shell:vagrant_suspend']);
 };

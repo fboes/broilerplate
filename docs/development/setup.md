@@ -36,9 +36,15 @@ The most important commands:
 
 * `vagrant up`: Start/resume your server
 * `vagrant suspend`: Pause your server. You should do this before shutting down your computer.
-* `vagrant destroy`: Delete your server
+* `vagrant halt`: Shutdown your server
+* `vagrant destroy`: Delete your server. This will keep all data in your local directory, and allows for a clean re-installation.
 * `vagrant ssh`: SSH into your server
 * `vagrant provision`: Run provisioner again
+
+Additonal commands:
+
+* `vagrant box update`: Run update of OS
+* `vagrant plugin install vagrant-vbguest`: Install guest plugin for Virtual Box
 
 The local Vagrant setup will execute any commands from [`build/vagrant/bootstrap.sh`](../../build/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Grunt watcher](grunt.md).
 
