@@ -33,7 +33,7 @@
     "develop": false
   },
   "scripts": {
-    "preinstall": "build/setup.sh",
+    "postinstall": "build/setup.sh",
     "build": "grunt",
     "start": "grunt watch",
     "deploy-live": "build/deploy.sh live"
