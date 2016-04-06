@@ -7,33 +7,36 @@
     "url": "git@github.com:fboes/broilerplate.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.2.3",
-    "grunt": "^0.4.5",
+    "autoprefixer": "^6.3.6",
+    "grunt": "^1.0.1",
     "grunt-appcache": "^0.2.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-image-resize": "^1.0.0",
     "grunt-postcss": "^0.8.0",
-    "grunt-shell": "^1.1.2",
+    "grunt-shell": "^1.2.1",
     "grunt-text-replace": "^0.4.0",
     "jit-grunt": "^0.10.0",
-    "rtlcss": "^2.0.0"
+    "rtlcss": "^2.0.3"
+  },
+  "config": {
+    "develop": false
   },
   "directories": {
     "doc": "docs",
     "lib": "src",
     "htdocs": "htdocs",
     "template": "htdocs",
+    "sass": "src/sass",
+    "css": "htdocs/css",
+    "js_src": "src/js-src",
+    "js": "htdocs/js",
     "images": "htdocs/images",
     "build": "build"
   },
-  "config": {
-    "develop": false
-  },
   "scripts": {
-    "postinstall": "build/setup.sh",
     "build": "grunt",
     "start": "grunt watch",
     "deploy-live": "build/deploy.sh live"

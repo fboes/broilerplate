@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 			build: {
 				files: {
 					src: [
-						'<%= pkg.directories.lib %>/js-src/**/*.js',
-						'!<%= pkg.directories.lib %>/js-src/vendor/*.js'
+						'<%= pkg.directories.js_src %>/**/*.js',
+						'!<%= pkg.directories.js_src %>/vendor/*.js'
 					]
 				}
 			}
@@ -30,10 +30,10 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'<%= pkg.directories.template %>/js/scripts.js': [
-						'<%= pkg.directories.lib %>/js-src/vendor/*.js', // disable this line by prepending '!' - in case of errors
-						'<%= pkg.directories.lib %>/js-src/modules/*.js',
-						'<%= pkg.directories.lib %>/js-src/main.js'
+					'<%= pkg.directories.js %>/scripts.js': [
+						'<%= pkg.directories.js_src %>/vendor/*.js', // disable this line by prepending '!' - in case of errors
+						'<%= pkg.directories.js_src %>/modules/*.js',
+						'<%= pkg.directories.js_src %>/main.js'
 					]
 				}
 			}
@@ -47,9 +47,9 @@ module.exports = function(grunt) {
 			build: {
 				files: [{
 					expand: true,
-					cwd: '<%= pkg.directories.lib %>/sass',
+					cwd: '<%= pkg.directories.sass %>',
 					src: ['*.scss'],
-					dest: '<%= pkg.directories.template %>/css',
+					dest: '<%= pkg.directories.css %>',
 					ext: '.css'
 				}]
 			}
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 						require('autoprefixer')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})
 					]
 				},
-				src: '<%= pkg.directories.template %>/css/*.css'
+				src: '<%= pkg.directories.css %>/*.css'
 			},
 			rtl: {
 				options: {
@@ -73,8 +73,8 @@ module.exports = function(grunt) {
 						require('rtlcss')()
 					]
 				},
-				src: '<%= pkg.directories.template %>/css/styles.css',
-				dest: '<%= pkg.directories.template %>/css/rtl.css'
+				src: '<%= pkg.directories.css %>/styles.css',
+				dest: '<%= pkg.directories.css %>/rtl.css'
 			}
 		},
 
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 		kss : {
 			build: {
 				files: {
-					'<%= pkg.directories.doc %>/styleguide': '<%= pkg.directories.lib %>/sass/'
+					'<%= pkg.directories.doc %>/styleguide': '<%= pkg.directories.sass %>/'
 				}
 			}
 		},*/
@@ -106,10 +106,10 @@ module.exports = function(grunt) {
 					patterns: [
 						'<%= pkg.directories.template %>/*',
 						'!<%= pkg.directories.template %>/*.html',
-						'<%= pkg.directories.template %>/css/*',
+						'<%= pkg.directories.css %>/*',
 						'<%= pkg.directories.template %>/fonts/**/*',
-						'<%= pkg.directories.template %>/images/*',
-						'<%= pkg.directories.template %>/js/**/*'
+						'<%= pkg.directories.images %>/*',
+						'<%= pkg.directories.js %>/**/*'
 					]
 				},
 				network: '*'
@@ -117,8 +117,8 @@ module.exports = function(grunt) {
 		},
 		replace: {
 			oldie: {
-				src: ['<%= pkg.directories.template %>/css/*.css'],
-				dest: '<%= pkg.directories.template %>/css/oldie/',
+				src: ['<%= pkg.directories.css %>/*.css'],
+				dest: '<%= pkg.directories.css %>/oldie/',
 				replacements: [
 					{from: /\/\*#.+?\*\//g, to: ''},
 					{from: /@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, to: '$1$2'},
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				options: {livereload: true},
-				files: ['<%= pkg.directories.lib %>/sass/**/*.scss'],
+				files: ['<%= pkg.directories.sass %>/**/*.scss'],
 				tasks: ['build-css']
 			},
 			js: {
@@ -227,7 +227,7 @@ module.exports = function(grunt) {
 			},
 			livereload: {
 				options: {livereload: true},
-				files: ['<%= pkg.directories.template %>*.html','<%= pkg.directories.template %>/images/*']
+				files: ['<%= pkg.directories.template %>*.html','<%= pkg.directories.images %>/*']
 			}
 		}
 	});
