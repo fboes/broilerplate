@@ -17,7 +17,7 @@
 // Styleguide 1.1.1.
 @mixin toolshed-webfont-src ($base, $id) {
 	@if ( str-length($id) > 31) {
-		/* This will not work in IE, filename to long! */
+		@error 'ID of webfont to long for IE, consider using a smaller webfont filename';
 	}
 	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
 		url('#{$base}.woff') format('woff'),
