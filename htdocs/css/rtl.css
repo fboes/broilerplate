@@ -25,7 +25,7 @@ img { -ms-interpolation-mode: bicubic; }
 
 img, video, audio { max-width: 100%; }
 
-button { cursor: pointer; }
+select, button { cursor: pointer; }
 
 form, input, select, textarea, button { font: inherit; }
 
