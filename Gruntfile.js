@@ -151,7 +151,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		image_resize: {
+		/*image_resize: {
 			options: {overwrite: true, upscale: true, crop: true, gravity: 'Center', quality: 0.7},
 			fav32: {
 				options: {width: 32},
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
 				src:  '<%= pkg.directories.images %>/originals/*.jpg',
 				dest: '<%= pkg.directories.images %>/articles-1280/'
 			}
-		},
+		},*/
 
 		shell: {
 			deploy_live:     { command: '<%= pkg.directories.build %>/deploy.sh live'},
@@ -217,14 +217,14 @@ module.exports = function(grunt) {
 				files: ['<%= jshint.build.files.src %>'],
 				tasks: ['build-js']
 			},
-			logo: {
+			/*logo: {
 				files: ['<%= pkg.directories.images %>/logo.png'],
 				tasks: ['build-icons']
 			},
 			article_images: {
 				files: ['<%= image_resize.article_images.src %>'],
 				tasks: ['build-article-images']
-			},
+			},*/
 			livereload: {
 				options: {livereload: true},
 				files: ['<%= pkg.directories.template %>*.html','<%= pkg.directories.images %>/*']
@@ -233,17 +233,14 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugins
-	require('jit-grunt')(grunt, {
-		replace: 'grunt-text-replace',
-		postcss: 'grunt-postcss'
-	});
+	require('load-grunt-tasks')(grunt);
 
 	// Default task(s).
 	grunt.registerTask('build-css',   ['sass','postcss','replace:oldie','replace:notty', 'appcache']);
 	grunt.registerTask('build-js',    ['jshint','uglify', 'appcache']);
-	grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558', 'appcache']);
-	grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
-	grunt.registerTask('default',     ['build-js','build-css','build-icons']);
+	//grunt.registerTask('build-icons', ['image_resize:fav32','image_resize:fav96','image_resize:fav152','image_resize:fav196','image_resize:tile128','image_resize:tile270','image_resize:tilewide','image_resize:tile558', 'appcache']);
+	//grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
+	grunt.registerTask('default',     ['build-js','build-css']); // ,'build-icons'
 	grunt.registerTask('deploy-live', ['shell:deploy_live']);
 	grunt.registerTask('vagrant-up',   ['shell:vagrant_up']);
 	grunt.registerTask('vagrant-suspend', ['shell:vagrant_suspend']);
