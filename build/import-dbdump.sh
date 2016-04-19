@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd ${0%/*}/..
+cd `dirname $0`/..
 source build/config.sh
 
 if [ -f build/mysql/dbdump.sql ]; then

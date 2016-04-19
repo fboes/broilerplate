@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd ${0%/*}/..
+cd `dirname $0`/..
 if [ ! -e build/config.sh ]; then
 	cp build/_config.sh build/config.sh
 fi

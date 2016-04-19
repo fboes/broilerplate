@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd ${0%/*}/..
+cd `dirname $0`/..
 source build/config.sh
 
 if [[ ! "$1" =~ ^(live)$ ]]; then
