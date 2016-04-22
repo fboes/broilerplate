@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 		sass: {
 			options: {
 				style: 'compact',
-				sourcemap: 'none' // 'auto', depending on '<%= pkg.config.develop %>'
+				sourcemap: '<%= pkg.config.develop ? \'auto\' : \'none\' %>'
 			},
 			build: {
 				files: [{
@@ -77,23 +77,6 @@ module.exports = function(grunt) {
 				dest: '<%= pkg.directories.css %>/rtl.css'
 			}
 		},
-
-		/*compass: {
-			build: {
-				options: {
-					basePath: '<%= pkg.directories.template %>/',
-					config: '<%= pkg.directories.template %>/config.rb'
-				}
-			}
-		},
-
-		kss : {
-			build: {
-				files: {
-					'<%= pkg.directories.doc %>/styleguide': '<%= pkg.directories.sass %>/'
-				}
-			}
-		},*/
 
 		appcache: {
 			options: {
@@ -205,7 +188,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			grunt: {
-				files: ['Gruntfile.js']
+				files: ['Gruntfile.js','package.json']
 			},
 			sass: {
 				options: {livereload: true},
