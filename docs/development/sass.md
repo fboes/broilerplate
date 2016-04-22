@@ -20,9 +20,9 @@ Grunt will create a secondary stylesheet which is called `oldie.css` for old Int
 Setup
 -----
 
-1. Set basic variables & settings in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss)
-2. Define your responsive/adaptive strategy by modyfing [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss)
-3. Check default in [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss)
+1. Set basic variables & settings in [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss).
+2. Define your responsive/adaptive strategy by modyfing [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss).
+3. Check default in [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss).
 
 You may also want to see the documenation for [webfonts](webfonts.md).
 
@@ -32,27 +32,27 @@ Directory structure
 There is a set of directories in SASS:
 
 * [`htdocs/sass/`](../../htdocs/sass/): These are your regular working files.
-* [`htdocs/sass/base/`](../../htdocs/sass/base/): Contains basic settings
+* [`htdocs/sass/base/`](../../htdocs/sass/base/): Contains basic settings.
 * [`htdocs/sass/modules/`](../../htdocs/sass/modules/): You may want to define modules for `_screen.scss`. Put these modules here.
 * [`htdocs/sass/vendor/`](../../htdocs/sass/vendor/): You may want to put vendor CSS here.
 
 `htdocs/sass/base/` contains:
 
-* [`htdocs/sass/base/_reset.scss`](../../htdocs/sass/base/_reset.scss): Resets all CSS to common defaults
-* [`htdocs/sass/base/_toolshed.scss`](../../htdocs/sass/base/_toolshed.scss): Some all-purpose mixins
-* [`htdocs/sass/base/_constants.scss`](../../htdocs/sass/base/_constants.scss): Some constants used in `base`
-* [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss): Add your own variables here
-* [`htdocs/sass/base/_fonts.scss`](../../htdocs/sass/base/_fonts.scss): Add your own webfonts here
-* [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss): Add your own mixins here
+* [`htdocs/sass/base/_reset.scss`](../../htdocs/sass/base/_reset.scss): Resets all CSS to common defaults.
+* [`htdocs/sass/base/_toolshed.scss`](../../htdocs/sass/base/_toolshed.scss): Some all-purpose mixins.
+* [`htdocs/sass/base/_constants.scss`](../../htdocs/sass/base/_constants.scss): Some constants used in `base`.
+* [`htdocs/sass/base/_base.scss`](../../htdocs/sass/base/_base.scss): Add your own variables here.
+* [`htdocs/sass/base/_fonts.scss`](../../htdocs/sass/base/_fonts.scss): Add your own webfonts here.
+* [`htdocs/sass/base/_mixins.scss`](../../htdocs/sass/base/_mixins.scss): Add your own mixins here.
 
 `htdocs/sass/` contains your regular working files:
 
-* [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss): Sensible defaults for all output channels, uses variables from `base`
-* [`htdocs/sass/_all.scss`](../../htdocs/sass/_all.scss): Add your own styles for all output channels
-* [`htdocs/sass/_screen-base.scss`](../../htdocs/sass/_screen-base.scss): Sensible defaults for all screen channels, uses variables from `base`
-* [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Add your own styles for all screen channels
-* [`htdocs/sass/_print-base.scss`](../../htdocs/sass/_print-base.scss): Sensible defaults for all print channels, uses variables from `base`
-* [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Add your own styles for all print channels
+* [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss): Sensible defaults for all output channels, uses variables from `base`.
+* [`htdocs/sass/_all.scss`](../../htdocs/sass/_all.scss): Add your own styles for all output channels.
+* [`htdocs/sass/_screen-base.scss`](../../htdocs/sass/_screen-base.scss): Sensible defaults for all screen channels, uses variables from `base`.
+* [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Add your own styles for all screen channels.
+* [`htdocs/sass/_print-base.scss`](../../htdocs/sass/_print-base.scss): Sensible defaults for all print channels, uses variables from `base`.
+* [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Add your own styles for all print channels.
 
 Using media queries
 -------------------

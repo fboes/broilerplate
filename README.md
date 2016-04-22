@@ -42,16 +42,16 @@ There are two ways to develop:
 
 Setup your development space:
 
-1. The Vagrant way: Update `build/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate.local`)
+1. The Vagrant way: Update `build/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate.local`).
 2. The Grunt way: Install Grunt plugins via `npm install`.
-4. The Grunt way: Run `build/setup.sh`
+4. The Grunt way: Run `build/setup.sh`.
 6. If you do not want to install the [LiveReload plugin](http://livereload.com/extensions/), insert the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-).
 
 Developing
 ----------
 
 1. Vagrant way: Start Vagrant via `cd build/vagrant && vagrant up`. This will start a webserver at http://broilerplate.local/ for your current project.
-2. Vagrant way: Start Grunt watcher via `vagrant ssh -- cd /var/www/ && grunt watch`
+2. Vagrant way: Start Grunt watcher via `vagrant ssh -- cd /var/www/ && grunt watch`.
 2. Grunt way: Start Grunt watcher via `grunt watch`. This will start the Grunt watcher responsible for compiling SASS, linting JS, reloading your page on changes via LiveReload and doing other useful stuff.
 3. Start [LiveReload plugin](http://livereload.com/) in your browser. If you use the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-) disregard this step.
 4. Develop (and check for advice given by the Grunt watcher).

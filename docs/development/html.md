@@ -19,7 +19,7 @@ Important `rel`-attributes:
 Accessibility
 -------------
 
-* Use [`aria-label` & `aria-hidden` for improved accessibility](https://dev.opera.com/articles/ux-accessibility-aria-label/)
+* Use [`aria-label` & `aria-hidden` for improved accessibility](https://dev.opera.com/articles/ux-accessibility-aria-label/).
 
 Images & responsive layout
 --------------------------
