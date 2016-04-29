@@ -24,7 +24,6 @@
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.3",
     "jshint": "^2.9.2",
-    "load-grunt-tasks": "^3.5.0",
     "rtlcss": "^2.0.3"
   },
   "config": {

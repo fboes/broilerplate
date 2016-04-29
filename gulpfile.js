@@ -8,8 +8,8 @@ var gulp = require('gulp'),
 
 // Include Our Plugins
 var jshint = require('gulp-jshint'),
-    //sass = require('gulp-sass'),
-    sass    = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
+    //sass    = require('gulp-ruby-sass'),
     uglify = require('gulp-uglify'),
     postcss    = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -59,9 +59,9 @@ gulp.task('uglify', function() {
 
 // Sass
 gulp.task('sass', function(cb) {
-    return sass(pkg.directories.sass + '/**/*.scss', {style: 'compact'})
-        .on('error', sass.logError)
+    return gulp.src(pkg.directories.sass + '/**/*.scss')
         .pipe(plumber({errorHandler: onError}))
+        .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
         .pipe(gulp.dest(pkg.directories.css))
     ;
     cb(err);
@@ -80,7 +80,9 @@ gulp.task('postcss',['sass'], function (cb) {
 });
 
 gulp.task('oldie',['postcss'], function () {
-    var css = gulp.src(pkg.directories.css + '/*.css');
+    var css = gulp.src(pkg.directories.css + '/*.css')
+        .pipe(replace(/(\n)\s*\n/g, '$1'))
+    ;
 
     var oldie = css.pipe(clone())
         .pipe(replace(/\/\*#.+?\*\//g, ''))
