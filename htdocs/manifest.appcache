@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 105 - 2015-11-24T16:00:26.736Z
+
 
 CACHE:
 apple-touch-icon-precomposed.png
@@ -17,8 +17,12 @@ images/tile-558x270.png
 images/tile-558x558.png
 js/scripts.js
 
+
 NETWORK:
 *
 
+
 SETTINGS:
 prefer-online
+
+# hash: 9ddfd6a6390123dd259ea1d341fcc2118e27f1f32a1ec619ef79e1cd58ca0f51
