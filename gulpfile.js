@@ -9,7 +9,6 @@ var gulp = require('gulp'),
 // Include Our Plugins
 var jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
-    //sass    = require('gulp-ruby-sass'),
     uglify = require('gulp-uglify'),
     postcss    = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
