@@ -19,6 +19,8 @@ var jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
     appcache = require('gulp-appcache')
+    appcache = require('gulp-appcache'),
+    imageResize = require('gulp-image-resize');
 ;
 
 // Lint Task
@@ -132,11 +134,99 @@ gulp.task('appcache', function(){
     .pipe(gulp.dest(pkg.directories.template));
 });
 
+gulp.task('logo', function() {
+    var logo = gulp.src(pkg.directories.images + '/logo.png');
+
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 32,
+            height : 32,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('favicon.ico'))
+        .pipe(gulp.dest(pkg.directories.template))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 96,
+            height : 96,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('favicon-96x96.png'))
+        .pipe(gulp.dest(pkg.directories.template))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 152,
+            height : 152,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('apple-touch-icon-precomposed.png'))
+        .pipe(gulp.dest(pkg.directories.template))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 196,
+            height : 196,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('favicon-196x196.png'))
+        .pipe(gulp.dest(pkg.directories.template))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 128,
+            height : 128,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('tile-128x128.png'))
+        .pipe(gulp.dest(pkg.directories.images))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 270,
+            height : 270,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('tile-270x270.png'))
+        .pipe(gulp.dest(pkg.directories.images))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 558,
+            height : 270,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('tile-558x270.png'))
+        .pipe(gulp.dest(pkg.directories.images))
+    ;
+    logo.pipe(clone())
+        .pipe(imageResize({
+            width : 558,
+            height : 558,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(rename('tile-558x558.png'))
+        .pipe(gulp.dest(pkg.directories.images))
+    ;
+
+    return logo;
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
     gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-sass']);
+    gulp.watch(pkg.directories.images + '/logo.png', ['logo']);
 });
 
 // Default Task

@@ -13,6 +13,7 @@
     "gulp-appcache": "0.0.4",
     "gulp-clone": "^1.0.0",
     "gulp-concat": "^2.6.0",
+    "gulp-image-resize": "^0.8.0",
     "gulp-jshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.1.0",
