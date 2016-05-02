@@ -137,111 +137,77 @@ gulp.task('appcache', function(){
 gulp.task('logo', function() {
     var logo = gulp.src(pkg.directories.images + '/logo.png');
 
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 32,
-            height : 32,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('favicon.ico'))
-        .pipe(gulp.dest(pkg.directories.template))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 96,
-            height : 96,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('favicon-96x96.png'))
-        .pipe(gulp.dest(pkg.directories.template))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 152,
-            height : 152,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('apple-touch-icon-precomposed.png'))
-        .pipe(gulp.dest(pkg.directories.template))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 196,
-            height : 196,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('favicon-196x196.png'))
-        .pipe(gulp.dest(pkg.directories.template))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 128,
-            height : 128,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('tile-128x128.png'))
-        .pipe(gulp.dest(pkg.directories.images))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 270,
-            height : 270,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('tile-270x270.png'))
-        .pipe(gulp.dest(pkg.directories.images))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 558,
-            height : 270,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('tile-558x270.png'))
-        .pipe(gulp.dest(pkg.directories.images))
-    ;
-    logo.pipe(clone())
-        .pipe(imageResize({
-            width : 558,
-            height : 558,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(rename('tile-558x558.png'))
-        .pipe(gulp.dest(pkg.directories.images))
-    ;
-
+    [
+        {
+            width: 32,
+            height: 32,
+            name: 'favicon.ico',
+            directory: pkg.directories.template
+        },{
+            width: 96,
+            height: 96,
+            name: 'favicon-96x96.png',
+            directory: pkg.directories.template
+        },{
+            width: 152,
+            height: 152,
+            name: 'apple-touch-icon-precomposed.png',
+            directory: pkg.directories.template
+        },{
+            width: 196,
+            height: 196,
+            name: 'favicon-196x196.png',
+            directory: pkg.directories.template
+        },{
+            width: 128,
+            height: 128,
+            name: 'tile-128x128.png',
+            directory: pkg.directories.images
+        },{
+            width: 270,
+            height: 270,
+            name: 'tile-270x270.png',
+            directory: pkg.directories.images
+        },{
+            width: 558,
+            height: 270,
+            name: 'tile-558x270.png',
+            directory: pkg.directories.images
+        },{
+            width: 558,
+            height: 558,
+            name: 'tile-558x558.png',
+            directory: pkg.directories.images
+        }
+    ].forEach(function(i) {
+        logo.pipe(clone())
+            .pipe(imageResize({
+                width : i.width,
+                height : i.height,
+                crop : true,
+                quality : 0.7
+            }))
+            .pipe(rename(i.name))
+            .pipe(gulp.dest(i.directory))
+        ;
+    })
     return logo;
 });
 
 gulp.task('article_images', function() {
     var article_images = gulp.src(pkg.directories.images + '/originals/*.jpg');
 
-    article_images.pipe(clone())
-        .pipe(imageResize({
-            width : 640,
-            height : 360,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(gulp.dest(pkg.directories.images + '/articles-640'))
-    ;
-    article_images.pipe(clone())
-        .pipe(imageResize({
-            width : 1280,
-            height : 720,
-            crop : true,
-            quality : 0.7
-        }))
-        .pipe(gulp.dest(pkg.directories.images + '/articles-1280'))
-    ;
+    [{ width: 640, height: 360 },{ width: 1280, height: 720 }].forEach(function(i) {
+        article_images.pipe(clone())
+            .pipe(imageResize({
+                width : i.width,
+                height : i.height,
+                crop : true,
+                quality : 0.7
+            }))
+            .pipe(gulp.dest(pkg.directories.images + '/articles-'+i.width))
+        ;
+    });
     return article_images;
 });
 
