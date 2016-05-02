@@ -185,7 +185,8 @@ gulp.task('logo', function() {
                 width : i.width,
                 height : i.height,
                 crop : true,
-                quality : 0.7
+                quality : 0.7,
+                gravity: 'Center'
             }))
             .pipe(rename(i.name))
             .pipe(gulp.dest(i.directory))
@@ -203,7 +204,8 @@ gulp.task('article_images', function() {
                 width : i.width,
                 height : i.height,
                 crop : true,
-                quality : 0.7
+                quality : 0.7,
+                gravity: 'Center'
             }))
             .pipe(gulp.dest(pkg.directories.images + '/articles-'+i.width))
         ;
