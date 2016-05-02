@@ -7,20 +7,19 @@ var gulp = require('gulp'),
 ;
 
 // Include Our Plugins
-var jshint = require('gulp-jshint'),
-    sass = require('gulp-sass'),
-    uglify = require('gulp-uglify'),
-    postcss    = require('gulp-postcss'),
-    sourcemaps = require('gulp-sourcemaps'),
-    rename = require("gulp-rename"),
-    replace = require('gulp-replace')
-    clone = require('gulp-clone'),
+var appcache = require('gulp-appcache'),
+    clone    = require('gulp-clone'),
+    concat   = require('gulp-concat'),
+    imageResize = require('gulp-image-resize')
+    jshint   = require('gulp-jshint'),
     livereload = require('gulp-livereload'),
-    concat = require('gulp-concat'),
-    plumber = require('gulp-plumber'),
-    appcache = require('gulp-appcache')
-    appcache = require('gulp-appcache'),
-    imageResize = require('gulp-image-resize');
+    plumber  = require('gulp-plumber'),
+    postcss  = require('gulp-postcss'),
+    rename   = require("gulp-rename"),
+    replace  = require('gulp-replace'),
+    sass     = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify   = require('gulp-uglify')
 ;
 
 // Lint Task
