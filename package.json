@@ -21,6 +21,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.1",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.3",
     "jshint": "^2.9.2",
@@ -43,10 +44,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch",
-    "deploy-live": "build/deploy.sh live",
-    "vagrant-up": "build/vagrant && vagrant up && cd -",
-    "vagrant-suspend": "build/vagrant && vagrant suspend && cd -"
+    "start": "gulp watch"
   },
   "author": "Frank Boës",
   "license": "MIT",

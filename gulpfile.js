@@ -18,6 +18,7 @@ var appcache = require('gulp-appcache'),
     rename   = require("gulp-rename"),
     replace  = require('gulp-replace'),
     sass     = require('gulp-sass'),
+    shell    = require('gulp-shell'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify   = require('gulp-uglify')
 ;
@@ -211,6 +212,16 @@ gulp.task('article_images', function() {
     });
     return article_images;
 });
+
+gulp.task('deploy_live', shell.task([
+    'build/deploy.sh live'
+]));
+gulp.task('vagrant_up', shell.task([
+    'cd build/vagrant && vagrant up && cd -'
+]));
+gulp.task('vagrant_suspend', shell.task([
+    'cd build/vagrant && vagrant suspend && cd -'
+]));
 
 // Watch Files For Changes
 gulp.task('watch', function() {
