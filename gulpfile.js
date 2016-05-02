@@ -221,12 +221,37 @@ gulp.task('logo', function() {
     return logo;
 });
 
+gulp.task('article_images', function() {
+    var article_images = gulp.src(pkg.directories.images + '/originals/*.jpg');
+
+    article_images.pipe(clone())
+        .pipe(imageResize({
+            width : 640,
+            height : 360,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(gulp.dest(pkg.directories.images + '/articles-640'))
+    ;
+    article_images.pipe(clone())
+        .pipe(imageResize({
+            width : 1280,
+            height : 720,
+            crop : true,
+            quality : 0.7
+        }))
+        .pipe(gulp.dest(pkg.directories.images + '/articles-1280'))
+    ;
+    return article_images;
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
     gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-sass']);
     gulp.watch(pkg.directories.images + '/logo.png', ['logo']);
+    gulp.watch(pkg.directories.images + '/originals/*.jpg', ['article_images']);
 });
 
 // Default Task
