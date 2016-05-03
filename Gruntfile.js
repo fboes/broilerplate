@@ -22,11 +22,10 @@ module.exports = function(grunt) {
 
 		uglify: {
 			options: {
-				// mangle: false,
-				// beautify: true,
-				// compress: false,
-				maxLineLen: 9000,
-				sourceMap: '<%= pkg.config.develop %>'
+				mangle: '<%= !pkg.config.develop %>',
+				beautify: '<%= pkg.config.develop %>',
+				sourceMap: '<%= pkg.config.develop %>',
+				maxLineLen: 9000
 			},
 			build: {
 				files: {
