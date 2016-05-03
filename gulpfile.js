@@ -71,7 +71,7 @@ gulp.task('sass', function(cb) {
 // PostCSS
 gulp.task('postcss',['sass'], function (cb) {
   return gulp.src(pkg.directories.css + '/styles.css')
-    .pipe( postcss([ require('autoprefixer')({browsers: ['last 2 versions', '> 5%', 'ie 8', 'ie 9']})]) )
+    .pipe( postcss([ require('autoprefixer')({browsers: ['last 2 versions', '> 2%', 'ie 8', 'ie 9']})]) )
     .pipe( gulp.dest(pkg.directories.css) )
     .pipe( postcss([ require('rtlcss')]) )
     .pipe(rename('rtl.css'))
