@@ -187,16 +187,16 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+			options: {livereload: true},
 			grunt: {
+				options: {livereload: false},
 				files: ['Gruntfile.js','package.json']
 			},
 			sass: {
-				options: {livereload: true},
 				files: ['<%= pkg.directories.sass %>/**/*.scss'],
 				tasks: ['build-css']
 			},
 			js: {
-				options: {livereload: true},
 				files: ['<%= jshint.build.files.src %>'],
 				tasks: ['build-js']
 			},
@@ -209,7 +209,6 @@ module.exports = function(grunt) {
 				tasks: ['build-article-images']
 			},*/
 			livereload: {
-				options: {livereload: true},
 				files: ['<%= pkg.directories.template %>*.html','<%= pkg.directories.images %>/*']
 			}
 		}
