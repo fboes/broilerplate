@@ -214,13 +214,13 @@ gulp.task('article_images', function() {
 });
 
 gulp.task('deploy_live', shell.task([
-  'build/deploy.sh live'
+  pkg.directories.build + '/deploy.sh live'
 ]));
 gulp.task('vagrant_up', shell.task([
-  'cd build/vagrant && vagrant up && cd -'
+  'cd ' + pkg.directories.build + '/vagrant && vagrant up && cd -'
 ]));
 gulp.task('vagrant_suspend', shell.task([
-  'cd build/vagrant && vagrant suspend && cd -'
+  'cd ' + pkg.directories.build + '/vagrant && vagrant suspend && cd -'
 ]));
 
 // Watch Files For Changes
