@@ -95,7 +95,7 @@ gulp.task('oldie',['postcss'], function () {
     .pipe(replace(/(transition|border-[\S]*radius):.+?;\s*/g, ''))
     .pipe(replace(/opacity: 0;\s*/g, 'visibility: hidden; '))
     .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
-    .pipe(replace(/(rgba\(.+?),\s?[\d\.]+(\))/g, '$1$2'))
+    .pipe(replace(/rgba(\(.+?),\s?[\d\.]+(\))/g, 'rgb$1$2'))
     .pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
     .pipe(replace(/([\d\.]+)vw/g, function (regexMatches) {
       return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
