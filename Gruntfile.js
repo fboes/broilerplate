@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 					{from: /(transition|border-[\S]*radius):.+?;\s*/g, to: ''},
 					{from: /opacity: 0;\s*/g, to: 'visibility: hidden; '},
 					{from: /opacity: 1;\s*/g, to: 'visibility: visible; '},
-					{from: /(rgba\(.+?),\s?[\d\.]+(\))/g, to: '$1$2'},
+					{from: /rgba(\(.+?),\s?[\d\.]+(\))/g, to: 'rgb$1$2'},
 					{from: /\s\S+\s?\{\s+\}/g, to: ''},
 					{from: /([\d\.]+)vw/g,  to: function (matchedWord, index, fullText, regexMatches) {
 						return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
