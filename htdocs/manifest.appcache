@@ -10,12 +10,12 @@ favicon.ico
 robots.txt
 css/rtl.css
 css/styles.css
+js/scripts.js
 images/logo.png
 images/tile-128x128.png
 images/tile-270x270.png
 images/tile-558x270.png
 images/tile-558x558.png
-js/scripts.js
 
 
 NETWORK:
@@ -25,4 +25,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 967f9c5948ba36210efe67bedff8b2898854923b82fd6a33597483ba24781144
+# hash: 8dae98ff514b2d9421bdca830695ce49f91f3cd146834632b8947f2c002e022c

@@ -46,7 +46,7 @@ Additonal commands:
 * `vagrant box update`: Run update of OS.
 * `vagrant plugin install vagrant-vbguest`: Install guest plugin for Virtual Box.
 
-The local Vagrant setup will execute any commands from [`build/vagrant/bootstrap.sh`](../../build/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Grunt watcher](grunt.md).
+The local Vagrant setup will execute any commands from [`build/vagrant/bootstrap.sh`](../../build/vagrant/bootstrap.sh). In this case Vagrant will install all required dependencies for your project and start the [Gulp watcher](gulp.md).
 
 After starting Vagrant there will be a webserver, running at the host name you set it to under [`build/vagrant/Vagrantfile`](../../build/vagrant/Vagrantfile).
 

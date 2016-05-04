@@ -35,7 +35,7 @@ gulp.task('jshint', function() {
       jquery: true,
       strict: true,
       curly: true,
-      undef:true
+      undef: true
     }))
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'))
@@ -182,11 +182,12 @@ gulp.task('logo', function() {
   ].forEach(function(i) {
     logo.pipe(clone())
       .pipe(imageResize({
-        width : i.width,
-        height : i.height,
-        crop : true,
-        quality : 0.7,
-        gravity: 'Center'
+        width: i.width,
+        height: i.height,
+        crop: true,
+        quality: 0.7,
+        gravity: 'Center',
+        imageMagick: true
       }))
       .pipe(rename(i.name))
       .pipe(gulp.dest(i.directory))
@@ -201,11 +202,12 @@ gulp.task('article_images', function() {
   [{ width: 640, height: 360 },{ width: 1280, height: 720 }].forEach(function(i) {
     article_images.pipe(clone())
       .pipe(imageResize({
-        width : i.width,
-        height : i.height,
-        crop : true,
-        quality : 0.7,
-        gravity: 'Center'
+        width: i.width,
+        height: i.height,
+        crop: true,
+        quality: 0.7,
+        gravity: 'Center',
+        imageMagick: true
       }))
       .pipe(gulp.dest(pkg.directories.images + '/articles-'+i.width))
     ;
