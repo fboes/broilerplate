@@ -102,6 +102,7 @@ module.exports = function(grunt) {
 				src: ['<%= pkg.directories.css %>/*.css'],
 				dest: '<%= pkg.directories.css %>/oldie/',
 				replacements: [
+					{from: /(\n)\s*\n/g, to: '$1'},
 					{from: /\/\*#.+?\*\//g, to: ''},
 					{from: /@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, to: '$1$2'},
 					{from: /(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''},
@@ -128,6 +129,7 @@ module.exports = function(grunt) {
 				src: ['<%= replace.oldie.src %>'],
 				overwrite: true,
 				replacements: [
+					{from: /(\n)\s*\n/g, to: '$1'},
 					{from: /(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, to: ''}
 				]
 			}
