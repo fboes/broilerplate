@@ -1,10 +1,10 @@
 Testing
 =======
 
-Testing with Grunt
+Testing with Gulp
 ------------------
 
-For basic testing of your JavaScript and CSS use [Grunt](grunt.md).
+For basic testing of your JavaScript and CSS use [Gulp](gulp.md).
 
 Testing for IE
 --------------

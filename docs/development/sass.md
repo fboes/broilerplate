@@ -15,7 +15,7 @@ Note: In this example there is no styling applied to HTML5 elements. Instead, th
 * .figure
 * .figcaption
 
-Grunt will create a secondary stylesheet which is called `oldie.css` for old Internet Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
+Gulp will create a secondary stylesheet which is called `oldie.css` for old Internet Explorers. This is done by removing media queries older IEs do not understand. There is als a media query for `tty`, which gets rewritten so it only works for old IEs.
 
 Setup
 -----

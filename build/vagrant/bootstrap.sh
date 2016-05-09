@@ -3,10 +3,9 @@ HOST=`hostname -f`
 if [ ! -f /etc/apache2/sites-enabled/${HOST}.conf ]; then
 	sudo apt-get update
 	sudo apt-get upgrade -y
-	sudo apt-get install language-pack-de-base ruby -y
+	sudo apt-get install language-pack-de-base -y
 	sudo sed -i -- 's/\/public/\/htdocs/g' /etc/apache2/**/*.conf
 	sudo a2enmod macro
-	sudo su -c "gem install sass"
 fi
 
 [ -d /var/www/logs ] || mkdir -p /var/www/logs
