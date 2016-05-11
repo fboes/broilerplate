@@ -9,7 +9,6 @@ favicon-96x96.png
 favicon.ico
 robots.txt
 css/rtl.css
-css/styles._
 css/styles.css
 images/logo.png
 images/tile-128x128.png
@@ -26,4 +25,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: f1418dcd827eec744191a8fb19b41bf84fdcc8fe2b812d040f664094c3e38057
+# hash: abc6fb79f31e2c5fb7cf1feb0d114ab3e3802d539be3a7d6f4ca7db1e363cda4
