@@ -228,6 +228,7 @@ gulp.task('vagrant_suspend', shell.task([
 // Watch Files For Changes
 gulp.task('watch', function() {
   livereload.listen();
+  gulp.watch(['gulpfile.js','package.json'], process.exit);
   gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
   gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-sass']);
   gulp.watch(pkg.directories.images + '/logo.png', ['build-icons']);
