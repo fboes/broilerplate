@@ -34,4 +34,10 @@ $content-rdquo:                     "\201D" !default;
 $content-bdquo:                     "\201E" !default;
 $content-laquo:                     "\00AB" !default;
 $content-raquo:                     "\00BB" !default;
+$content-close:                     "\00D7" !default; // "x" for close button
 $content-null:                      " " !default; // for spawning :before & :after
+
+$content-triangle-down:             "\25BE" !default;
+$content-triangle-up:               "\25B4" !default;
+$content-triangle-left:             "\25C2" !default;
+$content-triangle-right:            "\25B8" !default;
