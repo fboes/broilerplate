@@ -1,27 +1,25 @@
 // Include gulp
-var gulp = require('gulp'),
-  fs = require('fs'),
-  pkg = JSON.parse(fs.readFileSync('./package.json')),
-  beep = require('beepbeep'),
-  onError = function (err) { beep(); }
-;
+var gulp = require('gulp');
+var fs = require('fs');
+var pkg = JSON.parse(fs.readFileSync('./package.json'));
+var beep = require('beepbeep');
+var onError = function (err) { beep(); };
 
 // Include Our Plugins
-var appcache = require('gulp-appcache'),
-  clone      = require('gulp-clone'),
-  concat     = require('gulp-concat'),
-  imageResize= require('gulp-image-resize'),
-  jshint     = require('gulp-jshint'),
-  livereload = require('gulp-livereload'),
-  plumber    = require('gulp-plumber'),
-  postcss    = require('gulp-postcss'),
-  rename     = require("gulp-rename"),
-  replace    = require('gulp-replace'),
-  sass       = require('gulp-sass'),
-  shell      = require('gulp-shell'),
-  sourcemaps = require('gulp-sourcemaps'),
-  uglify     = require('gulp-uglify')
-;
+var appcache = require('gulp-appcache');
+var clone      = require('gulp-clone');
+var concat     = require('gulp-concat');
+var imageResize= require('gulp-image-resize');
+var jshint     = require('gulp-jshint');
+var livereload = require('gulp-livereload');
+var plumber    = require('gulp-plumber');
+var postcss    = require('gulp-postcss');
+var rename     = require("gulp-rename");
+var replace    = require('gulp-replace');
+var sass       = require('gulp-sass');
+var shell      = require('gulp-shell');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify     = require('gulp-uglify');
 
 // Lint Task
 gulp.task('jshint', function() {
