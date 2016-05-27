@@ -13,6 +13,6 @@ case "$1" in
 		#ssh jenkins-cli build 'example\ project' -s
 		;;
 	live)
-		#ssh $REMOTE_HOST "cd $REMOTE_DIRECTORY && git pull && git submodule update --init --recursive && exit"
+		#ssh $REMOTE_HOST "cd $REMOTE_DIRECTORY && git reset --hard && git clean -f -d && git pull && git submodule update --init --recursive && exit"
 		;;
 esac
