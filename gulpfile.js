@@ -97,14 +97,14 @@ gulp.task('oldie',['postcss'], function () {
     .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
     .pipe(replace(/rgba(\(.+?),\s?[\d\.]+(\))/g, 'rgb$1$2'))
     .pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
-    .pipe(replace(/([\d\.]+)vw/g, function (regexMatches) {
-      return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
+    .pipe(replace(/([\d\.]+)vw/g, function (match,p1) {
+      return Math.round(parseFloat(p1) * 10.24) + 'px'; // matches 100vw = 1024px
     }))
-    .pipe(replace(/([\d\.]+)vh/g, function (regexMatches) {
-      return Math.round(parseFloat(regexMatches[0]) * 7.68) + 'px'; // matches 768 px
+    .pipe(replace(/([\d\.]+)vh/g, function (match,p1) {
+      return Math.round(parseFloat(p1) * 7.68) + 'px'; // matches 100vw = 768px
     }))
-    .pipe(replace(/([\d\.]+)rem/g, function (regexMatches) {
-      return Math.round(parseFloat(regexMatches[0]) * 12) + 'px'; // matches $fontsize-default
+    .pipe(replace(/([\d\.]+)rem/g, function (match,p1) {
+      return Math.round(parseFloat(p1) * 12) + 'px'; // matches 1rem = 12px
     }))
     .pipe( gulp.dest(pkg.directories.css + '/oldie') )
   ;
