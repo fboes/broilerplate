@@ -54,7 +54,7 @@ gulp.task('uglify', function() {
       max_line_len: 9000
     }}))
     .pipe(gulp.dest(pkg.directories.js))
-    .pipe(livereload());
+    .pipe(livereload())
   ;
 });
 
@@ -124,14 +124,15 @@ gulp.task('appcache', function(){
     '!'+pkg.directories.images + '/originals/*',
     '!'+pkg.directories.css + '/oldie/*'
   ])
-  .pipe(appcache({
-    //relativePath: pkg.directories.template,
-    hash: true,
-    preferOnline: true,
-    filename: 'manifest.appcache',
-    exclude: 'manifest.appcache'
-  }))
-  .pipe(gulp.dest(pkg.directories.template));
+    .pipe(appcache({
+      //relativePath: pkg.directories.template,
+      hash: true,
+      preferOnline: true,
+      filename: 'manifest.appcache',
+      exclude: 'manifest.appcache'
+    }))
+    .pipe(gulp.dest(pkg.directories.template))
+  ;
 });
 
 gulp.task('logo', function() {
