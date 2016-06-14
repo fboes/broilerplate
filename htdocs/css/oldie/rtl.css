@@ -9,6 +9,7 @@ h4 { font-size: 1em; }
 blockquote, li { margin-right: 3em; }
 dt { font-weight: bold; }
 dl { margin-right: 1em; }
+a { -webkit-user-select: none; -webkit-touch-callout: none; }
 a img { border: none; }
 a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:hover { color: inherit; text-decoration: inherit; }
 img { -ms-interpolation-mode: bicubic; }
@@ -18,7 +19,7 @@ form, input, select, textarea, button { font: inherit; }
 fieldset { padding: 0.5em; }
 optgroup option { margin-right: 1em; }
 textarea { overflow: auto; resize: vertical; }
-input
+input [type="search"] { -webkit-appearance: none; }
 input [type="hidden"], input [hidden] { display: none; }
 [hidden] { display: none; }
 table { font-size: 1em; border-collapse: collapse; border-spacing: 0; }
@@ -39,7 +40,7 @@ table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; te
 table th.number, table td.number { font-family: "Courier New", monospace; text-align: left; }
 .browsehappy { display: none; }
 html { font-size: 8px; }
-body { direction: rtl; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
+body { direction: rtl; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 #container { margin: auto; }
 #banner { font: normal 700 28px/1.2 Garamond, serif; padding: 12px; }
 #navigation { padding: 12px; }
@@ -81,7 +82,7 @@ body { direction: rtl; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
   }
 @media screen { .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; right: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
   .browsehappy a { color: blue; } }
-@media print { * { color: black !important; background: transparent !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+@media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }
   @page { margin: 0.5cm; }
   h1, h2, h3, h4 { page-break-after: avoid; }
   h1, h2, h3, h4, p, li, tr, img { page-break-inside: avoid; }

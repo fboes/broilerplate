@@ -72,3 +72,15 @@
 @function rem ($value-px) {
 	@return toolshed-rem($value-px, $base-unit);
 }
+
+// hover
+//
+// Prevent iPad & co from having to double click items with :hover state
+//
+// Styleguide 3.1.8
+@mixin hover {
+	&:hover,
+	&:active {
+		@content;
+	}
+}

@@ -9,6 +9,7 @@ h4 { font-size: 1em; }
 blockquote, li { margin-right: 3em; }
 dt { font-weight: bold; }
 dl { margin-right: 1em; }
+a { -webkit-user-select: none; -webkit-touch-callout: none; }
 a img { border: none; }
 a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:hover { color: inherit; text-decoration: inherit; }
 img { -ms-interpolation-mode: bicubic; }

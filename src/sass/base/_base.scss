@@ -27,26 +27,26 @@ $borderradius-default:              2px !default;
 $width-column:                      300px !default;
 $spacing-column:                    20px !default;
 
-$width-column-2:                    2 * $width-column + 1 * $spacing-column;
-$width-column-3:                    3 * $width-column + 2 * $spacing-column;
-$width-column-4:                    4 * $width-column + 3 * $spacing-column;
+$width-column-2:                    2 * $width-column + 1 * $spacing-column !default;
+$width-column-3:                    3 * $width-column + 2 * $spacing-column !default;
+$width-column-4:                    4 * $width-column + 3 * $spacing-column !default;
 
 // Base canon > Assigning
 
-$width-container-col-mobile:        $width-column + $spacing-column;
-$width-container-col-tablet:        $width-column-2 + $spacing-column;
-$width-container-col-tablet-landscape: $width-column-3 + $spacing-column;
-$width-container-col-desktop:       $width-column-4 + $spacing-column;
+$width-container-col-mobile:        $width-column + $spacing-column !default;
+$width-container-col-tablet:        $width-column-2 + $spacing-column !default;
+$width-container-col-tablet-landscape: $width-column-3 + $spacing-column !default;
+$width-container-col-desktop:       $width-column-4 + $spacing-column !default;
 
-$width-container-mobile:            $width-column;
-$width-container-tablet:            $width-column-2;
-$width-container-tablet-landscape:  $width-column-3;
-$width-container-desktop:           $width-column-4;
+$width-container-mobile:            $width-column !default;
+$width-container-tablet:            $width-column-2 !default;
+$width-container-tablet-landscape:  $width-column-3 !default;
+$width-container-desktop:           $width-column-4 !default;
 
-$width-screen-mobile:               $width-container-col-mobile;
-$width-screen-tablet:               $width-container-col-tablet;
-$width-screen-tablet-landscape:     $width-container-col-tablet-landscape;
-$width-screen-desktop:              $width-container-col-desktop;
+$width-screen-mobile:               $width-container-col-mobile !default;
+$width-screen-tablet:               $width-container-col-tablet !default;
+$width-screen-tablet-landscape:     $width-container-col-tablet-landscape !default;
+$width-screen-desktop:              $width-container-col-desktop !default;
 
 $media-responsive-mobile:                    "screen and (max-width: #{$width-screen-tablet - 1px})";
 $media-responsive-tablet:                    "screen and (min-width: #{$width-screen-tablet}) and (max-width: #{$width-screen-tablet-landscape - 1px})";
@@ -69,55 +69,55 @@ $media-responsive-desktop--bigger:           "screen and (min-width: #{$width-sc
 //
 // Styleguide 2.4
 
-$color-white:                       #ffffff;
-$color-black:                       #000000;
-$color-grey:                        mix($color-white, $color-black, 50%);
-$color-grey-dark:                   mix($color-white, $color-black, 20%);
-$color-grey-light:                  mix($color-white, $color-black, 90%);
-$color-blue:                        #33b5e5;
-$color-blue-dark:                   darken($color-blue, 25%);
-$color-blue-light:                  lighten($color-blue, 15%);
-$color-purple:                      #AA66CC;
-$color-purple-dark:                 darken($color-purple, 25%);
-$color-purple-light:                lighten($color-purple, 15%);
-$color-green:                       #99cc00;
-$color-green-dark:                  darken($color-green, 25%);
-$color-green-light:                 lighten($color-green, 15%);
-$color-yellow:                      #FFBB33;
-$color-yellow-dark:                 darken($color-yellow, 25%);
-$color-yellow-light:                lighten($color-yellow, 15%);
-$color-red:                         #FF4444;
-$color-red-dark:                    darken($color-red, 25%);
-$color-red-light:                   lighten($color-red, 15%);
+$color-white:                       #ffffff !default;
+$color-black:                       #000000 !default;
+$color-grey:                        mix($color-white, $color-black, 50%) !default;
+$color-grey-dark:                   mix($color-white, $color-black, 20%) !default;
+$color-grey-light:                  mix($color-white, $color-black, 90%) !default;
+$color-blue:                        #33b5e5 !default;
+$color-blue-dark:                   darken($color-blue, 25%) !default;
+$color-blue-light:                  lighten($color-blue, 15%) !default;
+$color-purple:                      #AA66CC !default;
+$color-purple-dark:                 darken($color-purple, 25%) !default;
+$color-purple-light:                lighten($color-purple, 15%) !default;
+$color-green:                       #99cc00 !default;
+$color-green-dark:                  darken($color-green, 25%) !default;
+$color-green-light:                 lighten($color-green, 15%) !default;
+$color-yellow:                      #FFBB33 !default;
+$color-yellow-dark:                 darken($color-yellow, 25%) !default;
+$color-yellow-light:                lighten($color-yellow, 15%) !default;
+$color-red:                         #FF4444 !default;
+$color-red-dark:                    darken($color-red, 25%) !default;
+$color-red-light:                   lighten($color-red, 15%) !default;
 
-$color-lighter:                     rgba(255,255,255,0.25);
-$color-darker :                     rgba(0,0,0,0.25);
+$color-lighter:                     rgba(255,255,255,0.25) !default;
+$color-darker :                     rgba(0,0,0,0.25) !default;
 
 // Colors > Assigning
 
-$backgroundcolor-body:              $color-grey-light;
-$color-body:                        $color-black;
+$backgroundcolor-body:              $color-grey-light !default;
+$color-body:                        $color-black !default;
 
-$backgroundcolor-container:         $color-black;
-$color-container:                   $color-white;
+$backgroundcolor-container:         $color-black !default;
+$color-container:                   $color-white !default;
 
-$backgroundcolor-banner:            $color-black;
-$color-banner:                      $color-white;
+$backgroundcolor-banner:            $color-black !default;
+$color-banner:                      $color-white !default;
 
-$backgroundcolor-navigation:        $color-white;
-$color-navigation:                  $color-black;
+$backgroundcolor-navigation:        $color-white !default;
+$color-navigation:                  $color-black !default;
 
-$backgroundcolor-main:              $color-white;
-$color-main:                        $color-black;
+$backgroundcolor-main:              $color-white !default;
+$color-main:                        $color-black !default;
 
-$backgroundcolor-sidebar:           $color-grey;
-$color-sidebar:                     $color-black;
+$backgroundcolor-sidebar:           $color-grey !default;
+$color-sidebar:                     $color-black !default;
 
-$backgroundcolor-footer:            $color-black;
-$color-footer:                      $color-white;
+$backgroundcolor-footer:            $color-black !default;
+$color-footer:                      $color-white !default;
 
-$color-link:                        $color-red-dark;
-$color-link-hover:                  $color-red-light;
+$color-link:                        $color-red-dark !default;
+$color-link-hover:                  $color-red-light !default;
 
 // Typography
 //
@@ -125,48 +125,48 @@ $color-link-hover:                  $color-red-light;
 //
 // Styleguide 2.5
 
-$fontfamily-first-primary:          Helvetica;
-$fontfamily-primary:                $fontfamily-first-primary, Arial, sans-serif;
-$fontweight-primary:                $fontweight-normal;
-$fontweight-primary-bold:           $fontweight-bold;
-$fontweight-primary-light:          $fontweight-thin;
+$fontfamily-first-primary:          Helvetica !default;
+$fontfamily-primary:                $fontfamily-first-primary, Arial, sans-serif !default;
+$fontweight-primary:                $fontweight-normal !default;
+$fontweight-primary-bold:           $fontweight-bold !default;
+$fontweight-primary-light:          $fontweight-thin !default;
 
-$fontfamily-first-secondary:        Garamond;
-$fontfamily-secondary:              $fontfamily-first-secondary, serif;
-$fontweight-secondary:              $fontweight-bold;
-$fontweight-secondary-bold:         $fontweight-extrabold;
-$fontweight-secondary-light:        $fontweight-normal;
+$fontfamily-first-secondary:        Garamond !default;
+$fontfamily-secondary:              $fontfamily-first-secondary, serif !default;
+$fontweight-secondary:              $fontweight-bold !default;
+$fontweight-secondary-bold:         $fontweight-extrabold !default;
+$fontweight-secondary-light:        $fontweight-normal !default;
 
-$fontfamily-first-monospace:        "Courier New";
-$fontfamily-monospace:              $fontfamily-first-monospace, monospace;
-$fontweight-monospace:              $fontweight-normal;
-$fontweight-monospace-bold:         $fontweight-bold;
-$fontweight-monospace-light:        $fontweight-thin;
+$fontfamily-first-monospace:        "Courier New" !default;
+$fontfamily-monospace:              $fontfamily-first-monospace, monospace !default;
+$fontweight-monospace:              $fontweight-normal !default;
+$fontweight-monospace-bold:         $fontweight-bold !default;
+$fontweight-monospace-light:        $fontweight-thin !default;
 
-$fontfamily-first-symbols:          "FontAwesome"; // http://fortawesome.github.io/Font-Awesome/
-$fontfamily-symbols:                $fontfamily-first-symbols;
-$fontweight-symbols:                $fontweight-normal;
-$fontweight-symbols-bold:           $fontweight-bold;
-$fontweight-symbols-light:          $fontweight-thin;
+$fontfamily-first-symbols:          "FontAwesome" !default; // http://fortawesome.github.io/Font-Awesome/
+$fontfamily-symbols:                $fontfamily-first-symbols !default;
+$fontweight-symbols:                $fontweight-normal !default;
+$fontweight-symbols-bold:           $fontweight-bold !default;
+$fontweight-symbols-light:          $fontweight-thin !default;
 
 // Typography > Assigning
 
-$fontfamily-default:                $fontfamily-primary;
-$fontweight-default:                $fontweight-primary;
-$fontweight-default-bold:           $fontweight-primary-bold;
-$fontweight-default-light:          $fontweight-primary-light;
-$fontsize-default:                  12px;
-$lineheight-default:                $lineheight-base;
-$fontstyle-default:                 normal;
+$fontfamily-default:                $fontfamily-primary !default;
+$fontweight-default:                $fontweight-primary !default;
+$fontweight-default-bold:           $fontweight-primary-bold !default;
+$fontweight-default-light:          $fontweight-primary-light !default;
+$fontsize-default:                  12px !default;
+$lineheight-default:                $lineheight-base !default;
+$fontstyle-default:                 normal !default;
 
-$fontsize-big:                      round($fontsize-default * 1.15);
-$fontsize-bigger:                   round($fontsize-big * 1.5);
-$fontsize-biggest:                  round($fontsize-big * 2);
-$fontsize-small:                    round($fontsize-default * 0.9);
-$fontsize-smaller:                  round($fontsize-default * 0.8);
-$fontsize-smallest:                 round($fontsize-default * 0.75);
+$fontsize-big:                      round($fontsize-default * 1.15) !default;
+$fontsize-bigger:                   round($fontsize-big * 1.5) !default;
+$fontsize-biggest:                  round($fontsize-big * 2) !default;
+$fontsize-small:                    round($fontsize-default * 0.9) !default;
+$fontsize-smaller:                  round($fontsize-default * 0.8) !default;
+$fontsize-smallest:                 round($fontsize-default * 0.75) !default;
 
-$textshadow-default:                1px 1px 3px $color-darker;
+$textshadow-default:                1px 1px 3px $color-darker !default;
 
 
 // Misc
@@ -175,16 +175,16 @@ $textshadow-default:                1px 1px 3px $color-darker;
 //
 // Styleguide 2.6
 
-$zindex-headline:                   1;
-$zindex-popup:                      $zindex-headline + 1;
+$zindex-headline:                   1 !default;
+$zindex-popup:                      $zindex-headline + 1 !default;
 
-$transitionduration-default:        0.25s;
-$transitionduration-fast:           ($transitionduration-default / 2);
-$transitionduration-slow:           ($transitionduration-default * 2);
+$transitionduration-default:        0.25s !default;
+$transitionduration-fast:           ($transitionduration-default / 2) !default;
+$transitionduration-slow:           ($transitionduration-default * 2) !default;
 
-$transitionfunction-default:        ease-in-out;
+$transitionfunction-default:        ease-in-out !default;
 
-$transition-default:                all $transitionduration-default $transitionfunction-default;
-$transition-fast:                   all $transitionduration-fast $transitionfunction-default;
-$transition-slow:                   all $transitionduration-slow $transitionfunction-default;
+$transition-default:                all $transitionduration-default $transitionfunction-default !default;
+$transition-fast:                   all $transitionduration-fast $transitionfunction-default !default;
+$transition-slow:                   all $transitionduration-slow $transitionfunction-default !default;
 

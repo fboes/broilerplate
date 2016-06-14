@@ -51,6 +51,8 @@ dl {
 	margin-left:1em;
 }
 a {
+	-webkit-user-select: none; // Remove hover bug/feature from iPad
+	-webkit-touch-callout: none; // Remove hover bug/feature from iPad
 	img {
 		border:none;
 	}
