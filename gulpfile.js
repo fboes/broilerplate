@@ -7,6 +7,7 @@ var onError = function (err) { beep(); };
 
 // Include Our Plugins
 var appcache = require('gulp-appcache');
+var autoprefixer = require('autoprefixer');
 var clone      = require('gulp-clone');
 var concat     = require('gulp-concat');
 var imageResize= require('gulp-image-resize');
@@ -16,12 +17,11 @@ var plumber    = require('gulp-plumber');
 var postcss    = require('gulp-postcss');
 var rename     = require("gulp-rename");
 var replace    = require('gulp-replace');
+var rtlcss     = require('rtlcss');
 var sass       = require('gulp-sass');
 var shell      = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify     = require('gulp-uglify');
-var autoprefixer = require('autoprefixer');
-var rtlcss       = require('rtlcss');
 
 // Lint Task
 gulp.task('jshint', function() {
@@ -91,7 +91,6 @@ gulp.task('oldie',['postcss'], function () {
     .pipe(replace(/(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) [^\{]+ \(max-width: \d+px\)( \{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, '$1$2'))
-    .pipe(replace(/-(moz|webkit)-[^\{]+?:.+?;\s*/g, ''))
     .pipe(replace(/(transition|border-[\S]*radius):.+?;\s*/g, ''))
     .pipe(replace(/opacity: 0;\s*/g, 'visibility: hidden; '))
     .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
@@ -112,7 +111,7 @@ gulp.task('oldie',['postcss'], function () {
   return css
     .pipe(replace(/(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe( gulp.dest(pkg.directories.css) )
-    .pipe(livereload());
+    .pipe(livereload())
   ;
 });
 
