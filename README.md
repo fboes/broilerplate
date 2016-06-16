@@ -42,7 +42,7 @@ There are two ways to develop:
 
 Setup your development space:
 
-1. The Vagrant way: Update `build/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate.local`).
+1. The Vagrant way: Update `build/vagrant/Vagrantfile` and set your virtual hostname (currently `broilerplate-local`).
 2. The Gulp way: Install Gulp plugins via `npm install`.
 4. The Gulp way: Run `build/setup.sh`.
 6. If you do not want to install the [LiveReload plugin](http://livereload.com/extensions/), insert the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-).
@@ -50,7 +50,7 @@ Setup your development space:
 Developing
 ----------
 
-1. Vagrant way: Start Vagrant via `cd build/vagrant && vagrant up`. This will start a webserver at http://broilerplate.local/ for your current project.
+1. Vagrant way: Start Vagrant via `cd build/vagrant && vagrant up`. This will start a webserver at http://broilerplate-local/ for your current project.
 2. Vagrant way: Start Gulp watcher via `vagrant ssh -- cd /var/www/ && gulp watch`.
 2. Gulp way: Start Gulp watcher via `gulp watch`. This will start the Gulp watcher responsible for compiling SASS, linting JS, reloading your page on changes via LiveReload and doing other useful stuff.
 3. Start [LiveReload plugin](http://livereload.com/) in your browser. If you use the [LiveReload script](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-) disregard this step.

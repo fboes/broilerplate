@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCAL_HOST="broilerplate.local"
+LOCAL_HOST="broilerplate-local"
 LOCAL_DIRECTORY=$(pwd)
 LOCAL_DB_HOST="localhost"
 LOCAL_DB_USR="broilerplate"
