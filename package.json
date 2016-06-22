@@ -54,7 +54,10 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "deploy-live": "build/deploy.sh live",
+    "vagrant-up": "cd build/vagrant && vagrant up && cd -",
+    "vagrant-suspend": "cd build/vagrant && vagrant suspend && cd -"
   },
   "author": "Frank Boës",
   "license": "MIT",

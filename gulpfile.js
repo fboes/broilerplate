@@ -215,16 +215,6 @@ gulp.task('article_images', function() {
   return article_images;
 });
 
-gulp.task('deploy_live', shell.task([
-  pkg.directories.build + '/deploy.sh live'
-]));
-gulp.task('vagrant_up', shell.task([
-  'cd ' + pkg.directories.build + '/vagrant && vagrant up && cd -'
-]));
-gulp.task('vagrant_suspend', shell.task([
-  'cd ' + pkg.directories.build + '/vagrant && vagrant suspend && cd -'
-]));
-
 // Watch Files For Changes
 gulp.task('watch', function() {
   livereload.listen();
@@ -241,3 +231,6 @@ gulp.task('build-sass',  ['sass','postcss','oldie','appcache']);
 gulp.task('build-js',    ['jshint','uglify','appcache']);
 gulp.task('build-icons', ['logo','appcache']);
 gulp.task('build-article-images',    ['article_images','appcache']);
+gulp.task('deploy_live',     shell.task(['npm run deploy-live']));
+gulp.task('vagrant_up',      shell.task(['npm run vagrant-up']));
+gulp.task('vagrant_suspend', shell.task(['npm run vagrant-suspend']));

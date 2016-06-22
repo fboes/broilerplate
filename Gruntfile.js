@@ -181,9 +181,9 @@ module.exports = function(grunt) {
     },*/
 
     shell: {
-      deploy_live:     { command: '<%= pkg.directories.build %>/deploy.sh live'},
-      vagrant_up:      { command: 'cd <%= pkg.directories.build %>/vagrant && vagrant up && cd -'},
-      vagrant_suspend: { command: 'cd <%= pkg.directories.build %>/vagrant && vagrant suspend && cd -'}
+      deploy_live:     { command: 'npm run deploy-live'},
+      vagrant_up:      { command: 'npm run vagrant-up'},
+      vagrant_suspend: { command: 'npm run vagrant-suspend'}
     },
 
     watch: {
