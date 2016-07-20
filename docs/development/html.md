@@ -57,3 +57,33 @@ In most cases this will prevent bots from indexing a given page:
 ```html
 <meta name="robots" content="noindex" />
 ```
+
+Forms
+-----
+
+Atributes you want to consider:
+
+* `required`
+* `placeholder`
+* `pattern`
+* `accept` for hinting on required file type like `image/*`
+* `autocorrect`
+* `autocapitalize`
+* `autofocus`
+* `[autofill](http://blog.cloudfour.com/autofill-what-web-devs-should-know-but-dont/)`
+* `capture` allowing you to use `camera`, `microphone`, `camcorder` for direct upload from a phone.
+
+Important `type` attributes to use:
+
+* `type="date" min="…" max="…"`
+* `type="datetime-local" min="…" max="…"`
+* `type="email"`
+* `type="month" min="…" max="…"`
+* `type="number" min="…" max="…" step="…"`
+* `type="time"`
+* `type="url"`
+* `type="date"`
+
+In HTML5 there is also a [CSS property `:invalid`](https://developer.mozilla.org/en/docs/Web/CSS/:invalid) and a [JS `invalid` event](https://developer.mozilla.org/en/docs/Web/Events/invalid) for invalid form fields.
+
+There is a way of [styling checkboxes and radiobuttons with CSS](http://webdesign.tutsplus.com/tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons--webdesign-8953) without any Javascript.
