@@ -128,7 +128,7 @@ gulp.task('appcache', function(){
       hash: true,
       preferOnline: true,
       filename: 'manifest.appcache',
-      exclude: 'manifest.appcache'
+      exclude: ['manifest.appcache','manifest.json']
     }))
     .pipe(gulp.dest(pkg.directories.template))
   ;
