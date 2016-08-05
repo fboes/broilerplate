@@ -224,6 +224,6 @@ module.exports = function(grunt) {
   //grunt.registerTask('build-article-images', ['image_resize:article_images','image_resize:article_images2']);
   grunt.registerTask('default',     ['build-js','build-css']); // ,'build-icons'
   grunt.registerTask('deploy-live', ['shell:deploy_live']);
-  grunt.registerTask('vagrant-up',   ['shell:vagrant_up']);
+  grunt.registerTask('vagrant-up',  ['shell:vagrant_up']);
   grunt.registerTask('vagrant-suspend', ['shell:vagrant_suspend']);
 };
