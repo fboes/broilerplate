@@ -154,6 +154,11 @@ gulp.task('logo', function() {
       name: 'apple-touch-icon-precomposed.png',
       directory: pkg.directories.template
     },{
+      width: 144,
+      height: 144,
+      name: 'favicon-144x144.png',
+      directory: pkg.directories.template
+    },{
       width: 196,
       height: 196,
       name: 'favicon-196x196.png',
@@ -187,6 +192,7 @@ gulp.task('logo', function() {
         crop: true,
         quality: 0.7,
         gravity: 'Center',
+        upscale : true,
         imageMagick: true
       }))
       .pipe(rename(i.name))

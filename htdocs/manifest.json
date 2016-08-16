@@ -7,6 +7,9 @@
       "src": "/favicon-96x96.png",
       "sizes": "96x96"
     },{
+      "src": "/favicon-144x144.png",
+      "sizes": "144x144"
+    },{
       "src": "/favicon-196x196.png",
       "sizes": "196x196"
     }
