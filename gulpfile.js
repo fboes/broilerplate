@@ -30,13 +30,7 @@ gulp.task('jshint', function() {
       '!' + pkg.directories.js_src + '/vendor/*.js'
     ])
     .pipe(plumber({errorHandler: onError}))
-    .pipe(jshint({ // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-      browser: true,
-      jquery: true,
-      strict: true,
-      curly: true,
-      undef: true
-    }))
+    .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'))
   ;

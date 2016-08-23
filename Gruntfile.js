@@ -3,12 +3,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      options: { // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-        browser: true,
-        jquery: true,
-        strict: true,
-        curly: true,
-        undef:true
+      options: {
+        jshintrc:true
       },
       build: {
         files: {

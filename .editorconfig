@@ -14,6 +14,6 @@ tab_width = 4
 indent_style = space
 indent_size = 2
 
-[{package.json,bower.json,**/*.css,gulpfile.js,Gruntfile.js}]
+[{package.json,bower.json,**/*.css,gulpfile.js,Gruntfile.js,.jshintrc}]
 indent_style = space
 indent_size = 2
