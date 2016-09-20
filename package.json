@@ -62,10 +62,4 @@
   "author": "Frank Boës",
   "license": "MIT",
   "private": false,
-  "dependencies": {
-    "grunt-contrib-uglify": "^2.0.0",
-    "gulp-image-resize": "^0.10.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0"
-  }
 }
