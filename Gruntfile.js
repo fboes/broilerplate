@@ -179,7 +179,12 @@ module.exports = function(grunt) {
     shell: {
       deploy_live:     { command: 'npm run deploy-live'},
       vagrant_up:      { command: 'npm run vagrant-up'},
-      vagrant_suspend: { command: 'npm run vagrant-suspend'}
+      vagrant_suspend: { command: 'npm run vagrant-suspend'},
+      options: {
+        execOptions: {
+          maxBuffer: Infinity
+        }
+      }
     },
 
     watch: {
