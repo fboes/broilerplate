@@ -58,7 +58,7 @@ gulp.task('sass', function(cb) {
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(gulp.dest(pkg.directories.css))
-    .pipe( postcss([ autoprefixer({browsers: ['last 2 versions', '> 2%', 'ie 8', 'ie 9']})]) )
+    .pipe( postcss([ autoprefixer({browsers: ['last 2 versions', '> 0.5%', 'ie 8', 'ie 9']})]) )
     .pipe( gulp.dest(pkg.directories.css) )
     .pipe( postcss([ rtlcss ]) )
     .pipe(rename('rtl.css'))
