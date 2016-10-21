@@ -4,6 +4,7 @@ CACHE MANIFEST
 CACHE:
 apple-touch-icon-precomposed.png
 browserconfig.xml
+favicon-144x144.png
 favicon-196x196.png
 favicon-96x96.png
 favicon.ico
@@ -25,4 +26,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 6d53fd63539db2be576c8f19dcd1455ee16d59ef5c1b6e9fec71b6656bbee05e
+# hash: d514796b03448bf4ad54d3fe34860d4b9726c77c10dcd272362a6632285e3495

@@ -58,13 +58,6 @@ gulp.task('sass', function(cb) {
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(gulp.dest(pkg.directories.css))
-  ;
-  cb(err);
-});
-
-// PostCSS
-gulp.task('postcss',['sass'], function (cb) {
-  return gulp.src(pkg.directories.css + '/styles.css')
     .pipe( postcss([ autoprefixer({browsers: ['last 2 versions', '> 2%', 'ie 8', 'ie 9']})]) )
     .pipe( gulp.dest(pkg.directories.css) )
     .pipe( postcss([ rtlcss ]) )
@@ -74,7 +67,7 @@ gulp.task('postcss',['sass'], function (cb) {
   cb(err);
 });
 
-gulp.task('oldie',['postcss'], function () {
+gulp.task('oldie',['sass'], function () {
   var css = gulp.src(pkg.directories.css + '/*.css')
     .pipe(replace(/(\n)\s*\n/g, '$1'))
   ;
@@ -227,7 +220,7 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default',     ['build-js','build-sass','build-icons']);
-gulp.task('build-sass',  ['sass','postcss','oldie','appcache']);
+gulp.task('build-sass',  ['sass','oldie','appcache']);
 gulp.task('build-js',    ['jshint','uglify','appcache']);
 gulp.task('build-icons', ['logo','appcache']);
 gulp.task('build-article-images',    ['article_images','appcache']);
