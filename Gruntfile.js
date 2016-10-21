@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           processors: [
-            require('autoprefixer')({browsers: ['last 2 versions', '> 0.5%', 'ie 8', 'ie 9']})
+            require('autoprefixer')({browsers: ['last 2 versions', '> 0.5%', 'ie 8-11']})
           ]
         },
         src: '<%= pkg.directories.css %>/*.css'
