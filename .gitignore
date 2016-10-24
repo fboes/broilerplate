@@ -6,5 +6,5 @@
 /build/vagrant/.vagrant
 /build/config.sh
 /tmp
-/yarn.lock
+/yarn*
 npm*
