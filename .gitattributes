@@ -5,15 +5,17 @@
 # Automatically solve merge conflicts
 # See http://stackoverflow.com/questions/27134100/whats-the-proper-usage-of-gitattributes-with-merge-ours
 
-*.html text eol=lf
-*.txt text eol=lf
-*.md text eol=lf
-*.php text eol=lf
 *.css text eol=lf merge=ours
+*.html text eol=lf
 *.js text eol=lf
-*.scss text eol=lf
-*.min.js merge=ours
+*.json text eol=lf
 *.map merge=ours
+*.md text eol=lf
+*.min.js merge=ours
+*.php text eol=lf
+*.scss text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
 
 # https://github.com/github/linguist#using-gitattributes
 config.rb linguist-documentation=false
