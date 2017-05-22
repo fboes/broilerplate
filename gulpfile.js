@@ -1,7 +1,7 @@
 // Include gulp
 var gulp = require('gulp'),
   fs = require('fs'),
-  pkg = JSON.parse(fs.readFileSync('./package.json'))
+  pkg = JSON.parse(fs.readFileSync('./package.json')),
   beep = require('beepbeep'),
   onError = function (err) { beep(); }
 ;
