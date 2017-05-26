@@ -1,27 +1,27 @@
 // Include gulp
-var gulp = require('gulp');
-var fs = require('fs');
-var pkg = JSON.parse(fs.readFileSync('./package.json'));
-var beep = require('beepbeep');
-var onError = function (err) { beep(); };
+var gulp = require('gulp'),
+  fs = require('fs'),
+  pkg = JSON.parse(fs.readFileSync('./package.json')),
+  beep = require('beepbeep'),
+  onError = function (err) { beep(); }
+;
 
 // Include Our Plugins
-var appcache = require('gulp-appcache');
-var autoprefixer = require('autoprefixer');
-var clone      = require('gulp-clone');
-var concat     = require('gulp-concat');
-var imageResize= require('gulp-image-resize');
-var jshint     = require('gulp-jshint');
-var livereload = require('gulp-livereload');
-var plumber    = require('gulp-plumber');
-var postcss    = require('gulp-postcss');
-var rename     = require("gulp-rename");
-var replace    = require('gulp-replace');
-var rtlcss     = require('rtlcss');
-var sass       = require('gulp-sass');
-var shell      = require('gulp-shell');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify     = require('gulp-uglify');
+var appcache = require('gulp-appcache'),
+  clone      = require('gulp-clone'),
+  concat     = require('gulp-concat'),
+  imageResize= require('gulp-image-resize'),
+  jshint     = require('gulp-jshint'),
+  livereload = require('gulp-livereload'),
+  plumber    = require('gulp-plumber'),
+  postcss    = require('gulp-postcss'),
+  rename     = require("gulp-rename"),
+  replace    = require('gulp-replace'),
+  sass       = require('gulp-sass'),
+  shell      = require('gulp-shell'),
+  sourcemaps = require('gulp-sourcemaps'),
+  uglify     = require('gulp-uglify')
+;
 
 // Lint Task
 gulp.task('jshint', function() {
@@ -30,7 +30,13 @@ gulp.task('jshint', function() {
       '!' + pkg.directories.js_src + '/vendor/*.js'
     ])
     .pipe(plumber({errorHandler: onError}))
-    .pipe(jshint())
+    .pipe(jshint({ // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+      browser: true,
+      jquery: true,
+      strict: true,
+      curly: true,
+      undef: true
+    }))
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'))
   ;
@@ -48,7 +54,7 @@ gulp.task('uglify', function() {
       max_line_len: 9000
     }}))
     .pipe(gulp.dest(pkg.directories.js))
-    .pipe(livereload())
+    .pipe(livereload());
   ;
 });
 
@@ -58,16 +64,23 @@ gulp.task('sass', function(cb) {
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(gulp.dest(pkg.directories.css))
-    .pipe( postcss([ autoprefixer({browsers: ['last 2 versions', '> 0.5%', 'ie 8-11']})]) )
+  ;
+  cb(err);
+});
+
+// PostCSS
+gulp.task('postcss',['sass'], function (cb) {
+  return gulp.src(pkg.directories.css + '/styles.css')
+    .pipe( postcss([ require('autoprefixer')({browsers: ['last 2 versions', '> 2%', 'ie 8', 'ie 9']})]) )
     .pipe( gulp.dest(pkg.directories.css) )
-    .pipe( postcss([ rtlcss ]) )
+    .pipe( postcss([ require('rtlcss')]) )
     .pipe(rename('rtl.css'))
     .pipe( gulp.dest(pkg.directories.css) )
   ;
   cb(err);
 });
 
-gulp.task('oldie',['sass'], function () {
+gulp.task('oldie',['postcss'], function () {
   var css = gulp.src(pkg.directories.css + '/*.css')
     .pipe(replace(/(\n)\s*\n/g, '$1'))
   ;
@@ -78,19 +91,20 @@ gulp.task('oldie',['sass'], function () {
     .pipe(replace(/(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) [^\{]+ \(max-width: \d+px\)( \{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, '$1$2'))
+    .pipe(replace(/-(moz|webkit)-[^\{]+?:.+?;\s*/g, ''))
     .pipe(replace(/(transition|border-[\S]*radius):.+?;\s*/g, ''))
     .pipe(replace(/opacity: 0;\s*/g, 'visibility: hidden; '))
     .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
     .pipe(replace(/rgba(\(.+?),\s?[\d\.]+(\))/g, 'rgb$1$2'))
     .pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
-    .pipe(replace(/([\d\.]+)vw/g, function (match,p1) {
-      return Math.round(parseFloat(p1) * 10.24) + 'px'; // matches 100vw = 1024px
+    .pipe(replace(/([\d\.]+)vw/g, function (regexMatches) {
+      return Math.round(parseFloat(regexMatches[0]) * 10.24) + 'px'; // matches 1024px
     }))
-    .pipe(replace(/([\d\.]+)vh/g, function (match,p1) {
-      return Math.round(parseFloat(p1) * 7.68) + 'px'; // matches 100vw = 768px
+    .pipe(replace(/([\d\.]+)vh/g, function (regexMatches) {
+      return Math.round(parseFloat(regexMatches[0]) * 7.68) + 'px'; // matches 768 px
     }))
-    .pipe(replace(/([\d\.]+)rem/g, function (match,p1) {
-      return Math.round(parseFloat(p1) * 12) + 'px'; // matches 1rem = 12px
+    .pipe(replace(/([\d\.]+)rem/g, function (regexMatches) {
+      return Math.round(parseFloat(regexMatches[0]) * 12) + 'px'; // matches $fontsize-default
     }))
     .pipe( gulp.dest(pkg.directories.css + '/oldie') )
   ;
@@ -98,7 +112,7 @@ gulp.task('oldie',['sass'], function () {
   return css
     .pipe(replace(/(@media[^\{]+tty[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe( gulp.dest(pkg.directories.css) )
-    .pipe(livereload())
+    .pipe(livereload());
   ;
 });
 
@@ -110,15 +124,14 @@ gulp.task('appcache', function(){
     '!'+pkg.directories.images + '/originals/*',
     '!'+pkg.directories.css + '/oldie/*'
   ])
-    .pipe(appcache({
-      //relativePath: pkg.directories.template,
-      hash: true,
-      preferOnline: true,
-      filename: 'manifest.appcache',
-      exclude: ['manifest.appcache','manifest.json']
-    }))
-    .pipe(gulp.dest(pkg.directories.template))
-  ;
+  .pipe(appcache({
+    //relativePath: pkg.directories.template,
+    hash: true,
+    preferOnline: true,
+    filename: 'manifest.appcache',
+    exclude: 'manifest.appcache'
+  }))
+  .pipe(gulp.dest(pkg.directories.template));
 });
 
 gulp.task('logo', function() {
@@ -139,11 +152,6 @@ gulp.task('logo', function() {
       width: 152,
       height: 152,
       name: 'apple-touch-icon-precomposed.png',
-      directory: pkg.directories.template
-    },{
-      width: 144,
-      height: 144,
-      name: 'favicon-144x144.png',
       directory: pkg.directories.template
     },{
       width: 196,
@@ -179,7 +187,6 @@ gulp.task('logo', function() {
         crop: true,
         quality: 0.7,
         gravity: 'Center',
-        upscale : true,
         imageMagick: true
       }))
       .pipe(rename(i.name))
@@ -208,10 +215,19 @@ gulp.task('article_images', function() {
   return article_images;
 });
 
+gulp.task('deploy_live', shell.task([
+  pkg.directories.build + '/deploy.sh live'
+]));
+gulp.task('vagrant_up', shell.task([
+  'cd ' + pkg.directories.build + '/vagrant && vagrant up && cd -'
+]));
+gulp.task('vagrant_suspend', shell.task([
+  'cd ' + pkg.directories.build + '/vagrant && vagrant suspend && cd -'
+]));
+
 // Watch Files For Changes
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch(['gulpfile.js','package.json'], process.exit);
   gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
   gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-sass']);
   gulp.watch(pkg.directories.images + '/logo.png', ['build-icons']);
@@ -220,10 +236,7 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default',     ['build-js','build-sass','build-icons']);
-gulp.task('build-sass',  ['sass','oldie','appcache']);
+gulp.task('build-sass',  ['sass','postcss','oldie','appcache']);
 gulp.task('build-js',    ['jshint','uglify','appcache']);
 gulp.task('build-icons', ['logo','appcache']);
 gulp.task('build-article-images',    ['article_images','appcache']);
-gulp.task('deploy-live',     shell.task(['npm run deploy-live']));
-gulp.task('vagrant-up',      shell.task(['npm run vagrant-up']));
-gulp.task('vagrant-suspend', shell.task(['npm run vagrant-suspend']));
