@@ -76,25 +76,26 @@ gulp.task('sass', function (cb) {
 gulp.task('oldie', ['sass'], function () {
   gulp.src(pkg.directories.css + '/*.css')
     .pipe(replace(/\/\*#.+?\*\//g, ''))
+    .pipe(replace(/(url\("?\.\.)/g, '$1/..'))
     .pipe(replace(/@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, '$1$2'))
     .pipe(replace(/(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) [^\{]+ \(max-width: \d+px\)( \{ [\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, '$1$2'))
     .pipe(replace(/-(moz|webkit)-[^\{]+?:.+?;\s*/g, ''))
-    .pipe(replace(/(@supports) \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, ''))
+    .pipe(replace(/(@supports[\s\S]+? \} \}\s*)/g, ''))
     .pipe(replace(/(transition|border-[\S]*radius):.+?;\s*/g, ''))
     .pipe(replace(/opacity: 0;\s*/g, 'visibility: hidden; '))
     .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
     .pipe(replace(/rgba(\(.+?),\s?[\d\.]+(\))/g, 'rgb$1$2'))
-    .pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
+    //.pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
     .pipe(replace(/([\d\.]+)vw/g, function (match, p1) {
-        return Math.round(parseFloat(p1) * 10.24) + 'px'; // matches 100vw = 1024px
+      return Math.round(parseFloat(p1) * 10.24) + 'px'; // matches 100vw = 1024px
     }))
     .pipe(replace(/([\d\.]+)vh/g, function (match, p1) {
-        return Math.round(parseFloat(p1) * 7.68) + 'px'; // matches 100vw = 768px
+      return Math.round(parseFloat(p1) * 7.68) + 'px'; // matches 100vw = 768px
     }))
     .pipe(replace(/([\d\.]+)rem/g, function (match, p1) {
-        return Math.round(parseFloat(p1) * 12) + 'px'; // matches 1rem = 12px
+      return Math.round(parseFloat(p1) * 12) + 'px'; // matches 1rem = 12px
     }))
     .pipe(gulp.dest(pkg.directories.css + '/oldie'))
   ;
