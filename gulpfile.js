@@ -214,14 +214,14 @@ gulp.task('vagrant_suspend', shell.task([
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
-  gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-sass']);
+  gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-css']);
   gulp.watch(pkg.directories.images + '/logo.png', ['build-icons']);
   gulp.watch(pkg.directories.images + '/originals/*.jpg', ['build-article-images']);
 });
 
 // Default Task
-gulp.task('default',     ['build-js','build-sass','build-icons']);
-gulp.task('build-sass',  ['sass','oldie','appcache']);
+gulp.task('default',     ['build-js','build-css','build-icons']);
+gulp.task('build-css',   ['sass','oldie','appcache']);
 gulp.task('build-js',    ['jshint','uglify','appcache']);
 gulp.task('build-icons', ['logo','appcache']);
 gulp.task('build-article-images',    ['article_images','appcache']);
