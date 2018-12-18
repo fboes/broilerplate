@@ -1,13 +1,9 @@
-// Example
-//
-// Styleguide 4.2.1
-
 .example {
-	&__inner { }
-	&--open { }
+  &__inner { }
+  &--open { }
 
-	@include screen_mobile {
-		&__inner { }
-		&--open { }
-	}
+  @include screen_mobile {
+    &__inner { }
+    &--open { }
+  }
 }

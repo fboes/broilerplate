@@ -1,4 +1,196 @@
-// Screen styles
-//
-// Styleguide 4.2
+body, html {
+  overflow-x: hidden;
+}
+html {
+  height: 100%;
+  margin-bottom: 1px;
+}
+body {
+  color: $color-body;
+  background-color: $backgroundcolor-body;
+}
+#container {
+  color: $color-container;
+  background-color: $backgroundcolor-container;
+}
+#banner {
+  color: $color-banner;
+  background-color: $backgroundcolor-banner;
+  text-align:center;
+}
+#navigation {
+  color: $color-navigation;
+  background-color: $backgroundcolor-navigation;
+  text-align:center;
+}
+#main {
+  color: $color-main;
+  background-color: $backgroundcolor-main;
+}
+#sidebar {
+  color: $color-sidebar;
+  background-color: $backgroundcolor-sidebar;
+}
+#footer {
+  color: $color-footer;
+  background-color: $backgroundcolor-footer;
+}
+.no-screen {
+  display:none;
+}
 
+.columns {
+  float:left;
+  margin-left:  ceil($spacing-column/2);
+  margin-right: floor($spacing-column/2);
+  &--raw {
+    margin-left:0;
+    margin-right:0;
+  }
+  &__container {
+    @extend %toolshed-clearfix;
+    margin-left:  ceil($spacing-column/-2);
+    margin-right: floor($spacing-column/-2);
+  }
+}
+
+@if ($switch-fluid) {
+  .columns {
+    width: 100%;
+    @each $cols in (1,2,3) {
+      &--4-#{$cols} {
+        width: calc( #{100% / 4 * $cols} - #{$spacing-column});
+      }
+    }
+    @each $cols in (1,2) {
+      &--3-#{$cols} {
+        width: calc( #{100% / 3 * $cols} - #{$spacing-column});
+      }
+    }
+    @each $cols in (1) {
+      &--2-#{$cols} {
+        width: calc( #{100% / 2 * $cols} - #{$spacing-column});
+      }
+    }
+    &--raw {
+      @each $cols in (1,2,3) {
+        &--4-#{$cols} {
+          width: 100% / 4 * $cols;
+        }
+      }
+      @each $cols in (1,2) {
+        &--3-#{$cols} {
+          width: 100% / 3 * $cols;
+        }
+      }
+      @each $cols in (1) {
+        &--2-#{$cols} {
+          width: 100% / 2 * $cols;
+        }
+      }
+    }
+  }
+}
+@else {
+  @if ($switch-overlapping) {
+    .header__inner, .nav__inner, .main__inner, .aside__inner, .footer__inner, .news__inner {
+      margin:0 auto;
+      @include screen_mobile {
+        max-width: $width-container-mobile;
+      }
+      @include screen_tablet {
+        max-width: $width-container-tablet;
+      }
+      @include screen_tablet_landscape {
+        max-width: $width-container-tablet-landscape;
+      }
+      @include screen_desktop {
+        max-width: $width-container-desktop;
+      }
+    }
+  }
+  @else {
+    #container {
+      @include screen_mobile {
+        max-width: $width-container-mobile;
+      }
+      @include screen_tablet {
+        max-width: $width-container-tablet;
+      }
+      @include screen_tablet_landscape {
+        max-width: $width-container-tablet-landscape;
+      }
+      @include screen_desktop {
+        max-width: $width-container-desktop;
+      }
+    }
+  }
+  .columns {
+    width: $width-column;
+    @each $cols in (1,2,3,4) {
+      &--4-#{$cols} {
+        width: $cols * $width-column + ($cols - 1) * $spacing-column;
+      }
+    }
+    @include screen_tablet_landscape {
+      @each $cols in (1,2,3) {
+        &--3-#{$cols} {
+          width: $cols * $width-column + ($cols - 1) * $spacing-column;
+        }
+      }
+    }
+    @include screen_tablet {
+      @each $cols in (1,2) {
+        &--2-#{$cols} {
+          width: $cols * $width-column + ($cols - 1) * $spacing-column;
+        }
+      }
+    }
+    @include screen_mobile {
+      &--1-1 {
+        width: $width-column;
+      }
+    }
+  }
+}
+
+%toolshed-hide-text {
+  @include toolshed-hide-text();
+}
+%toolshed-visuallyhidden {
+  @include toolshed-visuallyhidden();
+}
+%toolshed-clearfix {
+  @include toolshed-clearfix();
+}
+%toolshed-horizontal-list {
+  @include toolshed-horizontal-list();
+}
+%toolshed-table-fixed {
+  @include toolshed-table-fixed();
+}
+%toolshed-vertical-center {
+  @include toolshed-vertical-center();
+}
+
+@media (tty) {
+  .browsehappy {
+    z-index:2;
+    position:fixed;
+    width:100%;
+    background-color: #ffffdd;
+    color: #000000;
+    padding:0.5em;
+    width:100%;
+    top:0;
+    left:0;
+    border-bottom:1px solid #eeeeee;
+    text-align:center;
+    display:block;
+    a {
+      color:blue;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------

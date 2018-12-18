@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd `dirname $0`/..
-source build/config.sh
+source build/.env
 
 if [[ ! "$1" =~ ^(live)$ ]]; then
   echo "Usage : $0 [live]"

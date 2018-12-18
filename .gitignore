@@ -1,10 +1,11 @@
+# IDEs
+/.idea
+/.vscode
 /.sublime-*
-/.sass-cache
-/docs/styleguide
+
+# Development stuff
 /logs
 /node_modules
-/build/vagrant/.vagrant
-/build/config.sh
 /tmp
 /yarn*
-npm*
+/package-lock.json

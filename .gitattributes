@@ -1,3 +1,6 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto eol=lf
+
 # Automatically set line endings
 # See https://help.github.com/articles/dealing-with-line-endings
 # In case of problems: http://stackoverflow.com/questions/11383094/unstaged-changes-left-after-git-reset-hard
@@ -5,18 +8,5 @@
 # Automatically solve merge conflicts
 # See http://stackoverflow.com/questions/27134100/whats-the-proper-usage-of-gitattributes-with-merge-ours
 
-*.css text eol=lf merge=ours
-*.html text eol=lf
-*.js text eol=lf
-*.json text eol=lf
-*.map merge=ours
-*.md text eol=lf
-*.min.js merge=ours
-*.php text eol=lf
-*.scss text eol=lf
-*.sh text eol=lf
-*.txt text eol=lf
-
-# https://github.com/github/linguist#using-gitattributes
-config.rb linguist-documentation=false
-setup/vagrant/Vagrantfile linguist-documentation=false
+*.css text merge=ours
+*.ics text eol=crlf

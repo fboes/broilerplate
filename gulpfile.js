@@ -2,45 +2,46 @@
 var gulp = require('gulp'),
   fs = require('fs'),
   pkg = JSON.parse(fs.readFileSync('./package.json')),
-  beep = require('beepbeep'),
+  beep = require('beeper'),
   onError = function (err) { beep(); }
 ;
 
 // Include Our Plugins
-var appcache = require('gulp-appcache'),
-  clone      = require('gulp-clone'),
-  concat     = require('gulp-concat'),
-  imageResize= require('gulp-image-resize'),
-  jshint     = require('gulp-jshint'),
-  livereload = require('gulp-livereload'),
-  plumber    = require('gulp-plumber'),
-  postcss    = require('gulp-postcss'),
-  rename     = require("gulp-rename"),
-  replace    = require('gulp-replace'),
-  sass       = require('gulp-sass'),
-  shell      = require('gulp-shell'),
-  sourcemaps = require('gulp-sourcemaps'),
-  uglify     = require('gulp-uglify')
+var clone     = require('gulp-clone'),
+  concat      = require('gulp-concat'),
+  eslint      = require('gulp-eslint'),
+  imageResize = require('gulp-image-resize'),
+  browserSync = require('browser-sync').create(),
+  plumber     = require('gulp-plumber'),
+  postcss     = require('gulp-postcss'),
+  rename      = require("gulp-rename"),
+  sass        = require('gulp-sass'),
+  shell       = require('gulp-shell'),
+  sourcemaps  = require('gulp-sourcemaps'),
+  uglify      = require('gulp-uglify')
 ;
 
 // Lint Task
-gulp.task('jshint', function() {
+gulp.task('eslint', function() {
   return gulp.src([
       pkg.directories.js_src + '/**/*.js',
       '!' + pkg.directories.js_src + '/vendor/*.js'
     ])
     .pipe(plumber({errorHandler: onError}))
-    .pipe(jshint({ // see https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-      browser: true,
-      jquery: true,
-      strict: true,
-      curly: true,
-      undef: true
+    .pipe(eslint({
+      'envs': [
+        'browser'
+      ],
+      "extends": [
+        "eslint:recommended"
+      ]
     }))
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
   ;
 });
+
+gulp.task('build-js',    ['eslint', 'uglify']);
 
 // Concatenate & Minify JS
 gulp.task('uglify', function() {
@@ -54,72 +55,23 @@ gulp.task('uglify', function() {
       max_line_len: 9000
     }}))
     .pipe(gulp.dest(pkg.directories.js))
-    .pipe(livereload());
   ;
 });
 
 // Sass
-gulp.task('sass', function (cb) {
+gulp.task('build-css', function (cb) {
   return gulp.src(pkg.directories.sass + '/**/*.scss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
-    .pipe(postcss([require('autoprefixer')({browsers: ['last 2 versions', '> 2%', 'ie 8', 'ie 9']})]))
+    .pipe(postcss([require('autoprefixer')({browsers: ['last 2 versions', '> 2%', 'ie 9', 'ie 10', 'ie 11']})]))
     //.pipe(replace(/([\n\r])\s*[\n\r]/g, '$1'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(pkg.directories.css))
-    .pipe(livereload());
-    ;
-  cb(err);
-});
-
-gulp.task('oldie', ['sass'], function () {
-  gulp.src(pkg.directories.css + '/*.css')
-    .pipe(replace(/\/\*#.+?\*\//g, ''))
-    .pipe(replace(/(url\("?\.\.)/g, '$1/..'))
-    .pipe(replace(/@media[^\{]+tty[^\{]+\{ (.+ \}) \}(\s*)/g, '$1$2'))
-    .pipe(replace(/(@media[^\{]+device-pixel-ratio[^\{]+\{ [\s\S]+? \} \}\s*)/g, ''))
-    .pipe(replace(/(@media screen) [^\{]+ \(max-width: \d+px\)( \{ [\s\S]+? \} \}\s*)/g, ''))
-    .pipe(replace(/(@media screen) and \(.+?\)( \{ [\s\S]+? \} \}\s*)/g, '$1$2'))
-    .pipe(replace(/-(moz|webkit)-[^\{]+?:.+?;\s*/g, ''))
-    .pipe(replace(/(@supports[\s\S]+? \} \}\s*)/g, ''))
-    .pipe(replace(/(transition|border-[\S]*radius):.+?;\s*/g, ''))
-    .pipe(replace(/opacity: 0;\s*/g, 'visibility: hidden; '))
-    .pipe(replace(/opacity: 1;\s*/g, 'visibility: visible; '))
-    .pipe(replace(/rgba(\(.+?),\s?[\d\.]+(\))/g, 'rgb$1$2'))
-    //.pipe(replace(/\s\S+\s?\{\s+\}/g, ''))
-    .pipe(replace(/([\d\.]+)vw/g, function (match, p1) {
-      return Math.round(parseFloat(p1) * 10.24) + 'px'; // matches 100vw = 1024px
-    }))
-    .pipe(replace(/([\d\.]+)vh/g, function (match, p1) {
-      return Math.round(parseFloat(p1) * 7.68) + 'px'; // matches 100vw = 768px
-    }))
-    .pipe(replace(/([\d\.]+)rem/g, function (match, p1) {
-      return Math.round(parseFloat(p1) * 12) + 'px'; // matches 1rem = 12px
-    }))
-    .pipe(gulp.dest(pkg.directories.css + '/oldie'))
   ;
 });
 
-gulp.task('appcache', function(){
-  gulp.src([
-    pkg.directories.template + '/**/*',
-    '!'+pkg.directories.template + '/*.html',
-    '!'+pkg.directories.images + '/article*/*',
-    '!'+pkg.directories.images + '/originals/*',
-    '!'+pkg.directories.css + '/oldie/*'
-  ])
-  .pipe(appcache({
-    //relativePath: pkg.directories.template,
-    hash: true,
-    preferOnline: true,
-    filename: 'manifest.appcache',
-    exclude: 'manifest.appcache'
-  }))
-  .pipe(gulp.dest(pkg.directories.template));
-});
-
-gulp.task('logo', function() {
+gulp.task('build-icons', function() {
   var logo = gulp.src(pkg.directories.images + '/logo.png');
 
   [
@@ -129,25 +81,35 @@ gulp.task('logo', function() {
       name: 'favicon.ico',
       directory: pkg.directories.template
     },{
-      width: 96,
-      height: 96,
-      name: 'favicon-96x96.png',
+      width: 16,
+      height: 16,
+      name: 'favicon-16x16.png',
       directory: pkg.directories.template
     },{
-      width: 152,
-      height: 152,
-      name: 'apple-touch-icon-precomposed.png',
-      directory: pkg.directories.template
-    },{
-      width: 196,
-      height: 196,
-      name: 'favicon-196x196.png',
+      width: 32,
+      height: 32,
+      name: 'favicon-32x32.png',
       directory: pkg.directories.template
     },{
       width: 128,
       height: 128,
       name: 'tile-128x128.png',
       directory: pkg.directories.images
+    },{
+      width: 180,
+      height: 180,
+      name: 'apple-touch-icon-precomposed.png',
+      directory: pkg.directories.template
+    },{
+      width: 192,
+      height: 192,
+      name: 'favicon-192x192.png',
+      directory: pkg.directories.template
+    },{
+      width: 512,
+      height: 512,
+      name: 'favicon-512x512.png',
+      directory: pkg.directories.template
     },{
       width: 270,
       height: 270,
@@ -181,7 +143,7 @@ gulp.task('logo', function() {
   return logo;
 });
 
-gulp.task('article_images', function() {
+gulp.task('build-article-images', function() {
   var article_images = gulp.src(pkg.directories.images + '/originals/*.jpg');
 
   [{ width: 640, height: 360 },{ width: 1280, height: 720 }].forEach(function(i) {
@@ -200,28 +162,28 @@ gulp.task('article_images', function() {
   return article_images;
 });
 
-gulp.task('deploy_live', shell.task([
-  pkg.directories.build + '/deploy.sh live'
-]));
-gulp.task('vagrant_up', shell.task([
-  'cd ' + pkg.directories.build + '/vagrant && vagrant up && cd -'
-]));
-gulp.task('vagrant_suspend', shell.task([
-  'cd ' + pkg.directories.build + '/vagrant && vagrant suspend && cd -'
-]));
+gulp.task('reload-frontend', function() {
+  gulp.src(pkg.directories.htdocs + '/**/*')
+    .pipe(browserSync.stream())
+  ;
+});
+
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  livereload.listen();
+  browserSync.init({
+    server: {
+      baseDir: "./htdocs",
+      directory: true
+    }
+  });
+
   gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
   gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-css']);
   gulp.watch(pkg.directories.images + '/logo.png', ['build-icons']);
   gulp.watch(pkg.directories.images + '/originals/*.jpg', ['build-article-images']);
+  gulp.watch(pkg.directories.htdocs + '/**/*', ['reload-frontend']);
 });
 
 // Default Task
 gulp.task('default',     ['build-js','build-css','build-icons']);
-gulp.task('build-css',   ['sass','oldie','appcache']);
-gulp.task('build-js',    ['jshint','uglify','appcache']);
-gulp.task('build-icons', ['logo','appcache']);
-gulp.task('build-article-images',    ['article_images','appcache']);

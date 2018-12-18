@@ -1,341 +1,334 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#" lang="de">
-<!--html prefix="og: http://ogp.me/ns#" lang="de" manifest="manifest.appcache" -->
+<html prefix="og: http://ogp.me/ns#" lang="de-DE">
 <head>
-	<!--base href="{{BASE_URL}}" /-->
-	<meta charset="utf-8" />
-	<title>{{PAGE_TITLE}} - {{SITENAME}}</title>
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-	<!--[if gte IE 9]><!-->
-		<link rel="stylesheet" href="css/styles.css" />
-	<!--<![endif]-->
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="css/oldie/styles.css" />
-	<![endif]-->
-	<meta name="description" content="{{PAGE_DESCRIPTION}}" />
-	<meta property="og:site_name" content="{{SITENAME}}" />
-	<meta property="og:title" content="{{PAGE_TITLE}}" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{{BASE_URL}}{{PAGE_RELATIVE_URL}}" />
-	<meta property="og:description" content="{{PAGE_DESCRIPTION}}" />
-	<meta property="og:image" content="{{BASE_URL}}/images/tile-558x558.png" />
-	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/png" href="images/tile-128x128.png" sizes="128x128" />
-	<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-	<link rel="icon" type="image/png" href="images/tile-270x270.png" sizes="270x270" />
-	<link rel="icon" type="image/png" href="images/tile-558x558.png" sizes="558x558" />
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
-	<link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-precomposed.png" sizes="152x152" />
-	<!--link rel="alternate home" title="{{SITENAME}} Newsfeed" type="application/rss+xml" href="{{BASE_URL}}/rss.xml" /-->
-	<!--link rel="alternate home" title="{{SITENAME}} Newsfeed" type="application/atom+xml" href="{{BASE_URL}}/atom.xml" /-->
-	<!--link rel="manifest" href="{{BASE_URL}}/manifest.json" /-->
-	<meta name="theme-color" content="{{THEME_COLOR}}" />
+  <!--base href="{{BASE_URL}}" /-->
+  <meta charset="utf-8" />
+  <title>{{PAGE_TITLE}} - {{SITENAME}}</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:site_name" content="{{SITENAME}}" />
+  <meta property="og:title" content="{{PAGE_TITLE}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{BASE_URL}}{{PAGE_RELATIVE_URL}}" />
+  <meta property="og:description" content="{{PAGE_DESCRIPTION}}" />
+  <meta property="og:image" name="description" content="{{BASE_URL}}/images/tile-558x558.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="./favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./favicon-192x192.png" sizes="192x192" type="image/png" />
+  <link rel="icon" href="./favicon-512x512.png" sizes="512x512" type="image/png" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" type="image/png" href="./apple-touch-icon-precomposed.png" sizes="180x180" />
+  <!--link rel="alternate home" title="{{SITENAME}} Newsfeed" type="application/rss+xml" href="{{BASE_URL}}/rss.xml" /-->
+  <!--link rel="alternate home" title="{{SITENAME}} Newsfeed" type="application/atom+xml" href="{{BASE_URL}}/atom.xml" /-->
+  <!--link rel="manifest" href="./manifest.json" /-->
+  <meta name="theme-color" content="{{THEME_COLOR}}" />
 </head>
 <body>
-	<!--[if lte IE 9]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<div id="container">
-		<header id="banner" class="header">
-			<div class="header__inner">
-				<a href="." rel="home">{{SITENAME}}</a>
-			</div>
-		</header>
-		<nav id="navigation" class="nav">
-			<div class="nav__inner">
-				<ul>
-					<li class="current-active"><a href="#">Navigation 1</a></li>
-					<li><a href="#">Navigation 2</a></li>
-					<li><a href="#">Navigation 3</a></li>
-				</ul>
-			</div>
-		</nav>
-		<main id="main" class="main">
-			<div class="main__inner">
-				<h1>{{PAGE_TITLE}}</h1>
+  <!--[if lte IE 11]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div id="container">
+    <header id="banner" class="header">
+      <div class="header__inner">
+        <a href="." rel="home">{{SITENAME}}</a>
+      </div>
+    </header>
+    <nav id="navigation" class="nav">
+      <div class="nav__inner">
+        <ul>
+          <li class="current-active"><a href="#">Navigation 1</a></li>
+          <li><a href="#">Navigation 2</a></li>
+          <li><a href="#">Navigation 3</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main" class="main">
+      <div class="main__inner">
+        <h1>{{PAGE_TITLE}}</h1>
 
-				<p>This is a standard paragraph. It can contain special inline elements.</p>
+        <p>This is a standard paragraph. It can contain special inline elements.</p>
 
-				<h2>Headings</h2>
-				<p>These headings can be used:</p>
+        <h2>Headings</h2>
+        <p>These headings can be used:</p>
 
-				<h2>- Heading 2</h2>
-				<h3>- Heading 3</h3>
-				<h3>- Heading 3</h3>
+        <h2>- Heading 2</h2>
+        <h3>- Heading 3</h3>
+        <h3>- Heading 3</h3>
 
-				<h2>Paragraph and inline text</h2>
+        <h2>Paragraph and inline text</h2>
 
-				<p>Lorem ipsum dolor sit amet, and a <a href="#">link</a>.</p>
-				<p>Lorem ipsum dolor sit amet, and <strong>strong</strong> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <em>emphasized</em> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <mark>marked</mark> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <code>coded</code> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <small>small</small> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <del>deleted</del> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <ins>inserted</ins> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <sub>sub</sub> text.</p>
-				<p>Lorem ipsum dolor sit amet, and <sup>sup</sup> text.</p>
+        <p>Lorem ipsum dolor sit amet, and a <a href="#">link</a>.</p>
+        <p>Lorem ipsum dolor sit amet, and <strong>strong</strong> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <em>emphasized</em> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <mark>marked</mark> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <code>coded</code> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <small>small</small> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <del>deleted</del> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <ins>inserted</ins> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <sub>sub</sub> text.</p>
+        <p>Lorem ipsum dolor sit amet, and <sup>sup</sup> text.</p>
 
-				<h2>Blockquote</h2>
-				<blockquote>
-					<p>Lorem ipsum dolor sit amet, and a blockquote.</p>
-					<cite>Source</cite>
-				</blockquote>
+        <h2>Blockquote</h2>
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet, and a blockquote.</p>
+          <cite>Source</cite>
+        </blockquote>
 
-				<h2>Lists</h2>
-				<p>These lists can be used:</p>
-				<ul>
-					<li>Unordered list</li>
-					<li>Unordered list</li>
-				</ul>
-				<ol>
-					<li>Ordered list</li>
-					<li>Ordered list</li>
-				</ol>
-				<dl>
-					<dt>Definition list</dt><dd>Definition list</dd>
-					<dt>Definition list</dt><dd>Definition list</dd>
-				</dl>
+        <h2>Lists</h2>
+        <p>These lists can be used:</p>
+        <ul>
+          <li>Unordered list</li>
+          <li>Unordered list</li>
+        </ul>
+        <ol>
+          <li>Ordered list</li>
+          <li>Ordered list</li>
+        </ol>
+        <dl>
+          <dt>Definition list</dt><dd>Definition list</dd>
+          <dt>Definition list</dt><dd>Definition list</dd>
+        </dl>
 
-				<h2>Article / teaser pattern</h2>
+        <h2>Article / teaser pattern</h2>
 
-				<a href="#" class="article">
-					<article>
-						<header>
-							<h4>Headline</h4>
-							<time datetime="2004-02-12T15:19:21+00:00">Today</time>
-						</header>
-						<p>Timestamp of time element is a ISO 8601 date, as in PHP's <code>date('c')</code>…</p>
-					</article>
-				</a>
+        <a href="#" class="article">
+          <article>
+            <header>
+              <h4>Headline</h4>
+              <time datetime="2004-02-12T15:19:21+00:00">Today</time>
+            </header>
+            <p>Timestamp of time element is a ISO 8601 date, as in PHP's <code>date('c')</code>…</p>
+          </article>
+        </a>
 
-				<h2>Microformat Address</h2>
+        <h2>Microformat Address</h2>
 
-				<div class="h-card" itemscope itemtype="http://schema.org/Person">
-					<p class="p-name" itemprop="name">Joe Bloggs</p>
-					<p itemprop="jobTitle">Professor</p>
-					<p class="p-adr h-adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						<span class="p-street-address" itemprop="streetAddress">17 Austerstræti</span>
-						<span class="p-postal-code" itemprop="postalCode">12345</span>
-						<span class="p-locality" itemprop="addressLocality">Reykjavík</span>
-						<span class="p-country-name" itemprop="addressCountry">Iceland</span>
-					</p>
-					<p class="p-adr h-adr">
-						<span class="p-tel">
-							<span class="type">Work</span>:
-							<span class="value" itemprop="telephone">+1.415.555.1212</span>
-						</span>
-					</p>
-				</div>
+        <div class="h-card" itemscope itemtype="http://schema.org/Person">
+          <p class="p-name" itemprop="name">Joe Bloggs</p>
+          <p itemprop="jobTitle">Professor</p>
+          <p class="p-adr h-adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span class="p-street-address" itemprop="streetAddress">17 Austerstræti</span>
+            <span class="p-postal-code" itemprop="postalCode">12345</span>
+            <span class="p-locality" itemprop="addressLocality">Reykjavík</span>
+            <span class="p-country-name" itemprop="addressCountry">Iceland</span>
+          </p>
+          <p class="p-adr h-adr">
+            <span class="p-tel">
+              <span class="type">Work</span>:
+              <span class="value" itemprop="telephone">+1.415.555.1212</span>
+            </span>
+          </p>
+        </div>
 
-				<h2>Microformat Event</h2>
+        <h2>Microformat Event</h2>
 
-				<div class="h-event" itemscope itemtype="http://schema.org/Event">
-					<p class="p-name" itemprop="name">Microformats Meetup</p>
-					<p>From
-						<time class="dt-start" datetime="2013-06-30 12:00" itemprop="startDate" content="2013-06-30T12:00">30<sup>th</sup> June 2013, 12:00</time>
-						to <time class="dt-end" datetime="2013-06-30 18:00" itemprop="endDate" content="2013-06-30T18:00">18:00</time>
-						at <span itemprop="location">
-							<span class="p-location" itemprop="name">Cool Location</span>
-							(<span class="p-location h-adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-								<span class="p-street-address" itemprop="streetAddress">17 Austerstræti</span>,
-								<span class="p-postal-code" itemprop="postalCode">12345</span>
-								<span class="p-locality" itemprop="addressLocality">Reykjavík</span>,
-								<span class="p-country-name" itemprop="addressCountry">Iceland</span>
-							</span>)
-						</span>
-					</p>
-					<p class="p-summary">Get together and discuss all things microformats-related.</p>
-				</div>
+        <div class="h-event" itemscope itemtype="http://schema.org/Event">
+          <p class="p-name" itemprop="name">Microformats Meetup</p>
+          <p>From
+            <time class="dt-start" datetime="2013-06-30 12:00" itemprop="startDate" content="2013-06-30T12:00">30<sup>th</sup> June 2013, 12:00</time>
+            to <time class="dt-end" datetime="2013-06-30 18:00" itemprop="endDate" content="2013-06-30T18:00">18:00</time>
+            at <span itemprop="location">
+              <span class="p-location" itemprop="name">Cool Location</span>
+              (<span class="p-location h-adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span class="p-street-address" itemprop="streetAddress">17 Austerstræti</span>,
+                <span class="p-postal-code" itemprop="postalCode">12345</span>
+                <span class="p-locality" itemprop="addressLocality">Reykjavík</span>,
+                <span class="p-country-name" itemprop="addressCountry">Iceland</span>
+              </span>)
+            </span>
+          </p>
+          <p class="p-summary">Get together and discuss all things microformats-related.</p>
+        </div>
 
-				<h2>Images</h2>
-				<div class="figure">
-					<figure>
-						<img src="images/articles-1280/article.jpg" srcset="images/articles-640/article.jpg 640w, images/articles-1280/article.jpg 1280w" sizes="100vw" alt="" />
-						<figcaption><span class="figcaption">Logo</span></figcaption>
-					</figure>
-				</div>
+        <h2>Images</h2>
+        <div class="figure">
+          <figure>
+            <img src="images/articles-1280/article.jpg" srcset="images/articles-640/article.jpg 640w, images/articles-1280/article.jpg 1280w" sizes="100vw" alt="" />
+            <figcaption><span class="figcaption">Logo</span></figcaption>
+          </figure>
+        </div>
 
-				<h2>Tables</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Head 1</th>
-							<th>Head 2</th>
-							<th>Head 3</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Row 1</th>
-							<td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
-							<td class="number">1234.5</td>
-						</tr>
-						<tr>
-							<th>Row 1</th>
-							<td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
-							<td class="number">1234.5</td>
-						</tr>
-					</tbody>
-				</table>
+        <h2>Tables</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Head 1</th>
+              <th>Head 2</th>
+              <th>Head 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Row 1</th>
+              <td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
+              <td class="number">1234.5</td>
+            </tr>
+            <tr>
+              <th>Row 1</th>
+              <td class="no-break">This is a a rather long text, which may cause problems at some point (if you use tables in responsive layout, that is)</td>
+              <td class="number">1234.5</td>
+            </tr>
+          </tbody>
+        </table>
 
-				<h2>Columns</h2>
+        <h2>Columns</h2>
 
-				<div class="columns__container">
-					<div class="columns columns--3-1">
-						Col 1
-					</div>
-					<div class="columns columns--3-2">
-						Col 2
-					</div>
-					<div class="columns columns--3-3">
-						Col 3
-					</div>
-				</div>
+        <div class="columns__container">
+          <div class="columns columns--3-1">
+            Col 1
+          </div>
+          <div class="columns columns--3-2">
+            Col 2
+          </div>
+          <div class="columns columns--3-3">
+            Col 3
+          </div>
+        </div>
 
-				<h2>Forms</h2>
+        <h2>Forms</h2>
 
-				<form action="." method="post" enctype="multipart/form-data">
-					<fieldset>
-						<legend>Legend</legend>
-						<div class="form-field required">
-							<label for="text">
-								text
-								<small>There goes some additional text</small>
-							</label>
-							<input name="text" type="text" id="text" class="input text" required="required" />
-						</div>
+        <form action="." method="post" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Legend</legend>
+            <div class="form-field required">
+              <label for="text">
+                text
+                <small>There goes some additional text</small>
+              </label>
+              <input name="text" type="text" id="text" class="input text" required="required" />
+            </div>
 
-						<div class="form-field">
-							<label for="text">
-								pattern
-								<small>There goes some additional text</small>
-							</label>
-							<input name="pattern" type="text" id="pattern" class="input text" pattern="\S\S+" />
-						</div>
+            <div class="form-field">
+              <label for="text">
+                pattern
+                <small>There goes some additional text</small>
+              </label>
+              <input name="pattern" type="text" id="pattern" class="input text" pattern="\S\S+" />
+            </div>
 
-						<div class="form-field required">
-							<label for="password">
-								password
-							</label>
-							<input name="password" type="text" id="password" class="input password" required="required" />
-						</div>
+            <div class="form-field required">
+              <label for="password">
+                password
+              </label>
+              <input name="password" type="text" id="password" class="input password" required="required" />
+            </div>
 
-						<div class="form-field required">
-							<label for="search">
-								search
-							</label>
-							<input name="search" type="search" id="search" class="input search" required="required" />
-						</div>
+            <div class="form-field required">
+              <label for="search">
+                search
+              </label>
+              <input name="search" type="search" id="search" class="input search" required="required" />
+            </div>
 
-						<div class="form-field required">
-							<label for="date">
-								date
-							</label>
-							<input name="date" type="date" id="date" class="input date" required="required" />
-						</div>
+            <div class="form-field required">
+              <label for="date">
+                date
+              </label>
+              <input name="date" type="date" id="date" class="input date" required="required" />
+            </div>
 
-						<div class="form-field required">
-							<label for="email">
-								email
-							</label>
-							<input name="email" type="email" id="email" class="input email" required="required" />
-						</div>
+            <div class="form-field required">
+              <label for="email">
+                email
+              </label>
+              <input name="email" type="email" id="email" class="input email" required="required" />
+            </div>
 
-						<div class="form-field required">
-							<label for="number">
-								number
-							</label>
-							<input name="number" type="number" id="number" class="input number" required="required" />
-						</div>
+            <div class="form-field required">
+              <label for="number">
+                number
+              </label>
+              <input name="number" type="number" id="number" class="input number" required="required" />
+            </div>
 
-						<div class="form-field">
-							<label for="url">
-								url
-							</label>
-							<input name="url" type="url" id="url" class="input url" />
-						</div>
+            <div class="form-field">
+              <label for="url">
+                url
+              </label>
+              <input name="url" type="url" id="url" class="input url" />
+            </div>
 
-						<div class="form-field">
-							<label for="time">
-								time
-							</label>
-							<input name="time" type="time" id="time" class="input time" />
-						</div>
+            <div class="form-field">
+              <label for="time">
+                time
+              </label>
+              <input name="time" type="time" id="time" class="input time" />
+            </div>
 
-						<div class="form-field">
-							<label for="tel">
-								tel
-							</label>
-							<input name="tel" type="tel" id="tel" class="input tel" />
-						</div>
+            <div class="form-field">
+              <label for="tel">
+                tel
+              </label>
+              <input name="tel" type="tel" id="tel" class="input tel" />
+            </div>
 
-						<div class="form-field">
-							<label for="file">
-								file
-							</label>
-							<input name="file" type="file" id="file" class="input file" />
-						</div>
+            <div class="form-field">
+              <label for="file">
+                file
+              </label>
+              <input name="file" type="file" id="file" class="input file" />
+            </div>
 
-						<div class="form-field">
-							<label for="textarea">
-								textarea
-							</label>
-							<textarea name="textarea" id="textarea"></textarea>
-						</div>
+            <div class="form-field">
+              <label for="textarea">
+                textarea
+              </label>
+              <textarea name="textarea" id="textarea"></textarea>
+            </div>
 
-						<div class="form-field">
-							<label for="select">
-								select
-							</label>
-							<select name="select" id="select"><option value="a">b</option><option value="c">d</option></select>
-						</div>
+            <div class="form-field">
+              <label for="select">
+                select
+              </label>
+              <select name="select" id="select"><option value="a">b</option><option value="c">d</option></select>
+            </div>
 
-						<div class="form-field">
-							<label for="multiple">
-								multiple
-							</label>
-							<select name="multiple" id="multiple" multiple="multiple"><option value="a">b</option><option value="c">d</option></select>
-						</div>
+            <div class="form-field">
+              <label for="multiple">
+                multiple
+              </label>
+              <select name="multiple" id="multiple" multiple="multiple"><option value="a">b</option><option value="c">d</option></select>
+            </div>
 
-						<div class="form-field">
-							<label>checkbox</label>
-							<ul class="form-optionlist" id="checkbox_">
-								<li><label><input value="a" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
-								<li><label><input value="c" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
-							</ul>
-						</div>
+            <div class="form-field">
+              <label>checkbox</label>
+              <ul class="form-optionlist" id="checkbox_">
+                <li><label><input value="a" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>b</span></label></li>
+                <li><label><input value="c" name="checkbox[]" type="checkbox" class="checkbox checkbox-checkbox" /> <span>d</span></label></li>
+              </ul>
+            </div>
 
-						<div class="form-field">
-							<label>radio</label>
-							<ul class="form-optionlist" id="radio">
-								<li><label><input value="a" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
-								<li><label><input value="c" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
-							</ul>
-						</div>
+            <div class="form-field">
+              <label>radio</label>
+              <ul class="form-optionlist" id="radio">
+                <li><label><input value="a" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>b</span></label></li>
+                <li><label><input value="c" name="radio" type="radio" class="checkbox checkbox-radio" /> <span>d</span></label></li>
+              </ul>
+            </div>
 
-						<input type="hidden" name="b" id="b" class="input hidden" />
-						<button type="submit">submit</button>
-					</fieldset>
-				</form>
-			</div>
-		</main>
-		<aside id="sidebar" class="aside">
-			<div class="aside__inner">
-				<!-- -->
-			</div>
-		</aside>
-		<footer id="footer" class="footer">
-			<div class="footer__inner">
-				<ul>
-					<li><a href="#">Navigation</a></li>
-					<li><a href="rtl.html" rel="alternate" hreflang="ar">This page in Arabic</a></li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+            <input type="hidden" name="b" id="b" class="input hidden" />
+            <button type="submit">submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <aside id="sidebar" class="aside">
+      <div class="aside__inner">
+        <!-- -->
+      </div>
+    </aside>
+    <footer id="footer" class="footer">
+      <div class="footer__inner">
+        <ul>
+          <li><a href="#">Navigation</a></li>
+          <li><a href="rtl.html" rel="alternate" hreflang="ar">This page in Arabic</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 
-	<!--script src="//code.jquery.com/jquery-1.11.3.min.js"></script-->
-	<script src="js/scripts.js"></script>
+  <!--script src="//code.jquery.com/jquery-1.11.3.min.js"></script-->
+  <script src="js/scripts.js"></script>
 </body>
 </html>

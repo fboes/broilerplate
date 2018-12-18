@@ -1,11 +1,11 @@
-(function ($) {
-	'use strict';
-	$(document).ready(function() {
-		$('body').bodyInteraction(); // ({})
-		$('#navigation').navigationInteraction(); // ({})
-		$('#main').mainInteraction(); // ({})
+// see http://youmightnotneedjquery.com/
 
-		//$(window).resize(function() {});
-		//$(window).scroll(function() {});
-	});
-})(jQuery);
+(function () {
+  'use strict';
+
+  var el = {
+    body: document.querySelector('body'),
+    header: document.querySelector('#banner'),
+    navigation: document.querySelector('#navigation')
+  };
+})();

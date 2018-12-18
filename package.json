@@ -7,35 +7,22 @@
     "url": "git@github.com:fboes/broilerplate.git"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "beepbeep": "^1.2.0",
-    "grunt": "^1.0.1",
-    "grunt-appcache": "^0.2.0",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-shell": "^2.0.0",
-    "grunt-text-replace": "^0.4.0",
-    "gulp": "^3.9.1",
-    "gulp-appcache": "0.0.4",
-    "gulp-clone": "^1.0.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-image-resize": "^0.12.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^3.0.0",
-    "gulp-shell": "^0.6.3",
-    "gulp-sourcemaps": "^2.1.1",
-    "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.2",
-    "load-grunt-tasks": "^3.5.0",
-    "rtlcss": "^2.0.6"
+    "autoprefixer": "^9.4.3",
+    "beeper": "^1.1.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.0.0",
+    "gulp-clone": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-shell": "^0.6.5",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "rtlcss": "^2.4.0"
   },
   "config": {
     "develop": false
@@ -50,14 +37,12 @@
     "js_src": "src/js-src",
     "js": "htdocs/js",
     "images": "htdocs/images",
-    "build": "build"
+    "tools": "tools"
   },
   "scripts": {
     "build": "gulp",
     "start": "gulp watch",
-    "deploy-live": "build/deploy.sh live",
-    "vagrant-up": "cd build/vagrant && vagrant up && cd -",
-    "vagrant-suspend": "cd build/vagrant && vagrant suspend && cd -"
+    "deploy-live": "tools/deploy.sh live"
   },
   "author": "Frank Boës",
   "license": "MIT",

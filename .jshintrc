@@ -1,7 +1,0 @@
-{
-  "browser": true,
-  "jquery": true,
-  "strict": true,
-  "curly": true,
-  "undef": true
-}

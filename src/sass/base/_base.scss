@@ -4,8 +4,6 @@
 // See http://compass-style.org/help/tutorials/best_practices/
 
 // Switches
-//
-// Styleguide 2.2
 
 $switch-develop:                    false !default; // show debugging styles
 $switch-overlapping:                false !default; // container does not set width, but every __inner-element on its own
@@ -14,8 +12,6 @@ $switch-fluid:                      false !default; // if set to fluid, the cont
 // Base canon
 //
 // Basic margins and padding, grid settings, responsive breakpoints, etc.
-//
-// Styleguide 2.3
 
 $base-unit:                         8px !default; // this is also the base unit to calculate `rem` to
 
@@ -66,8 +62,6 @@ $media-responsive-desktop--bigger:           "screen and (min-width: #{$width-sc
 // Colors
 //
 // Absolute colors, as well as relative colors with RGBA
-//
-// Styleguide 2.4
 
 $color-white:                       #ffffff !default;
 $color-black:                       #000000 !default;
@@ -122,8 +116,6 @@ $color-link-hover:                  $color-red-light !default;
 // Typography
 //
 // Font families, sizes, weights etc.
-//
-// Styleguide 2.5
 
 $fontfamily-first-primary:          Helvetica !default;
 $fontfamily-primary:                $fontfamily-first-primary, Arial, sans-serif !default;
@@ -172,8 +164,6 @@ $textshadow-default:                1px 1px 3px $color-darker !default;
 // Misc
 //
 // Z-Indexes and transitions
-//
-// Styleguide 2.6
 
 $zindex-headline:                   1 !default;
 $zindex-popup:                      $zindex-headline + 1 !default;

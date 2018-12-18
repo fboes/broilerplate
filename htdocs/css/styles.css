@@ -84,6 +84,8 @@ html { font-size: 8px; }
 
 body { direction: ltr; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
+[dir="rtl"] body { direction: rtl; }
+
 #container { margin: auto; }
 
 #banner { font: normal 700 28px/1.2 Garamond, serif; padding: 1rem; }

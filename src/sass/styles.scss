@@ -1,38 +1,22 @@
 // Resets & super-basic mixins
-//
-// Styleguide 1
-
 @import "base/reset";
 @import "base/toolshed";
 
 
 // Variables & constants
-//
-// Styleguide 2
-
 @import "base/constants";
 @import "base/base";
 @import "base/fonts";
 
 // Mixins
-//
-// Styleguide 3
-
 @import "base/mixins";
 
 // Actual styles
-//
-// Styleguide 4
-
-@import "animations";
-@import "all-base";
 @import "all";
 @media screen {
-	@import "screen-base";
-	@import "screen";
-	// @import "modules/article";
+  @import "screen";
+  // @import "modules/article";
 }
 @media print {
-	@import "print-base";
-	@import "print";
+  @import "print";
 }
