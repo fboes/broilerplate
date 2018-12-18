@@ -22,7 +22,7 @@ var clone     = require('gulp-clone'),
 ;
 
 // Lint Task
-gulp.task('eslint', function() {
+function makeEslint() {
   return gulp.src([
       pkg.directories.js_src + '/**/*.js',
       '!' + pkg.directories.js_src + '/vendor/*.js'
@@ -39,12 +39,12 @@ gulp.task('eslint', function() {
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
   ;
-});
+};
 
-gulp.task('build-js',    ['eslint', 'uglify']);
+//function build-js',    ['eslintuglify']);
 
 // Concatenate & Minify JS
-gulp.task('uglify', function() {
+function makeUglify() {
   return gulp.src([
       pkg.directories.js_src + '/vendor/*.js', // disable this line by prepending '!' - in case of errors
       pkg.directories.js_src + '/modules/*.js',
@@ -56,10 +56,12 @@ gulp.task('uglify', function() {
     }}))
     .pipe(gulp.dest(pkg.directories.js))
   ;
-});
+};
+
+var buildJs = gulp.parallel(makeEslint, makeUglify);
 
 // Sass
-gulp.task('build-css', function (cb) {
+function buildCss() {
   return gulp.src(pkg.directories.sass + '/**/*.scss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
@@ -69,9 +71,9 @@ gulp.task('build-css', function (cb) {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(pkg.directories.css))
   ;
-});
+};
 
-gulp.task('build-icons', function() {
+function buildIcons() {
   var logo = gulp.src(pkg.directories.images + '/logo.png');
 
   [
@@ -141,9 +143,9 @@ gulp.task('build-icons', function() {
     ;
   })
   return logo;
-});
+};
 
-gulp.task('build-article-images', function() {
+function buildArticleImages() {
   var article_images = gulp.src(pkg.directories.images + '/originals/*.jpg');
 
   [{ width: 640, height: 360 },{ width: 1280, height: 720 }].forEach(function(i) {
@@ -160,17 +162,17 @@ gulp.task('build-article-images', function() {
     ;
   });
   return article_images;
-});
+};
 
-gulp.task('reload-frontend', function() {
+function reloadFrontend() {
   gulp.src(pkg.directories.htdocs + '/**/*')
     .pipe(browserSync.stream())
   ;
-});
+};
 
 
 // Watch Files For Changes
-gulp.task('watch', function() {
+function watch() {
   browserSync.init({
     server: {
       baseDir: "./htdocs",
@@ -178,12 +180,18 @@ gulp.task('watch', function() {
     }
   });
 
-  gulp.watch(pkg.directories.js_src + '/**/*.js', ['build-js']);
-  gulp.watch(pkg.directories.sass + '/**/*.scss', ['build-css']);
-  gulp.watch(pkg.directories.images + '/logo.png', ['build-icons']);
-  gulp.watch(pkg.directories.images + '/originals/*.jpg', ['build-article-images']);
-  gulp.watch(pkg.directories.htdocs + '/**/*', ['reload-frontend']);
-});
+  gulp.watch(pkg.directories.js_src + '/**/*.js', buildJs);
+  gulp.watch(pkg.directories.sass + '/**/*.scss', buildCss);
+  gulp.watch(pkg.directories.images + '/logo.png', buildIcons);
+  gulp.watch(pkg.directories.images + '/originals/*.jpg', buildArticleImages);
+  gulp.watch(pkg.directories.htdocs + '/**/*', reloadFrontend);
+};
 
-// Default Task
-gulp.task('default',     ['build-js','build-css','build-icons']);
+var build = gulp.parallel(buildJs, buildCss, buildIcons);
+
+// Tasks
+gulp.task('buildJs',    buildJs);
+gulp.task('buildCss',   buildCss);
+gulp.task('buildIcons', buildIcons);
+gulp.task('watch',      watch);
+gulp.task('default',    build);
