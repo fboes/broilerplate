@@ -3,6 +3,10 @@ Change log
 
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
+* Add HTML examples for pullquotes, code examples, video embeds
+* Improve examples for tables, teasers
+* Add AMP mixin
+
 3.0.0
 =====
 
