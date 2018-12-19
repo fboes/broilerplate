@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 cd `dirname $0`/..
-if [ ! -e tools/.env ]; then
-  cp tools/_.env tools/.env
+if [ ! -e .env ]; then
+  cp .env.example .env
 fi
-source tools/.env
+source .env
 
 if [ "$LOCAL_DB_HOST" ]; then
   mysql -h $LOCAL_DB_HOST -u root -proot --execute "CREATE DATABASE IF NOT EXISTS $LOCAL_DB_DB"
@@ -15,7 +15,6 @@ if [ -f tools/mysql/dbdump.sql ]; then
 fi
 
 # mkdir -p tmp
-# make_writable_directory htdocs/files
 #[ -h TARGET ] || ln -s SOURCE TARGET
 #[ -f TARGET ] || cp SOURCE TARGET
 

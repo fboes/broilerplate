@@ -25,16 +25,16 @@ Example SASS implementation
 
 ```sass
 @mixin icon-font ($name, $onlyContent: true) {
-	$content:  'X';
-	@if ($name == 'prev') {
-		$content:  "\e601";
-	}
-	@elseif ($name == 'next') {
-		$content: "\e602";
-	}
-	// ... add some more
+  $content:  'X';
+  @if ($name == 'prev') {
+    $content:  "\e601";
+  }
+  @elseif ($name == 'next') {
+    $content: "\e602";
+  }
+  // ... add some more
 
-	@include toolshed-font-icon($fontfamily-symbols, $content, 1em, $onlyContent);
+  @include toolshed-font-icon($fontfamily-symbols, $content, 1em, $onlyContent);
 }
 ```
 
@@ -42,14 +42,14 @@ A simple solution for generating icon-classes
 
 ```sass
 .icon {
-	:before {
-		@include icon-font('x');
-	}
+  :before {
+    @include icon-font('x');
+  }
 
-	@each $icon in (prev,next) {
-		&--#{$icon}:before {
-			@include icon-font('#{$icon}');
-		}
-	}
+  @each $icon in (prev,next) {
+    &--#{$icon}:before {
+      @include icon-font('#{$icon}');
+    }
+  }
 }
 ```

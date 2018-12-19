@@ -4,16 +4,26 @@
   color: black !important;
   background: transparent !important;
   text-shadow: none !important;
-  filter:none !important;
+  filter: none !important;
   -ms-filter: none !important;
 }
 @page {
   margin: 0.5cm;
 }
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   page-break-after: avoid;
 }
-h1, h2, h3, h4, p, li, tr, img {
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+tr,
+img {
   page-break-inside: avoid;
 }
 thead {
@@ -23,8 +33,7 @@ img {
   max-width: 100% !important;
 }
 
-
 // -----------------------------------------------------------------------------
 #navigation {
-  display:none;
+  display: none;
 }

@@ -47,12 +47,9 @@ There is a set of directories in SASS:
 
 `htdocs/sass/` contains your regular working files:
 
-* [`htdocs/sass/_all-base.scss`](../../htdocs/sass/_all-base.scss): Sensible defaults for all output channels, uses variables from `base`.
-* [`htdocs/sass/_all.scss`](../../htdocs/sass/_all.scss): Add your own styles for all output channels.
-* [`htdocs/sass/_screen-base.scss`](../../htdocs/sass/_screen-base.scss): Sensible defaults for all screen channels, uses variables from `base`.
-* [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Add your own styles for all screen channels.
-* [`htdocs/sass/_print-base.scss`](../../htdocs/sass/_print-base.scss): Sensible defaults for all print channels, uses variables from `base`.
-* [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Add your own styles for all print channels.
+* [`htdocs/sass/_all.scss`](../../htdocs/sass/_all.scss): Sensible defaults for all output channels, uses variables from `base`. Add your own styles for all output channels.
+* [`htdocs/sass/_screen.scss`](../../htdocs/sass/_screen.scss): Sensible defaults for all screen channels, uses variables from `base`. Add your own styles for all screen channels.
+* [`htdocs/sass/_print.scss`](../../htdocs/sass/_print.scss): Sensible defaults for all print channels, uses variables from `base`. Add your own styles for all print channels.
 
 Using media queries
 -------------------
@@ -61,14 +58,28 @@ There is a set of prefedined media queries in [`htdocs/sass/base/_mixins.scss`](
 
 ```sass
 .selector {
-	// Here goes some regular CSS
-	@include screen_mobile {
-		// Here goes some CSS for mobiles
-	}
+  // Here goes some regular CSS
+  @include screen_mobile {
+    // Here goes some CSS for mobiles
+  }
 }
 ```
 
 You may want to take a look at [Write Better Media Queries with Sass](http://davidwalsh.name/write-media-queries-sass).
+
+Using RTL layout
+----------------
+
+If you are in need of fixes for Right-To-Left layout, there is a Sass mixin:
+
+```sass
+.selector {
+  text-align: left;
+  @include rtl {
+    text-align: right;
+  }
+}
+```
 
 Using toolshed mixins
 ---------------------

@@ -2,7 +2,6 @@
 @import "base/reset";
 @import "base/toolshed";
 
-
 // Variables & constants
 @import "base/constants";
 @import "base/base";
@@ -13,9 +12,9 @@
 
 // Actual styles
 @import "all";
+// @import "modules/example";
 @media screen {
   @import "screen";
-  // @import "modules/article";
 }
 @media print {
   @import "print";

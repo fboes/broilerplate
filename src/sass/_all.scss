@@ -8,16 +8,20 @@
 // Headings
 
 h1 {
-  font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default} $fontfamily-secondary;
+  font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default}
+    $fontfamily-secondary;
 }
 h2 {
-  font: $fontstyle-default $fontweight-secondary #{$fontsize-bigger}/#{$lineheight-default} $fontfamily-secondary;
+  font: $fontstyle-default $fontweight-secondary #{$fontsize-bigger}/#{$lineheight-default}
+    $fontfamily-secondary;
 }
 h3 {
-  font: $fontstyle-default $fontweight-secondary #{$fontsize-big}/#{$lineheight-default} $fontfamily-secondary;
+  font: $fontstyle-default $fontweight-secondary #{$fontsize-big}/#{$lineheight-default}
+    $fontfamily-secondary;
 }
 h4 {
-  font: $fontstyle-default $fontweight-default-bold #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+  font: $fontstyle-default $fontweight-default-bold #{$fontsize-default}/#{$lineheight-default}
+    $fontfamily-default;
 }
 
 // Text
@@ -25,55 +29,75 @@ h4 {
 a {
   color: $color-link;
 
-  &:link {}
-  &:visited {}
-  &:focus, &:hover {
+  &:link {
+  }
+  &:visited {
+  }
+  &:focus,
+  &:hover {
     color: $color-link-hover;
   }
-  &:active {}
-  &.current-active {} // class for links which point to current page
+  &:active {
+  }
+  &.current-active {
+  } // class for links which point to current page
 }
 strong {
   font-weight: $fontweight-default-bold;
 }
 p {
-  a {}
-  strong {}
-  em {}
-  mark {}
-  code {}
-  small {}
-  del {}
-  ins {}
-  sub {}
-  sup {}
+  a {
+  }
+  strong {
+  }
+  em {
+  }
+  mark {
+  }
+  code {
+  }
+  small {
+  }
+  del {
+  }
+  ins {
+  }
+  sub {
+  }
+  sup {
+  }
 }
 blockquote {
-  p {}
-  cite {}
+  p {
+  }
+  cite {
+  }
 }
 
 // Lists
 
 ul {
-  li {}
+  li {
+  }
 }
 ol {
-  li {}
+  li {
+  }
 }
 dl {
   dt {
     font-weight: $fontweight-default-bold;
   }
-  dd {}
+  dd {
+  }
 }
-
 
 // Forms
 
 form {
   fieldset {
-    legend {}
+    legend {
+    }
   }
   .form-field {
     &.required {
@@ -82,61 +106,98 @@ form {
           content: "*";
         }
       }
-      input {}
-      textarea {}
+      input {
+      }
+      textarea {
+      }
     }
     &.valid {
-      label {}
-      input {}
-      textarea {}
+      label {
+      }
+      input {
+      }
+      textarea {
+      }
     }
     &.invalid {
-      label {}
-      input {}
-      textarea {}
-      select {}
+      label {
+      }
+      input {
+      }
+      textarea {
+      }
+      select {
+      }
     }
   }
   label {
     display: inline-block;
     width: 20%;
   }
-  small {}
-  input, textarea, select {
-    &:required {}
-    &:valid {}
-    &:invalid {}
+  small {
+  }
+  input,
+  textarea,
+  select {
+    &:required {
+    }
+    &:valid {
+    }
+    &:invalid {
+    }
   }
   input {
-    &[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number], &[type=url], &[type=time], &[type=tel] {}
-    &[type=hidden] {}
-    &[type=file] {}
-    &[type=submit] {}
-    &[type=checkbox], &[type=radio] {}
+    &[type="text"],
+    &[type="password"],
+    &[type="search"],
+    &[type="date"],
+    &[type="email"],
+    &[type="number"],
+    &[type="url"],
+    &[type="time"],
+    &[type="tel"] {
+    }
+    &[type="hidden"] {
+    }
+    &[type="file"] {
+    }
+    &[type="submit"] {
+    }
+    &[type="checkbox"],
+    &[type="radio"] {
+    }
   }
-  textarea {}
+  textarea {
+  }
   select {
-    optgroup {}
+    optgroup {
+    }
   }
-  button {}
+  button {
+  }
 }
 
 // Tables
 
 table {
   table-layout: fixed;
-  width:100%;
+  width: 100%;
 
-  thead {}
-  tfoot {}
-  tbody {}
+  thead {
+  }
+  tfoot {
+  }
+  tbody {
+  }
   tr {
   }
   th {
     font-weight: $fontweight-default-bold;
   }
-  td {}
-  th, td {
+  td {
+  }
+  th,
+  td {
     &.no-break {
       white-space: nowrap;
       overflow: hidden;
@@ -144,7 +205,7 @@ table {
     }
     &.number {
       font-family: $fontfamily-monospace;
-      text-align:right;
+      text-align: right;
     }
   }
 }
@@ -152,41 +213,98 @@ table {
 // Images
 
 .figure {
-  .figcaption {}
+  .figcaption {
+  }
 }
 
 // UI Elements
 
 .browsehappy {
-  display:none;
+  display: none;
 }
 
 @if ($switch-develop) {
-  div,table {
-    outline:1px solid rgba(255,0,0,0.5);
+  div,
+  table {
+    outline: 1px solid rgba(255, 0, 0, 0.5);
   }
-  h1,h2,h3,h4 {
-    outline:1px solid rgba(0,255,0,0.5);
+  h1,
+  h2,
+  h3,
+  h4 {
+    outline: 1px solid rgba(0, 255, 0, 0.5);
   }
-  td,th {
-    outline:1px solid rgba(0,0,255,0.5);
+  td,
+  th {
+    outline: 1px solid rgba(0, 0, 255, 0.5);
   }
 
-  @media #{$media-responsive-mobile} { .debug {/*media-responsive-mobile*/ }}
-  @media #{$media-responsive-tablet} { .debug {/*media-responsive-tablet*/ }}
-  @media #{$media-responsive-tablet-landscape} { .debug {/*media-responsive-tablet-landscape*/ }}
-  @media #{$media-responsive-desktop} { .debug {/*media-responsive-desktop*/ }}
-  @media #{$media-responsive-mobile--smaller} { .debug {/*media-responsive-mobile--smaller*/ }}
-  @media #{$media-responsive-tablet--smaller} { .debug {/*media-responsive-tablet--smaller*/ }}
-  @media #{$media-responsive-tablet-landscape--smaller} { .debug {/*media-responsive-tablet-landscape--smaller*/ }}
-  @media #{$media-responsive-desktop--smaller} { .debug {/*media-responsive-desktop--smaller*/ }}
-  @media #{$media-responsive-mobile--bigger} { .debug {/*media-responsive-mobile--bigger*/ }}
-  @media #{$media-responsive-tablet--bigger} { .debug {/*media-responsive-tablet--bigger*/ }}
-  @media #{$media-responsive-tablet-landscape--bigger} { .debug {/*media-responsive-tablet-landscape--bigger*/ }}
-  @media #{$media-responsive-desktop--bigger} { .debug {/*media-responsive-desktop--bigger*/ }}
-  @media tty { .debug {/* Old-IE*/ }}
+  @media #{$media-responsive-mobile} {
+    .debug {
+      /*media-responsive-mobile*/
+    }
+  }
+  @media #{$media-responsive-tablet} {
+    .debug {
+      /*media-responsive-tablet*/
+    }
+  }
+  @media #{$media-responsive-tablet-landscape} {
+    .debug {
+      /*media-responsive-tablet-landscape*/
+    }
+  }
+  @media #{$media-responsive-desktop} {
+    .debug {
+      /*media-responsive-desktop*/
+    }
+  }
+  @media #{$media-responsive-mobile--smaller} {
+    .debug {
+      /*media-responsive-mobile--smaller*/
+    }
+  }
+  @media #{$media-responsive-tablet--smaller} {
+    .debug {
+      /*media-responsive-tablet--smaller*/
+    }
+  }
+  @media #{$media-responsive-tablet-landscape--smaller} {
+    .debug {
+      /*media-responsive-tablet-landscape--smaller*/
+    }
+  }
+  @media #{$media-responsive-desktop--smaller} {
+    .debug {
+      /*media-responsive-desktop--smaller*/
+    }
+  }
+  @media #{$media-responsive-mobile--bigger} {
+    .debug {
+      /*media-responsive-mobile--bigger*/
+    }
+  }
+  @media #{$media-responsive-tablet--bigger} {
+    .debug {
+      /*media-responsive-tablet--bigger*/
+    }
+  }
+  @media #{$media-responsive-tablet-landscape--bigger} {
+    .debug {
+      /*media-responsive-tablet-landscape--bigger*/
+    }
+  }
+  @media #{$media-responsive-desktop--bigger} {
+    .debug {
+      /*media-responsive-desktop--bigger*/
+    }
+  }
+  @media tty {
+    .debug {
+      /* Old-IE*/
+    }
+  }
 }
-
 
 // -----------------------------------------------------------------------------
 
@@ -198,7 +316,8 @@ body {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+  font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default}
+    $fontfamily-default;
   //font-size: $fontsize-default; // needed for IE 9-10 in case of rem
   @include rtl {
     direction: rtl;
@@ -208,31 +327,34 @@ body {
   margin: auto;
 }
 #banner {
-  font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default} $fontfamily-secondary;
+  font: $fontstyle-default $fontweight-secondary #{$fontsize-biggest}/#{$lineheight-default}
+    $fontfamily-secondary;
   //font-size: $fontsize-biggest; // needed for IE 9-10 in case of rem
-  padding:1rem;
+  padding: 1rem;
 }
 #navigation {
-  padding:1rem;
+  padding: 1rem;
   ul {
     @extend %toolshed-horizontal-list;
   }
 }
 #main {
-  font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+  font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default}
+    $fontfamily-default;
   //font-size: $fontsize-default; // needed for IE 9-10 in case of rem
-  padding:1rem;
+  padding: 1rem;
   .columns__container {
-    margin:0 calc(-1rem - #{floor($spacing-column/2)});
+    margin: 0 calc(-1rem - #{floor($spacing-column/2)});
   }
 }
 #aside {
-  font:  $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default} $fontfamily-default;
+  font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default}
+    $fontfamily-default;
   //font-size: $fontsize-default; // needed for IE 9-10 in case of rem
-  padding:1rem;
+  padding: 1rem;
 }
 #footer {
-  padding:1rem;
+  padding: 1rem;
   ul {
     @extend %toolshed-horizontal-list;
   }

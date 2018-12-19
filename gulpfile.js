@@ -190,8 +190,8 @@ function watch() {
 var build = gulp.parallel(buildJs, buildCss, buildIcons);
 
 // Tasks
-gulp.task('buildJs',    buildJs);
-gulp.task('buildCss',   buildCss);
-gulp.task('buildIcons', buildIcons);
-gulp.task('watch',      watch);
-gulp.task('default',    build);
+gulp.task('build-js',    buildJs);
+gulp.task('build-css',   buildCss);
+gulp.task('build-icons', buildIcons);
+gulp.task('watch',       watch);
+gulp.task('default',     build);

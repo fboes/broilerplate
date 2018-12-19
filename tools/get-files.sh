@@ -1,16 +1,10 @@
 #!/bin/bash
 set -e
 cd `dirname $0`/..
-source build/.env
+source .env
 
-if [[ ! "$1" =~ ^(live)$ ]]; then
-  echo "Usage : $0 [live]"
-  exit 255
+if [ "$REMOTE_HOST" = "localhost" ]; then
+  rsync -avz $REMOTE_DIRECTORY/htdocs/images htdocs/
+else
+  rsync -avz $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIRECTORY/htdocs/images htdocs/
 fi
-
-case "$1" in
-  live)
-    rsync -avz $REMOTE_HOST:$REMOTE_DIRECTORY/htdocs/download htdocs/
-    #rsync -avz --exclude=.git $REMOTE_HOST:$REMOTE_DIRECTORY/htdocs/download htdocs/
-    ;;
-esac

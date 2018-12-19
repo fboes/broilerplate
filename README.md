@@ -5,21 +5,24 @@ Broilerplate
 
 A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 
-* SASS
-* Gulp support
-* Opengraph implementation
+* Basic directory structure for web projects
+* Basic HTML structure for web templates with…
+  * [Open Graph](http://ogp.me/)
+  * [Schema.org](https://schema.org/)
+  * [IndieWeb Microformats](https://indieweb.org/format)
 * Best practices for icons
-* RTL-support
-* Support for [editorconfig](http://editorconfig.org/)
-
-So you can eat your broiler and have it.
+* Development tools like…
+  * [Sass](https://sass-lang.com/)
+  * [Gulp](https://gulpjs.com/)
+  * [editorconfig](http://editorconfig.org/) configuration for clean code
+  * Git configuration
 
 Installation
 ------------
 
 Setup your project:
 
-1. Check Gulpfile for any file or host references.
+1. Execute `/tools/init-project.sh`.
 2. You may want to replace all variables (like `{{ VARNAME }}`) with a meaningful text or variable.
 
 See the [setup instructions in detail](docs/development/setup.md).

@@ -1,9 +1,13 @@
 .example {
-  &__inner { }
-  &--open { }
+  &__inner {
+  }
+  &--open {
+  }
 
   @include screen_mobile {
-    &__inner { }
-    &--open { }
+    &__inner {
+    }
+    &--open {
+    }
   }
 }

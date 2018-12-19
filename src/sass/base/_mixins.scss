@@ -1,39 +1,57 @@
 // Will output the enclosed styles in a media query matching the settings in your `_base.scss`. You may want to change these to match your responsive strategy, be it "mobile-first", "desktop-first", "each their own", "mobile separate" or anything in between.
 // See http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 and http://davidwalsh.name/write-media-queries-sass for more information.
 // Use like `@include screen_mobile {…}`
-@mixin screen_mobile () {
-  @media #{$media-responsive-mobile--bigger} { @content; }
+@mixin screen_mobile() {
+  @media #{$media-responsive-mobile--bigger} {
+    @content;
+  }
 }
 
-@mixin screen_tablet () {
-  @media #{$media-responsive-tablet--bigger} { @content; }
+@mixin screen_tablet() {
+  @media #{$media-responsive-tablet--bigger} {
+    @content;
+  }
 }
 
-@mixin screen_tablet_landscape () {
-  @media #{$media-responsive-tablet-landscape--bigger} { @content; }
+@mixin screen_tablet_landscape() {
+  @media #{$media-responsive-tablet-landscape--bigger} {
+    @content;
+  }
 }
 
-@mixin screen_desktop () {
-  @media #{$media-responsive-desktop--bigger} { @content; }
+@mixin screen_desktop() {
+  @media #{$media-responsive-desktop--bigger} {
+    @content;
+  }
 }
 
 // Styles for devices with a high DPI ratio, aka retina devices. See 3.1.1
-@mixin screen_retina () {
+@mixin screen_retina() {
   @media (min--moz-device-pixel-ratio: 1.3),
     (-o-min-device-pixel-ratio: 2.6/2),
     (-webkit-min-device-pixel-ratio: 1.3),
     (min-device-pixel-ratio: 1.3),
-    (min-resolution: 1.3dppx) { @content; }
+    (min-resolution: 1.3dppx) {
+    @content;
+  }
 }
 
 @mixin rtl() {
-  [dir="rtl"] & { @content; }
+  [dir="rtl"] & {
+    @content;
+  }
+}
+
+@mixin ltr() {
+  [dir="ltr"] & {
+    @content;
+  }
 }
 
 // This will compute any pixel value to a rem value, according to $base-unit you set in `_base.scss`
 //
 // $value-px - (unit) A size given in pixels. This will be converted to rem, according to your `base-unit` set in `_base.scss`
-@function rem ($value-px) {
+@function rem($value-px) {
   @return toolshed-rem($value-px, $base-unit);
 }
 

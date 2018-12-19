@@ -1,16 +1,31 @@
 // see https://github.com/fboes/SASS-Toolshed
 
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   // see http://css-tricks.com/international-box-sizing-awareness-day/
-  &, &:before, &:after {
+  &,
+  &:before,
+  &:after {
     box-sizing: border-box;
   }
   // see http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
   // this is actually a :not-first selector
-  & + h1, & + h2, & + h3, & + h4, & + p, & + dl, & + ul, & + ol, & + li,  & + dt, & + form, & + table, & + section, & + blockquote {
-    margin-top:1em;
+  & + h1,
+  & + h2,
+  & + h3,
+  & + h4,
+  & + p,
+  & + dl,
+  & + ul,
+  & + ol,
+  & + li,
+  & + dt,
+  & + form,
+  & + table,
+  & + section,
+  & + blockquote {
+    margin-top: 1em;
   }
 }
 
@@ -26,53 +41,62 @@ main,
 nav,
 section,
 summary {
-  display:block;
+  display: block;
 }
 h1 {
-  font-size:3em;
+  font-size: 3em;
 }
 h2 {
-  font-size:2em;
+  font-size: 2em;
 }
 h3 {
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 h4 {
-  font-size:1em;
+  font-size: 1em;
 }
 blockquote,
 li {
-  margin-left:3em;
+  margin-left: 3em;
 }
 dt {
-  font-weight:bold;
+  font-weight: bold;
 }
 dl {
-  margin-left:1em;
+  margin-left: 1em;
 }
 a {
   -webkit-user-select: none; // Remove hover bug/feature from iPad
   -webkit-touch-callout: none; // Remove hover bug/feature from iPad
   img {
-    border:none;
+    border: none;
   }
   &[href^="tel"] {
-    &:link, &:visited, &:hover {
-      color:inherit;
-      text-decoration:inherit;
+    &:link,
+    &:visited,
+    &:hover {
+      color: inherit;
+      text-decoration: inherit;
     }
   }
 }
 img {
   -ms-interpolation-mode: bicubic;
 }
-img, video, audio {
-  max-width:100%;
+img,
+video,
+audio {
+  max-width: 100%;
 }
-select, button {
-  cursor:pointer;
+select,
+button {
+  cursor: pointer;
 }
-form, input, select, textarea, button {
+form,
+input,
+select,
+textarea,
+button {
   font: inherit;
 }
 fieldset {
@@ -80,7 +104,7 @@ fieldset {
 }
 optgroup {
   option {
-    margin-left:1em;
+    margin-left: 1em;
   }
 }
 textarea {
@@ -91,7 +115,8 @@ input {
   [type="search"] {
     -webkit-appearance: none;
   }
-  [type="hidden"],[hidden] {
+  [type="hidden"],
+  [hidden] {
     display: none;
   }
 }
@@ -103,7 +128,8 @@ table {
   font-size: 1em;
   border-collapse: collapse;
   border-spacing: 0;
-  td, th {
+  td,
+  th {
     font-size: 1em;
     vertical-align: top;
     text-align: left;
