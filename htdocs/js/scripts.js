@@ -1,1 +1,1 @@
-!function(){"use strict";document.querySelector("body"),document.querySelector("#banner"),document.querySelector("#navigation")}();
+!function(){"use strict";({header:document.querySelector("#banner")}).header.addEventListener("click",function(e){e.currentTarget.classList.toggle("clicked")})}();
