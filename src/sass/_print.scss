@@ -1,39 +1,41 @@
 // see https://github.com/fboes/SASS-Toolshed
 
-* {
-  color: black !important;
-  background: transparent !important;
-  text-shadow: none !important;
-  filter: none !important;
-  -ms-filter: none !important;
-}
-@page {
-  margin: 0.5cm;
-}
-h1,
-h2,
-h3,
-h4 {
-  page-break-after: avoid;
-}
-h1,
-h2,
-h3,
-h4,
-p,
-li,
-tr,
-img {
-  page-break-inside: avoid;
-}
-thead {
-  display: table-header-group;
-}
-img {
-  max-width: 100% !important;
-}
+@include no-amp {
+  * {
+    color: black !important;
+    background: transparent !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  img {
+    max-width: 100% !important;
+  }
 
-// -----------------------------------------------------------------------------
-#navigation {
-  display: none;
+  // -----------------------------------------------------------------------------
+  #navigation {
+    display: none;
+  }
 }

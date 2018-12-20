@@ -177,7 +177,7 @@ body {
   @include toolshed-vertical-center();
 }
 
-@media (tty) {
+@include no-amp {
   .browsehappy {
     z-index: 2;
     position: fixed;

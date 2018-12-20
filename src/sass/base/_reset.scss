@@ -68,10 +68,12 @@ a {
 }
 img {
   -ms-interpolation-mode: bicubic;
+  border: none;
 }
 img,
 video,
-audio {
+audio,
+iframe {
   max-width: 100%;
 }
 select,

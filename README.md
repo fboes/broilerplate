@@ -45,7 +45,7 @@ See `docs/development` for more information
 Version / Status
 ----------------
 
-See [changelog](CHANGELOG.md)
+See [change log](CHANGELOG.md)
 
 [![devDependency Status](https://david-dm.org/fboes/broilerplate/dev-status.svg)](https://david-dm.org/fboes/broilerplate?type=dev)
 

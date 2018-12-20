@@ -3,12 +3,15 @@ Change log
 
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
+* Add AMP stylesheet
+
 3.0.1 (2018-12-20)
 ==================
 
 * Add HTML examples for pullquotes, code examples, video embeds
 * Improve examples for tables, teasers
 * Add AMP mixin
+* Switch to Gulp@4.0.0
 
 3.0.0 (2018-12-18)
 ==================
