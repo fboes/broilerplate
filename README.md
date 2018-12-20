@@ -1,9 +1,7 @@
 Broilerplate
 ================
 
-[![devDependency Status](https://david-dm.org/fboes/broilerplate/dev-status.svg)](https://david-dm.org/fboes/broilerplate?type=dev)
-
-A boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
+A plattform-agnostic web-project boilerplate with SASS & JS. It serves the following goodness on a shiny plate:
 
 * Basic directory structure for web projects
 * Basic HTML structure for web templates with…
@@ -44,10 +42,12 @@ Developing
 
 See `docs/development` for more information
 
-Version
--------
+Version / Status
+----------------
 
-Version: 3.0.0 (2018-12-18)
+See [changelog](CHANGELOG.md)
+
+[![devDependency Status](https://david-dm.org/fboes/broilerplate/dev-status.svg)](https://david-dm.org/fboes/broilerplate?type=dev)
 
 Legal stuff
 -----------
