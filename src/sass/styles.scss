@@ -12,7 +12,11 @@
 
 // Actual styles
 @import "all";
-// @import "modules/example";
+@import "modules/form";
+@import "modules/pager";
+@import "modules/table";
+@import "modules/video";
+
 @media screen {
   @import "screen";
 }

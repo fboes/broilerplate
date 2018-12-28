@@ -1,0 +1,36 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+
+  thead {
+  }
+  tfoot {
+  }
+  tbody {
+  }
+  tr {
+  }
+  th {
+    font-weight: $fontweight-default-bold;
+  }
+  td {
+  }
+  th,
+  td {
+    &.no-break {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &.number {
+      font-family: $fontfamily-monospace;
+      text-align: right;
+    }
+  }
+}
+
+
+.table-wrapper {
+  max-width: 100%;
+  overflow: auto;
+}

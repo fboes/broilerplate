@@ -1,0 +1,82 @@
+form {
+  fieldset {
+    legend {
+    }
+  }
+  .form-field {
+    &.required {
+      label {
+        &:after {
+          content: "*";
+        }
+      }
+      input {
+      }
+      textarea {
+      }
+    }
+    &.valid {
+      label {
+      }
+      input {
+      }
+      textarea {
+      }
+    }
+    &.invalid {
+      label {
+      }
+      input {
+      }
+      textarea {
+      }
+      select {
+      }
+    }
+  }
+  label {
+    display: inline-block;
+    width: 20%;
+  }
+  small {
+  }
+  input,
+  textarea,
+  select {
+    &:required {
+    }
+    &:valid {
+    }
+    &:invalid {
+    }
+  }
+  input {
+    &[type="text"],
+    &[type="password"],
+    &[type="search"],
+    &[type="date"],
+    &[type="email"],
+    &[type="number"],
+    &[type="url"],
+    &[type="time"],
+    &[type="tel"] {
+    }
+    &[type="hidden"] {
+    }
+    &[type="file"] {
+    }
+    &[type="submit"] {
+    }
+    &[type="checkbox"],
+    &[type="radio"] {
+    }
+  }
+  textarea {
+  }
+  select {
+    optgroup {
+    }
+  }
+  button {
+  }
+}
