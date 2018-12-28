@@ -11,8 +11,9 @@ PROJECT_SUBDOMAIN=${PROJECT_ID//_/-}
 
 sed -i'' -e "s#broiler-plate\.localtest\.me#$PROJECT_DOMAIN#g;s#broiler_plate#$PROJECT_ID#g;s#broiler-plate#$PROJECT_SUBDOMAIN#g" \
   ../config/* \
-  ../.env.example
+  ../.env.example \
   ../docs/*.md \
+  ../*.yml \
   ../README.md
 #sed -i'' -e "s#\(192\.168\.33\)\.[[:digit:]]\+#\1.$PROJECT_IP#g" ../docker/*.md ../docs/*.md ../*.yml
 
