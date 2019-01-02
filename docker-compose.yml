@@ -3,19 +3,20 @@ services:
   web:
     image: php
     ports:
-      - '8080:80'
+      - '8080:80' # http://localhost:8080/
     volumes:
       - ./htdocs:/var/www/html
     environment:
       DB_HOST: db
-      DB_PORT: 3306
-      DB_USER: ${LOCAL_DB_USR:-broiler_plate}
+      DB_USERNAME: ${LOCAL_DB_USR:-broiler_plate}
       DB_PASSWORD: ${LOCAL_DB_PWD:-broiler_plate}
       DB_DATABASE: ${LOCAL_DB_DB:-broiler_plate}
+      DB_PORT: 3306
     links:
       - db
   db:
-    image: mysql
+    image: mariadb # https://hub.docker.com/_/mariadb/
+    command: ["mysqld", "--character-set-server=utf8", "--collation-server=utf8_unicode_ci"]
     ports:
       - '3307:3306'
     environment:
