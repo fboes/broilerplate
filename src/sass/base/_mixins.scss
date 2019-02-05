@@ -38,14 +38,14 @@
 
 // Add rules for RTL pages
 @mixin rtl() {
-  [dir="rtl"] & {
+  &:dir(rtl) {
     @content;
   }
 }
 
 // Add rules for LTR pages
 @mixin ltr() {
-  [dir="ltr"] & {
+  &:dir(ltr) {
     @content;
   }
 }

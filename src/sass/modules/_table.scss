@@ -25,6 +25,9 @@ table {
     &.number {
       font-family: $fontfamily-monospace;
       text-align: right;
+      @include rtl {
+        text-align: left;
+      }
     }
   }
 }

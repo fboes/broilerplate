@@ -196,9 +196,6 @@ body {
   font: $fontstyle-default $fontweight-default #{$fontsize-default}/#{$lineheight-default}
     $fontfamily-default;
   //font-size: $fontsize-default; // needed for IE 9-10 in case of rem
-  @include rtl {
-    direction: rtl;
-  }
 }
 #container {
   margin: auto;

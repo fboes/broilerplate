@@ -70,8 +70,6 @@ html { font-size: 8px; }
 
 body { direction: ltr; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font: normal 400 12px/1.2 Helvetica, Arial, sans-serif; }
 
-[dir="rtl"] body { direction: rtl; }
-
 #container { margin: auto; }
 
 #banner { font: normal 700 28px/1.2 Garamond, serif; padding: 1rem; }
@@ -98,6 +96,8 @@ table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; te
 
 table th.number, table td.number { font-family: "Courier New", monospace; text-align: right; }
 
+table th.number:dir(rtl), table td.number:dir(rtl) { text-align: left; }
+
 .table-wrapper { max-width: 100%; overflow: auto; }
 
 .video-player { position: relative; padding-bottom: 56.25%; width: 100%; height: 0; margin-bottom: 1em; overflow: hidden; }
@@ -115,6 +115,7 @@ table th.number, table td.number { font-family: "Courier New", monospace; text-a
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; }
   .columns { float: left; margin-left: 10px; margin-right: 10px; }
+  .columns:dir(rtl) { float: right; }
   .columns--raw { margin-left: 0; margin-right: 0; }
   .columns__container { margin-left: -10px; margin-right: -10px; } }
 
@@ -150,7 +151,7 @@ table th.number, table td.number { font-family: "Courier New", monospace; text-a
   
   
   
-  .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
+  .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; right: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
   .browsehappy a { color: blue; } }
 
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }

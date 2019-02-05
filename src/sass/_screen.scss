@@ -44,6 +44,9 @@ body {
   float: left;
   margin-left: ceil($spacing-column/2);
   margin-right: floor($spacing-column/2);
+  @include rtl {
+    float: right;
+  }
   &--raw {
     margin-left: 0;
     margin-right: 0;
@@ -188,6 +191,7 @@ body {
     width: 100%;
     top: 0;
     left: 0;
+    right: 0;
     border-bottom: 1px solid #eeeeee;
     text-align: center;
     display: block;
