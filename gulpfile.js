@@ -1,23 +1,43 @@
 'use strict';
 
+/**
+ * Install with:
+ *
+ * ```bash
+ * npm init
+ * npm install -g gulp-cli
+ * npm install --save-dev autoprefixer beeper browser-sync gulp gulp-concat gulp-eslint gulp-plumber gulp-postcss node-sass gulp-sass gulp-sourcemaps gulp-uglify
+ * ```
+ *
+ * Afterwards change `config` in line 30ff
+ */
+
 const fs       = require('fs'),
   beep         = require('beeper'),
   plumber      = require('gulp-plumber'),
   gulp         = require('gulp'),
-  clone        = require('gulp-clone'),
   concat       = require('gulp-concat'),
   eslint       = require('gulp-eslint'),
-  imageResize  = require('gulp-image-resize'),
   browserSync  = require('browser-sync').create(),
   postcss      = require('gulp-postcss'),
-  rename       = require('gulp-rename'),
   sass         = require('gulp-sass'),
   sourcemaps   = require('gulp-sourcemaps'),
   uglify       = require('gulp-uglify'),
   autoprefixer = require('autoprefixer');
 
-  // Get configuration
-const config = JSON.parse(fs.readFileSync('./package.json'));
+// Get configuration
+//const config = JSON.parse(fs.readFileSync('./package.json'));
+const config = {
+  directories: {
+    htdocs: "htdocs",
+    theme: "src",
+    sass: "src/scss",
+    css: "htdocs/css",
+    js_src: "src/js-src",
+    js: "htdocs/js"
+  },
+  server: "localhost:8080"
+};
 
 // Error handler
 const onError = function(err) {
@@ -37,9 +57,9 @@ const globs = {
     config.directories.js_src + '/main.js'
   ],
   sass: config.directories.sass + '/**/*.scss',
-  icon: config.directories.images + '/logo.png',
-  articleImages: config.directories.images + '/originals/*.jpg',
-  allHtdocs: config.directories.htdocs + '/**/*'
+  template: [
+      config.directories.theme + '/css/*.css'
+  ]
 };
 
 const tasks = {
@@ -56,7 +76,7 @@ const tasks = {
             semi: [2, 'always'],
             'no-undef': 2
           },
-          envs: ['browser'],
+          envs: ['browser', 'jquery'],
           extends: ['eslint:recommended']
         })
       )
@@ -94,139 +114,35 @@ const tasks = {
       .pipe(gulp.dest(config.directories.css));
   },
 
-  buildIcons: function() {
-    const logo = gulp.src(globs.icon);
-
-    [
-      {
-        width: 32,
-        height: 32,
-        name: 'favicon.ico',
-        directory: config.directories.template
-      },
-      {
-        width: 16,
-        height: 16,
-        name: 'favicon-16x16.png',
-        directory: config.directories.template
-      },
-      {
-        width: 32,
-        height: 32,
-        name: 'favicon-32x32.png',
-        directory: config.directories.template
-      },
-      {
-        width: 192,
-        height: 192,
-        name: 'favicon-192x192.png',
-        directory: config.directories.template
-      },
-      {
-        width: 512,
-        height: 512,
-        name: 'favicon-512x512.png',
-        directory: config.directories.template
-      },
-      {
-        width: 180,
-        height: 180,
-        name: 'apple-touch-icon-precomposed.png',
-        directory: config.directories.template
-      },
-      {
-        width: 128,
-        height: 128,
-        name: 'tile-128x128.png',
-        directory: config.directories.images
-      },
-      {
-        width: 270,
-        height: 270,
-        name: 'tile-270x270.png',
-        directory: config.directories.images
-      },
-      {
-        width: 558,
-        height: 270,
-        name: 'tile-558x270.png',
-        directory: config.directories.images
-      },
-      {
-        width: 558,
-        height: 558,
-        name: 'tile-558x558.png',
-        directory: config.directories.images
-      }
-    ].forEach(function(i) {
-      logo
-        .pipe(clone())
-        .pipe(
-          imageResize({
-            width: i.width,
-            height: i.height,
-            crop: true,
-            quality: 0.7,
-            gravity: 'Center',
-            imageMagick: true
-          })
-        )
-        .pipe(rename(i.name))
-        .pipe(gulp.dest(i.directory));
-    });
-    return logo;
-  },
-
-  buildArticleImages: function() {
-    var article_images = gulp.src(globs.articleImages);
-
-    [{ width: 640, height: 360 }, { width: 1280, height: 720 }].forEach(
-      function(i) {
-        article_images
-          .pipe(clone())
-          .pipe(
-            imageResize({
-              width: i.width,
-              height: i.height,
-              crop: true,
-              quality: 0.7,
-              gravity: 'Center',
-              imageMagick: true
-            })
-          )
-          .pipe(gulp.dest(config.directories.images + '/articles-' + i.width));
-      }
-    );
-    return article_images;
-  },
-
   reloadFrontend: function() {
-    gulp.src(globs.allHtdocs).pipe(browserSync.stream());
+    gulp.src(globs.template).pipe(browserSync.stream());
   },
 
   watch: function() {
-    browserSync.init({
-      server: {
-        baseDir: config.directories.htdocs,
-        directory: true
+    /*browserSync.init( config.server
+      ? {
+        proxy: config.server,
+        files: globs.template
+      } : {
+        server: {
+          baseDir: config.directories.htdocs,
+          directory: true
+        }
       }
-    });
+    );*/
 
     gulp.watch(['./gulpfile.js', './package.json'], process.exit);
     gulp.watch(globs.compileJs,     tasks.buildJs);
     gulp.watch(globs.sass,          tasks.buildCss);
-    gulp.watch(globs.icon,          tasks.buildIcons);
-    gulp.watch(globs.articleImages, tasks.buildArticleImages);
-    gulp.watch(globs.allHtdocs,     tasks.reloadFrontend);
+    //gulp.watch(globs.template,      tasks.reloadFrontend);
   }
 };
 
 tasks.buildJs = gulp.parallel(tasks.doEslint, tasks.doUglify);
-tasks.build   = gulp.parallel(tasks.buildJs, tasks.buildCss, tasks.buildIcons);
+tasks.build   = gulp.parallel(tasks.buildJs, tasks.buildCss);
 
 // Shell commands
 gulp.task('build-js',    tasks.buildJs);
 gulp.task('build-css',   tasks.buildCss);
-gulp.task('build-icons', tasks.buildIcons);
 gulp.task('watch',       tasks.watch);
 gulp.task('default',     tasks.build);

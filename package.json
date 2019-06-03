@@ -7,10 +7,10 @@
     "url": "git@github.com:fboes/broilerplate.git"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.3",
+    "autoprefixer": "^9.5.1",
     "beeper": "^1.1.1",
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
     "gulp-clone": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^5.0.0",
@@ -19,8 +19,9 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1"
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.12.0"
   },
   "config": {
     "develop": false
