@@ -7,9 +7,9 @@
     "url": "git@github.com:fboes/broilerplate.git"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "beeper": "^1.1.1",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "eslint": "^6.0.1",
     "gulp": "^4.0.2",
     "gulp-clone": "^2.0.1",
