@@ -3,7 +3,16 @@ Change log
 
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
-* Add AMP stylesheet
+3.1.0
+=====
+
+* 🎁 Improve RTL handling
+* 🎁 Add pager HTML
+* 🎁 Improve `<head>` of HTML
+* 🎁 Add AMP stylesheet
+* 🔧 Add stub `docker-compose.yml`
+* 🔧 Streamline Gulp and favicon generator
+* 🔧 Add Stylelint
 
 3.0.1 (2018-12-20)
 ==================
