@@ -10,6 +10,7 @@
     "autoprefixer": "^9.5.1",
     "beeper": "^1.1.1",
     "browser-sync": "^2.26.5",
+    "eslint": "^6.0.1",
     "gulp": "^4.0.2",
     "gulp-clone": "^2.0.1",
     "gulp-concat": "^2.6.1",
@@ -20,8 +21,12 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.8.0"
   },
   "config": {
     "develop": false
@@ -45,5 +50,31 @@
   },
   "author": "Frank Boës",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "rules": {},
+    "globals": {},
+    "extends": "eslint:recommended"
+  },
+  "eslintIgnore": [],
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "no-descending-specificity": null,
+      "block-no-empty": null
+    },
+    "ignoreFiles": [
+      "**/*.css"
+    ]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 2%",
+    "ie 9",
+    "ie 10",
+    "ie 11"
+  ]
 }

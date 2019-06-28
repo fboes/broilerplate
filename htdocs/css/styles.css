@@ -151,7 +151,7 @@ table th.number:dir(rtl), table td.number:dir(rtl) { text-align: left; }
   
   
   
-  .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; width: 100%; top: 0; left: 0; right: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
+  .browsehappy { z-index: 2; position: fixed; width: 100%; background-color: #ffffdd; color: #000000; padding: 0.5em; top: 0; left: 0; right: 0; border-bottom: 1px solid #eeeeee; text-align: center; display: block; }
   .browsehappy a { color: blue; } }
 
 @media print { * { color: black !important; background: transparent !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; -ms-filter: none !important; }

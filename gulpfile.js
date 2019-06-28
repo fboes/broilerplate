@@ -23,21 +23,22 @@ const fs       = require('fs'),
   sass         = require('gulp-sass'),
   sourcemaps   = require('gulp-sourcemaps'),
   uglify       = require('gulp-uglify'),
-  autoprefixer = require('autoprefixer');
+  autoprefixer = require('autoprefixer'),
+  stylelint    = require('gulp-stylelint');
 
 // Get configuration
-//const config = JSON.parse(fs.readFileSync('./package.json'));
-const config = {
+const config = JSON.parse(fs.readFileSync('./package.json'));
+/*const config = {
   directories: {
     htdocs: "htdocs",
     theme: "src",
-    sass: "src/scss",
+    sass: "src/sass",
     css: "htdocs/css",
     js_src: "src/js-src",
     js: "htdocs/js"
-  },
-  server: "localhost:8080"
-};
+  }
+};*/
+config.server = "localhost:8080";
 
 // Error handler
 const onError = function(err) {
@@ -67,19 +68,7 @@ const tasks = {
     return gulp
       .src(globs.eslintJs)
       .pipe(plumber({ errorHandler: onError }))
-      .pipe(
-        eslint({
-          useEslintrc: false,
-          rules: {
-            strict: [2, 'safe'],
-            curly: 2,
-            semi: [2, 'always'],
-            'no-undef': 2
-          },
-          envs: ['browser', 'jquery'],
-          extends: ['eslint:recommended']
-        })
-      )
+      .pipe(eslint())
       .pipe(eslint.format());
   },
 
@@ -101,13 +90,16 @@ const tasks = {
     return gulp
       .src(globs.sass)
       .pipe(plumber({ errorHandler: onError }))
+      .pipe(stylelint({
+        reporters: [
+          {formatter: 'string', console: true}
+        ]
+      }))
       .pipe(sourcemaps.init())
       .pipe(sass({ outputStyle: 'compact' }).on('error', sass.logError))
       .pipe(
         postcss([
-          autoprefixer({
-            browsers: ['last 2 versions', '> 2%', 'ie 9', 'ie 10', 'ie 11']
-          })
+          autoprefixer()
         ])
       )
       .pipe(sourcemaps.write('.'))
