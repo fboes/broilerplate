@@ -3,6 +3,11 @@ Change log
 
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
+3.1.1
+=====
+
+* 🔧 Update NPM packages
+
 3.1.0
 =====
 

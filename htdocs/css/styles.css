@@ -96,7 +96,7 @@ table th.no-break, table td.no-break { white-space: nowrap; overflow: hidden; te
 
 table th.number, table td.number { font-family: "Courier New", monospace; text-align: right; }
 
-table th.number:dir(rtl), table td.number:dir(rtl) { text-align: left; }
+[dir="rtl"] table th.number, [dir="rtl"] table td.number { text-align: left; }
 
 .table-wrapper { max-width: 100%; overflow: auto; }
 
@@ -115,7 +115,7 @@ table th.number:dir(rtl), table td.number:dir(rtl) { text-align: left; }
   #footer { color: #ffffff; background-color: #000000; }
   .no-screen { display: none; }
   .columns { float: left; margin-left: 10px; margin-right: 10px; }
-  .columns:dir(rtl) { float: right; }
+  [dir="rtl"] .columns { float: right; }
   .columns--raw { margin-left: 0; margin-right: 0; }
   .columns__container { margin-left: -10px; margin-right: -10px; } }
 
