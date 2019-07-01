@@ -3,6 +3,8 @@ Change log
 
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
+* 💊 Change unsupported CSS properties
+
 3.1.1
 =====
 
