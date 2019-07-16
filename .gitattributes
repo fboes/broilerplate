@@ -1,5 +1,5 @@
 # Set the default behavior, in case people don't have core.autocrlf set.
-* text=auto eol=lf
+* text=auto
 
 # Automatically set line endings
 # See https://help.github.com/articles/dealing-with-line-endings
@@ -8,5 +8,19 @@
 # Automatically solve merge conflicts
 # See http://stackoverflow.com/questions/27134100/whats-the-proper-usage-of-gitattributes-with-merge-ours
 
-*.css text merge=ours
+*.css text eol=lf merge=ours
+*.go text eol=lf
+*.html text eol=lf
 *.ics text eol=crlf
+*.js text eol=lf
+*.json text eol=lf
+*.less text eol=lf
+*.lock text eol=lf
+*.md text eol=lf
+*.php text eol=lf
+*.scss text eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
+*.tpl text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
