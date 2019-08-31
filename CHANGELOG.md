@@ -4,6 +4,7 @@ Change log
 For detailed information check [Broilerplates's releases on Github](https://github.com/fboes/broilerplate/releases).
 
 * 💊 Change unsupported CSS properties
+* 🎁 Adding [maskable icons to `manifest.json`](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/)
 
 3.1.1
 =====
