@@ -103,13 +103,12 @@ input {
   [type="search"] {
     -webkit-appearance: none;
   }
-  [type="hidden"],
-  [hidden] {
+  [type="hidden"] {
     display: none;
   }
 }
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 table {

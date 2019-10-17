@@ -40,9 +40,9 @@ textarea { overflow: auto; resize: vertical; }
 
 input [type="search"] { -webkit-appearance: none; }
 
-input [type="hidden"], input [hidden] { display: none; }
+input [type="hidden"] { display: none; }
 
-[hidden] { display: none; }
+[hidden] { display: none !important; }
 
 table { font-size: 1em; border-collapse: collapse; border-spacing: 0; }
 
