@@ -1,4 +1,5 @@
 // Styles for all media types
+@use "sass:math";
 
 // Webfonts
 
@@ -218,7 +219,7 @@ body {
   //font-size: $fontsize-default; // needed for IE 9-10 in case of rem
   padding: 1rem;
   .columns__container {
-    margin: 0 calc(-1rem - #{floor($spacing-column/2)});
+    margin: 0 calc(-1rem - math.floor(math.div($spacing-column, 2)));
   }
 }
 #aside {

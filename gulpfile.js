@@ -1,142 +1,81 @@
-/* eslint-env node, es6 */
-
 'use strict';
 
-/**
- * Install with:
- *
- * ```bash
- * npm init
- * npm install -g gulp-cli
- * npm install --save-dev autoprefixer beeper browser-sync gulp gulp-concat gulp-eslint gulp-plumber gulp-postcss node-sass gulp-sass gulp-sourcemaps gulp-uglify
- * ```
- *
- * Afterwards change `config` in line 30ff
- */
+// Include gulp
+const gulp = require('gulp');
+const pkg  = require('./package.json');
 
-const fs       = require('fs'),
-  beep         = require('beeper'),
-  plumber      = require('gulp-plumber'),
-  gulp         = require('gulp'),
-  concat       = require('gulp-concat'),
-  eslint       = require('gulp-eslint'),
-  browserSync  = require('browser-sync').create(),
-  postcss      = require('gulp-postcss'),
-  sass         = require('gulp-sass'),
-  sourcemaps   = require('gulp-sourcemaps'),
-  uglify       = require('gulp-uglify'),
-  autoprefixer = require('autoprefixer'),
-  stylelint    = require('gulp-stylelint');
 
-// Get configuration
-const config = JSON.parse(fs.readFileSync('./package.json'));
-/*const config = {
-  directories: {
-    htdocs: "htdocs",
-    theme: "src",
-    sass: "src/sass",
-    css: "htdocs/css",
-    js_src: "src/js-src",
-    js: "htdocs/js"
-  }
-};*/
-config.server = "localhost:8080";
+// Include Our Plugins
+var concat      = require('gulp-concat'),
+  eslint        = require('gulp-eslint'),
+  sass          = require('gulp-sass')(require('sass')),
+  postcss       = require('gulp-postcss'),
+  rename        = require("gulp-rename"),
+  replace       = require('gulp-replace'),
+  uglify        = require('gulp-uglify'),
+  autoprefixer  = require ('autoprefixer'),
+  gulpStylelint = require ('@ronilaukkarinen/gulp-stylelint')
+;
 
-// Error handler
-const onError = function(err) {
-  beep();
-};
-
-// -------------------------------------------------------
-
-const globs = {
-  eslintJs: [
-    config.directories.js_src + '/**/*.js',
-    '!' + config.directories.js_src + '/vendor/*.js'
-  ],
-  compileJs: [
-    config.directories.js_src + '/vendor/*.js',
-    config.directories.js_src + '/**/_*.js',
-    config.directories.js_src + '/main.js'
-  ],
-  sass: config.directories.sass + '/**/*.scss',
-  template: [
-      config.directories.theme + '/css/*.css'
-  ]
-};
-
+// Tasks
 const tasks = {
-  doEslint: function() {
-    return gulp
-      .src(globs.eslintJs)
-      .pipe(plumber({ errorHandler: onError }))
+  buildJs: function() {
+    return gulp.src([
+        pkg.directories.js_src + '/main.js'
+      ])
       .pipe(eslint())
-      .pipe(eslint.format());
-  },
-
-  doUglify: function() {
-    return gulp
-      .src(globs.compileJs)
-      .pipe(concat('scripts.js'))
-      .pipe(
-        uglify({
-          output: {
-            max_line_len: 9000
-          }
-        })
-      )
-      .pipe(gulp.dest(config.directories.js));
+      .pipe(eslint.format())
+      //.pipe(eslint.failAfterError())
+      .pipe(concat('scripts.min.js'))
+      .pipe(uglify({output: {
+        max_line_len: 9000
+      }}))
+      .pipe(gulp.dest(pkg.directories.js))
+    ;
   },
 
   buildCss: function() {
-    return gulp
-      .src(globs.sass)
-      .pipe(plumber({ errorHandler: onError }))
-      .pipe(stylelint({
+    return gulp.src(pkg.directories.sass + '/**/*.scss')
+      .pipe(gulpStylelint({
         reporters: [
           {formatter: 'string', console: true}
         ]
       }))
-      .pipe(sourcemaps.init())
-      .pipe(sass({ outputStyle: 'compact' }).on('error', sass.logError))
-      .pipe(
-        postcss([
-          autoprefixer()
-        ])
-      )
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(config.directories.css));
+      .pipe(sass().on('error', sass.logError))
+      .pipe(postcss([
+        autoprefixer()
+      ]))
+      .pipe(gulp.dest(pkg.directories.css))
+    ;
   },
 
-  reloadFrontend: function() {
-    gulp.src(globs.template).pipe(browserSync.stream());
+  compressCss: function() {
+    return gulp.src(pkg.directories.css + '/**/amp.css')
+      .pipe(replace(/\n\s+/g, ''))
+      .pipe(replace(/\s*(\{)\s*/g, '$1'))
+      .pipe(replace(/\s*(\})/g, '$1'))
+      .pipe(replace(/(;)\s*/g, '$1'))
+      .pipe(replace(/(url\()/g, '$1https://cdn.3960.org/css/'))
+      .pipe(replace(/\s?!important/g, ''))
+      .pipe(rename('amp.min.css'))
+      .pipe(gulp.dest(pkg.directories.css))
+    ;
   },
 
+  // Watch Files For Changes
   watch: function() {
-    /*browserSync.init( config.server
-      ? {
-        proxy: config.server,
-        files: globs.template
-      } : {
-        server: {
-          baseDir: config.directories.htdocs,
-          directory: true
-        }
-      }
-    );*/
-
-    gulp.watch(['./gulpfile.js', './package.json'], process.exit);
-    gulp.watch(globs.compileJs,     tasks.buildJs);
-    gulp.watch(globs.sass,          tasks.buildCss);
-    //gulp.watch(globs.template,      tasks.reloadFrontend);
+    gulp.watch(pkg.directories.js_src + '/**/*.js',  tasks.buildJs);
+    gulp.watch(pkg.directories.sass + '/**/*.scss',  tasks.buildCss);
+    gulp.watch(pkg.directories.css + '/**/amp.css',  tasks.compressCss);
   }
 };
 
-tasks.buildJs = gulp.parallel(tasks.doEslint, tasks.doUglify);
-tasks.build   = gulp.parallel(tasks.buildJs, tasks.buildCss);
+// Bundle tasks
+tasks.defaultTask = gulp.parallel(tasks.buildJs, tasks.buildCss);
 
-// Shell commands
-gulp.task('build-js',    tasks.buildJs);
-gulp.task('build-css',   tasks.buildCss);
-gulp.task('watch',       tasks.watch);
-gulp.task('default',     tasks.build);
+// Expose tasks
+gulp.task('build-js',  tasks.buildJs);
+gulp.task('build-css', gulp.series(tasks.buildCss, tasks.compressCss));
+//gulp.task('build',   tasks.build);
+gulp.task('watch',     tasks.watch);
+gulp.task('default',   tasks.defaultTask);

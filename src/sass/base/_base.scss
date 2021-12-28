@@ -3,6 +3,9 @@
 // CSSPROPERTY(-CSS-SUBPROPERTY)-[default|VARIABLENAME](-SUBVARIABLENAME)
 // See http://compass-style.org/help/tutorials/best_practices/
 
+@use "sass:math";
+@use "sass:color";
+
 // Switches
 
 $switch-amp:                        false !default; // Stylesheet is for AMP pages
@@ -11,7 +14,6 @@ $switch-overlapping:                false !default; // container does not set wi
 $switch-fluid:                      false !default; // if set to fluid, the container will not use breakpoints for its width
 
 // Base canon
-//
 // Basic margins and padding, grid settings, responsive breakpoints, etc.
 
 $base-unit:                         8px !default; // this is also the base unit to calculate `rem` to
@@ -61,29 +63,28 @@ $media-responsive-tablet-landscape--bigger:  "screen and (min-width: #{$width-sc
 $media-responsive-desktop--bigger:           "screen and (min-width: #{$width-screen-desktop})";
 
 // Colors
-//
 // Absolute colors, as well as relative colors with RGBA
 
 $color-white:                       #ffffff !default;
 $color-black:                       #000000 !default;
-$color-grey:                        mix($color-white, $color-black, 50%) !default;
-$color-grey-dark:                   mix($color-white, $color-black, 20%) !default;
-$color-grey-light:                  mix($color-white, $color-black, 90%) !default;
+$color-grey:                        color.mix($color-white, $color-black, 50%) !default;
+$color-grey-dark:                   color.mix($color-white, $color-black, 20%) !default;
+$color-grey-light:                  color.mix($color-white, $color-black, 90%) !default;
 $color-blue:                        #33b5e5 !default;
-$color-blue-dark:                   darken($color-blue, 25%) !default;
-$color-blue-light:                  lighten($color-blue, 15%) !default;
-$color-purple:                      #AA66CC !default;
-$color-purple-dark:                 darken($color-purple, 25%) !default;
-$color-purple-light:                lighten($color-purple, 15%) !default;
+$color-blue-dark:                   color.adjust($color-blue, $lightness: -25%) !default;
+$color-blue-light:                  color.adjust($color-blue, $lightness: 15%) !default;
+$color-purple:                      #555455 !default;
+$color-purple-dark:                 color.adjust($color-purple, $lightness: -25%) !default;
+$color-purple-light:                color.adjust($color-purple, $lightness: 15%) !default;
 $color-green:                       #99cc00 !default;
-$color-green-dark:                  darken($color-green, 25%) !default;
-$color-green-light:                 lighten($color-green, 15%) !default;
+$color-green-dark:                  color.adjust($color-green, $lightness: -25%) !default;
+$color-green-light:                 color.adjust($color-green, $lightness: 15%) !default;
 $color-yellow:                      #FFBB33 !default;
-$color-yellow-dark:                 darken($color-yellow, 25%) !default;
-$color-yellow-light:                lighten($color-yellow, 15%) !default;
+$color-yellow-dark:                 color.adjust($color-yellow, $lightness: -25%) !default;
+$color-yellow-light:                color.adjust($color-yellow, $lightness: 15%) !default;
 $color-red:                         #FF4444 !default;
-$color-red-dark:                    darken($color-red, 25%) !default;
-$color-red-light:                   lighten($color-red, 15%) !default;
+$color-red-dark:                    color.adjust($color-red, $lightness: -25%) !default;
+$color-red-light:                   color.adjust($color-red, $lightness: 15%) !default;
 
 $color-lighter:                     rgba(255,255,255,0.25) !default;
 $color-darker :                     rgba(0,0,0,0.25) !default;
@@ -115,7 +116,6 @@ $color-link:                        $color-red-dark !default;
 $color-link-hover:                  $color-red-light !default;
 
 // Typography
-//
 // Font families, sizes, weights etc.
 
 $fontfamily-first-primary:          Helvetica !default;
@@ -152,26 +152,25 @@ $fontsize-default:                  12px !default;
 $lineheight-default:                $lineheight-base !default;
 $fontstyle-default:                 normal !default;
 
-$fontsize-big:                      round($fontsize-default * 1.15) !default;
-$fontsize-bigger:                   round($fontsize-big * 1.5) !default;
-$fontsize-biggest:                  round($fontsize-big * 2) !default;
-$fontsize-small:                    round($fontsize-default * 0.9) !default;
-$fontsize-smaller:                  round($fontsize-default * 0.8) !default;
-$fontsize-smallest:                 round($fontsize-default * 0.75) !default;
+$fontsize-big:                      math.round($fontsize-default * 1.15) !default;
+$fontsize-bigger:                   math.round($fontsize-big * 1.5) !default;
+$fontsize-biggest:                  math.round($fontsize-big * 2) !default;
+$fontsize-small:                    math.round($fontsize-default * 0.9) !default;
+$fontsize-smaller:                  math.round($fontsize-default * 0.8) !default;
+$fontsize-smallest:                 math.round($fontsize-default * 0.75) !default;
 
 $textshadow-default:                1px 1px 3px $color-darker !default;
 
 
 // Misc
-//
 // Z-Indexes and transitions
 
 $zindex-headline:                   1 !default;
 $zindex-popup:                      $zindex-headline + 1 !default;
 
 $transitionduration-default:        0.25s !default;
-$transitionduration-fast:           ($transitionduration-default / 2) !default;
-$transitionduration-slow:           ($transitionduration-default * 2) !default;
+$transitionduration-fast:           math.div($transitionduration-default, 2) !default;
+$transitionduration-slow:           $transitionduration-default * 2 !default;
 
 $transitionfunction-default:        ease-in-out !default;
 
