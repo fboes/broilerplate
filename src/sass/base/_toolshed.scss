@@ -1,12 +1,10 @@
 // -----------------------------------------------
 // BASICS
 // -----------------------------------------------
+@use "sass:math";
 
 // build webfont source. Remember that the filename of the font must be short than 31 characters, else it will not work in IE8 and lower.
 // See http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
-//
-// $base - (string)
-// $id   - (string)
 @mixin toolshed-webfont-src($base, $id) {
   @if (str-length($id) > 31) {
     @error 'ID of webfont to long for IE, consider using a smaller webfont filename';
@@ -50,7 +48,6 @@
 }
 
 // convert current element to horizontal list
-//
 // $useFloat - (bool) Will remove whitespaces between list elements like `</li><li>`
 @mixin toolshed-horizontal-list($useFloat: false) {
   display: block;
@@ -117,7 +114,6 @@
 
 // This mixin allows you to get a specific icon from a grid-sprite.
 // Combine this mixing with @mixin background-retina to a new mixing for your sprite
-//
 // $imageUrl       - (string)
 // $retinaImageUrl - (string)
 // $imageWidth     - (unit)    The dimension of the non-retina image
@@ -143,8 +139,8 @@
   $mode: 0
 ) {
   @if ($mode == 3) {
-    width: ceil($iconWidth);
-    height: ceil($iconHeight);
+    width: math.ceil($iconWidth);
+    height: math.ceil($iconHeight);
   } @else {
     @if ($mode == 0) {
       @include toolshed-background-retina(
@@ -194,8 +190,8 @@
 @mixin toolshed-grid-sprite-stuff($iconWidth: 20px, $iconHeight: $iconWidth) {
   background-repeat: no-repeat;
   display: inline-block;
-  width: ceil($iconWidth);
-  height: ceil($iconHeight);
+  width: math.ceil($iconWidth);
+  height: math.ceil($iconHeight);
   content: " ";
 }
 
@@ -208,12 +204,11 @@
   $iconWidth: 20px,
   $iconHeight: $iconWidth
 ) {
-  background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2))
-    floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
+  background-position: math.floor(-1 * $xGrid * ($xOffset + 0.5) + ($iconWidth / 2))
+    math.floor(-1 * $yGrid * ($yOffset + 0.5) + ($iconHeight / 2));
 }
 
 // Load a single webfont icon. This works best in :before
-//
 // $fontfamily  : (string) Name of fontfamily used for icon font
 // $content     : (string) Character to display. Will be something like `\e601`
 // $fontsize    : (unit) Size of character. Defaults to `1em`. Beware of using `rem` as IE9-10 will not glob this.
@@ -242,8 +237,7 @@
 }
 
 // round with precision of 3
-//
 // $val - (unit) Any unit you want be rounded to the last three decimals
 @function toolshed-round($val) {
-  @return round($val * 1000) / 1000;
+  @return math.round($val * 1000) / 1000;
 }

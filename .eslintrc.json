@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules":{
+    "curly": "error",
+    "eqeqeq": "error"
+  },
+  "ignorePatterns": [
+    "**/vendor/*.js"
+  ],
+  "overrides": [
+    {
+      "files": "gulpfile.js",
+      "env": {
+        "node": true,
+        "browser": false
+      }
+    }
+  ]
+}

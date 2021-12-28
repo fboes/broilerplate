@@ -63,14 +63,12 @@
 }
 
 // This will compute any pixel value to a rem value, according to $base-unit you set in `_base.scss`
-//
 // $value-px - (unit) A size given in pixels. This will be converted to rem, according to your `base-unit` set in `_base.scss`
 @function rem($value-px) {
   @return toolshed-rem($value-px, $base-unit);
 }
 
 // Prevent iPad & co from having to double click items with :hover state
-//
 // Styleguide 3.1.8
 @mixin hover {
   &:hover,

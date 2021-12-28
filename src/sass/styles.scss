@@ -17,9 +17,6 @@
 @import "modules/table";
 @import "modules/video";
 
-@media screen {
-  @import "screen";
-}
-@media print {
-  @import "print";
-}
+@import "screen";
+@import "print";
+
